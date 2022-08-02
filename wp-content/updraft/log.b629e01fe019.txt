@@ -1,0 +1,256 @@
+0000.001 () Opened log file at time: Fri, 15 Jul 2022 10:42:57 +0000 on https://esez.pl
+0000.002 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 2.22.14.0 WP: 6.0.1 PHP: 8.1.3 (fpm-fcgi, Linux da23036.serwervps.pl 3.10.0-1160.53.1.vz7.185.3 #1 SMP Tue Jan 25 12:49:12 MSK 2022 x86_64) MySQL: 10.2.30-MariaDB (max packet size=16777216) WPLANG: pl_PL Server: Apache/2 safe_mode: 0 max_execution_time: 900 memory_limit: 1024M (used: 18.2M | 20M) multisite: N openssl: OpenSSL 1.0.2k  26 Jan 2017 mcrypt: N LANG:  ZipArchive::addFile: Y
+0000.002 () Free space on disk containing Updraft's temporary directory: 475994.7 MB
+0000.014 () Restore setup, now closing connection and starting restore over AJAX.
+0000.001 () Opened log file at time: Fri, 15 Jul 2022 10:42:57 +0000 on https://esez.pl
+0000.001 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 2.22.14.0 WP: 6.0.1 PHP: 8.1.3 (fpm-fcgi, Linux da23036.serwervps.pl 3.10.0-1160.53.1.vz7.185.3 #1 SMP Tue Jan 25 12:49:12 MSK 2022 x86_64) MySQL: 10.2.30-MariaDB (max packet size=16777216) WPLANG: pl_PL Server: Apache/2 safe_mode: 0 max_execution_time: 900 memory_limit: 1024M (used: 17.4M | 20M) multisite: N openssl: OpenSSL 1.0.2k  26 Jan 2017 mcrypt: N LANG:  ZipArchive::addFile: Y
+0000.001 () Free space on disk containing Updraft's temporary directory: 475994.7 MB
+0000.012 () Ensuring WP_Filesystem is setup for a restore
+0000.012 () WP_Filesystem is setup and ready for a restore
+0000.014 () Restore job started. Entities to restore: plugins, themes, uploads, others, db. Restore options: {"include_unspecified_tables":false,"tables_to_restore":["mys13lxo_options","mys13lxo_users","mys13lxo_usermeta","mys13lxo_commentmeta","mys13lxo_comments","mys13lxo_links","mys13lxo_postmeta","mys13lxo_posts","mys13lxo_term_relationships","mys13lxo_term_taxonomy","mys13lxo_termmeta","mys13lxo_terms","mys13lxo_admin_columns","mys13lxo_duplicator_pro_entities","mys13lxo_duplicator_pro_packages","mys13lxo_ewwwio_images","mys13lxo_ewwwio_queue","mys13lxo_frm_fields","mys13lxo_frm_forms","mys13lxo_frm_item_metas","mys13lxo_frm_items","mys13lxo_groups_capability","mys13lxo_groups_group","mys13lxo_groups_group_capability","mys13lxo_groups_user_capability","mys13lxo_groups_user_group","mys13lxo_nf3_action_meta","mys13lxo_nf3_actions","mys13lxo_nf3_chunks","mys13lxo_nf3_field_meta","mys13lxo_nf3_fields","mys13lxo_nf3_form_meta","mys13lxo_nf3_forms","mys13lxo_nf3_object_meta","mys13lxo_nf3_objects","mys13lxo_nf3_relationships","mys13lxo_nf3_upgrades","mys13lxo_pmxe_exports","mys13lxo_pmxe_google_cats","mys13lxo_pmxe_posts","mys13lxo_pmxe_templates","mys13lxo_pmxi_files","mys13lxo_pmxi_hash","mys13lxo_pmxi_history","mys13lxo_pmxi_images","mys13lxo_pmxi_imports","mys13lxo_pmxi_posts","mys13lxo_pmxi_templates","mys13lxo_yoast_indexable","mys13lxo_yoast_indexable_hierarchy","mys13lxo_yoast_migrations","mys13lxo_yoast_primary_term","mys13lxo_yoast_seo_links"],"tables_to_skip":[],"updraft_encryptionphrase":"","updraft_restorer_wpcore_includewpconfig":false,"updraft_incremental_restore_point":-1}
+0000.015 () PHP event: code E_WARNING: mkdir(): File exists (line 545, wp-admin/includes/class-wp-filesystem-direct.php)
+0000.020 () Entity: db
+0000.020 () restore_backup(backup_file=backup_2022-07-11-0007_eSEZ_a3f8d345557d-db.gz, type=db, info=a:0:{}, last_one=)
+0000.020 () Rozpakowywanie kopii... (backup_2022-07-11-0007_eSEZ_a3f8d345557d-db.gz, 11.9 Mb)
+0000.020 () PHP event: code E_WARNING: mkdir(): File exists (line 545, wp-admin/includes/class-wp-filesystem-direct.php)
+0000.037 () Database successfully unpacked
+0000.037 () Przywracanie bazy danych (na dużej stronie może to zająć dużo czasu - jeśli czas dobiegnie końca(co może się zdarzyć, jeśli firma hostingowa nie skonfigurowała hostingu ograniczającego zasoby), należy użyć innej metody, np. phpMyAdmin)...
+0000.037 () Using direct MySQL access; value of use_mysqli is: 1
+0000.038 () SQL compatibility mode is: NO_AUTO_VALUE_ON_ZERO,NO_ENGINE_SUBSTITUTION
+0000.047 () Tried to raise max_allowed_packet from 16 MB to 32 MB, but failed (Access denied; you need (at least one of) the SUPER privilege(s) for this operation, b:0;)
+0000.047 () Max packet size: 16 MB
+0000.047 () Entering maintenance mode
+0000.047 () Włączanie trybu konserwacji&#8230;
+0000.050 () Backup of: https://esez.pl
+0000.051 () Content URL: https://esez.pl/wp-content
+0000.051 () Uploads URL: https://esez.pl/wp-content/uploads
+0000.051 () Old table prefix: mys13lxo_
+0000.051 () Site information: multisite=0
+0000.051 () Site information: sql_mode=NO_ENGINE_SUBSTITUTION
+0000.052 () New table prefix: ty_
+0000.055 () Processing table (InnoDB): mys13lxo_options - will restore as: ty_options
+0000.114 () Atomic restore: dropping original table (mys13lxo_options)
+0000.127 () Atomic restore: renaming new table (ty_options) to final table name (mys13lxo_options)
+0000.129 () Restoring prior UD configuration (table: mys13lxo_options; keys: 4)
+0000.141 () Processing table (InnoDB): mys13lxo_users - will restore as: ty_users
+0000.148 () Atomic restore: dropping original table (mys13lxo_users)
+0000.160 () Atomic restore: renaming new table (ty_users) to final table name (mys13lxo_users)
+0000.161 () Processing table (InnoDB): mys13lxo_usermeta - will restore as: ty_usermeta
+0000.174 () Atomic restore: dropping original table (mys13lxo_usermeta)
+0000.186 () Atomic restore: renaming new table (ty_usermeta) to final table name (mys13lxo_usermeta)
+0000.188 () Processing table (InnoDB): mys13lxo_commentmeta - will restore as: ty_commentmeta
+0000.191 () Atomic restore: dropping original table (mys13lxo_commentmeta)
+0000.192 () Atomic restore: renaming new table (ty_commentmeta) to final table name (mys13lxo_commentmeta)
+0000.194 () Processing table (InnoDB): mys13lxo_comments - will restore as: ty_comments
+0000.199 () Atomic restore: dropping original table (mys13lxo_comments)
+0000.200 () Atomic restore: renaming new table (ty_comments) to final table name (mys13lxo_comments)
+0000.203 () Processing table (InnoDB): mys13lxo_links - will restore as: ty_links
+0000.208 () Atomic restore: dropping original table (mys13lxo_links)
+0000.210 () Atomic restore: renaming new table (ty_links) to final table name (mys13lxo_links)
+0000.213 () Processing table (InnoDB): mys13lxo_postmeta - will restore as: ty_postmeta
+0011.889 () Database queries processed: 50 in 11.85 seconds
+0027.997 () Atomic restore: dropping original table (mys13lxo_postmeta)
+0028.097 () Atomic restore: renaming new table (ty_postmeta) to final table name (mys13lxo_postmeta)
+0028.099 () Processing table (InnoDB): mys13lxo_posts - will restore as: ty_posts
+0029.033 () Database queries processed: 100 in 28.99 seconds
+0036.616 () Database queries processed: 150 in 36.58 seconds
+0036.616 () Atomic restore: dropping original table (mys13lxo_posts)
+0036.666 () Atomic restore: renaming new table (ty_posts) to final table name (mys13lxo_posts)
+0036.668 () Processing table (InnoDB): mys13lxo_term_relationships - will restore as: ty_term_relationships
+0036.673 () Atomic restore: dropping original table (mys13lxo_term_relationships)
+0036.674 () Atomic restore: renaming new table (ty_term_relationships) to final table name (mys13lxo_term_relationships)
+0036.675 () Processing table (InnoDB): mys13lxo_term_taxonomy - will restore as: ty_term_taxonomy
+0036.681 () Atomic restore: dropping original table (mys13lxo_term_taxonomy)
+0036.692 () Atomic restore: renaming new table (ty_term_taxonomy) to final table name (mys13lxo_term_taxonomy)
+0036.694 () Processing table (InnoDB): mys13lxo_termmeta - will restore as: ty_termmeta
+0036.699 () Atomic restore: dropping original table (mys13lxo_termmeta)
+0036.700 () Atomic restore: renaming new table (ty_termmeta) to final table name (mys13lxo_termmeta)
+0036.702 () Processing table (InnoDB): mys13lxo_terms - will restore as: ty_terms
+0036.709 () Atomic restore: dropping original table (mys13lxo_terms)
+0036.721 () Atomic restore: renaming new table (ty_terms) to final table name (mys13lxo_terms)
+0036.723 () Processing table (InnoDB): mys13lxo_admin_columns - will restore as: ty_admin_columns
+0036.727 () Atomic restore: dropping original table (mys13lxo_admin_columns)
+0036.729 () Atomic restore: renaming new table (ty_admin_columns) to final table name (mys13lxo_admin_columns)
+0036.731 () Processing table (InnoDB): mys13lxo_duplicator_pro_entities - will restore as: ty_duplicator_pro_entities
+0036.736 () Atomic restore: dropping original table (mys13lxo_duplicator_pro_entities)
+0036.738 () Atomic restore: renaming new table (ty_duplicator_pro_entities) to final table name (mys13lxo_duplicator_pro_entities)
+0036.739 () Processing table (InnoDB): mys13lxo_duplicator_pro_packages - will restore as: ty_duplicator_pro_packages
+0036.748 () Atomic restore: dropping original table (mys13lxo_duplicator_pro_packages)
+0036.750 () Atomic restore: renaming new table (ty_duplicator_pro_packages) to final table name (mys13lxo_duplicator_pro_packages)
+0036.751 () Processing table (InnoDB): mys13lxo_ewwwio_images - will restore as: ty_ewwwio_images
+0036.758 () Atomic restore: dropping original table (mys13lxo_ewwwio_images)
+0036.760 () Atomic restore: renaming new table (ty_ewwwio_images) to final table name (mys13lxo_ewwwio_images)
+0036.761 () Processing table (InnoDB): mys13lxo_ewwwio_queue - will restore as: ty_ewwwio_queue
+0036.765 () Atomic restore: dropping original table (mys13lxo_ewwwio_queue)
+0036.767 () Atomic restore: renaming new table (ty_ewwwio_queue) to final table name (mys13lxo_ewwwio_queue)
+0036.769 () Processing table (InnoDB): mys13lxo_frm_fields - will restore as: ty_frm_fields
+0036.776 () Atomic restore: dropping original table (mys13lxo_frm_fields)
+0036.779 () Atomic restore: renaming new table (ty_frm_fields) to final table name (mys13lxo_frm_fields)
+0036.781 () Processing table (InnoDB): mys13lxo_frm_forms - will restore as: ty_frm_forms
+0036.787 () Atomic restore: dropping original table (mys13lxo_frm_forms)
+0036.788 () Atomic restore: renaming new table (ty_frm_forms) to final table name (mys13lxo_frm_forms)
+0036.790 () Processing table (InnoDB): mys13lxo_frm_item_metas - will restore as: ty_frm_item_metas
+0036.794 () Atomic restore: dropping original table (mys13lxo_frm_item_metas)
+0036.796 () Atomic restore: renaming new table (ty_frm_item_metas) to final table name (mys13lxo_frm_item_metas)
+0036.798 () Processing table (InnoDB): mys13lxo_frm_items - will restore as: ty_frm_items
+0036.804 () Atomic restore: dropping original table (mys13lxo_frm_items)
+0036.806 () Atomic restore: renaming new table (ty_frm_items) to final table name (mys13lxo_frm_items)
+0036.808 () Processing table (InnoDB): mys13lxo_groups_capability - will restore as: ty_groups_capability
+0036.816 () Atomic restore: dropping original table (mys13lxo_groups_capability)
+0036.818 () Atomic restore: renaming new table (ty_groups_capability) to final table name (mys13lxo_groups_capability)
+0036.819 () Processing table (InnoDB): mys13lxo_groups_group - will restore as: ty_groups_group
+0036.824 () Atomic restore: dropping original table (mys13lxo_groups_group)
+0036.825 () Atomic restore: renaming new table (ty_groups_group) to final table name (mys13lxo_groups_group)
+0036.826 () Processing table (InnoDB): mys13lxo_groups_group_capability - will restore as: ty_groups_group_capability
+0036.830 () Atomic restore: dropping original table (mys13lxo_groups_group_capability)
+0036.832 () Atomic restore: renaming new table (ty_groups_group_capability) to final table name (mys13lxo_groups_group_capability)
+0036.833 () Processing table (InnoDB): mys13lxo_groups_user_capability - will restore as: ty_groups_user_capability
+0036.836 () Atomic restore: dropping original table (mys13lxo_groups_user_capability)
+0036.838 () Atomic restore: renaming new table (ty_groups_user_capability) to final table name (mys13lxo_groups_user_capability)
+0036.840 () Processing table (InnoDB): mys13lxo_groups_user_group - will restore as: ty_groups_user_group
+0036.845 () Atomic restore: dropping original table (mys13lxo_groups_user_group)
+0036.847 () Atomic restore: renaming new table (ty_groups_user_group) to final table name (mys13lxo_groups_user_group)
+0036.848 () Processing table (InnoDB): mys13lxo_nf3_action_meta - will restore as: ty_nf3_action_meta
+0036.854 () Database queries processed: 200 in 36.81 seconds
+0036.855 () Atomic restore: dropping original table (mys13lxo_nf3_action_meta)
+0036.867 () Atomic restore: renaming new table (ty_nf3_action_meta) to final table name (mys13lxo_nf3_action_meta)
+0036.868 () Processing table (InnoDB): mys13lxo_nf3_actions - will restore as: ty_nf3_actions
+0036.873 () Atomic restore: dropping original table (mys13lxo_nf3_actions)
+0036.875 () Atomic restore: renaming new table (ty_nf3_actions) to final table name (mys13lxo_nf3_actions)
+0036.876 () Processing table (InnoDB): mys13lxo_nf3_chunks - will restore as: ty_nf3_chunks
+0036.879 () Atomic restore: dropping original table (mys13lxo_nf3_chunks)
+0036.880 () Atomic restore: renaming new table (ty_nf3_chunks) to final table name (mys13lxo_nf3_chunks)
+0036.882 () Processing table (InnoDB): mys13lxo_nf3_field_meta - will restore as: ty_nf3_field_meta
+0036.892 () Atomic restore: dropping original table (mys13lxo_nf3_field_meta)
+0036.904 () Atomic restore: renaming new table (ty_nf3_field_meta) to final table name (mys13lxo_nf3_field_meta)
+0036.906 () Processing table (InnoDB): mys13lxo_nf3_fields - will restore as: ty_nf3_fields
+0036.914 () Atomic restore: dropping original table (mys13lxo_nf3_fields)
+0036.916 () Atomic restore: renaming new table (ty_nf3_fields) to final table name (mys13lxo_nf3_fields)
+0036.918 () Processing table (InnoDB): mys13lxo_nf3_form_meta - will restore as: ty_nf3_form_meta
+0036.931 () Atomic restore: dropping original table (mys13lxo_nf3_form_meta)
+0036.934 () Atomic restore: renaming new table (ty_nf3_form_meta) to final table name (mys13lxo_nf3_form_meta)
+0036.935 () Processing table (InnoDB): mys13lxo_nf3_forms - will restore as: ty_nf3_forms
+0036.940 () Atomic restore: dropping original table (mys13lxo_nf3_forms)
+0036.942 () Atomic restore: renaming new table (ty_nf3_forms) to final table name (mys13lxo_nf3_forms)
+0036.943 () Processing table (InnoDB): mys13lxo_nf3_object_meta - will restore as: ty_nf3_object_meta
+0036.946 () Atomic restore: dropping original table (mys13lxo_nf3_object_meta)
+0036.947 () Atomic restore: renaming new table (ty_nf3_object_meta) to final table name (mys13lxo_nf3_object_meta)
+0036.950 () Processing table (InnoDB): mys13lxo_nf3_objects - will restore as: ty_nf3_objects
+0036.953 () Atomic restore: dropping original table (mys13lxo_nf3_objects)
+0036.954 () Atomic restore: renaming new table (ty_nf3_objects) to final table name (mys13lxo_nf3_objects)
+0036.956 () Processing table (InnoDB): mys13lxo_nf3_relationships - will restore as: ty_nf3_relationships
+0036.959 () Atomic restore: dropping original table (mys13lxo_nf3_relationships)
+0036.961 () Atomic restore: renaming new table (ty_nf3_relationships) to final table name (mys13lxo_nf3_relationships)
+0036.963 () Processing table (InnoDB): mys13lxo_nf3_upgrades - will restore as: ty_nf3_upgrades
+0036.969 () Atomic restore: dropping original table (mys13lxo_nf3_upgrades)
+0036.971 () Atomic restore: renaming new table (ty_nf3_upgrades) to final table name (mys13lxo_nf3_upgrades)
+0036.972 () Processing table (InnoDB): mys13lxo_pmxe_exports - will restore as: ty_pmxe_exports
+0036.983 () Atomic restore: dropping original table (mys13lxo_pmxe_exports)
+0036.985 () Atomic restore: renaming new table (ty_pmxe_exports) to final table name (mys13lxo_pmxe_exports)
+0036.986 () Processing table (InnoDB): mys13lxo_pmxe_google_cats - will restore as: ty_pmxe_google_cats
+0037.068 () Atomic restore: dropping original table (mys13lxo_pmxe_google_cats)
+0037.079 () Atomic restore: renaming new table (ty_pmxe_google_cats) to final table name (mys13lxo_pmxe_google_cats)
+0037.080 () Processing table (InnoDB): mys13lxo_pmxe_posts - will restore as: ty_pmxe_posts
+0037.086 () Atomic restore: dropping original table (mys13lxo_pmxe_posts)
+0037.087 () Atomic restore: renaming new table (ty_pmxe_posts) to final table name (mys13lxo_pmxe_posts)
+0037.089 () Processing table (InnoDB): mys13lxo_pmxe_templates - will restore as: ty_pmxe_templates
+0037.096 () Atomic restore: dropping original table (mys13lxo_pmxe_templates)
+0037.098 () Atomic restore: renaming new table (ty_pmxe_templates) to final table name (mys13lxo_pmxe_templates)
+0037.099 () Processing table (InnoDB): mys13lxo_pmxi_files - will restore as: ty_pmxi_files
+0037.104 () Atomic restore: dropping original table (mys13lxo_pmxi_files)
+0037.105 () Atomic restore: renaming new table (ty_pmxi_files) to final table name (mys13lxo_pmxi_files)
+0037.107 () Processing table (InnoDB): mys13lxo_pmxi_hash - will restore as: ty_pmxi_hash
+0037.136 () Database queries processed: 250 in 37.10 seconds
+0041.334 () Atomic restore: dropping original table (mys13lxo_pmxi_hash)
+0041.349 () Atomic restore: renaming new table (ty_pmxi_hash) to final table name (mys13lxo_pmxi_hash)
+0041.351 () Processing table (InnoDB): mys13lxo_pmxi_history - will restore as: ty_pmxi_history
+0041.355 () Atomic restore: dropping original table (mys13lxo_pmxi_history)
+0041.357 () Atomic restore: renaming new table (ty_pmxi_history) to final table name (mys13lxo_pmxi_history)
+0041.358 () Processing table (InnoDB): mys13lxo_pmxi_images - will restore as: ty_pmxi_images
+0041.364 () Atomic restore: dropping original table (mys13lxo_pmxi_images)
+0041.366 () Atomic restore: renaming new table (ty_pmxi_images) to final table name (mys13lxo_pmxi_images)
+0041.368 () Processing table (InnoDB): mys13lxo_pmxi_imports - will restore as: ty_pmxi_imports
+0041.374 () Atomic restore: dropping original table (mys13lxo_pmxi_imports)
+0041.376 () Atomic restore: renaming new table (ty_pmxi_imports) to final table name (mys13lxo_pmxi_imports)
+0041.378 () Processing table (InnoDB): mys13lxo_pmxi_posts - will restore as: ty_pmxi_posts
+0043.090 () Atomic restore: dropping original table (mys13lxo_pmxi_posts)
+0043.107 () Atomic restore: renaming new table (ty_pmxi_posts) to final table name (mys13lxo_pmxi_posts)
+0043.108 () Processing table (InnoDB): mys13lxo_pmxi_templates - will restore as: ty_pmxi_templates
+0043.112 () Atomic restore: dropping original table (mys13lxo_pmxi_templates)
+0043.113 () Atomic restore: renaming new table (ty_pmxi_templates) to final table name (mys13lxo_pmxi_templates)
+0043.115 () Processing table (InnoDB): mys13lxo_yoast_indexable - will restore as: ty_yoast_indexable
+0053.721 () Atomic restore: dropping original table (mys13lxo_yoast_indexable)
+0053.800 () Atomic restore: renaming new table (ty_yoast_indexable) to final table name (mys13lxo_yoast_indexable)
+0053.801 () Processing table (InnoDB): mys13lxo_yoast_indexable_hierarchy - will restore as: ty_yoast_indexable_hierarchy
+0053.842 () Atomic restore: dropping original table (mys13lxo_yoast_indexable_hierarchy)
+0053.850 () Atomic restore: renaming new table (ty_yoast_indexable_hierarchy) to final table name (mys13lxo_yoast_indexable_hierarchy)
+0053.851 () Processing table (InnoDB): mys13lxo_yoast_migrations - will restore as: ty_yoast_migrations
+0053.856 () Atomic restore: dropping original table (mys13lxo_yoast_migrations)
+0053.858 () Atomic restore: renaming new table (ty_yoast_migrations) to final table name (mys13lxo_yoast_migrations)
+0053.859 () Processing table (InnoDB): mys13lxo_yoast_primary_term - will restore as: ty_yoast_primary_term
+0053.863 () Atomic restore: dropping original table (mys13lxo_yoast_primary_term)
+0053.865 () Atomic restore: renaming new table (ty_yoast_primary_term) to final table name (mys13lxo_yoast_primary_term)
+0053.867 () Processing table (InnoDB): mys13lxo_yoast_seo_links - will restore as: ty_yoast_seo_links
+0053.876 () UpdraftPlus Vault: this site has not been connected - check your settings
+0054.310 () Successfully updated and refreshed the access token
+0084.509 () Unlocking database and leaving maintenance mode
+0084.509 () Wyłączanie trybu konserwacji&#8230;
+0084.510 () Atomic restore: dropping original table (mys13lxo_yoast_seo_links)
+0084.519 () Atomic restore: renaming new table (ty_yoast_seo_links) to final table name (mys13lxo_yoast_seo_links)
+0084.521 () Finished: lines processed: 404 in 84.48 seconds
+0084.524 () Sprzątanie śmieci...
+0084.533 () Entity: plugins
+0084.533 () restore_backup(backup_file=backup_2022-07-11-0007_eSEZ_a3f8d345557d-plugins.zip, type=plugins, info=a:3:{s:4:"path";s:57:"/home/esez/domains/esez.pl/public_html/wp-content/plugins";s:11:"description";s:7:"Wtyczki";s:20:"singular_description";s:6:"Plugin";}, last_one=)
+0084.533 () Rozpakowywanie kopii... (backup_2022-07-11-0007_eSEZ_a3f8d345557d-plugins.zip, 32.7 MB)
+0084.534 () Unzipping backup_2022-07-11-0007_eSEZ_a3f8d345557d-plugins.zip to /home/esez/domains/esez.pl/public_html/wp-content/upgrade/f5c5a5b5/ using UpdraftPlus_ZipArchive, starting index 0
+0084.809 () Unzip progress: 1313 out of 9460 files (58.1 KB, plugins/wp-all-import-pro/wp-all-import-pro.php)
+0085.168 () Unzip progress: 2314 out of 9460 files (10.9 MB, plugins/hummingbird-performance/vendor/predis/predis/src/Command/ListPopLast.php)
+0085.566 () Unzip progress: 3315 out of 9460 files (32.7 MB, plugins/wordpress-seo/src/deprecated/frontend/schema/class-schema-ids.php)
+0085.840 () Unzip progress: 4316 out of 9460 files (38 MB, plugins/wp-all-export-pro/classes/PHPExcel/Cell/DataType.php)
+0086.113 () Unzip progress: 5317 out of 9460 files (46.7 MB, plugins/gtranslate/flags/24/ml.png)
+0086.381 () Unzip progress: 6318 out of 9460 files (51.3 MB, plugins/advanced-custom-fields-pro/includes/fields/class-acf-field.php)
+0086.759 () Unzip progress: 7319 out of 9460 files (71.4 MB, plugins/updraftplus/vendor/guzzle/guzzle/src/Guzzle/Service/ConfigLoaderInterface.php)
+0087.040 () Unzip progress: 8320 out of 9460 files (76.9 MB, plugins/lightbox-photoswipe/vendor/matthiasmullie/minify/src/Minify.php)
+0087.388 () Unzip progress: 9321 out of 9460 files (99 MB, plugins/simply-gallery-block/freemius/templates/plugin-info/screenshots.php)
+0087.447 () Unzip progress: 9460 out of 9460 files (102.9 MB, plugins/simply-gallery-block/plugins/init.php)
+0087.461 () Moving old data: filesystem method / updraft_dir is potentially possible
+0087.461 () Moving old data: can potentially use wp_filesystem method / -old
+0087.461 () Usuwanie starych danych...
+0088.755 () Top-level entities being moved: wp-all-import-pro, frontend-reset-password, wordpress-seo, wp-all-export-pro, gtranslate, index.php, user-role-field-setting-for-acf, perfmatters, ewidencja-zmarlych, acf-better-search, wpai-acf-add-on, advanced-database-cleaner-pro, advanced-custom-fields-pro, updraftplus, lightbox-photoswipe, imsanity, query-monitor, ninja-forms, wpae-acf-add-on, simply-gallery-block
+0088.763 () Przenoszenie rozpakowanej kopii zapasowej do tego miejsca... 
+0090.311 () Top-level entities being moved: wp-all-import-pro, frontend-reset-password, hummingbird-performance, wordpress-seo, wp-all-export-pro, redis-cache, gtranslate, index.php, user-role-field-setting-for-acf, perfmatters, ewidencja-zmarlych, acf-better-search, wpai-acf-add-on, advanced-database-cleaner-pro, advanced-custom-fields-pro, updraftplus, lightbox-photoswipe, imsanity, query-monitor, ninja-forms, wpae-acf-add-on, simply-gallery-block
+0090.325 () Sprzątanie śmieci...
+0090.328 () Entity: themes
+0090.328 () restore_backup(backup_file=backup_2022-07-11-0007_eSEZ_a3f8d345557d-themes.zip, type=themes, info=a:3:{s:4:"path";s:56:"/home/esez/domains/esez.pl/public_html/wp-content/themes";s:11:"description";s:6:"Motywy";s:20:"singular_description";s:5:"Theme";}, last_one=)
+0090.328 () Rozpakowywanie kopii... (backup_2022-07-11-0007_eSEZ_a3f8d345557d-themes.zip, 0.4 MB)
+0090.328 () Unzipping backup_2022-07-11-0007_eSEZ_a3f8d345557d-themes.zip to /home/esez/domains/esez.pl/public_html/wp-content/upgrade/47903d93/ using UpdraftPlus_ZipArchive, starting index 0
+0090.365 () Unzip progress: 83 out of 83 files (1.6 MB, themes/esez/LICENSE)
+0090.367 () Moving old data: filesystem method / updraft_dir is potentially possible
+0090.367 () Moving old data: can potentially use wp_filesystem method / -old
+0090.367 () Usuwanie starych danych...
+0090.377 () Top-level entities being moved: esez-child, index.php, esez
+0090.378 () Przenoszenie rozpakowanej kopii zapasowej do tego miejsca... 
+0090.388 () Top-level entities being moved: esez-child, index.php, esez
+0090.389 () Sprzątanie śmieci...
+0090.392 () Entity: uploads
+0090.392 () restore_backup(backup_file=backup_2022-07-11-0007_eSEZ_a3f8d345557d-uploads.zip, type=uploads, info=a:2:{s:4:"path";s:57:"/home/esez/domains/esez.pl/public_html/wp-content/uploads";s:11:"description";s:10:"Przesłane";}, last_one=)
+0090.392 () Rozpakowywanie kopii... (backup_2022-07-11-0007_eSEZ_a3f8d345557d-uploads.zip, 97.8 MB)
+0090.392 () Unzipping backup_2022-07-11-0007_eSEZ_a3f8d345557d-uploads.zip to /home/esez/domains/esez.pl/public_html/wp-content/upgrade/af779617/ using UpdraftPlus_ZipArchive, starting index 0
+0090.897 () Unzip progress: 654 out of 707 files (100.2 MB, uploads/2022/05/16548749421514588126533713231294.jpg)
+0090.930 () Unzip progress: 707 out of 707 files (107.2 MB, uploads/wpallexport/temp/index.php)
+0090.962 () Moving old data: filesystem method / updraft_dir is potentially possible
+0090.962 () Moving old data: can potentially use wp_filesystem method / -old
+0090.962 () Usuwanie starych danych...
+0091.049 () Przenoszenie rozpakowanej kopii zapasowej do tego miejsca... 
+0091.141 () Sprzątanie śmieci...
+0091.145 () Entity: others
+0091.145 () restore_backup(backup_file=backup_2022-07-11-0007_eSEZ_a3f8d345557d-others.zip, type=others, info=a:2:{s:4:"path";s:49:"/home/esez/domains/esez.pl/public_html/wp-content";s:11:"description";s:4:"Inne";}, last_one=1)
+0091.145 () Rozpakowywanie kopii... (backup_2022-07-11-0007_eSEZ_a3f8d345557d-others.zip, 1.3 MB)
+0091.145 () Unzipping backup_2022-07-11-0007_eSEZ_a3f8d345557d-others.zip to /home/esez/domains/esez.pl/public_html/wp-content/upgrade/0e975dc0/ using UpdraftPlus_ZipArchive, starting index 0
+0091.209 () Unzip progress: 162 out of 162 files (4.5 MB, languages/pl_PL-7d5ca435e60d92f024d46c9257aaa0f7.json)
+0091.212 () PHP event: code E_WARNING: file_exists(): open_basedir restriction in effect. File(/home/esez/domains/esez.pl/public_html/wp-content/upgrade/0e975dc0/object-cache.php/object-cache.php) is not within the allowed path(s): (/home/esez/:/tmp/:/var/tmp/:/usr/local/php81/lib/:/usr/local/php54/lib/:/usr/local/php55/lib/:/usr/local/php56/lib/:/usr/local/php70/lib/:/usr/local/php71/lib/:/usr/local/lib/php/) (line 406, wp-admin/includes/class-wp-filesystem-direct.php)
+0091.212 () PHP event: code E_WARNING: file_exists(): open_basedir restriction in effect. File(/home/esez/domains/esez.pl/public_html/wp-content/upgrade/0e975dc0/index.php/index.php) is not within the allowed path(s): (/home/esez/:/tmp/:/var/tmp/:/usr/local/php81/lib/:/usr/local/php54/lib/:/usr/local/php55/lib/:/usr/local/php56/lib/:/usr/local/php70/lib/:/usr/local/php71/lib/:/usr/local/lib/php/) (line 406, wp-admin/includes/class-wp-filesystem-direct.php)
+0091.212 () PHP event: code E_WARNING: file_exists(): open_basedir restriction in effect. File(/home/esez/domains/esez.pl/public_html/wp-content/upgrade/0e975dc0/advanced-cache.php/advanced-cache.php) is not within the allowed path(s): (/home/esez/:/tmp/:/var/tmp/:/usr/local/php81/lib/:/usr/local/php54/lib/:/usr/local/php55/lib/:/usr/local/php56/lib/:/usr/local/php70/lib/:/usr/local/php71/lib/:/usr/local/lib/php/) (line 406, wp-admin/includes/class-wp-filesystem-direct.php)
+0091.213 () Sprzątanie śmieci...
+0091.236 () Restore successful!
+0091.236 () Restore successful

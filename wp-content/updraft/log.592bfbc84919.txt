@@ -1,0 +1,668 @@
+0000.000 (0) Opened log file at time: Fri, 29 Jul 2022 22:09:55 +0000 on https://esez.pl
+0000.002 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 2.22.14.0 WP: 6.0.1 PHP: 8.1.3 (fpm-fcgi, Linux da23036.serwervps.pl 3.10.0-1160.53.1.vz7.185.3 #1 SMP Tue Jan 25 12:49:12 MSK 2022 x86_64) MySQL: 10.2.30-MariaDB (max packet size=16777216) WPLANG: pl_PL Server: Apache/2 safe_mode: 0 max_execution_time: 900 memory_limit: 1024M (used: 28.8M | 30M) multisite: N openssl: OpenSSL 1.0.2k  26 Jan 2017 mcrypt: N LANG:  ZipArchive::addFile: Y
+0000.003 (0) Free space on disk containing Updraft's temporary directory: 472612.4 MB
+0000.005 (0) Tasks: Backup files: 1 (schedule: daily) Backup DB:  (schedule: daily)
+0000.007 (0) Processed schedules. Combining jobs from identical schedules. Tasks now: Backup files: 1 Backup DB: 1
+0000.010 (0) Requesting semaphore lock (fd) (apparently via scheduler: last_scheduled_action_called_at=1659046195, seconds_ago=86400)
+0000.012 (0) Set semaphore last lock (fd) time to 2022-07-29 22:09:55
+0000.014 (0) Semaphore lock (fd) complete
+0000.017 (0) Backup run: resumption=0, nonce=592bfbc84919, file_nonce=592bfbc84919 begun at=1659132595 (0s ago), job type=backup
+0000.019 (0) Scheduling a resumption (1) after 300 seconds (1659132895) in case this run gets aborted
+0000.032 (0) PHP event: code E_WARNING: file_exists(): open_basedir restriction in effect. File(/proc/user_beancounters) is not within the allowed path(s): (/home/esez/:/tmp/:/var/tmp/:/usr/local/php81/lib/:/usr/local/php54/lib/:/usr/local/php55/lib/:/usr/local/php56/lib/:/usr/local/php70/lib/:/usr/local/php71/lib/:/usr/local/lib/php/) (line 140, wp-content/plugins/updraftplus/backup.php)
+0000.033 (0) Checking if we have a zip executable available
+0000.034 (0) PHP event: code E_WARNING: is_executable(): open_basedir restriction in effect. File(/usr/bin/zip) is not within the allowed path(s): (/home/esez/:/tmp/:/var/tmp/:/usr/local/php81/lib/:/usr/local/php54/lib/:/usr/local/php55/lib/:/usr/local/php56/lib/:/usr/local/php70/lib/:/usr/local/php71/lib/:/usr/local/lib/php/) (line 1754, wp-content/plugins/updraftplus/class-updraftplus.php)
+0000.036 (0) PHP event: code E_WARNING: is_executable(): open_basedir restriction in effect. File(/bin/zip) is not within the allowed path(s): (/home/esez/:/tmp/:/var/tmp/:/usr/local/php81/lib/:/usr/local/php54/lib/:/usr/local/php55/lib/:/usr/local/php56/lib/:/usr/local/php70/lib/:/usr/local/php71/lib/:/usr/local/lib/php/) (line 1754, wp-content/plugins/updraftplus/class-updraftplus.php)
+0000.037 (0) PHP event: code E_WARNING: is_executable(): open_basedir restriction in effect. File(/usr/local/bin/zip) is not within the allowed path(s): (/home/esez/:/tmp/:/var/tmp/:/usr/local/php81/lib/:/usr/local/php54/lib/:/usr/local/php55/lib/:/usr/local/php56/lib/:/usr/local/php70/lib/:/usr/local/php71/lib/:/usr/local/lib/php/) (line 1754, wp-content/plugins/updraftplus/class-updraftplus.php)
+0000.038 (0) PHP event: code E_WARNING: is_executable(): open_basedir restriction in effect. File(/usr/sfw/bin/zip) is not within the allowed path(s): (/home/esez/:/tmp/:/var/tmp/:/usr/local/php81/lib/:/usr/local/php54/lib/:/usr/local/php55/lib/:/usr/local/php56/lib/:/usr/local/php70/lib/:/usr/local/php71/lib/:/usr/local/lib/php/) (line 1754, wp-content/plugins/updraftplus/class-updraftplus.php)
+0000.039 (0) PHP event: code E_WARNING: is_executable(): open_basedir restriction in effect. File(/usr/xdg4/bin/zip) is not within the allowed path(s): (/home/esez/:/tmp/:/var/tmp/:/usr/local/php81/lib/:/usr/local/php54/lib/:/usr/local/php55/lib/:/usr/local/php56/lib/:/usr/local/php70/lib/:/usr/local/php71/lib/:/usr/local/lib/php/) (line 1754, wp-content/plugins/updraftplus/class-updraftplus.php)
+0000.040 (0) PHP event: code E_WARNING: is_executable(): open_basedir restriction in effect. File(/opt/bin/zip) is not within the allowed path(s): (/home/esez/:/tmp/:/var/tmp/:/usr/local/php81/lib/:/usr/local/php54/lib/:/usr/local/php55/lib/:/usr/local/php56/lib/:/usr/local/php70/lib/:/usr/local/php71/lib/:/usr/local/lib/php/) (line 1754, wp-content/plugins/updraftplus/class-updraftplus.php)
+0000.043 (0) Creation of backups of directories: beginning
+0000.047 (0) Beginning creation of dump of plugins (split every: 400 MB)
+0000.050 (0) PHP event: code E_WARNING: is_dir(): open_basedir restriction in effect. File(/usr/local/cpanel) is not within the allowed path(s): (/home/esez/:/tmp/:/var/tmp/:/usr/local/php81/lib/:/usr/local/php54/lib/:/usr/local/php55/lib/:/usr/local/php56/lib/:/usr/local/php70/lib/:/usr/local/php71/lib/:/usr/local/lib/php/) (line 383, wp-content/plugins/updraftplus/class-updraftplus.php)
+0001.310 (0) Total entities for the zip file: 1490 directories, 9402 files (0 skipped as non-modified), 134.9 MB
+0001.338 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 100 files added (on-disk size: 0 KB)
+0001.360 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 200 files added (on-disk size: 0 KB)
+0001.383 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 300 files added (on-disk size: 0 KB)
+0001.406 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 400 files added (on-disk size: 0 KB)
+0001.429 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 500 files added (on-disk size: 0 KB)
+0001.451 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 600 files added (on-disk size: 0 KB)
+0001.471 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 700 files added (on-disk size: 0 KB)
+0001.494 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 800 files added (on-disk size: 0 KB)
+0001.519 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 900 files added (on-disk size: 0 KB)
+0001.544 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 1000 files added (on-disk size: 0 KB)
+0001.546 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (11 MB, 9402 files batched, 1001 (1001) added so far); re-opening (prior size: 0 KB)
+0002.537 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 1100 files added (on-disk size: 3637.4 KB)
+0002.560 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 1200 files added (on-disk size: 3637.4 KB)
+0002.582 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 1300 files added (on-disk size: 3637.4 KB)
+0002.604 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 1400 files added (on-disk size: 3637.4 KB)
+0002.631 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 1500 files added (on-disk size: 3637.4 KB)
+0002.656 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 1600 files added (on-disk size: 3637.4 KB)
+0002.679 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 1700 files added (on-disk size: 3637.4 KB)
+0002.698 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 1800 files added (on-disk size: 3637.4 KB)
+0002.719 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 1900 files added (on-disk size: 3637.4 KB)
+0002.739 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 2000 files added (on-disk size: 3637.4 KB)
+0002.741 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (21.7 MB, 9402 files batched, 1001 (2002) added so far); re-opening (prior size: 3637.4 KB)
+0005.631 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 2100 files added (on-disk size: 11763.5 KB)
+0005.653 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 2200 files added (on-disk size: 11763.5 KB)
+0005.674 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 2300 files added (on-disk size: 11763.5 KB)
+0005.699 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 2400 files added (on-disk size: 11763.5 KB)
+0005.719 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 2500 files added (on-disk size: 11763.5 KB)
+0005.742 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 2600 files added (on-disk size: 11763.5 KB)
+0005.763 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 2700 files added (on-disk size: 11763.5 KB)
+0005.788 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 2800 files added (on-disk size: 11763.5 KB)
+0005.820 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 2900 files added (on-disk size: 11763.5 KB)
+0005.839 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 3000 files added (on-disk size: 11763.5 KB)
+0005.841 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (5.9 MB, 9402 files batched, 1001 (3003) added so far); re-opening (prior size: 11763.5 KB)
+0006.383 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 3100 files added (on-disk size: 13587.8 KB)
+0006.411 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 3200 files added (on-disk size: 13587.8 KB)
+0006.441 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 3300 files added (on-disk size: 13587.8 KB)
+0006.474 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 3400 files added (on-disk size: 13587.8 KB)
+0006.509 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 3500 files added (on-disk size: 13587.8 KB)
+0006.546 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 3600 files added (on-disk size: 13587.8 KB)
+0006.572 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 3700 files added (on-disk size: 13587.8 KB)
+0006.607 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 3800 files added (on-disk size: 13587.8 KB)
+0006.639 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 3900 files added (on-disk size: 13587.8 KB)
+0006.684 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 4000 files added (on-disk size: 13587.8 KB)
+0006.688 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (9.2 MB, 9402 files batched, 1001 (4004) added so far); re-opening (prior size: 13587.8 KB)
+0008.249 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 4100 files added (on-disk size: 16306.5 KB)
+0008.285 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 4200 files added (on-disk size: 16306.5 KB)
+0008.319 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 4300 files added (on-disk size: 16306.5 KB)
+0008.421 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 4400 files added (on-disk size: 16306.5 KB)
+0008.505 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 4500 files added (on-disk size: 16306.5 KB)
+0008.583 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 4600 files added (on-disk size: 16306.5 KB)
+0008.654 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 4700 files added (on-disk size: 16306.5 KB)
+0008.688 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 4800 files added (on-disk size: 16306.5 KB)
+0008.727 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 4900 files added (on-disk size: 16306.5 KB)
+0008.764 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 5000 files added (on-disk size: 16306.5 KB)
+0008.769 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (3.2 MB, 9402 files batched, 1001 (5005) added so far); re-opening (prior size: 16306.5 KB)
+0009.466 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 5100 files added (on-disk size: 18059.5 KB)
+0009.503 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 5200 files added (on-disk size: 18059.5 KB)
+0009.537 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 5300 files added (on-disk size: 18059.5 KB)
+0009.577 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 5400 files added (on-disk size: 18059.5 KB)
+0009.619 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 5500 files added (on-disk size: 18059.5 KB)
+0009.658 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 5600 files added (on-disk size: 18059.5 KB)
+0009.679 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 25 MB added on this batch (25.6 MB, 9402 files batched, 651 (5656) added so far); re-opening (prior size: 18059.5 KB)
+0013.958 (0) A useful amount of data was added after this amount of zip processing: 4.6 s (normalised: 4.5 s, rate: 5691.5 KB/s)
+0013.962 (0) Performance is good - will increase the amount of data we attempt to batch (time=4.6101861000061, normalised_time=4.4979303565741, max_time=13.960073947906, data points known=1, old_max_bytes=26214400, new_max_bytes=48816446)
+0014.015 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 5700 files added (on-disk size: 30488.9 KB)
+0014.050 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 5800 files added (on-disk size: 30488.9 KB)
+0014.075 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 5900 files added (on-disk size: 30488.9 KB)
+0014.112 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 6000 files added (on-disk size: 30488.9 KB)
+0014.137 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 6100 files added (on-disk size: 30488.9 KB)
+0014.172 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 6200 files added (on-disk size: 30488.9 KB)
+0014.207 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 6300 files added (on-disk size: 30488.9 KB)
+0014.247 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 6400 files added (on-disk size: 30488.9 KB)
+0014.293 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 6500 files added (on-disk size: 30488.9 KB)
+0014.335 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 6600 files added (on-disk size: 30488.9 KB)
+0014.363 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (20.4 MB, 9402 files batched, 1001 (6657) added so far); re-opening (prior size: 30488.9 KB)
+0018.249 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 6700 files added (on-disk size: 38522.7 KB)
+0018.285 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 6800 files added (on-disk size: 38522.7 KB)
+0018.318 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 6900 files added (on-disk size: 38522.7 KB)
+0018.347 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 7000 files added (on-disk size: 38522.7 KB)
+0018.386 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 7100 files added (on-disk size: 38522.7 KB)
+0018.424 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 7200 files added (on-disk size: 38522.7 KB)
+0018.467 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 7300 files added (on-disk size: 38522.7 KB)
+0018.501 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 7400 files added (on-disk size: 38522.7 KB)
+0018.534 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 7500 files added (on-disk size: 38522.7 KB)
+0018.565 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 7600 files added (on-disk size: 38522.7 KB)
+0018.580 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (6.4 MB, 9402 files batched, 1001 (7658) added so far); re-opening (prior size: 38522.7 KB)
+0020.156 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 7700 files added (on-disk size: 40353.7 KB)
+0020.197 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 7800 files added (on-disk size: 40353.7 KB)
+0020.237 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 7900 files added (on-disk size: 40353.7 KB)
+0020.274 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 8000 files added (on-disk size: 40353.7 KB)
+0020.309 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 8100 files added (on-disk size: 40353.7 KB)
+0020.341 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 8200 files added (on-disk size: 40353.7 KB)
+0020.376 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 8300 files added (on-disk size: 40353.7 KB)
+0020.412 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 8400 files added (on-disk size: 40353.7 KB)
+0020.457 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 8500 files added (on-disk size: 40353.7 KB)
+0020.498 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 8600 files added (on-disk size: 40353.7 KB)
+0020.525 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (18.6 MB, 9402 files batched, 1001 (8659) added so far); re-opening (prior size: 40353.7 KB)
+0023.014 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 8700 files added (on-disk size: 46082.4 KB)
+0023.054 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 8800 files added (on-disk size: 46082.4 KB)
+0023.081 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 8900 files added (on-disk size: 46082.4 KB)
+0023.114 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 9000 files added (on-disk size: 46082.4 KB)
+0023.142 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 9100 files added (on-disk size: 46082.4 KB)
+0023.176 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 9200 files added (on-disk size: 46082.4 KB)
+0023.211 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 9300 files added (on-disk size: 46082.4 KB)
+0023.236 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.tmp: 9400 files added (on-disk size: 46082.4 KB)
+0024.966 (0) Creating zip file manifest (backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.list-temp.tmp)
+0025.012 (0) Successfully created zip file manifest (size: 761217)
+0026.064 (0) Created plugins zip (0) - 49724 KB in 26 s (1911.5 KB/s) (sha1: e553ba3d233d4dbde7431bb5ff8afb5cabd8b290, sha256: af4587fe6fa3dfe4401f941a2eb335616f14e75586d6105a5e846f722f65e0a3)
+0026.081 (0) Cloud backup selection (1/1): dropbox with instance (1/1) (last)
+0026.083 (0) Beginning dispatch of backup to remote (dropbox) (instance identifier s-d07ae8b10b578fc3f03b5e124c9628fb)
+0026.084 (0) Dropbox: begin cloud upload (using API version 2 with OAuth v2 token)
+0026.482 (0) Successfully updated and refreshed the access token
+0026.484 (0) Dropbox: access gained; setting chunk size to: 1024 KB
+0026.936 (0) Dropbox: quota usage: used=9377441 MB, total=12582912 MB, available=3205471 MB
+0026.941 (0) Dropbox: Attempt to upload: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip to: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip
+0029.055 (0) PHP event: code E_DEPRECATED: Implicit conversion from float 4468342.474919433 to int loses precision (line 65, wp-content/plugins/updraftplus/methods/dropbox.php)
+0029.061 (0) Dropbox chunked upload: 2.1 % uploaded (pid_upload_session:ABIFNjazBXkyOwqjubb55Ll8DpM7MlIbBfUYzu7wW-lySdD1, 1048576, 4096 KB)
+0032.253 (0) Dropbox chunked upload: 10.3 % uploaded (pid_upload_session:ABIFNjazBXkyOwqjubb55Ll8DpM7MlIbBfUYzu7wW-lySdD1, 5242880, 10240 KB)
+0037.294 (0) Dropbox chunked upload: 30.9 % uploaded (pid_upload_session:ABIFNjazBXkyOwqjubb55Ll8DpM7MlIbBfUYzu7wW-lySdD1, 15728640, 10240 KB)
+0041.248 (0) Dropbox chunked upload: 51.5 % uploaded (pid_upload_session:ABIFNjazBXkyOwqjubb55Ll8DpM7MlIbBfUYzu7wW-lySdD1, 26214400, 10240 KB)
+0045.704 (0) Dropbox chunked upload: 72.1 % uploaded (pid_upload_session:ABIFNjazBXkyOwqjubb55Ll8DpM7MlIbBfUYzu7wW-lySdD1, 36700160, 10240 KB)
+0051.552 (0) Dropbox chunked upload: 92.7 % uploaded (pid_upload_session:ABIFNjazBXkyOwqjubb55Ll8DpM7MlIbBfUYzu7wW-lySdD1, 47185920, 10240 KB)
+0054.149 (0) Dropbox chunked upload: 100 % uploaded (pid_upload_session:ABIFNjazBXkyOwqjubb55Ll8DpM7MlIbBfUYzu7wW-lySdD1, 50917373, 10240 KB)
+0055.799 (0) Recording as successfully uploaded: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip
+0055.818 (0) Deleting local file: backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip: OK
+0055.821 (0) Deleting zip manifest (backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip.list.tmp)
+0055.824 (0) Dropbox: File upload success (backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip): 49723 KB in 28s (1721 KB/s)
+0055.835 (0) Beginning creation of dump of themes (split every: 400 MB)
+0055.840 (0) PHP event: code E_WARNING: is_dir(): open_basedir restriction in effect. File(/usr/local/cpanel) is not within the allowed path(s): (/home/esez/:/tmp/:/var/tmp/:/usr/local/php81/lib/:/usr/local/php54/lib/:/usr/local/php55/lib/:/usr/local/php56/lib/:/usr/local/php70/lib/:/usr/local/php71/lib/:/usr/local/lib/php/) (line 383, wp-content/plugins/updraftplus/class-updraftplus.php)
+0055.855 (0) Total entities for the zip file: 11 directories, 72 files (0 skipped as non-modified), 1.6 MB
+0056.047 (0) Creating zip file manifest (backup_2022-07-30-0009_eSEZ_592bfbc84919-themes.zip.list-temp.tmp)
+0056.049 (0) Successfully created zip file manifest (size: 3031)
+0056.058 (0) Created themes zip (0) - 409.1 KB in 0.2 s (1902.1 KB/s) (sha1: 770823b33f91ec104b9129dd3a98002abfcf1507, sha256: fc899b875919c6aa49987fff104910b15bf7b08b032019ce3aa2a859625b5c31)
+0056.062 (0) Exclusion option setting (uploads): backup*,*backups,backwpup*,wp-clone,snapshots
+0056.063 (0) Looking for candidates to backup in: /home/esez/domains/esez.pl/public_html/wp-content/uploads
+0056.064 (0) finding files: wpallimport: adding to list (1)
+0056.065 (0) finding files: wpcf7_uploads: adding to list (2)
+0056.066 (0) finding files: hummingbird-assets: adding to list (3)
+0056.067 (0) finding files: 2022: adding to list (4)
+0056.068 (0) finding files: wpallexport: adding to list (5)
+0056.069 (0) finding files: wp-staging: adding to list (6)
+0056.070 (0) Beginning creation of dump of uploads (split every: 400 MB)
+0056.074 (0) PHP event: code E_WARNING: is_dir(): open_basedir restriction in effect. File(/usr/local/cpanel) is not within the allowed path(s): (/home/esez/:/tmp/:/var/tmp/:/usr/local/php81/lib/:/usr/local/php54/lib/:/usr/local/php55/lib/:/usr/local/php56/lib/:/usr/local/php70/lib/:/usr/local/php71/lib/:/usr/local/lib/php/) (line 383, wp-content/plugins/updraftplus/class-updraftplus.php)
+0056.152 (0) Total entities for the zip file: 31 directories, 947 files (0 skipped as non-modified), 162.3 MB
+0056.172 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-uploads.zip.tmp: 100 files added (on-disk size: 0 KB)
+0056.190 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-uploads.zip.tmp: 200 files added (on-disk size: 0 KB)
+0056.209 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-uploads.zip.tmp: 300 files added (on-disk size: 0 KB)
+0056.227 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 46.6 MB added on this batch (48.4 MB, 947 files batched, 395 (395) added so far); re-opening (prior size: 0 KB)
+0057.556 (0) A useful amount of data was added after this amount of zip processing: 2.2 s (normalised: 2.1 s, rate: 22452.3 KB/s)
+0057.558 (0) Performance is good - will increase the amount of data we attempt to batch (time=2.2078199386597, normalised_time=2.1232743667776, max_time=57.557045936584, data points known=1, old_max_bytes=48816446, new_max_bytes=209715200)
+0057.563 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-uploads.zip.tmp: 400 files added (on-disk size: 42112 KB)
+0057.581 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-uploads.zip.tmp: 500 files added (on-disk size: 42112 KB)
+0057.602 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-uploads.zip.tmp: 600 files added (on-disk size: 42112 KB)
+0057.628 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-uploads.zip.tmp: 700 files added (on-disk size: 42112 KB)
+0057.648 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-uploads.zip.tmp: 800 files added (on-disk size: 42112 KB)
+0057.677 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-uploads.zip.tmp: 900 files added (on-disk size: 42112 KB)
+0058.819 (0) Creating zip file manifest (backup_2022-07-30-0009_eSEZ_592bfbc84919-uploads.zip.list-temp.tmp)
+0058.824 (0) Successfully created zip file manifest (size: 64698)
+0061.225 (0) Created uploads zip (0) - 158741.7 KB in 5.1 s (30826.4 KB/s) (sha1: 5a0961a6e536135dbd8272eb3e3b4c0ac22aa934, sha256: 528b20516409aa312019215604c6f4db67cd924cad0ace26512ff268503c0c69)
+0061.231 (0) Beginning backup of other directories found in the content directory (index: 0)
+0061.232 (0) Exclusion option setting (others): upgrade,cache,updraft,backup*,*backups,mysql.sql,debug.log
+0061.233 (0) Looking for candidates to backup in: /home/esez/domains/esez.pl/public_html/wp-content
+0061.234 (0) finding files: uploads: skipping: this is the uploads directory
+0061.252 (0) finding files: mu-plugins: adding to list (1)
+0061.254 (0) finding files: wphb-cache: adding to list (2)
+0061.255 (0) finding files: object-cache.php: adding to list (3)
+0061.257 (0) finding files: index.php: adding to list (4)
+0061.258 (0) finding files: advanced-cache.php: adding to list (5)
+0061.259 (0) finding files: updraft: skipping: this is the updraft directory
+0061.260 (0) finding files: themes: skipping: this is the themes directory
+0061.262 (0) finding files: my-languages: adding to list (6)
+0061.263 (0) finding files: ewww: adding to list (7)
+0061.267 (0) finding files: languages: adding to list (8)
+0061.269 (0) finding files: wphb-logs: adding to list (9)
+0061.270 (0) finding files: upgrade: skipping: excluded by options
+0061.271 (0) finding files: backups-dup-pro: skipping: excluded by options (glob)
+0061.272 (0) finding files: plugins: skipping: this is the plugins directory
+0061.276 (0) PHP event: code E_WARNING: is_dir(): open_basedir restriction in effect. File(/usr/local/cpanel) is not within the allowed path(s): (/home/esez/:/tmp/:/var/tmp/:/usr/local/php81/lib/:/usr/local/php54/lib/:/usr/local/php55/lib/:/usr/local/php56/lib/:/usr/local/php70/lib/:/usr/local/php71/lib/:/usr/local/lib/php/) (line 383, wp-content/plugins/updraftplus/class-updraftplus.php)
+0061.299 (0) Total entities for the zip file: 15 directories, 181 files (0 skipped as non-modified), 8.3 MB
+0061.321 (0) Zip: backup_2022-07-30-0009_eSEZ_592bfbc84919-others.zip.tmp: 100 files added (on-disk size: 0 KB)
+0062.598 (0) Creating zip file manifest (backup_2022-07-30-0009_eSEZ_592bfbc84919-others.zip.list-temp.tmp)
+0062.601 (0) Successfully created zip file manifest (size: 10991)
+0062.649 (0) Created others zip (0) - 3160.5 KB in 1.4 s (2303.4 KB/s) (sha1: db9ca72e94ff4fafecdfc15f12aae29619b55cc3, sha256: 861f99bc3863af564154038050b134aa86cfb37e01c34af2fc72b918f3540778)
+0062.657 (0) Saving backup status to database (elements: 7)
+0062.663 (0) Beginning creation of database dump (WordPress DB)
+0062.665 (0) SQL compatibility mode is: NO_ENGINE_SUBSTITUTION
+0062.669 (0) PHP event: code E_WARNING: is_executable(): open_basedir restriction in effect. File(/usr/bin/mysqldump) is not within the allowed path(s): (/home/esez/:/tmp/:/var/tmp/:/usr/local/php81/lib/:/usr/local/php54/lib/:/usr/local/php55/lib/:/usr/local/php56/lib/:/usr/local/php70/lib/:/usr/local/php71/lib/:/usr/local/lib/php/) (line 1637, wp-content/plugins/updraftplus/class-updraftplus.php)
+0062.670 (0) PHP event: code E_WARNING: is_executable(): open_basedir restriction in effect. File(/bin/mysqldump) is not within the allowed path(s): (/home/esez/:/tmp/:/var/tmp/:/usr/local/php81/lib/:/usr/local/php54/lib/:/usr/local/php55/lib/:/usr/local/php56/lib/:/usr/local/php70/lib/:/usr/local/php71/lib/:/usr/local/lib/php/) (line 1637, wp-content/plugins/updraftplus/class-updraftplus.php)
+0062.672 (0) PHP event: code E_WARNING: is_executable(): open_basedir restriction in effect. File(/usr/local/bin/mysqldump) is not within the allowed path(s): (/home/esez/:/tmp/:/var/tmp/:/usr/local/php81/lib/:/usr/local/php54/lib/:/usr/local/php55/lib/:/usr/local/php56/lib/:/usr/local/php70/lib/:/usr/local/php71/lib/:/usr/local/lib/php/) (line 1637, wp-content/plugins/updraftplus/class-updraftplus.php)
+0062.674 (0) PHP event: code E_WARNING: is_executable(): open_basedir restriction in effect. File(/usr/sfw/bin/mysqldump) is not within the allowed path(s): (/home/esez/:/tmp/:/var/tmp/:/usr/local/php81/lib/:/usr/local/php54/lib/:/usr/local/php55/lib/:/usr/local/php56/lib/:/usr/local/php70/lib/:/usr/local/php71/lib/:/usr/local/lib/php/) (line 1637, wp-content/plugins/updraftplus/class-updraftplus.php)
+0062.676 (0) PHP event: code E_WARNING: is_executable(): open_basedir restriction in effect. File(/usr/xdg4/bin/mysqldump) is not within the allowed path(s): (/home/esez/:/tmp/:/var/tmp/:/usr/local/php81/lib/:/usr/local/php54/lib/:/usr/local/php55/lib/:/usr/local/php56/lib/:/usr/local/php70/lib/:/usr/local/php71/lib/:/usr/local/lib/php/) (line 1637, wp-content/plugins/updraftplus/class-updraftplus.php)
+0062.677 (0) PHP event: code E_WARNING: is_executable(): open_basedir restriction in effect. File(/opt/bin/mysqldump) is not within the allowed path(s): (/home/esez/:/tmp/:/var/tmp/:/usr/local/php81/lib/:/usr/local/php54/lib/:/usr/local/php55/lib/:/usr/local/php56/lib/:/usr/local/php70/lib/:/usr/local/php71/lib/:/usr/local/lib/php/) (line 1637, wp-content/plugins/updraftplus/class-updraftplus.php)
+0062.694 (0) Table mys13lxo_options: Total expected rows (via COUNT): 552
+0062.739 (0) Table mys13lxo_options: Rows added in this batch (next record: 44951): 548 (uncompressed bytes in this segment=873255) in 0.05 seconds
+0062.748 (0) Table mys13lxo_options: finishing file(s) (2, 180.4 KB)
+0062.755 (0) Table mys13lxo_users: Total expected rows (via COUNT): 17
+0062.757 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0062.761 (0) Table mys13lxo_users: Rows added in this batch (next record: 22): 17 (uncompressed bytes in this segment=4070) in 0.01 seconds
+0062.766 (0) Table mys13lxo_users: finishing file(s) (2, 1.8 KB)
+0062.774 (0) Table mys13lxo_usermeta: Total expected rows (via COUNT): 631
+0062.776 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0062.787 (0) Table mys13lxo_usermeta: Rows added in this batch (next record: 898): 631 (uncompressed bytes in this segment=82169) in 0.02 seconds
+0062.802 (0) Table mys13lxo_usermeta: finishing file(s) (2, 16 KB)
+0062.810 (0) Table mys13lxo_commentmeta: Total expected rows (via COUNT): 0
+0062.814 (0) Table mys13lxo_commentmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=732) in 0.01 seconds
+0062.822 (0) Table mys13lxo_commentmeta: finishing file(s) (2, 0.4 KB)
+0062.837 (0) Table mys13lxo_comments: Total expected rows (via COUNT): 0
+0062.841 (0) Table mys13lxo_comments: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1750) in 0.02 seconds
+0062.847 (0) Table mys13lxo_comments: finishing file(s) (2, 0.5 KB)
+0062.853 (0) Table mys13lxo_links: Total expected rows (via COUNT): 0
+0062.855 (0) Table mys13lxo_links: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1342) in 0.00 seconds
+0062.860 (0) Table mys13lxo_links: finishing file(s) (2, 0.5 KB)
+0063.315 (0) Table mys13lxo_postmeta: Total expected rows (approximate): 513353
+0063.318 (0) [Warning] Table mys13lxo_postmeta has very many rows (513353) - we hope your web hosting company gives you enough resources to dump out that table in the backup. Jeżeli nie musisz usuwać danych z tej tabeli to skontaktuj się ze swoją firmą hostingową aby poprosić o więcej zasobów.
+0066.377 (0) Table mys13lxo_postmeta: Rows added in this batch (next record: 546516): 384000 (uncompressed bytes in this segment=20754645) in 3.51 seconds
+0066.615 (0) Table mys13lxo_postmeta: Total expected rows (via COUNT): 511898
+0066.794 (0) [Warning] Table mys13lxo_postmeta has very many rows (511898) - we hope your web hosting company gives you enough resources to dump out that table in the backup. Jeżeli nie musisz usuwać danych z tej tabeli to skontaktuj się ze swoją firmą hostingową aby poprosić o więcej zasobów.
+0067.911 (0) Table mys13lxo_postmeta: Rows added in this batch (next record: 736601): 127898 (uncompressed bytes in this segment=7114415) in 1.50 seconds
+0067.920 (0) Table mys13lxo_postmeta: finishing file(s) (3, 2885.5 KB)
+0068.079 (0) Table mys13lxo_posts: Total expected rows (approximate): 100260
+0071.152 (0) Table mys13lxo_posts: Rows added in this batch (next record: 260743): 100000 (uncompressed bytes in this segment=24912350) in 3.23 seconds
+0071.229 (0) Table mys13lxo_posts: Total expected rows (via COUNT): 100404
+0071.378 (0) Table mys13lxo_posts: Rows added in this batch (next record: 264230): 404 (uncompressed bytes in this segment=255959) in 0.20 seconds
+0071.386 (0) Table mys13lxo_posts: finishing file(s) (3, 1682.7 KB)
+0071.390 (0) Table mys13lxo_term_relationships: Total expected rows (approximate): 276
+0071.394 (0) Table mys13lxo_term_relationships: Rows added in this batch (next record: 100000): 276 (uncompressed bytes in this segment=5503) in 0.00 seconds
+0071.401 (0) Table mys13lxo_term_relationships: finishing file(s) (2, 1.1 KB)
+0071.406 (0) Table mys13lxo_term_taxonomy: Total expected rows (via COUNT): 17
+0071.407 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0071.411 (0) Table mys13lxo_term_taxonomy: Rows added in this batch (next record: 19): 17 (uncompressed bytes in this segment=1927) in 0.01 seconds
+0071.417 (0) Table mys13lxo_term_taxonomy: finishing file(s) (2, 0.8 KB)
+0071.435 (0) Table mys13lxo_termmeta: Total expected rows (via COUNT): 56
+0071.437 (0) Table is relatively small; fetch_rows will thus be: 100 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0071.441 (0) Table mys13lxo_termmeta: Rows added in this batch (next record: 56): 56 (uncompressed bytes in this segment=2783) in 0.02 seconds
+0071.448 (0) Table mys13lxo_termmeta: finishing file(s) (2, 1 KB)
+0071.453 (0) Table mys13lxo_terms: Total expected rows (via COUNT): 17
+0071.455 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0071.458 (0) Table mys13lxo_terms: Rows added in this batch (next record: 19): 17 (uncompressed bytes in this segment=1376) in 0.01 seconds
+0071.463 (0) Table mys13lxo_terms: finishing file(s) (2, 0.7 KB)
+0071.474 (0) Table mys13lxo_admin_columns: Total expected rows (via COUNT): 0
+0071.478 (0) Table mys13lxo_admin_columns: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1003) in 0.01 seconds
+0071.483 (0) Table mys13lxo_admin_columns: finishing file(s) (2, 0.4 KB)
+0071.496 (0) Table mys13lxo_duplicator_pro_entities: Total expected rows (via COUNT): 5
+0071.497 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0071.502 (0) Table mys13lxo_duplicator_pro_entities: Rows added in this batch (next record: 5): 5 (uncompressed bytes in this segment=6024) in 0.02 seconds
+0071.509 (0) Table mys13lxo_duplicator_pro_entities: finishing file(s) (2, 1.7 KB)
+0071.516 (0) Table mys13lxo_duplicator_pro_packages: Total expected rows (via COUNT): 1
+0071.517 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0071.520 (0) Table mys13lxo_duplicator_pro_packages: Rows added in this batch (next record: 3): 1 (uncompressed bytes in this segment=34294) in 0.01 seconds
+0071.538 (0) Table mys13lxo_duplicator_pro_packages: finishing file(s) (2, 4.3 KB)
+0071.545 (0) Table mys13lxo_ewwwio_images: Total expected rows (via COUNT): 131
+0071.547 (0) Table is relatively small; fetch_rows will thus be: 250 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0071.555 (0) Table mys13lxo_ewwwio_images: Rows added in this batch (next record: 131): 131 (uncompressed bytes in this segment=27913) in 0.01 seconds
+0071.567 (0) Table mys13lxo_ewwwio_images: finishing file(s) (2, 4.8 KB)
+0071.572 (0) Table mys13lxo_ewwwio_queue: Total expected rows (via COUNT): 0
+0071.576 (0) Table mys13lxo_ewwwio_queue: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=671) in 0.00 seconds
+0071.581 (0) Table mys13lxo_ewwwio_queue: finishing file(s) (2, 0.4 KB)
+0071.589 (0) Table mys13lxo_fea_submissions: Total expected rows (via COUNT): 0
+0071.591 (0) Table mys13lxo_fea_submissions: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=797) in 0.01 seconds
+0071.598 (0) Table mys13lxo_fea_submissions: finishing file(s) (2, 0.4 KB)
+0071.607 (0) Table mys13lxo_frm_fields: Total expected rows (via COUNT): 5
+0071.608 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0071.611 (0) Table mys13lxo_frm_fields: Rows added in this batch (next record: 5): 5 (uncompressed bytes in this segment=6064) in 0.01 seconds
+0071.619 (0) Table mys13lxo_frm_fields: finishing file(s) (2, 1.1 KB)
+0071.632 (0) Table mys13lxo_frm_forms: Total expected rows (via COUNT): 2
+0071.633 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0071.636 (0) Table mys13lxo_frm_forms: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=3630) in 0.01 seconds
+0071.642 (0) Table mys13lxo_frm_forms: finishing file(s) (2, 1.1 KB)
+0071.650 (0) Table mys13lxo_frm_item_metas: Total expected rows (via COUNT): 0
+0071.653 (0) Table mys13lxo_frm_item_metas: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=695) in 0.01 seconds
+0071.660 (0) Table mys13lxo_frm_item_metas: finishing file(s) (2, 0.4 KB)
+0071.667 (0) Table mys13lxo_frm_items: Total expected rows (via COUNT): 0
+0071.669 (0) Table mys13lxo_frm_items: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1159) in 0.00 seconds
+0071.673 (0) Table mys13lxo_frm_items: finishing file(s) (2, 0.5 KB)
+0071.680 (0) Table mys13lxo_groups_capability: Total expected rows (via COUNT): 70
+0071.682 (0) Table is relatively small; fetch_rows will thus be: 100 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0071.685 (0) Table mys13lxo_groups_capability: Rows added in this batch (next record: 70): 70 (uncompressed bytes in this segment=4407) in 0.01 seconds
+0071.693 (0) Table mys13lxo_groups_capability: finishing file(s) (2, 1 KB)
+0071.714 (0) Table mys13lxo_groups_group: Total expected rows (via COUNT): 2
+0071.717 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0071.723 (0) Table mys13lxo_groups_group: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=944) in 0.01 seconds
+0071.730 (0) Table mys13lxo_groups_group: finishing file(s) (2, 0.5 KB)
+0071.744 (0) Table mys13lxo_groups_group_capability: Total expected rows (approximate): 1
+0071.748 (0) Table mys13lxo_groups_group_capability: Rows added in this batch (next record: 1000): 1 (uncompressed bytes in this segment=711) in 0.00 seconds
+0071.752 (0) Table mys13lxo_groups_group_capability: finishing file(s) (2, 0.4 KB)
+0071.756 (0) Table mys13lxo_groups_user_capability: Total expected rows (approximate): 0
+0071.759 (0) Table mys13lxo_groups_user_capability: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=637) in 0.00 seconds
+0071.764 (0) Table mys13lxo_groups_user_capability: finishing file(s) (2, 0.3 KB)
+0071.768 (0) Table mys13lxo_groups_user_group: Total expected rows (approximate): 5
+0071.770 (0) Table mys13lxo_groups_user_group: Rows added in this batch (next record: 1000): 5 (uncompressed bytes in this segment=680) in 0.00 seconds
+0071.776 (0) Table mys13lxo_groups_user_group: finishing file(s) (2, 0.4 KB)
+0071.782 (0) Table mys13lxo_nf3_action_meta: Total expected rows (via COUNT): 208
+0071.784 (0) Table is relatively small; fetch_rows will thus be: 250 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0071.792 (0) Table mys13lxo_nf3_action_meta: Rows added in this batch (next record: 439): 208 (uncompressed bytes in this segment=14862) in 0.01 seconds
+0071.799 (0) Table mys13lxo_nf3_action_meta: finishing file(s) (2, 2.3 KB)
+0071.805 (0) Table mys13lxo_nf3_actions: Total expected rows (via COUNT): 12
+0071.807 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0071.811 (0) Table mys13lxo_nf3_actions: Rows added in this batch (next record: 20): 12 (uncompressed bytes in this segment=1996) in 0.01 seconds
+0071.818 (0) Table mys13lxo_nf3_actions: finishing file(s) (2, 0.6 KB)
+0071.826 (0) Table mys13lxo_nf3_chunks: Total expected rows (via COUNT): 0
+0071.829 (0) Table mys13lxo_nf3_chunks: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=480) in 0.01 seconds
+0071.834 (0) Table mys13lxo_nf3_chunks: finishing file(s) (2, 0.3 KB)
+0071.842 (0) Table mys13lxo_nf3_field_meta: Total expected rows (via COUNT): 373
+0071.844 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0071.850 (0) Table mys13lxo_nf3_field_meta: Rows added in this batch (next record: 1011): 373 (uncompressed bytes in this segment=23278) in 0.01 seconds
+0071.858 (0) Table mys13lxo_nf3_field_meta: finishing file(s) (2, 3.7 KB)
+0071.866 (0) Table mys13lxo_nf3_fields: Total expected rows (via COUNT): 19
+0071.868 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0071.872 (0) Table mys13lxo_nf3_fields: Rows added in this batch (next record: 28): 19 (uncompressed bytes in this segment=5492) in 0.01 seconds
+0071.879 (0) Table mys13lxo_nf3_fields: finishing file(s) (2, 1.3 KB)
+0071.889 (0) Table mys13lxo_nf3_form_meta: Total expected rows (via COUNT): 127
+0071.891 (0) Table is relatively small; fetch_rows will thus be: 250 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0071.897 (0) Table mys13lxo_nf3_form_meta: Rows added in this batch (next record: 345): 127 (uncompressed bytes in this segment=10877) in 0.01 seconds
+0071.904 (0) Table mys13lxo_nf3_form_meta: finishing file(s) (2, 2 KB)
+0071.912 (0) Table mys13lxo_nf3_forms: Total expected rows (via COUNT): 4
+0071.913 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0071.916 (0) Table mys13lxo_nf3_forms: Rows added in this batch (next record: 6): 4 (uncompressed bytes in this segment=1867) in 0.01 seconds
+0071.923 (0) Table mys13lxo_nf3_forms: finishing file(s) (2, 0.7 KB)
+0071.929 (0) Table mys13lxo_nf3_object_meta: Total expected rows (via COUNT): 0
+0071.933 (0) Table mys13lxo_nf3_object_meta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=607) in 0.01 seconds
+0071.939 (0) Table mys13lxo_nf3_object_meta: finishing file(s) (2, 0.3 KB)
+0071.948 (0) Table mys13lxo_nf3_objects: Total expected rows (via COUNT): 0
+0071.951 (0) Table mys13lxo_nf3_objects: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=653) in 0.01 seconds
+0071.958 (0) Table mys13lxo_nf3_objects: finishing file(s) (2, 0.4 KB)
+0071.966 (0) Table mys13lxo_nf3_relationships: Total expected rows (via COUNT): 0
+0071.968 (0) Table mys13lxo_nf3_relationships: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=716) in 0.01 seconds
+0071.977 (0) Table mys13lxo_nf3_relationships: finishing file(s) (2, 0.4 KB)
+0071.985 (0) Table mys13lxo_nf3_upgrades: Total expected rows (via COUNT): 4
+0071.986 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0071.990 (0) Table mys13lxo_nf3_upgrades: Rows added in this batch (next record: 6): 4 (uncompressed bytes in this segment=29518) in 0.01 seconds
+0071.997 (0) Table mys13lxo_nf3_upgrades: finishing file(s) (2, 3.2 KB)
+0072.006 (0) Table mys13lxo_pmxe_exports: Total expected rows (via COUNT): 4
+0072.007 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0072.017 (0) Table mys13lxo_pmxe_exports: Rows added in this batch (next record: 8): 4 (uncompressed bytes in this segment=240921) in 0.02 seconds
+0072.023 (0) Table mys13lxo_pmxe_exports: finishing file(s) (2, 35.5 KB)
+0072.027 (0) Table mys13lxo_pmxe_google_cats: Total expected rows (approximate): 5395
+0072.077 (0) Table mys13lxo_pmxe_google_cats: Rows added in this batch (next record: 505832): 5371 (uncompressed bytes in this segment=327649) in 0.05 seconds
+0072.083 (0) Table mys13lxo_pmxe_google_cats: finishing file(s) (2, 75.4 KB)
+0072.089 (0) Table mys13lxo_pmxe_posts: Total expected rows (via COUNT): 14
+0072.090 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0072.094 (0) Table mys13lxo_pmxe_posts: Rows added in this batch (next record: 54040): 14 (uncompressed bytes in this segment=1021) in 0.01 seconds
+0072.100 (0) Table mys13lxo_pmxe_posts: finishing file(s) (2, 0.5 KB)
+0072.106 (0) Table mys13lxo_pmxe_templates: Total expected rows (via COUNT): 1
+0072.107 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0072.112 (0) Table mys13lxo_pmxe_templates: Rows added in this batch (next record: 2): 1 (uncompressed bytes in this segment=54559) in 0.01 seconds
+0072.120 (0) Table mys13lxo_pmxe_templates: finishing file(s) (2, 8.7 KB)
+0072.125 (0) Table mys13lxo_pmxi_files: Total expected rows (approximate): 1305
+0072.149 (0) Table mys13lxo_pmxi_files: Rows added in this batch (next record: 1327): 1305 (uncompressed bytes in this segment=278306) in 0.02 seconds
+0072.161 (0) Table mys13lxo_pmxi_files: finishing file(s) (2, 9.8 KB)
+0072.165 (0) Table mys13lxo_pmxi_hash: Total expected rows (approximate): 99756
+0073.273 (0) Table mys13lxo_pmxi_hash: Rows added in this batch (next record: 100000): 100000 (uncompressed bytes in this segment=5801355) in 1.11 seconds
+0073.374 (0) Table mys13lxo_pmxi_hash: Rows added in this batch (next record: 101000): 2 (uncompressed bytes in this segment=156) in 0.06 seconds
+0073.380 (0) Table mys13lxo_pmxi_hash: finishing file(s) (3, 2286.1 KB)
+0073.391 (0) Table mys13lxo_pmxi_history: Total expected rows (via COUNT): 2
+0073.392 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0073.396 (0) Table mys13lxo_pmxi_history: Rows added in this batch (next record: 8): 2 (uncompressed bytes in this segment=1086) in 0.01 seconds
+0073.413 (0) Table mys13lxo_pmxi_history: finishing file(s) (2, 0.5 KB)
+0073.423 (0) Table mys13lxo_pmxi_images: Total expected rows (via COUNT): 152
+0073.425 (0) Table is relatively small; fetch_rows will thus be: 250 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0073.433 (0) Table mys13lxo_pmxi_images: Rows added in this batch (next record: 158): 152 (uncompressed bytes in this segment=8540) in 0.01 seconds
+0073.439 (0) Table mys13lxo_pmxi_images: finishing file(s) (2, 3 KB)
+0073.475 (0) Table mys13lxo_pmxi_imports: Total expected rows (via COUNT): 5
+0073.477 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0073.482 (0) Table mys13lxo_pmxi_imports: Rows added in this batch (next record: 14): 5 (uncompressed bytes in this segment=53563) in 0.04 seconds
+0073.496 (0) Table mys13lxo_pmxi_imports: finishing file(s) (2, 5.8 KB)
+0073.503 (0) Table mys13lxo_pmxi_posts: Total expected rows (via COUNT): 36
+0073.504 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0073.509 (0) Table mys13lxo_pmxi_posts: Rows added in this batch (next record: 372285): 36 (uncompressed bytes in this segment=2557) in 0.01 seconds
+0073.516 (0) Table mys13lxo_pmxi_posts: finishing file(s) (2, 0.8 KB)
+0073.527 (0) Table mys13lxo_pmxi_templates: Total expected rows (via COUNT): 0
+0073.531 (0) Table mys13lxo_pmxi_templates: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1051) in 0.01 seconds
+0073.538 (0) Table mys13lxo_pmxi_templates: finishing file(s) (2, 0.4 KB)
+0073.547 (0) Table mys13lxo_wpstg_queue: Total expected rows (via COUNT): 0
+0073.550 (0) Table mys13lxo_wpstg_queue: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=916) in 0.01 seconds
+0073.556 (0) Table mys13lxo_wpstg_queue: finishing file(s) (2, 0.4 KB)
+0073.615 (0) Table mys13lxo_yoast_indexable: Total expected rows (approximate): 96237
+0078.051 (0) Table mys13lxo_yoast_indexable: Rows added in this batch (next record: 100014): 100000 (uncompressed bytes in this segment=43184287) in 4.49 seconds
+0078.133 (0) Table mys13lxo_yoast_indexable: Total expected rows (via COUNT): 100401
+0078.156 (0) Table mys13lxo_yoast_indexable: Rows added in this batch (next record: 103388): 401 (uncompressed bytes in this segment=194303) in 0.08 seconds
+0078.171 (0) Table mys13lxo_yoast_indexable: finishing file(s) (3, 3923.2 KB)
+0078.176 (0) Table mys13lxo_yoast_indexable_hierarchy: Total expected rows (approximate): 2419
+0078.192 (0) Table mys13lxo_yoast_indexable_hierarchy: Rows added in this batch (next record: 3000): 2419 (uncompressed bytes in this segment=44500) in 0.02 seconds
+0078.198 (0) Table mys13lxo_yoast_indexable_hierarchy: finishing file(s) (2, 7 KB)
+0078.203 (0) Table mys13lxo_yoast_migrations: Total expected rows (via COUNT): 23
+0078.205 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0078.209 (0) Table mys13lxo_yoast_migrations: Rows added in this batch (next record: 23): 23 (uncompressed bytes in this segment=1294) in 0.01 seconds
+0078.221 (0) Table mys13lxo_yoast_migrations: finishing file(s) (2, 0.6 KB)
+0078.232 (0) Table mys13lxo_yoast_primary_term: Total expected rows (via COUNT): 0
+0078.238 (0) Table mys13lxo_yoast_primary_term: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=896) in 0.01 seconds
+0078.243 (0) Table mys13lxo_yoast_primary_term: finishing file(s) (2, 0.4 KB)
+0078.254 (0) Table mys13lxo_yoast_seo_links: Total expected rows (via COUNT): 28
+0078.256 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0078.260 (0) Table mys13lxo_yoast_seo_links: Rows added in this batch (next record: 1960): 28 (uncompressed bytes in this segment=4562) in 0.01 seconds
+0078.267 (0) Table mys13lxo_yoast_seo_links: finishing file(s) (2, 1 KB)
+0078.268 (0) PHP event: code E_WARNING: filemtime(): stat failed for /home/esez/domains/esez.pl/public_html/wp-content/updraft/backup_2022-07-30-0009_eSEZ_592bfbc84919-db.gz (line 1884, wp-content/plugins/updraftplus/backup.php)
+0078.271 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_options.table.tmpr44952.gz (1/55/fopen): adding to final database dump
+0078.279 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_options.table.gz (2/55/fopen): adding to final database dump
+0078.282 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_users.table.tmpr23.gz (3/55/fopen): adding to final database dump
+0078.286 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_users.table.gz (4/55/fopen): adding to final database dump
+0078.288 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_usermeta.table.tmpr899.gz (5/55/fopen): adding to final database dump
+0078.291 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_usermeta.table.gz (6/55/fopen): adding to final database dump
+0078.293 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_commentmeta.table.tmpr0.gz (7/55/fopen): adding to final database dump
+0078.295 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_commentmeta.table.gz (8/55/fopen): adding to final database dump
+0078.297 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_comments.table.tmpr0.gz (9/55/fopen): adding to final database dump
+0078.299 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_comments.table.gz (10/55/fopen): adding to final database dump
+0078.301 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_links.table.tmpr0.gz (11/55/fopen): adding to final database dump
+0078.303 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_links.table.gz (12/55/fopen): adding to final database dump
+0078.304 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_postmeta.table.tmpr546516.gz (13/55/fopen): adding to final database dump
+0078.371 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_postmeta.table.tmpr736602.gz (14/55/fopen): adding to final database dump
+0078.387 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_postmeta.table.gz (15/55/fopen): adding to final database dump
+0078.389 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_posts.table.tmpr260743.gz (16/55/fopen): adding to final database dump
+0078.528 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_posts.table.tmpr264231.gz (17/55/fopen): adding to final database dump
+0078.531 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_posts.table.gz (18/55/fopen): adding to final database dump
+0078.533 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_term_relationships.table.tmpr100001.gz (19/55/fopen): adding to final database dump
+0078.535 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_term_relationships.table.gz (20/55/fopen): adding to final database dump
+0078.537 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_term_taxonomy.table.tmpr20.gz (21/55/fopen): adding to final database dump
+0078.539 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_term_taxonomy.table.gz (22/55/fopen): adding to final database dump
+0078.540 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_termmeta.table.tmpr57.gz (23/55/fopen): adding to final database dump
+0078.542 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_termmeta.table.gz (24/55/fopen): adding to final database dump
+0078.544 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_terms.table.tmpr20.gz (25/55/fopen): adding to final database dump
+0078.545 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_terms.table.gz (26/55/fopen): adding to final database dump
+0078.547 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_admin_columns.table.tmpr0.gz (27/55/fopen): adding to final database dump
+0078.548 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_admin_columns.table.gz (28/55/fopen): adding to final database dump
+0078.549 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_duplicator_pro_entities.table.tmpr6.gz (29/55/fopen): adding to final database dump
+0078.551 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_duplicator_pro_entities.table.gz (30/55/fopen): adding to final database dump
+0078.552 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_duplicator_pro_packages.table.tmpr4.gz (31/55/fopen): adding to final database dump
+0078.553 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_duplicator_pro_packages.table.gz (32/55/fopen): adding to final database dump
+0078.554 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_ewwwio_images.table.tmpr132.gz (33/55/fopen): adding to final database dump
+0078.556 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_ewwwio_images.table.gz (34/55/fopen): adding to final database dump
+0078.558 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_ewwwio_queue.table.tmpr0.gz (35/55/fopen): adding to final database dump
+0078.560 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_ewwwio_queue.table.gz (36/55/fopen): adding to final database dump
+0078.562 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_fea_submissions.table.tmpr0.gz (37/55/fopen): adding to final database dump
+0078.564 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_fea_submissions.table.gz (38/55/fopen): adding to final database dump
+0078.565 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_frm_fields.table.tmpr6.gz (39/55/fopen): adding to final database dump
+0078.567 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_frm_fields.table.gz (40/55/fopen): adding to final database dump
+0078.568 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_frm_forms.table.tmpr3.gz (41/55/fopen): adding to final database dump
+0078.570 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_frm_forms.table.gz (42/55/fopen): adding to final database dump
+0078.571 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_frm_item_metas.table.tmpr0.gz (43/55/fopen): adding to final database dump
+0078.573 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_frm_item_metas.table.gz (44/55/fopen): adding to final database dump
+0078.575 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_frm_items.table.tmpr0.gz (45/55/fopen): adding to final database dump
+0078.577 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_frm_items.table.gz (46/55/fopen): adding to final database dump
+0078.578 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_groups_capability.table.tmpr71.gz (47/55/fopen): adding to final database dump
+0078.583 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_groups_capability.table.gz (48/55/fopen): adding to final database dump
+0078.586 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_groups_group.table.tmpr3.gz (49/55/fopen): adding to final database dump
+0078.588 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_groups_group.table.gz (50/55/fopen): adding to final database dump
+0078.590 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_groups_group_capability.table.tmpr1001.gz (51/55/fopen): adding to final database dump
+0078.592 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_groups_group_capability.table.gz (52/55/fopen): adding to final database dump
+0078.594 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_groups_user_capability.table.tmpr1.gz (53/55/fopen): adding to final database dump
+0078.596 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_groups_user_capability.table.gz (54/55/fopen): adding to final database dump
+0078.598 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_groups_user_group.table.tmpr1001.gz (55/55/fopen): adding to final database dump
+0078.600 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_groups_user_group.table.gz (56/55/fopen): adding to final database dump
+0078.601 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_nf3_action_meta.table.tmpr440.gz (57/55/fopen): adding to final database dump
+0078.603 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_nf3_action_meta.table.gz (58/55/fopen): adding to final database dump
+0078.604 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_nf3_actions.table.tmpr21.gz (59/55/fopen): adding to final database dump
+0078.606 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_nf3_actions.table.gz (60/55/fopen): adding to final database dump
+0078.607 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_nf3_chunks.table.tmpr0.gz (61/55/fopen): adding to final database dump
+0078.609 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_nf3_chunks.table.gz (62/55/fopen): adding to final database dump
+0078.610 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_nf3_field_meta.table.tmpr1012.gz (63/55/fopen): adding to final database dump
+0078.612 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_nf3_field_meta.table.gz (64/55/fopen): adding to final database dump
+0078.613 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_nf3_fields.table.tmpr29.gz (65/55/fopen): adding to final database dump
+0078.615 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_nf3_fields.table.gz (66/55/fopen): adding to final database dump
+0078.616 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_nf3_form_meta.table.tmpr346.gz (67/55/fopen): adding to final database dump
+0078.618 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_nf3_form_meta.table.gz (68/55/fopen): adding to final database dump
+0078.620 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_nf3_forms.table.tmpr7.gz (69/55/fopen): adding to final database dump
+0078.622 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_nf3_forms.table.gz (70/55/fopen): adding to final database dump
+0078.624 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_nf3_object_meta.table.tmpr0.gz (71/55/fopen): adding to final database dump
+0078.626 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_nf3_object_meta.table.gz (72/55/fopen): adding to final database dump
+0078.628 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_nf3_objects.table.tmpr0.gz (73/55/fopen): adding to final database dump
+0078.630 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_nf3_objects.table.gz (74/55/fopen): adding to final database dump
+0078.631 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_nf3_relationships.table.tmpr0.gz (75/55/fopen): adding to final database dump
+0078.633 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_nf3_relationships.table.gz (76/55/fopen): adding to final database dump
+0078.635 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_nf3_upgrades.table.tmpr7.gz (77/55/fopen): adding to final database dump
+0078.637 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_nf3_upgrades.table.gz (78/55/fopen): adding to final database dump
+0078.638 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_pmxe_exports.table.tmpr9.gz (79/55/fopen): adding to final database dump
+0078.641 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_pmxe_exports.table.gz (80/55/fopen): adding to final database dump
+0078.642 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_pmxe_google_cats.table.tmpr505833.gz (81/55/fopen): adding to final database dump
+0078.646 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_pmxe_google_cats.table.gz (82/55/fopen): adding to final database dump
+0078.647 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_pmxe_posts.table.tmpr54041.gz (83/55/fopen): adding to final database dump
+0078.649 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_pmxe_posts.table.gz (84/55/fopen): adding to final database dump
+0078.651 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_pmxe_templates.table.tmpr3.gz (85/55/fopen): adding to final database dump
+0078.653 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_pmxe_templates.table.gz (86/55/fopen): adding to final database dump
+0078.655 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_pmxi_files.table.tmpr1328.gz (87/55/fopen): adding to final database dump
+0078.657 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_pmxi_files.table.gz (88/55/fopen): adding to final database dump
+0078.659 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_pmxi_hash.table.tmpr100000.gz (89/55/fopen): adding to final database dump
+0078.717 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_pmxi_hash.table.tmpr101001.gz (90/55/fopen): adding to final database dump
+0078.721 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_pmxi_hash.table.gz (91/55/fopen): adding to final database dump
+0078.723 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_pmxi_history.table.tmpr9.gz (92/55/fopen): adding to final database dump
+0078.724 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_pmxi_history.table.gz (93/55/fopen): adding to final database dump
+0078.726 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_pmxi_images.table.tmpr159.gz (94/55/fopen): adding to final database dump
+0078.728 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_pmxi_images.table.gz (95/55/fopen): adding to final database dump
+0078.729 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_pmxi_imports.table.tmpr15.gz (96/55/fopen): adding to final database dump
+0078.731 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_pmxi_imports.table.gz (97/55/fopen): adding to final database dump
+0078.733 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_pmxi_posts.table.tmpr372286.gz (98/55/fopen): adding to final database dump
+0078.734 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_pmxi_posts.table.gz (99/55/fopen): adding to final database dump
+0078.737 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_pmxi_templates.table.tmpr0.gz (100/55/fopen): adding to final database dump
+0078.739 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_pmxi_templates.table.gz (101/55/fopen): adding to final database dump
+0078.740 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_wpstg_queue.table.tmpr0.gz (102/55/fopen): adding to final database dump
+0078.742 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_wpstg_queue.table.gz (103/55/fopen): adding to final database dump
+0078.743 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_yoast_indexable.table.tmpr100014.gz (104/55/fopen): adding to final database dump
+0078.809 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_yoast_indexable.table.tmpr103389.gz (105/55/fopen): adding to final database dump
+0078.812 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_yoast_indexable.table.gz (106/55/fopen): adding to final database dump
+0078.814 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_yoast_indexable_hierarchy.table.tmpr3001.gz (107/55/fopen): adding to final database dump
+0078.816 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_yoast_indexable_hierarchy.table.gz (108/55/fopen): adding to final database dump
+0078.817 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_yoast_migrations.table.tmpr24.gz (109/55/fopen): adding to final database dump
+0078.819 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_yoast_migrations.table.gz (110/55/fopen): adding to final database dump
+0078.820 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_yoast_primary_term.table.tmpr0.gz (111/55/fopen): adding to final database dump
+0078.822 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_yoast_primary_term.table.gz (112/55/fopen): adding to final database dump
+0078.824 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_yoast_seo_links.table.tmpr1961.gz (113/55/fopen): adding to final database dump
+0078.825 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db-table-mys13lxo_yoast_seo_links.table.gz (114/55/fopen): adding to final database dump
+0078.830 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db.gz: finished writing out complete database file (11162.7 KB)
+0079.055 (0) Total database tables backed up: 55 (backup_2022-07-30-0009_eSEZ_592bfbc84919-db.gz, size: 11430669, sha1: e19e8c3f001df58437163c112d3a452bc9ae4547, sha256: 339e0f2c5580e6f0607fab3d7336e918db4679cfd9633ff6bf6c2ef7c9d8282f)
+0079.068 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-plugins.zip: plugins: This file has already been successfully uploaded
+0079.070 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+0079.072 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+0079.075 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-others.zip: others: This file has not yet been successfully uploaded: will queue
+0079.077 (0) backup_2022-07-30-0009_eSEZ_592bfbc84919-db.gz: db: This file has not yet been successfully uploaded: will queue
+0079.078 (0) Saving backup history. Total backup size: Unknown
+0079.083 (0) Requesting upload of the files that have not yet been successfully uploaded (4)
+0079.087 (0) Cloud backup selection (1/1): dropbox with instance (1/1) (last)
+0079.088 (0) Beginning dispatch of backup to remote (dropbox) (instance identifier s-d07ae8b10b578fc3f03b5e124c9628fb)
+0079.090 (0) Dropbox: begin cloud upload (using API version 2 with OAuth v2 token)
+0079.092 (0) Dropbox: access gained; setting chunk size to: 10240 KB
+0079.573 (0) Dropbox: quota usage: used=9377441 MB, total=12582912 MB, available=3205471 MB
+0079.575 (0) Dropbox: Attempt to upload: backup_2022-07-30-0009_eSEZ_592bfbc84919-themes.zip to: backup_2022-07-30-0009_eSEZ_592bfbc84919-themes.zip
+0083.720 (0) Dropbox chunked upload: 100 % uploaded (pid_upload_session:ABIFNuAyvKVAJSZe9CB1FmgzWsQCjsG1qiQwv1Nj6zthuF3J, 418878, 10240 KB)
+0085.916 (0) Recording as successfully uploaded: backup_2022-07-30-0009_eSEZ_592bfbc84919-themes.zip
+0085.924 (0) Deleting local file: backup_2022-07-30-0009_eSEZ_592bfbc84919-themes.zip: OK
+0085.926 (0) Deleting zip manifest (backup_2022-07-30-0009_eSEZ_592bfbc84919-themes.zip.list.tmp)
+0085.929 (0) Dropbox: File upload success (backup_2022-07-30-0009_eSEZ_592bfbc84919-themes.zip): 409 KB in 6s (64 KB/s)
+0086.595 (0) Dropbox: quota usage: used=9377441 MB, total=12582912 MB, available=3205471 MB
+0086.604 (0) Dropbox: Attempt to upload: backup_2022-07-30-0009_eSEZ_592bfbc84919-uploads.zip to: backup_2022-07-30-0009_eSEZ_592bfbc84919-uploads.zip
+0090.817 (0) Dropbox chunked upload: 6.5 % uploaded (pid_upload_session:ABIFNhH0sQSTNG7iedHBdahIcUnCh4NpGn9jy7IUUWRuIEMI, 10485760, 10240 KB)
+0095.836 (0) Dropbox chunked upload: 12.9 % uploaded (pid_upload_session:ABIFNhH0sQSTNG7iedHBdahIcUnCh4NpGn9jy7IUUWRuIEMI, 20971520, 10240 KB)
+0103.232 (0) Dropbox chunked upload: 19.4 % uploaded (pid_upload_session:ABIFNhH0sQSTNG7iedHBdahIcUnCh4NpGn9jy7IUUWRuIEMI, 31457280, 10240 KB)
+0107.306 (0) Dropbox chunked upload: 25.8 % uploaded (pid_upload_session:ABIFNhH0sQSTNG7iedHBdahIcUnCh4NpGn9jy7IUUWRuIEMI, 41943040, 10240 KB)
+0112.281 (0) Dropbox chunked upload: 32.3 % uploaded (pid_upload_session:ABIFNhH0sQSTNG7iedHBdahIcUnCh4NpGn9jy7IUUWRuIEMI, 52428800, 10240 KB)
+0116.314 (0) Dropbox chunked upload: 38.7 % uploaded (pid_upload_session:ABIFNhH0sQSTNG7iedHBdahIcUnCh4NpGn9jy7IUUWRuIEMI, 62914560, 10240 KB)
+0121.525 (0) Dropbox chunked upload: 45.2 % uploaded (pid_upload_session:ABIFNhH0sQSTNG7iedHBdahIcUnCh4NpGn9jy7IUUWRuIEMI, 73400320, 10240 KB)
+0126.893 (0) Dropbox chunked upload: 51.6 % uploaded (pid_upload_session:ABIFNhH0sQSTNG7iedHBdahIcUnCh4NpGn9jy7IUUWRuIEMI, 83886080, 10240 KB)
+0131.104 (0) Dropbox chunked upload: 58.1 % uploaded (pid_upload_session:ABIFNhH0sQSTNG7iedHBdahIcUnCh4NpGn9jy7IUUWRuIEMI, 94371840, 10240 KB)
+0133.428 (0) Dropbox chunked upload: 64.5 % uploaded (pid_upload_session:ABIFNhH0sQSTNG7iedHBdahIcUnCh4NpGn9jy7IUUWRuIEMI, 104857600, 10240 KB)
+0136.961 (0) Dropbox chunked upload: 71 % uploaded (pid_upload_session:ABIFNhH0sQSTNG7iedHBdahIcUnCh4NpGn9jy7IUUWRuIEMI, 115343360, 10240 KB)
+0141.239 (0) Dropbox chunked upload: 77.4 % uploaded (pid_upload_session:ABIFNhH0sQSTNG7iedHBdahIcUnCh4NpGn9jy7IUUWRuIEMI, 125829120, 10240 KB)
+0145.837 (0) Dropbox chunked upload: 83.9 % uploaded (pid_upload_session:ABIFNhH0sQSTNG7iedHBdahIcUnCh4NpGn9jy7IUUWRuIEMI, 136314880, 10240 KB)
+0149.938 (0) Dropbox chunked upload: 90.3 % uploaded (pid_upload_session:ABIFNhH0sQSTNG7iedHBdahIcUnCh4NpGn9jy7IUUWRuIEMI, 146800640, 10240 KB)
+0154.801 (0) Dropbox chunked upload: 96.8 % uploaded (pid_upload_session:ABIFNhH0sQSTNG7iedHBdahIcUnCh4NpGn9jy7IUUWRuIEMI, 157286400, 10240 KB)
+0159.111 (0) Dropbox chunked upload: 100 % uploaded (pid_upload_session:ABIFNhH0sQSTNG7iedHBdahIcUnCh4NpGn9jy7IUUWRuIEMI, 162551452, 10240 KB)
+0162.024 (0) Recording as successfully uploaded: backup_2022-07-30-0009_eSEZ_592bfbc84919-uploads.zip
+0162.080 (0) Deleting local file: backup_2022-07-30-0009_eSEZ_592bfbc84919-uploads.zip: OK
+0162.100 (0) Deleting zip manifest (backup_2022-07-30-0009_eSEZ_592bfbc84919-uploads.zip.list.tmp)
+0162.106 (0) Dropbox: File upload success (backup_2022-07-30-0009_eSEZ_592bfbc84919-uploads.zip): 158741 KB in 75s (2102 KB/s)
+0162.625 (0) Dropbox: quota usage: used=9377441 MB, total=12582912 MB, available=3205471 MB
+0162.632 (0) Dropbox: Attempt to upload: backup_2022-07-30-0009_eSEZ_592bfbc84919-others.zip to: backup_2022-07-30-0009_eSEZ_592bfbc84919-others.zip
+0165.155 (0) Dropbox chunked upload: 100 % uploaded (pid_upload_session:ABIFNhkeUtsu22V_aAdvFtgYrkXiVUFAXcgE72VhkowFg51X, 3236342, 10240 KB)
+0167.283 (0) Recording as successfully uploaded: backup_2022-07-30-0009_eSEZ_592bfbc84919-others.zip
+0167.290 (0) Deleting local file: backup_2022-07-30-0009_eSEZ_592bfbc84919-others.zip: OK
+0167.291 (0) Deleting zip manifest (backup_2022-07-30-0009_eSEZ_592bfbc84919-others.zip.list.tmp)
+0167.292 (0) Dropbox: File upload success (backup_2022-07-30-0009_eSEZ_592bfbc84919-others.zip): 3160 KB in 4s (678 KB/s)
+0167.698 (0) Dropbox: quota usage: used=9377441 MB, total=12582912 MB, available=3205471 MB
+0167.701 (0) Dropbox: Attempt to upload: backup_2022-07-30-0009_eSEZ_592bfbc84919-db.gz to: backup_2022-07-30-0009_eSEZ_592bfbc84919-db.gz
+0172.976 (0) Dropbox chunked upload: 91.7 % uploaded (pid_upload_session:ABIFNtTf6FzJaM5iu-Tj3zf_hWbp2JoJsN1364wPJsHtfbXa, 10485760, 10240 KB)
+0174.704 (0) Dropbox chunked upload: 100 % uploaded (pid_upload_session:ABIFNtTf6FzJaM5iu-Tj3zf_hWbp2JoJsN1364wPJsHtfbXa, 11430669, 10240 KB)
+0177.044 (0) Recording as successfully uploaded: backup_2022-07-30-0009_eSEZ_592bfbc84919-db.gz
+0177.052 (0) Deleting local file: backup_2022-07-30-0009_eSEZ_592bfbc84919-db.gz: OK
+0177.053 (0) Dropbox: File upload success (backup_2022-07-30-0009_eSEZ_592bfbc84919-db.gz): 11162 KB in 9s (1193 KB/s)
+0177.058 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=10, retain_db=10
+0177.060 (0) Number of backup sets in history: 11; groups (db): 1
+0177.061 (0) Examining (for databases) backup set with group_id=0, nonce=592bfbc84919, datestamp=1659132595 (Jul 29 2022 22:09:55)
+0177.062 (0) This backup set is the backup set just made, so will not be deleted.
+0177.062 (0) Examining (for databases) backup set with group_id=0, nonce=33217511cfa2, datestamp=1659046195 (Jul 28 2022 22:09:55)
+0177.062 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0177.063 (0) Examining (for databases) backup set with group_id=0, nonce=df6a365f2870, datestamp=1658959796 (Jul 27 2022 22:09:56)
+0177.063 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0177.063 (0) Examining (for databases) backup set with group_id=0, nonce=35b957acba42, datestamp=1658873395 (Jul 26 2022 22:09:55)
+0177.063 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0177.063 (0) Examining (for databases) backup set with group_id=0, nonce=83463ca87124, datestamp=1658786995 (Jul 25 2022 22:09:55)
+0177.063 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0177.063 (0) Examining (for databases) backup set with group_id=0, nonce=48177a4a2a57, datestamp=1658700755 (Jul 24 2022 22:12:35)
+0177.063 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0177.063 (0) Examining (for databases) backup set with group_id=0, nonce=4a049a1aa03d, datestamp=1658614055 (Jul 23 2022 22:07:35)
+0177.063 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0177.063 (0) Examining (for databases) backup set with group_id=0, nonce=91f6c798de91, datestamp=1658527667 (Jul 22 2022 22:07:47)
+0177.063 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0177.063 (0) Examining (for databases) backup set with group_id=0, nonce=0afede37739e, datestamp=1658441217 (Jul 21 2022 22:06:57)
+0177.064 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0177.064 (0) Examining (for databases) backup set with group_id=0, nonce=b060d08ab12a, datestamp=1658354967 (Jul 20 2022 22:09:27)
+0177.064 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0177.064 (0) Examining (for databases) backup set with group_id=0, nonce=9508fd073b51, datestamp=1658268567 (Jul 19 2022 22:09:27)
+0177.064 (0) 1658268567: db: this set includes a database (backup_2022-07-20-0009_eSEZ_9508fd073b51-db.gz); db count is now 10
+0177.064 (0) 1658268567: db: over retain limit (10); will delete this database
+0177.064 (0) Delete file: backup_2022-07-20-0009_eSEZ_9508fd073b51-db.gz, service=dropbox
+0177.065 (0) Dropbox: request deletion: backup_2022-07-20-0009_eSEZ_9508fd073b51-db.gz
+0178.101 (0) Dropbox: deletion succeeded
+0178.106 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0178.108 (0) Number of backup sets in history: 11; groups (files): 1
+0178.109 (0) Examining (for files) backup set with nonce=592bfbc84919, datestamp=1659132595 (Jul 29 2022 22:09:55)
+0178.109 (0) This backup set is the backup set just made, so will not be deleted.
+0178.110 (0) This backup set is the backup set just made, so will not be deleted.
+0178.110 (0) This backup set is the backup set just made, so will not be deleted.
+0178.111 (0) This backup set is the backup set just made, so will not be deleted.
+0178.111 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0178.112 (0) Examining (for files) backup set with nonce=33217511cfa2, datestamp=1659046195 (Jul 28 2022 22:09:55)
+0178.112 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0178.112 (0) Examining (for files) backup set with nonce=df6a365f2870, datestamp=1658959796 (Jul 27 2022 22:09:56)
+0178.112 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0178.112 (0) Examining (for files) backup set with nonce=35b957acba42, datestamp=1658873395 (Jul 26 2022 22:09:55)
+0178.112 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0178.112 (0) Examining (for files) backup set with nonce=83463ca87124, datestamp=1658786995 (Jul 25 2022 22:09:55)
+0178.112 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0178.112 (0) Examining (for files) backup set with nonce=48177a4a2a57, datestamp=1658700755 (Jul 24 2022 22:12:35)
+0178.112 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0178.112 (0) Examining (for files) backup set with nonce=4a049a1aa03d, datestamp=1658614055 (Jul 23 2022 22:07:35)
+0178.112 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0178.112 (0) Examining (for files) backup set with nonce=91f6c798de91, datestamp=1658527667 (Jul 22 2022 22:07:47)
+0178.112 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0178.112 (0) Examining (for files) backup set with nonce=0afede37739e, datestamp=1658441217 (Jul 21 2022 22:06:57)
+0178.112 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0178.112 (0) Examining (for files) backup set with nonce=b060d08ab12a, datestamp=1658354967 (Jul 20 2022 22:09:27)
+0178.112 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0178.112 (0) Examining (for files) backup set with nonce=9508fd073b51, datestamp=1658268567 (Jul 19 2022 22:09:27)
+0178.112 (0) plugins: over retain limit (10); will delete this file entity
+0178.112 (0) themes: over retain limit (10); will delete this file entity
+0178.112 (0) uploads: over retain limit (10); will delete this file entity
+0178.112 (0) others: over retain limit (10); will delete this file entity
+0178.112 (0) Delete file: backup_2022-07-20-0009_eSEZ_9508fd073b51-plugins.zip, service=dropbox
+0178.113 (0) Delete file: backup_2022-07-20-0009_eSEZ_9508fd073b51-themes.zip, service=dropbox
+0178.115 (0) Delete file: backup_2022-07-20-0009_eSEZ_9508fd073b51-uploads.zip, service=dropbox
+0178.116 (0) Delete file: backup_2022-07-20-0009_eSEZ_9508fd073b51-others.zip, service=dropbox
+0178.118 (0) Dropbox: request deletion: backup_2022-07-20-0009_eSEZ_9508fd073b51-plugins.zip
+0178.891 (0) Dropbox: deletion succeeded
+0178.894 (0) Dropbox: request deletion: backup_2022-07-20-0009_eSEZ_9508fd073b51-themes.zip
+0180.336 (0) Dropbox: deletion succeeded
+0180.360 (0) Dropbox: request deletion: backup_2022-07-20-0009_eSEZ_9508fd073b51-uploads.zip
+0181.313 (0) Dropbox: deletion succeeded
+0181.315 (0) Dropbox: request deletion: backup_2022-07-20-0009_eSEZ_9508fd073b51-others.zip
+0182.857 (0) Dropbox: deletion succeeded
+0182.862 (0) This backup set is now empty; will remove from history
+0182.863 (0) Deleting log file (log.9508fd073b51.txt)
+0182.868 (0) Retain: saving new backup history (sets now: 10) and finishing retain operation
+0182.873 (0) Resume backup (592bfbc84919, 0): finish run
+0182.875 (0) Decremented the semaphore (fd) by 1
+0182.877 (0) Semaphore (fd) unlocked
+0182.878 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0182.882 (0) The backup apparently succeeded and is now complete
+0182.882 (0) No email will/can be sent - the user has not configured an email address.
+0182.883 (0) Udało się wykonać i zakończyć tworzenie kopii
