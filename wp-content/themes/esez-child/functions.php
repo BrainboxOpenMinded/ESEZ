@@ -6,7 +6,6 @@
 		add_action( 'wp_enqueue_scripts', 'my_custom_script_load' );
 		function my_custom_script_load(){
 			wp_enqueue_script( 'child-script', get_stylesheet_directory_uri() . '/assets/main-child.js', array( 'jquery' ) );
-			//wp_enqueue_script( 'bootstrap-bundle', '//cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js', array( 'jquery' ), '1.0', true );
 		}
 
 		   function bb_login_logo() { ?>
@@ -138,14 +137,11 @@
 				// Set the image Alt-Text
 				update_post_meta( $post_ID, '_wp_attachment_image_alt', $my_image_title );
 		
-				// Set the image meta (e.g. Title, Excerpt, Content)
 				wp_update_post( $my_image_meta );
 		
 			} 
 		}
-		
-		// ************* Remove default Posts type since no blog *************
-		
+				
 		// Remove side menu
 		add_action( 'admin_menu', 'remove_default_post_type' );
 		
@@ -194,7 +190,7 @@
 			remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 			remove_action( 'admin_print_styles', 'print_emoji_styles' );
 			// --------------------------------------------
-				// Wyłącz pomiar stanu witryny
+			// Wyłącz pomiar stanu witryny
 			add_action( 'init', 'my_deregister_heartbeat', 1 );
 			function my_deregister_heartbeat() {
 				global $pagenow;
@@ -206,18 +202,10 @@
 			// --------------------------------------------
 			function my_custom_pagination_base() {
 				global $wp_rewrite;
-				$wp_rewrite->pagination_base = 's'; //where new-slug is the slug you want to use 
+				$wp_rewrite->pagination_base = 's';
 				$wp_rewrite->flush_rules();
 			}
 			add_action('init', 'my_custom_pagination_base', 1);
-				
-				add_filter('auth_cookie_expiration', 'keep_me_logged_in_for_2_week' );
-				
-				function keep_me_logged_in_for_2_week( $expirein ) {
-				
-				return WEEK_IN_SECONDS; // 2 week in seconds
-				
-				}
 
 				function ace_block_wp_admin() {
 					if ( is_admin() && ! current_user_can( 'administrator' ) && ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
@@ -227,24 +215,7 @@
 				}
 				add_action( 'admin_init', 'ace_block_wp_admin' );
 								
-				// add_action('init', 'buddyforms_allow_firma_uploads');
-			
-				// function buddyforms_allow_firma_uploads() {
-				// 	if ( current_user_can('firma') || current_user_can('firma pro') && !current_user_can('upload_files') ){
-				// 		$contributor = get_role('firma');
-				// 		$contributor->add_cap('upload_files');
-				// 	}
-				// }
 
-				// if ( current_user_can('firma') || current_user_can('firma pro') ) {
-				// 	add_action('init', 'allow_firma_uploads', 20);
-				// 	add_action('admin_init', 'allow_firma_uploads', 20);
-				// }
-				// function allow_firma_uploads() {
-				// 	$firma = get_role('firma');
-				// 	$firma->add_cap('upload_files');
-				// 	$firma->add_cap('unfiltered_upload');
-				// }
 add_action( 'show_user_profile', 'ns_show_extra_profile_fields' );
 add_action( 'edit_user_profile', 'ns_show_extra_profile_fields' );
 function ns_show_extra_profile_fields( $user ) { ?>
@@ -326,9 +297,7 @@ add_action( 'init', function() {
 	
 	<?php
 	}
-	
-	// the ajax function
-	add_action('wp_ajax_data_fetch' , 'data_fetch');
+		add_action('wp_ajax_data_fetch' , 'data_fetch');
 	add_action('wp_ajax_nopriv_data_fetch','data_fetch');
 	function data_fetch(){
 		global $current_user;
@@ -357,18 +326,12 @@ add_action( 'init', function() {
 	add_action( 'pre_get_posts', 'mukto_post_type_include' );
 	
 	add_filter( 'intermediate_image_sizes_advanced', 'prefix_remove_default_images' );
-	// This will remove the default image sizes medium and large. 
+
 	function prefix_remove_default_images( $sizes ) {
 	 unset( $sizes['medium']); // 300px
 	 unset( $sizes['large']); // 1024px
 	 return $sizes;
 	}
-
-	// add_filter('use_block_editor_for_post', '__return_false', 10);
-
-		   /*-----------------------------------------------------------------------------------*/
-		   /* /End
-		   /*-----------------------------------------------------------------------------------*/
 
 function esez_features() {
 	register_nav_menu( 'headerMenuLocation', 'Menu Główne' );
@@ -407,91 +370,3 @@ function call_url_funeralkety_cron() {
 	wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=8&action=trigger');
 	wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=8&action=processing');
 }
-
-
-// if (!wp_next_scheduled('xml_cron'))
-// {
-//     wp_schedule_event(strtotime('01:30:00'), 'cron_xml', 'xml_cron');
-// }
-
-// add_action('xml_cron', 'call_xml_cron');
-
-// function call_xml_cron() {
-// 	$file = '/home/ppu-zielen/ftp/zielen-3/nekrolog/wp-content/uploads/nekrologi/KlepsydraXML.xml';
-// 	$newfile = "/home/ppu-zielen/ftp/zielen-3/nekrolog/wp-content/uploads/nekrologi-backup/KlepsydraXML-".date('m-d-Y-His').".xml";
-
-// 	copy($file, $newfile);
-// 	unlink($file);
-// }
-
-add_action( 'pre_get_posts', 'kvn_rem_pp' );
-function kvn_rem_pp($query){
-        if(current_user_can ('read_private_posts') ){
-                /*restrict to the posts page main query.
-                 *All other views (eg. category archives) unnaffected
-                 *http://codex.wordpress.org/Function_Reference/is_home
-                 *http://codex.wordpress.org/Function_Reference/is_main_query*/
-                if ( $query->is_home() && $query->is_main_query() && $query->is_page() ) {
-                        $query->set( 'post_status', 'publish' );
-                }
-        }
-}
-
-/*
-add authors menu filter to admin post list for custom post type
-*/
-function restrict_manage_authors() {
-    if (isset($_GET['post_type']) && post_type_exists($_GET['post_type']) && in_array(strtolower($_GET['post_type']), array('ewidencjazgonow'))) {
-        wp_dropdown_users(array(
-            'show_option_all'   => 'Wszyscy użytkownicy',
-            'show_option_none'  => false,
-            'name'          => 'author',
-            'selected'      => !empty($_GET['author']) ? $_GET['author'] : 0,
-            'include_selected'  => false
-        ));
-    }
-}
-add_action('restrict_manage_posts', 'restrict_manage_authors');
- 
-function custom_columns_author($columns) {
-    $columns['author'] = 'Author';
-    return $columns;
-}
-add_filter('manage_edit-CUSTOM_POST_TYPE_columns', 'custom_columns_author');
-
-// Step 1. Add the filters surrounding the get_terms (which should be used in your code)
-add_filter( 'terms_clauses', 'rs_replace_inner_with_straight_joins', 20 );
-remove_filter( 'terms_clauses', 'rs_replace_inner_with_straight_joins', 20 );
-
-// Step 2. Add to functions.php or similar:
-function rs_replace_inner_with_straight_joins( $pieces, $taxonomies = null, $args = null ) {
-	global $wpdb;
-	
-	$s = 'INNER JOIN ' . $wpdb->prefix;
-	$r = 'STRAIGHT_JOIN ' . $wpdb->prefix;
-	$pieces['join'] = str_replace( $s, $r, $pieces['join'] );
-	
-	return $pieces;
-}
-
-add_action( 'wp_login_failed', 'my_front_end_login_fail' );  // hook failed login
-
-function my_front_end_login_fail( $username ) {
-   $referrer = $_SERVER['HTTP_REFERER'];  // where did the post submission come from?
-   // if there's a valid referrer, and it's not the default log-in screen
-   if ( !empty($referrer) && !strstr($referrer,'wp-login') && !strstr($referrer,'wp-admin') ) {
-      wp_redirect( $referrer . '?login=failed' );  // let's append some information (login=failed) to the URL for the theme to use
-      exit;
-   }
-}
-
-add_filter( 'coauthors_count_published_post_types', function( $post_types ) {
-	$post_types[] = 'esez_post_type';
-	return $post_types;
- } );
-
-
- add_filter('bulk_actions-edit-ewidencjazgonow', function($bulk_actions) {
-	$bulk_actions['change-to-published'] = __('Change to published', 'txtdomain');
-	return $bulk_actions;
-	});

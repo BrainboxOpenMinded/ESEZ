@@ -280,14 +280,16 @@ a:not([href]):not([class]):hover {
     position: fixed;
     transition: opacity 1s ease;
     z-index: 10;
-    flex-direction: column;
+    flex-direction: row;
     max-width: 100%;
     padding: 1em 1rem;
     opacity: 1;
-    top: 75px;
+    top: 0;
     background-color: #1c1c1cd6;
     color: rgb(255, 255, 255);
     width: 100%;
+    justify-content: flex-start;
+    align-items: center;
   }
 
   .fixed-name-area a {
@@ -517,14 +519,32 @@ div.search_result {
   padding: 0 !important;
 }
 
+.single-esez__gallery {
+  margin-left: 22%;
+  margin-top: 28%;
+}
+
 .single-esez__gallery__title {
   padding: 12px;
   margin-top: 25px;
 }
 
 .single-ewidencjazgonow__gallery__img {
-  padding: 15px;
+  padding: 5px;
   max-width: 100%;
+  width: 120px;
+}
+
+.acf-gallery .acf-gallery-attachment .thumbnail img {
+  width: 120px !important;
+}
+
+.acf-gallery[data-columns="3"] .acf-gallery-attachment {
+  width: 20% !important;
+}
+
+.acf-gallery .acf-gallery-main {
+  height: 240px;
 }
 
 .pagination a {
@@ -543,7 +563,7 @@ div.search_result {
 }
 
 .acf-gallery {
-  height: 300px !important;
+  height: 245px !important;
 }
 
 .acf-gallery-side {
@@ -579,6 +599,10 @@ div.search_result {
   -webkit-user-select: none;
   touch-action: manipulation;
   width: 100%;
+}
+
+.acf-url i {
+  top: 0px !important;
 }
 
 [data-tooltip] {
@@ -776,12 +800,26 @@ div.search_result {
     font-size: 1rem;
   }
 
+  .fixed-top,
+  .sb-nav-fixed #layoutSidenav #layoutSidenav_nav,
+  .sb-nav-fixed .sb-topnav {
+    position: absolute !important;
+  }
+
+  .single-esez__gallery {
+    margin-left: 2%;
+  }
+
   .acf-fields>.acf-field {
     width: 100% !important;
   }
 
   .acf-gallery {
-    height: 280px !important;
+    height: 182px !important;
+  }
+
+  .acf-gallery .acf-gallery-main {
+    height: 180px;
   }
 
   .h1,
@@ -14055,10 +14093,14 @@ fieldset:disabled .btn {
   font-weight: 500 !important;
 }
 
+.hide-label .acf-label {
+  display: none;
+}
+
 .acf-input-prepend,
 .acf-input-append {
-  font-size: 13px !important;
-  line-height: 1.36 !important;
+  font-size: 11px !important;
+  line-height: 1.31 !important;
   padding: 8px 8px !important;
 }
 

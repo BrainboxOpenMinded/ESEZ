@@ -114,60 +114,6 @@ class Ewidencja_Zmarlych_Admin {
     }
 	}
 
-
-
-	public static function firma_post_type() {
-
-		$cap_type 	= 'post';
-		$plural 	= 'Firmy';
-		$single 	= 'Firma';
-		$cpt_name 	= 'Firmy';
-
-
-		$opts['can_export']						  		= TRUE;
-		$opts['capability_type']						= $cap_type;
-		$opts['description']						  	= 'Zbiór profili firm pogrzebowych';
-		$opts['exclude_from_search']					= FALSE;
-		$opts['has_archive']						  	= 'r';
-		$opts['hierarchical']						  	= FALSE;
-		$opts['map_meta_cap']						  	= TRUE;
-		$opts['menu_icon']							  	= 'dashicons-excerpt-view';
-		$opts['public']								    = TRUE;
-		$opts['publicly_querable']						= TRUE;
-		$opts['query_var']								= TRUE;
-		$opts['register_meta_box_cb']					= '';
-		$opts['show_in_admin_bar']						= TRUE;
-		$opts['show_in_menu']						  	= TRUE;
-		$opts['show_in_nav_menu']						= TRUE;
-		$opts['show_ui']							    = TRUE;
-		$opts['supports']								= array( 'title', 'author' );
-
-		$opts['labels']['add_new']						= esc_html__( "Dodaj {$single}", 'ewidencja-zmarlych' );
-		$opts['labels']['add_new_item']					= esc_html__( "Dodaj nowy {$single}", 'ewidencja-zmarlych' );
-		$opts['labels']['all_items']					= esc_html__( "Wszystkie zakłady", 'ewidencja-zmarlych' );
-		$opts['labels']['edit_item']					= esc_html__( "Edytuj {$single}" , 'ewidencja-zmarlych' );
-		$opts['labels']['menu_name']					= esc_html__( "Firmy", 'ewidencja-zmarlych' );
-		$opts['labels']['name']							= esc_html__( "Firma", 'ewidencja-zmarlych' );
-		$opts['labels']['name_admin_bar']				= esc_html__( $single, 'ewidencja-zmarlych' );
-		$opts['labels']['new_item']						= esc_html__( "Nowa {$single}", 'ewidencja-zmarlych' );
-		$opts['labels']['not_found']					= esc_html__( "Nie {$plural} znaleziono", 'ewidencja-zmarlych' );
-		$opts['labels']['not_found_in_trash']			= esc_html__( "Nie {$plural} w koszu", 'ewidencja-zmarlych' );
-		$opts['labels']['parent_item_colon']			= esc_html__( "Rodzic {$plural} :", 'ewidencja-zmarlych' );
-		$opts['labels']['search_items']					= esc_html__( "Szukaj {$plural}", 'ewidencja-zmarlych' );
-		$opts['labels']['singular_name']				= esc_html__( "Firma", 'ewidencja-zmarlych' );
-		$opts['labels']['view_item']					= esc_html__( "Zobacz {$single}", 'ewidencja-zmarlych' ); 
-
-		$opts['rewrite']['ep_mask']						= EP_PERMALINK;
-		$opts['rewrite']['feeds']						= FALSE;
-		$opts['rewrite']['pages']						= TRUE;
-		$opts['rewrite']['slug']						= esc_html__( strtolower( 'r' ), 'r' );
-		$opts['rewrite']['with_front']					= FALSE;
-
-		$opts = apply_filters( 'firma_post_type', $opts );
-
-		register_post_type( strtolower( $cpt_name ), $opts );
-
-	} 
   public static function esez_post_type() {
 
     $cap_type 	= 'post';
@@ -263,7 +209,7 @@ class Ewidencja_Zmarlych_Admin {
 	 'nazwisko_zmarlego' => 'Nazwisko',
      'pesel' => 'PESEL',
      'data_odbioru_ciala' => 'Data odbioru',
-	 'coauthors' => 'Właściciel',
+	 'authors' => 'Authors',
 	 'post_modified' => 'Data modyfikacji',
      'date' => 'Data publikacji'
     );
@@ -294,8 +240,8 @@ class Ewidencja_Zmarlych_Admin {
 			case "data_odbioru_ciala":
 				echo get_field( 'data_odbioru_ciala', $post_id, true);
 				break;
-			case "author":
-					echo get_post_meta( $post_id, 'coauthors', true);
+			case "authors":
+					echo get_post_meta( $post_id, 'authors', true);
 					break;
 			case "post_modified":
 				echo get_the_modified_date();
@@ -311,7 +257,7 @@ class Ewidencja_Zmarlych_Admin {
 		$columns['numer_opaski'] = 'numer_opaski';
 		$columns['data_odbioru_ciala'] = 'data_odbioru_ciala';
 		$columns['post_modified'] = 'post_modified';
-		$columns['coauthors'] = 'coauthors';
+		$columns['authors'] = 'authors';
 		$columns['imie_zmarlego'] = 'imie_zmarlego';
 		$columns['nazwisko_zmarlego'] = 'nazwisko_zmarlego';
 		$columns['pesel'] = 'pesel';
@@ -337,8 +283,8 @@ class Ewidencja_Zmarlych_Admin {
 					$query->set('meta_key','post_modified');
 					$query->set('orderby','meta_value');
 					break;
-				case 'coauthors': 
-					$query->set('meta_key','coauthors');
+				case 'authors': 
+					$query->set('meta_key','authors');
 					$query->set('orderby','meta_value');
 					break;
 				case 'imie_zmarlego': 
