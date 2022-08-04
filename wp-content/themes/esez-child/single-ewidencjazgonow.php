@@ -137,6 +137,7 @@ if (is_user_logged_in() && in_array($current_user->ID, $items) || current_user_c
         #dp1659535698987,
         .acf-date-picker,
         .acf-time-picker,
+        .acf-date-time-picker,
         #acf-field_6137462544bfd,
         #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-6295e8f260432>div.acf-input>div>div.acf-field.acf-field-number.acf-field-6295e90b60435.hide-label.-r0>div.acf-input,
         #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-6295e8f260432>div.acf-input>div>div.acf-field.acf-field-text.acf-field-6295e8f260433.hide-label.-r0>div.acf-input,
