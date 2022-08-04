@@ -33,6 +33,14 @@ if (is_user_logged_in() && in_array($current_user->ID, $items) || current_user_c
         padding: 32px 0;
     }
 
+    @media (max-width: 800px) {
+        .fixed-top,
+        .sb-nav-fixed #layoutSidenav #layoutSidenav_nav,
+        .sb-nav-fixed .sb-topnav {
+            position: absolute !important;
+        }
+    }
+
     .acf-fields {
         border: 1px solid #E1E1E1;
     }
@@ -69,7 +77,8 @@ if (is_user_logged_in() && in_array($current_user->ID, $items) || current_user_c
     #acf-field_601429bd3ccb6-field_601429bd3ccb9,
     #acf-field_601429bd3ccb6-field_601429bd3ccba,
     #acf-field_60140a20aeae8-field_60140d77aeaeb,
-    #acf-field_60140a20aeae8-field_6014134caeaec {
+    #acf-field_60140a20aeae8-field_6014134caeaec,
+    #acf-field_629378ceae433 {
         width: 37.7%;
     }
 
