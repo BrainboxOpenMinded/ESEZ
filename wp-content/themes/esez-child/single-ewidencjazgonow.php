@@ -200,6 +200,7 @@ if (is_user_logged_in() && in_array($current_user->ID, $items) || current_user_c
 			acf_form(array(
                 'label_placement' => 'left',
                 'updated_message' => __("Zaktualizowano dane!", 'acf'),
+                'uploader' => 'basic'
             ));
             if(get_field('uslugi_pogrzebowe')) :
             include('/home/esez/public_html/wp-content/plugins/ewidencja-zmarlych/public/templates/cennik-uslug-pogrzebowych.php');
