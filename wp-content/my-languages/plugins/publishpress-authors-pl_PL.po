@@ -1,0 +1,1189 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PublishPress Authors\n"
+"POT-Creation-Date: 2022-03-22 18:17-0300\n"
+"PO-Revision-Date: 2022-08-04 10:33+0200\n"
+"Language-Team: Anderson Grudtner Martins <anderson@publishpress.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 "
+"|| n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 2.4.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: publishpress-authors.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: \n"
+"Language: pl_PL\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: assets_wp\n"
+"X-Poedit-SearchPathExcluded-1: dist\n"
+"X-Poedit-SearchPathExcluded-2: legacy-tests\n"
+"X-Poedit-SearchPathExcluded-3: tests\n"
+"X-Poedit-SearchPathExcluded-4: vendor\n"
+"X-Poedit-SearchPathExcluded-5: *.min.js\n"
+"X-Poedit-SearchPathExcluded-6: src/assets/lib\n"
+
+#: publishpress-authors.php:113
+#, php-format
+msgid "New comment on your post \"%s\""
+msgstr "Nowy komentarz w Twoim poście \"%s\""
+
+#: publishpress-authors.php:116
+#, php-format
+msgid "Author : %1$s (IP: %2$s , %3$s)"
+msgstr "Firma : %1$s (IP: %2$s , %3$s)"
+
+#: publishpress-authors.php:121
+#, php-format
+msgid "E-mail : %s"
+msgstr "E-mail: %s"
+
+#: publishpress-authors.php:122 publishpress-authors.php:140
+#: publishpress-authors.php:154
+#, php-format
+msgid "URL    : %s"
+msgstr "Adres URL: %s"
+
+#: publishpress-authors.php:124
+#, php-format
+msgid "Whois  : http://whois.arin.net/rest/ip/%s"
+msgstr "Whois: http://whois.arin.net/rest/ip/%s"
+
+#: publishpress-authors.php:127
+msgid "Comment: "
+msgstr "Komentarz: "
+
+#: publishpress-authors.php:128
+msgid "You can see all comments on this post here: "
+msgstr "Wszystkie komentarze tego wpisu tutaj:"
+
+#. translators: 1: blog name, 2: post title
+#: publishpress-authors.php:130
+#, php-format
+msgid "[%1$s] Comment: \"%2$s\""
+msgstr "[%1$s] Komentarz: \"%2$s\""
+
+#: publishpress-authors.php:132
+#, php-format
+msgid "New trackback on your post \"%s\""
+msgstr "Nowy trackback w poście \"%s\""
+
+#: publishpress-authors.php:135 publishpress-authors.php:149
+#, php-format
+msgid "Website: %1$s (IP: %2$s , %3$s)"
+msgstr "Strona internetowa: %1$s (IP: %2$s , %3$s)"
+
+#: publishpress-authors.php:141 publishpress-authors.php:155
+msgid "Excerpt: "
+msgstr "Wyjątek:"
+
+#: publishpress-authors.php:142
+msgid "You can see all trackbacks on this post here: "
+msgstr "Wszystkie trackbacki twojego wpisu tutaj:"
+
+#. translators: 1: blog name, 2: post title
+#: publishpress-authors.php:144
+#, php-format
+msgid "[%1$s] Trackback: \"%2$s\""
+msgstr "[%1$s] Trackback: \"%2$s\""
+
+#: publishpress-authors.php:146
+#, php-format
+msgid "New pingback on your post \"%s\""
+msgstr "Nowy pingback do wpisu \"%s\""
+
+#: publishpress-authors.php:159
+msgid "You can see all pingbacks on this post here: "
+msgstr "Wszystkie pingbacki tego wpisu tutaj:"
+
+#. translators: 1: blog name, 2: post title
+#: publishpress-authors.php:161
+#, php-format
+msgid "[%1$s] Pingback: \"%2$s\""
+msgstr "[%1$s] Pingback: \"%2$s\""
+
+#: publishpress-authors.php:165
+#, php-format
+msgid "Permalink: %s"
+msgstr "Permalink: %s"
+
+#: publishpress-authors.php:170
+#, php-format
+msgid "Trash it: %s"
+msgstr "Do kosza: %s"
+
+#: publishpress-authors.php:175
+#, php-format
+msgid "Delete it: %s"
+msgstr "Usuń: %s"
+
+#: publishpress-authors.php:180
+#, php-format
+msgid "Spam it: %s"
+msgstr "Spam: %s"
+
+#: src/core/Authors_Widget.php:22
+msgid "Authors List"
+msgstr "Lista firm"
+
+#: src/core/Authors_Widget.php:29
+msgid "Display authors list."
+msgstr "Wyświetl listę firm."
+
+#: src/core/Authors_Widget.php:107
+msgid "Title"
+msgstr "Tytuł"
+
+#: src/core/Authors_Widget.php:108 src/core/Widget.php:123
+msgid "Layout"
+msgstr "Układ"
+
+#: src/core/Authors_Widget.php:110
+msgid "Display All Authors (including those who have not written any posts)"
+msgstr ""
+"Wyświetl wszystkich firm (w tym tych, którzy nie napisali żadnych postów)"
+
+#: src/core/Classes/Admin_Ajax.php:236
+msgid "Request status."
+msgstr "Status żądania."
+
+#: src/core/Classes/Admin_Ajax.php:244
+msgid "Security error. Kindly reload this page and try again"
+msgstr ""
+"Błąd zabezpieczeń. Prosimy o ponowne załadowanie tej strony i ponowną próbę"
+
+#: src/core/Classes/Admin_Ajax.php:258 src/core/Classes/Author_Editor.php:807
+msgid "This user is already mapped to another author."
+msgstr "Ten użytkownik jest już zmapowany na innego firmy."
+
+#: src/core/Classes/Admin_Ajax.php:267
+msgid "Author URL cannot be empty."
+msgstr "Adres URL firmy nie może być pusty."
+
+#: src/core/Classes/Admin_Ajax.php:281
+msgid "Another user with Author URL already exists."
+msgstr "Inny użytkownik z adresem URL firmy już istnieje."
+
+#: src/core/Classes/Author_Editor.php:47
+msgid "Name"
+msgstr "Nazwa"
+
+#: src/core/Classes/Author_Editor.php:48 src/core/Classes/Author_Editor.php:352
+msgid "Email"
+msgstr "E-mail"
+
+#: src/core/Classes/Author_Editor.php:57 src/core/Plugin.php:720
+#: src/modules/multiple-authors/multiple-authors.php:122
+#: src/modules/multiple-authors/multiple-authors.php:665
+#: src/modules/settings/settings.php:248
+msgid "Posts"
+msgstr "Wpisy"
+
+#: src/core/Classes/Author_Editor.php:59 src/core/Plugin.php:722
+#, php-format
+msgid "Published posts of the following post types: %s"
+msgstr "Opublikowane wpisy następujących typów postów: %s"
+
+#: src/core/Classes/Author_Editor.php:97
+msgid "User"
+msgstr "Firma"
+
+#: src/core/Classes/Author_Editor.php:100
+msgid "Guest Author"
+msgstr "Firma gościnny"
+
+#: src/core/Classes/Author_Editor.php:143
+#: src/core/Classes/Author_Editor.php:221
+msgid "Edit User"
+msgstr "Edytuj firma"
+
+#: src/core/Classes/Author_Editor.php:158
+#: src/core/Classes/Author_Editor.php:205
+msgid "Edit Author Profile"
+msgstr "Edytuj profil firmy"
+
+#: src/core/Classes/Author_Editor.php:172
+msgid "Create Author Profile"
+msgstr "Utwórz profil firmy"
+
+#: src/core/Classes/Author_Editor.php:258
+msgid "tab-link nav-tab"
+msgstr "tabulator-link nav-tab"
+
+#: src/core/Classes/Author_Editor.php:307
+#: src/modules/multiple-authors/multiple-authors.php:1115
+msgid "General"
+msgstr "Ustawienia główne"
+
+#: src/core/Classes/Author_Editor.php:310
+msgid "Image"
+msgstr "Obrazek"
+
+#: src/core/Classes/Author_Editor.php:336
+msgid "Mapped User"
+msgstr "Zmapowany użytkownik"
+
+#: src/core/Classes/Author_Editor.php:342
+msgid "First Name"
+msgstr "Imię"
+
+#: src/core/Classes/Author_Editor.php:347
+msgid "Last Name"
+msgstr "Nazwisko"
+
+#: src/core/Classes/Author_Editor.php:357
+msgid "Avatar Source"
+msgstr "Źródło awatara"
+
+#: src/core/Classes/Author_Editor.php:363
+msgid "Gravatar"
+msgstr "Gravatar •"
+
+#: src/core/Classes/Author_Editor.php:366
+#, php-format
+msgid "(Uses the %sauthor e-mail%s as Gravatar account)"
+msgstr "(Używa %se-mail autora%s jako konta Gravatar)"
+
+#: src/core/Classes/Author_Editor.php:373
+msgid "Custom image"
+msgstr "Niestandardowy obraz"
+
+#: src/core/Classes/Author_Editor.php:378
+msgid "Website"
+msgstr "Witryna internetowa"
+
+#: src/core/Classes/Author_Editor.php:384
+msgid "Biographical Info"
+msgstr "Bio"
+
+#: src/core/Classes/Author_Editor.php:446
+#: src/core/Classes/Author_Editor.php:495
+msgid "Select image"
+msgstr "Wybierz obraz"
+
+#: src/core/Classes/Author_Editor.php:450
+#: src/core/Classes/Author_Editor.php:499
+msgid "Remove this image"
+msgstr "Usuń obrazek"
+
+#: src/core/Classes/Author_Editor.php:513
+msgid "Select a user"
+msgstr "Wybierz firma"
+
+#: src/core/Classes/Author_Editor.php:627
+msgid "Mapped User (optional)"
+msgstr "Zmapowany użytkownik (opcjonalnie)"
+
+#: src/core/Classes/Author_Editor.php:635
+msgid ""
+"You don’t have to choose a Mapped User. Leave this choice blank and you can "
+"create a Guest Author with no WordPress account."
+msgstr ""
+"Nie musisz wybierać firma mapowanego. Pozostaw ten wybór pusty i możesz "
+"utworzyć firmy gościnnego bez konta WordPress."
+
+#: src/core/Classes/Author_Editor.php:694
+msgid "Update data from mapped user"
+msgstr "Aktualizowanie danych od zamapowanego firma"
+
+#: src/core/Classes/Author_Editor.php:698
+msgid "Convert into guest author"
+msgstr "Konwertuj na firmy gościnnego"
+
+#: src/core/Classes/Author_Editor.php:702
+msgid "Update post count"
+msgstr "Aktualizowanie liczby postów"
+
+#: src/core/Classes/Author_Editor.php:766
+msgid "No authors were updated"
+msgstr "Żaden firma nie został zaktualizowany"
+
+#: src/core/Classes/Author_Editor.php:769
+#, php-format
+msgid "Updated %d authors"
+msgstr "Zaktualizowani %d firmy"
+
+#: src/core/Classes/Author_Editor.php:836
+msgid "An author with the name provided already exists."
+msgstr "Firma o podanym nazwisku już istnieje."
+
+#: src/core/Classes/Authors_Iterator.php:56
+msgid ""
+"No post ID provided for Authors_Iterator constructor. Are you not in a loop "
+"or is $post not set?"
+msgstr ""
+"Nie podano identyfikatora postu dla konstruktora Authors_Iterator. Czy nie "
+"jesteś w pętli, czy $post nie jest ustawiona?"
+
+#: src/core/Classes/Installer.php:154
+#, php-format
+msgid "Now inspecting or updating %d total authors"
+msgstr "Teraz sprawdzanie lub aktualizowanie %d wszystkich firm"
+
+#: src/core/Classes/Installer.php:168
+#, php-format
+msgid "%d/%d: Inspecting the user %d"
+msgstr "%d/%d: Sprawdzanie %d firma"
+
+#: src/core/Classes/Installer.php:180
+msgid "All is set. No author need to be updated"
+msgstr "Wszystko jest ustawione. Nie trzeba aktualizować firmy"
+
+#: src/core/Classes/Installer.php:261
+#, php-format
+msgid "Now inspecting or updating %d total posts"
+msgstr "Teraz sprawdzanie lub aktualizowanie %d wszystkich postów"
+
+#: src/core/Classes/Installer.php:273
+#, php-format
+msgid "%d/%d: Inspecting the post %d"
+msgstr "%d/%d: Kontrola %d pocztowych"
+
+#: src/core/Classes/Installer.php:287
+#, php-format
+msgid "Creating author term for the user %d"
+msgstr "Tworzenie terminu firmy dla %d firma"
+
+#: src/core/Classes/Installer.php:300
+#, php-format
+msgid "Adding the author term %d to the post %d"
+msgstr "Dodawanie terminu firmy %d do %d postu"
+
+#: src/core/Classes/Installer.php:319
+msgid "All is set. No posts need to be updated"
+msgstr "Wszystko jest ustawione. Nie trzeba aktualizować postów"
+
+#: src/core/Classes/Integrations/Theme.php:40
+#, php-format
+msgid "Author: %s"
+msgstr "Firma: %s"
+
+#: src/core/Classes/Legacy/LegacyPlugin.php:260
+msgid "Configure"
+msgstr "Konfiguracja"
+
+#: src/core/Classes/Legacy/LegacyPlugin.php:264
+msgid "Please correct your form errors below and try again."
+msgstr "Popraw poniższe błędy w formularzu i spróbuj ponownie."
+
+#: src/core/Classes/Legacy/LegacyPlugin.php:267
+#: src/modules/settings/settings.php:296
+msgid "Cheatin&#8217; uh?"
+msgstr "Oszukujemy&#8217; co?"
+
+#: src/core/Classes/Legacy/LegacyPlugin.php:269
+msgid "You do not have necessary permissions to complete this action."
+msgstr "Nie masz uprawnień niezbędnych do wykonania tej akcji."
+
+#: src/core/Classes/Legacy/LegacyPlugin.php:272
+msgid "Post does not exist"
+msgstr "Post nie istnieje"
+
+#: src/core/Classes/Legacy/Module.php:102
+msgid "Post"
+msgstr "Wpis"
+
+#: src/core/Classes/Legacy/Module.php:103
+msgid "Page"
+msgstr "Strona"
+
+#: src/core/Classes/Post_Editor.php:89 src/core/Classes/Post_Editor.php:192
+#: src/core/Plugin.php:800 src/core/Traits/Author_box.php:154
+#: src/modules/editflow-integration/editflow-integration.php:113
+#: src/modules/multiple-authors/multiple-authors.php:269
+#: src/modules/multiple-authors/multiple-authors.php:270
+#: src/modules/multiple-authors/multiple-authors.php:320
+#: src/modules/multiple-authors/multiple-authors.php:321
+#: src/modules/multiple-authors/multiple-authors.php:746
+msgid "Authors"
+msgstr "Firmy"
+
+#: src/core/Classes/Post_Editor.php:156
+msgid "No author term"
+msgstr "Brak terminu firmy"
+
+#: src/core/Classes/Post_Editor.php:164
+msgid "\"post_author\" is empty"
+msgstr "\"post_author\" jest pusty"
+
+#: src/core/Classes/Post_Editor.php:268 src/core/Plugin.php:1395
+#: src/modules/multiple-authors/multiple-authors.php:873
+msgid "Search for an author"
+msgstr "Wyszukiwanie firmy"
+
+#: src/core/Classes/Post_Editor.php:290
+msgid ""
+"This option is showing because you do not have a WordPress user selected as "
+"an author. For some tasks, it can be helpful to have a user selected here. "
+"This user will not be visible on the front of your site."
+msgstr ""
+"Ta opcja jest wyświetlana, ponieważ nie masz wybranego firma WordPress jako "
+"firmy. W przypadku niektórych zadań pomocne może być wybranie tutaj firma. "
+"Ten użytkownik nie będzie widoczny z przodu Twojej witryny."
+
+#: src/core/Classes/Post_Editor.php:297
+msgid "Search for an user"
+msgstr "Wyszukiwanie firma"
+
+#: src/core/Classes/Term_Editor.php:56
+#: src/modules/multiple-authors/multiple-authors.php:1205
+msgid "Author URL"
+msgstr "URL firmy"
+
+#: src/core/Classes/Utils.php:73
+msgid "Co-Authors Plus must be installed and active."
+msgstr "Co-Authors Plus musi być zainstalowany i aktywny."
+
+#: src/core/Plugin.php:481
+msgid "Edit My Author Profile"
+msgstr "Edytuj mój profil firmy"
+
+#: src/core/Plugin.php:486
+msgid "This is the name that will show on the site."
+msgstr "Jest to nazwa, która będzie wyświetlana na stronie."
+
+#: src/core/Plugin.php:491
+msgid ""
+"This forms part of the URL for the author’s profile page. If you choose a "
+"Mapped User, this URL is taken from the user’s account and can not be "
+"changed."
+msgstr ""
+"Stanowi to część adresu URL strony profilu firmy. Jeśli wybierzesz "
+"zamapowanego firma, ten adres URL zostanie pobrany z konta firma i nie można "
+"go zmienić."
+
+#: src/core/Plugin.php:507
+msgctxt "taxonomy general name"
+msgid "Authors"
+msgstr "Firmy"
+
+#: src/core/Plugin.php:512
+msgctxt "taxonomy singular name"
+msgid "Author"
+msgstr "Firma"
+
+#: src/core/Plugin.php:516
+msgid "Search Authors"
+msgstr "Szukaj zarejestrowanych"
+
+#: src/core/Plugin.php:517
+msgid "Popular Authors"
+msgstr "Popularni firmy"
+
+#: src/core/Plugin.php:518
+msgid "All Authors"
+msgstr "Wszyscy firmy"
+
+#: src/core/Plugin.php:519
+msgid "Parent Author"
+msgstr "URL firmy nadrzędnego motywu"
+
+#: src/core/Plugin.php:520
+msgid "Parent Author:"
+msgstr "URL firmy nadrzędnego motywu"
+
+#: src/core/Plugin.php:521
+msgid "Edit Author"
+msgstr "Edytuj firmy"
+
+#: src/core/Plugin.php:522
+msgid "View Author"
+msgstr "Zobacz firmy"
+
+#: src/core/Plugin.php:523
+msgid "Update Author"
+msgstr "Firma aktualizacji"
+
+#: src/core/Plugin.php:524 src/core/Plugin.php:525
+msgid "New Author"
+msgstr "Nowa firma"
+
+#: src/core/Plugin.php:527
+msgid "Separate authors with commas"
+msgstr "Oddziel firm przecinkami"
+
+#: src/core/Plugin.php:530
+msgid "Add or remove authors"
+msgstr "Dodawanie lub usuwanie firm"
+
+#: src/core/Plugin.php:532
+msgid "Choose from the most used Authors"
+msgstr "Wybierz spośród najczęściej używanych Firm"
+
+#: src/core/Plugin.php:535
+msgid "No authors found."
+msgstr "Nie znaleziono firm."
+
+#: src/core/Plugin.php:536 src/core/Traits/Author_box.php:148
+#: src/modules/multiple-authors/multiple-authors.php:740
+msgid "Author"
+msgstr "Firma"
+
+#: src/core/Plugin.php:537
+msgid "Back to Authors"
+msgstr "Powrót do firm"
+
+#. Plugin Name of the plugin/theme
+#: src/core/Plugin.php:655 src/modules/settings/settings.php:61
+msgid "PublishPress Authors"
+msgstr "Firmy PublishPress"
+
+#: src/core/Plugin.php:659
+#, php-format
+msgid "If you like %s please leave us a %s rating. Thank you!"
+msgstr "Jeśli podoba Ci się %s zostaw nam ocenę %s. Dziękuję!"
+
+#. translators: %s: Number of posts.
+#: src/core/Plugin.php:750
+#, php-format
+msgid "%s post by this author"
+msgid_plural "%s posts by this author"
+msgstr[0] "%s opaska firmy"
+msgstr[1] "%s  opaski firmy"
+msgstr[2] "%s opasek firmy"
+
+#: src/core/Plugin.php:804
+msgid "Click on an author to change them. Drag to change their order."
+msgstr "Kliknij firmy, aby je zmienić. Przeciągnij, aby zmienić ich kolejność."
+
+#: src/core/Plugin.php:842
+msgid "No co-author exists for that term"
+msgstr "Nie istnieje współautor tego terminu"
+
+#: src/core/Plugin.php:1386
+msgid "Edit"
+msgstr "Edytuj"
+
+#: src/core/Plugin.php:1388
+msgid "Are you sure you want to remove this author?"
+msgstr "Czy na pewno usunąć tego firmy?"
+
+#: src/core/Plugin.php:1392
+msgid "Click to change this author, or drag to change their position"
+msgstr ""
+"Kliknij, aby zmienić tego firmy, lub przeciągnij, aby zmienić jego położenie"
+
+#: src/core/Plugin.php:1397
+msgid ""
+"Click on an author to change them. Drag to change their order. Click on "
+"<strong>Remove</strong> to remove them."
+msgstr ""
+"Kliknij firmy, aby je zmienić. Przeciągnij, aby zmienić ich kolejność. "
+"Kliknij <strong>Usuń</strong> , aby je usunąć."
+
+#: src/core/Plugin.php:1401
+msgid ""
+"Are you sure you want to delete the authors profiles mapped to users? This "
+"action can't be undone."
+msgstr ""
+"Czy na pewno chcesz usunąć profile firm zmapowane na firm? Tej akcji nie "
+"można cofnąć."
+
+#: src/core/Plugin.php:1405
+msgid ""
+"Are you sure you want to delete the guest authors profiles? This action "
+"can't be undone."
+msgstr ""
+"Czy na pewno chcesz usunąć profile firm-gości? Tej akcji nie można cofnąć."
+
+#: src/core/Plugin.php:1409
+msgid ""
+"Are you sure you want to create author profiles for the missed post authors?"
+msgstr "Czy na pewno chcesz utworzyć profile firm dla pominiętych firm postów?"
+
+#: src/core/Plugin.php:1413
+msgid "Are you sure you want to update the author column for all the posts?"
+msgstr "Czy na pewno chcesz zaktualizować kolumnę firmy dla wszystkich postów?"
+
+#: src/core/Plugin.php:1417
+msgid "Are you sure you want to update the author slug for all the users?"
+msgstr "Czy na pewno chcesz zaktualizować ślimak firmy dla wszystkich firm?"
+
+#: src/core/Plugin.php:1421
+msgid "Are you sure you want to create authors for the selected roles?"
+msgstr "Czy na pewno chcesz utworzyć firm dla wybranych ról?"
+
+#: src/core/Plugin.php:1426
+msgid "Please, wait..."
+msgstr "Proszę czekać..."
+
+#: src/core/Plugin.php:1428
+msgid "Sorry, the request returned an error."
+msgstr "Przepraszamy, żądanie zwróciło błąd."
+
+#: src/core/Plugin.php:1498
+msgid "Mine"
+msgstr "Mój"
+
+#: src/core/WP_Cli.php:56
+msgid "No posts without author terms were found"
+msgstr "Nie znaleziono postów bez warunków firmy"
+
+#: src/core/WP_Cli.php:71
+#, php-format
+msgid "%d posts were found without author terms"
+msgstr "%d posty zostały znalezione bez warunków firmy"
+
+#: src/core/Widget.php:42
+msgid "Post Author"
+msgstr "Firma wpisu"
+
+#: src/core/Widget.php:49
+msgid "Display a list of authors for the current post."
+msgstr "Wyświetl listę firm bieżącego wpisu."
+
+#: src/core/Widget.php:121
+msgid "Single Title"
+msgstr "Pojedynczy tytuł"
+
+#: src/core/Widget.php:122
+msgid "Plural Title"
+msgstr "Tytuł w liczbie mnogej"
+
+#: src/functions/template-tags.php:320 src/functions/template-tags.php:940
+msgid " and "
+msgstr " i "
+
+#: src/functions/template-tags.php:470
+#: src/modules/multiple-authors/multiple-authors.php:1135
+#, php-format
+msgid "Posts by %s"
+msgstr "Posts by %s"
+
+#: src/functions/template-tags.php:654 src/functions/template-tags.php:910
+#, php-format
+msgid "Visit %s&#8217;s website"
+msgstr "Odwiedź stronę %s"
+
+#: src/functions/template-tags.php:855
+#, php-format
+msgid "Posts by %1$s"
+msgstr "Posty, których %1$s"
+
+#: src/functions/template-tags.php:941
+msgid ", and "
+msgstr ", i "
+
+#: src/modules/byline-migration/byline-migration.php:72
+msgid "Migrate Byline Data"
+msgstr "Migracja danych byline"
+
+#: src/modules/byline-migration/byline-migration.php:73
+#: src/modules/byline-migration/byline-migration.php:74
+msgid "Add migration option for Byline"
+msgstr "Dodaj opcję migracji dla Byline"
+
+#: src/modules/byline-migration/byline-migration.php:158
+msgid "Copy Byline Data"
+msgstr "Kopiowanie danych Byline"
+
+#: src/modules/bylines-migration/bylines-migration.php:75
+msgid "Migrate Bylines Data"
+msgstr "Migracja danych Bylines"
+
+#: src/modules/bylines-migration/bylines-migration.php:76
+#: src/modules/bylines-migration/bylines-migration.php:77
+msgid "Add migration option for Bylines"
+msgstr "Dodaj opcję migracji dla Bylines"
+
+#: src/modules/bylines-migration/bylines-migration.php:160
+msgid "Copy Bylines Data"
+msgstr "Kopiuj dane Bylines"
+
+#: src/modules/debug/debug.php:53
+msgid "Debug"
+msgstr "Debug"
+
+#: src/modules/debug/debug.php:54
+msgid "Add debug information for the plugin"
+msgstr "Dodaj informacje o debugowaniu dla wtyczki"
+
+#: src/modules/debug/debug.php:97
+msgid "Authors Debug"
+msgstr "Debugowanie firm"
+
+#: src/modules/default-layouts/default-layouts.php:54
+msgid "Default Layouts"
+msgstr "Układy domyślne"
+
+#: src/modules/default-layouts/default-layouts.php:133
+msgid "View all posts"
+msgstr "Zobacz wszystkie posty"
+
+#: src/modules/default-layouts/default-layouts.php:153
+msgid "Boxed"
+msgstr "Pudełkowy"
+
+#: src/modules/default-layouts/default-layouts.php:154
+msgid "Centered"
+msgstr "Wyśrodkowane"
+
+#: src/modules/default-layouts/default-layouts.php:155
+msgid "Inline"
+msgstr "Wstawka"
+
+#: src/modules/default-layouts/default-layouts.php:156
+msgid "Inline with avatar"
+msgstr "W linii z awatarem"
+
+#: src/modules/default-layouts/default-layouts.php:157
+msgid "Simple list"
+msgstr "Prosta lista"
+
+#: src/modules/divi-integration/divi-integration.php:52
+msgid "Divi Integration"
+msgstr "Integracja Divi"
+
+#: src/modules/divi-integration/divi-integration.php:53
+msgid "Add compatibility with the Divi Theme Builder"
+msgstr "Dodaj zgodność z Divi Theme Builder"
+
+#: src/modules/editflow-integration/editflow-integration.php:51
+msgid "Edit Flow Integration"
+msgstr "Edytuj integrację Flow"
+
+#: src/modules/editflow-integration/editflow-integration.php:53
+msgid "Add compatibility with the Edit Flow plugin"
+msgstr "Dodaj zgodność z wtyczką Edit Flow"
+
+#: src/modules/elementor-integration/Modules/Posts/Skins/PostsSkinCards.php:40
+msgid "Cards - PublishPress Authors"
+msgstr "Karty - PublishPress Firmy"
+
+#: src/modules/elementor-integration/Modules/Posts/Skins/PostsSkinClassic.php:38
+msgid "Classic - PublishPress Authors"
+msgstr "Classic - Firmy PublishPress"
+
+#: src/modules/elementor-integration/Modules/Posts/Skins/PostsSkinFullContent.php:36
+msgid "Full Content - PublishPress Authors"
+msgstr "Pełna treść - Firmy PublishPress"
+
+#: src/modules/elementor-integration/elementor-integration.php:57
+msgid "Elementor Integration"
+msgstr "Integracja Elementora"
+
+#: src/modules/elementor-integration/elementor-integration.php:59
+msgid "Add compatibility with the Elementor and Elementor Pro page builder"
+msgstr "Dodaj zgodność z kreatorem stron Elementor i Elementor Pro"
+
+#: src/modules/genesis-integration/genesis-integration.php:52
+msgid "Genesis Integration"
+msgstr "Integracja Genesis"
+
+#: src/modules/genesis-integration/genesis-integration.php:53
+msgid "Add compatibility with the Genesis framework"
+msgstr "Dodaj zgodność z frameworkiem Genesis"
+
+#: src/modules/modules-settings/modules-settings.php:54
+msgid "Authors Settings"
+msgstr "Ustawienia firm"
+
+#: src/modules/modules-settings/modules-settings.php:231
+msgid "Features"
+msgstr "Funkcje"
+
+#: src/modules/modules-settings/modules-settings.php:233
+msgid "Feel free to select only the features you need."
+msgstr "Możesz wybrać tylko te funkcje, których potrzebujesz."
+
+#: src/modules/modules-settings/modules-settings.php:241
+msgid "Enabled features"
+msgstr "Włączone funkcje"
+
+#: src/modules/modules-settings/modules-settings.php:282
+msgid "Recommendations for you"
+msgstr "Rekomendacje dla Ciebie"
+
+#: src/modules/modules-settings/modules-settings.php:283
+msgid "Showcase your Authors with PublishPress Blocks"
+msgstr "Zaprezentuj swoich firm za pomocą bloków PublishPress"
+
+#: src/modules/modules-settings/modules-settings.php:285
+msgid ""
+"PublishPress Blocks is a free plugin with full support for PublishPress "
+"Authors."
+msgstr ""
+"PublishPress Blocks to darmowa wtyczka z pełnym wsparciem dla firm "
+"PublishPress."
+
+#: src/modules/modules-settings/modules-settings.php:286
+msgid "Install this plugin to showcase content by your Authors."
+msgstr "Zainstaluj tę wtyczkę, aby zaprezentować treści swoich Firm."
+
+#: src/modules/modules-settings/modules-settings.php:287
+msgid ""
+"Use the Content Display block to show your posts in many beautiful layouts."
+msgstr ""
+"Użyj bloku Wyświetlanie treści, aby wyświetlać swoje posty w wielu pięknych "
+"układach."
+
+#: src/modules/modules-settings/modules-settings.php:288
+msgid ""
+"PublishPress Blocks has over 20 extra Gutenberg blocks including accordions, "
+"galleries, tables, and more."
+msgstr ""
+"PublishPress Blocks ma ponad 20 dodatkowych bloków Gutenberga, w tym "
+"akordeony, galerie, stoły i inne."
+
+#: src/modules/modules-settings/modules-settings.php:291
+msgid "Click here to install PublishPress Blocks"
+msgstr "Kliknij tutaj, aby zainstalować Bloki PublishPress"
+
+#: src/modules/multiple-authors/multiple-authors.php:73
+msgid "Multiple Authors"
+msgstr "Wielu firm"
+
+#. Description of the plugin/theme
+#: src/modules/multiple-authors/multiple-authors.php:75
+#: src/modules/multiple-authors/multiple-authors.php:79
+msgid ""
+"PublishPress Authors allows you to add multiple authors and guest authors to "
+"WordPress posts"
+msgstr ""
+"PublishPress Firmy pozwala dodawać wielu firm i firm gościnnych do postów "
+"WordPress"
+
+#: src/modules/multiple-authors/multiple-authors.php:123
+#: src/modules/multiple-authors/multiple-authors.php:666
+#: src/modules/settings/settings.php:249
+msgid "Pages"
+msgstr "Strony"
+
+#: src/modules/multiple-authors/multiple-authors.php:286
+#: src/modules/multiple-authors/multiple-authors.php:287
+msgid "Author Profile"
+msgstr "Profil firmy"
+
+#: src/modules/multiple-authors/multiple-authors.php:506
+msgid "Add to these post types:"
+msgstr "Dodaj do tych typów postów:"
+
+#: src/modules/multiple-authors/multiple-authors.php:514
+msgid "Post types to display on the author's profile page:"
+msgstr "Typy postów do wyświetlenia na stronie profilu firmy:"
+
+#: src/modules/multiple-authors/multiple-authors.php:523
+msgid "Automatically create author profiles:"
+msgstr "Automatycznie twórz profile firm:"
+
+#: src/modules/multiple-authors/multiple-authors.php:534
+msgid "Show username in the search field:"
+msgstr "Pokaż nazwę firma w polu wyszukiwania:"
+
+#: src/modules/multiple-authors/multiple-authors.php:545
+msgid "Default author for new posts:"
+msgstr "Domyślny firma nowych postów:"
+
+#: src/modules/multiple-authors/multiple-authors.php:568
+msgid "Show below the content:"
+msgstr "Pokaż pod treścią:"
+
+#: src/modules/multiple-authors/multiple-authors.php:576
+msgid "Title for the author box:"
+msgstr "Tytuł pola firmy:"
+
+#: src/modules/multiple-authors/multiple-authors.php:584
+msgid "Layout:"
+msgstr "Układ:"
+
+#: src/modules/multiple-authors/multiple-authors.php:592
+msgid "Color scheme:"
+msgstr "Schemat kolorów:"
+
+#: src/modules/multiple-authors/multiple-authors.php:601
+msgid "Show email link:"
+msgstr "Pokaż link e-mail:"
+
+#: src/modules/multiple-authors/multiple-authors.php:609
+msgid "Show site link:"
+msgstr "Pokaż link do witryny:"
+
+#: src/modules/multiple-authors/multiple-authors.php:703
+#: src/modules/settings/settings.php:271
+#, php-format
+msgid ""
+"Disabled because add_post_type_support('%1$s', '%2$s') is included in a "
+"loaded file."
+msgstr ""
+"Wyłączone, ponieważ add_post_type_support('%1$s', '%2$s') jest zawarte w "
+"załadowanym pliku."
+
+#: src/modules/multiple-authors/multiple-authors.php:724
+msgid "This will display the authors box at the end of the content."
+msgstr "Spowoduje to wyświetlenie pola firm na końcu zawartości."
+
+#: src/modules/multiple-authors/multiple-authors.php:751
+msgid "Single"
+msgstr "Pojedynczy"
+
+#: src/modules/multiple-authors/multiple-authors.php:758
+msgid "Plural"
+msgstr "Liczba mnoga"
+
+#: src/modules/multiple-authors/multiple-authors.php:828
+msgid ""
+"Author profiles can be mapped to WordPress user accounts. This option allows "
+"you to automatically create author profiles when users are created in these "
+"roles. You can also do this for existing users by clicking the \"Create "
+"missed authors from role\" button in the Maintenance tab."
+msgstr ""
+"Profile firm można mapować na konta firm WordPress. Ta opcja umożliwia "
+"automatyczne tworzenie profili firm podczas tworzenia firm w tych rolach. "
+"Możesz to również zrobić dla istniejących firm, klikając przycisk \"Utwórz "
+"pominiętych firm z roli\" na karcie Konserwacja."
+
+#: src/modules/multiple-authors/multiple-authors.php:849
+msgid ""
+"If the Author is mapped to a WordPress user, this will display the authors' "
+"\"Display name\" and their \"Username\". The default is to show only the "
+"\"Display name\". Showing the \"Username\" is useful if you have several "
+"authors with similar names."
+msgstr ""
+"Jeśli Firma zostanie zmapowany na firma WordPress, wyświetli to \"Nazwę "
+"wyświetlaną\" firm i ich \"Nazwę firma\". Domyślnie wyświetlana jest tylko "
+"\"Nazwa wyświetlana\". Wyświetlanie \"Nazwy firma\" jest przydatne, jeśli "
+"masz kilku firm o podobnych nazwiskach."
+
+#: src/modules/multiple-authors/multiple-authors.php:886
+msgid "This setting may be disabled for users who can not edit others posts."
+msgstr ""
+"To ustawienie może być wyłączone dla firm, którzy nie mogą edytować postów "
+"innych osób."
+
+#: src/modules/multiple-authors/multiple-authors.php:908
+msgid "This will display the authors email in the author box."
+msgstr "Spowoduje to wyświetlenie wiadomości e-mail firm w polu firmy."
+
+#: src/modules/multiple-authors/multiple-authors.php:928
+msgid "This will display the authors site in the author box."
+msgstr "Spowoduje to wyświetlenie witryny firm w polu firmy."
+
+#: src/modules/multiple-authors/multiple-authors.php:946
+#: src/modules/multiple-authors/multiple-authors.php:948
+msgid "Create missed post authors"
+msgstr "Tworzenie pominiętych firm postów"
+
+#: src/modules/multiple-authors/multiple-authors.php:952
+#: src/modules/multiple-authors/multiple-authors.php:954
+msgid "Create missed authors from role"
+msgstr "Tworzenie pominiętych firm z roli"
+
+#: src/modules/multiple-authors/multiple-authors.php:958
+msgid "Update author field on posts"
+msgstr "Aktualizowanie pola firmy w postach"
+
+#: src/modules/multiple-authors/multiple-authors.php:965
+msgid "Synchronize Author slugs to User logins"
+msgstr "Synchronizowanie ślimaków firmy z loginami firm"
+
+#: src/modules/multiple-authors/multiple-authors.php:979
+msgid "Copy Co-Authors Plus Data"
+msgstr "Kopiuj współautorów plus dane"
+
+#: src/modules/multiple-authors/multiple-authors.php:987
+msgid "Delete Mapped Authors"
+msgstr "Usuwanie zmapowanych firm"
+
+#: src/modules/multiple-authors/multiple-authors.php:989
+msgid "Delete all authors mapped to users"
+msgstr "Usuwanie wszystkich firm mapowanych na firm"
+
+#: src/modules/multiple-authors/multiple-authors.php:994
+msgid "Delete Guest Authors"
+msgstr "Usuwanie firm-gości"
+
+#: src/modules/multiple-authors/multiple-authors.php:996
+msgid "Delete all guest authors"
+msgstr "Usuwanie wszystkich firm-gości"
+
+#: src/modules/multiple-authors/multiple-authors.php:1003
+msgid ""
+"Please be careful clicking these buttons. Before clicking, we recommend "
+"taking a site backup in case anything goes wrong."
+msgstr ""
+"Zachowaj ostrożność, klikając te przyciski. Przed kliknięciem zalecamy "
+"wykonanie kopii zapasowej witryny na wypadek, gdyby coś poszło nie tak."
+
+#: src/modules/multiple-authors/multiple-authors.php:1116
+msgid "Display"
+msgstr "Wyświetl"
+
+#: src/modules/multiple-authors/multiple-authors.php:1117
+msgid "Maintenance"
+msgstr "Konserwacja"
+
+#: src/modules/multiple-authors/multiple-authors.php:1702
+msgid "Invalid nonce"
+msgstr "Nieprawidłowa wartość nonce"
+
+#: src/modules/multiple-authors/multiple-authors.php:1706
+msgid "Access denied"
+msgstr "Brak dostępu"
+
+#: src/modules/multiple-authors/multiple-authors.php:1872
+msgid "Error. Author terms could not be reseted."
+msgstr "Błąd. Nie można zresetować terminów firmy."
+
+#: src/modules/multiple-authors/multiple-authors.php:1882
+msgid "Maintenance completed successfully."
+msgstr "Konserwacja zakończyła się pomyślnie."
+
+#: src/modules/multiple-authors/multiple-authors.php:2541
+msgid "It looks like you have Co-Authors Plus installed."
+msgstr "Wygląda na to, że masz zainstalowaną aplikację Co-Authors Plus."
+
+#: src/modules/multiple-authors/multiple-authors.php:2543
+msgid "Please click here and read this guide!"
+msgstr "Kliknij tutaj i przeczytaj ten przewodnik!"
+
+#: src/modules/multiple-authors/multiple-authors.php:2548
+#: src/modules/multiple-authors/multiple-authors.php:2622
+msgid "Dismiss"
+msgstr "Zamknij"
+
+#: src/modules/multiple-authors/multiple-authors.php:2614
+msgid ""
+"PublishPress Authors needs a database update for Permissions integration."
+msgstr ""
+"PublishPress Firmy potrzebują aktualizacji bazy danych do integracji "
+"uprawnień."
+
+#: src/modules/multiple-authors/multiple-authors.php:2616
+msgid "Click to run the update now"
+msgstr "Kliknij, aby uruchomić aktualizację teraz"
+
+#: src/modules/polylang-integration/polylang-integration.php:55
+#: src/modules/polylang-integration/polylang-integration.php:56
+#: src/modules/polylang-integration/polylang-integration.php:57
+msgid "Polylang Integration"
+msgstr "Integracja Polylang"
+
+#: src/modules/pro-placeholders/pro-placeholders.php:56
+#: src/modules/pro-placeholders/pro-placeholders.php:57
+#: src/modules/pro-placeholders/pro-placeholders.php:58
+msgid "Pro Placeholders"
+msgstr "Symbole zastępcze Pro"
+
+#: src/modules/pro-placeholders/pro-placeholders.php:95
+#: src/modules/pro-placeholders/pro-placeholders.php:96
+msgid "Fields"
+msgstr "Pola"
+
+#: src/modules/pro-placeholders/pro-placeholders.php:105
+#: src/modules/pro-placeholders/pro-placeholders.php:106
+msgid "Layouts"
+msgstr "Układ"
+
+#: src/modules/pro-placeholders/views/fields-placeholder.php:2
+msgid "Author Fields"
+msgstr "Pola firmy"
+
+#: src/modules/pro-placeholders/views/fields-placeholder.php:2
+msgid "New Author Field"
+msgstr "Nowe pole firmy"
+
+#: src/modules/pro-placeholders/views/fields-placeholder.php:11
+msgid ""
+"With PublishPress Authors Pro you can create custom fields for your author "
+"profiles. You can add Text, WYSIWYG, Link, email fields and more."
+msgstr ""
+"Dzięki PublishPress Authors Pro możesz tworzyć niestandardowe pola dla "
+"swoich profili firm. Możesz dodać Tekst, WYSIWYG, Link, pola e-mail i inne."
+
+#: src/modules/pro-placeholders/views/fields-placeholder.php:15
+#: src/modules/pro-placeholders/views/layouts-placeholder.php:15
+msgid "Upgrade to Pro"
+msgstr "Przejdź na wersje Pro"
+
+#: src/modules/pro-placeholders/views/layouts-placeholder.php:2
+msgid "Author Layouts"
+msgstr "Układy firmy"
+
+#: src/modules/pro-placeholders/views/layouts-placeholder.php:2
+msgid "New Author Layout"
+msgstr "Nowy układ firmy"
+
+#: src/modules/pro-placeholders/views/layouts-placeholder.php:11
+msgid ""
+"With PublishPress Authors Pro you can build new layouts for authors. You can "
+"use author information, custom fields, and much more."
+msgstr ""
+"Dzięki PublishPress Authors Pro możesz tworzyć nowe układy dla firm. Możesz "
+"użyć informacji o autorze, pól niestandardowych i wielu innych."
+
+#: src/modules/rest-api/rest-api.php:57
+msgid "Rest API"
+msgstr "REST API"
+
+#: src/modules/rest-api/rest-api.php:58 src/modules/rest-api/rest-api.php:59
+msgid "Rest API support"
+msgstr "Obsługa rest API"
+
+#: src/modules/rest-api/rest-api.php:96
+msgid "Authors."
+msgstr "Przypisz firm"
+
+#: src/modules/reviews/reviews.php:74
+msgid "Reviews"
+msgstr "Opinie"
+
+#: src/modules/seoframework-integration/seoframework-integration.php:58
+msgid "The SEO Framework Integration"
+msgstr "Integracja SEO Framework"
+
+#: src/modules/seoframework-integration/seoframework-integration.php:60
+msgid "Add compatibility with The SEO Framework plugin."
+msgstr "Dodaj kompatybilność z wtyczką SEO Framework."
+
+#: src/modules/settings/settings.php:101
+msgid "Multiple Authors Settings"
+msgstr "Ustawienia wielu firm"
+
+#: src/modules/settings/settings.php:102
+msgid "Settings"
+msgstr "Ustawienia"
+
+#: src/modules/settings/settings.php:201
+msgid "There are no PublishPress modules registered"
+msgstr "Nie zarejestrowano żadnych modułów PublishPress"
+
+#: src/modules/ultimatemember-integration/ultimatemember-integration.php:53
+msgid "Ultimate Member Integration"
+msgstr "Najlepsza integracja członków"
+
+#: src/modules/ultimatemember-integration/ultimatemember-integration.php:54
+msgid "Add compatibility with the Ultimate Member plugin"
+msgstr "Dodaj kompatybilność z wtyczką Ultimate Member"
+
+#: src/modules/wpengine-integration/wpengine-integration.php:51
+msgid "WPEngine Integration"
+msgstr "Integracja WPEngine"
+
+#: src/modules/wpengine-integration/wpengine-integration.php:53
+msgid "Add compatibility with the WPEngine object cache."
+msgstr "Dodaj zgodność z pamięcią podręczną obiektów WPEngine."
+
+#: src/modules/yoast-seo-integration/yoast-seo-integration.php:52
+msgid "Yoast SEO Integration"
+msgstr "Integracja Yoast SEO"
+
+#: src/modules/yoast-seo-integration/yoast-seo-integration.php:53
+msgid "Add compatibility with the Yoast SEO plugin"
+msgstr "Dodaj kompatybilność z wtyczką Yoast SEO"
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/plugins/publishpress-authors/"
+msgstr "https://wordpress.org/plugins/publishpress-authors/"
+
+#. Author of the plugin/theme
+msgid "PublishPress"
+msgstr "PublikujPress"
+
+#. Author URI of the plugin/theme
+msgid "https://publishpress.com"
+msgstr "https://publishpress.com"
