@@ -153,10 +153,12 @@
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-bars-progress"></i></div>
                             Zlecenia w toku
                         </a>
+                        <?php if(!current_user_can('pracownik')) : ?>
                         <a class="nav-link" href="/konto/zakonczone">
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-clipboard-check"></i></div>
                             Zlecenia zrealizowane
                         </a>
+                        <?php endif; ?>
                         <a class="nav-link" href="/konto/wolne">
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-clipboard-list"></i></div>
                             Wolne pakiety
