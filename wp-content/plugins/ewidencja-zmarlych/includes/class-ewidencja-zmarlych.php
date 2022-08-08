@@ -156,7 +156,6 @@ class Ewidencja_Zmarlych {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-		$this->loader->add_action( 'init', $plugin_admin, 'firma_post_type' );
 		$this->loader->add_action( 'init', $plugin_admin, 'esez_post_type' );
 		$this->loader->add_action( 'login_head', $plugin_admin, 'redirect_to_nonexistent_page' );
 		$this->loader->add_action( 'init', $plugin_admin, 'redirect_to_actual_login' );

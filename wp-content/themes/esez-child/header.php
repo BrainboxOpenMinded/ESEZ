@@ -138,8 +138,8 @@
     </nav>
     <?php if(get_field('imie_zmarlego') and get_field('nazwisko_zmarlego') || is_singular('ewidencjazgonow') ) : ?>
     <div id="fixed-name-area" class="fixed-name-area hide">
-        <a
-            href="#esez-top"><span><?php echo get_field('numer_opaski') . ' | ' . get_field('imie_zmarlego') . ' ' .  get_field('nazwisko_zmarlego'); ?></span></a>
+    <a href="/konto"><i class="fa-solid fa-chevron-left"></i></a>    
+    <a style="margin-left: auto; margin-right: auto;" href="#esez-top"><span><?php echo get_field('numer_opaski') . ' | ' . get_field('imie_zmarlego') . ' ' .  get_field('nazwisko_zmarlego'); ?></span></a>
     </div>
     <?php endif; ?>
     <?php if (is_user_logged_in()) : ?>
@@ -153,10 +153,12 @@
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-bars-progress"></i></div>
                             Zlecenia w toku
                         </a>
+                        <?php if(!current_user_can('pracownik')) : ?>
                         <a class="nav-link" href="/konto/zakonczone">
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-clipboard-check"></i></div>
                             Zlecenia zrealizowane
                         </a>
+                        <?php endif; ?>
                         <a class="nav-link" href="/konto/wolne">
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-clipboard-list"></i></div>
                             Wolne pakiety

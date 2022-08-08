@@ -13,9 +13,12 @@
 /wp-content/plugins/query-monitor
 /wp-content/wphb-cache
 /wp-content/wphb-logs
+/wp-content/updraft
 /wp-content/advanced-cache.php
 /wp-content/object-cache.php
 /wp-includes/
+/codes
+/library
 /index.php
 /license.txt
 /readme.html

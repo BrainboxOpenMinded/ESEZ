@@ -210,11 +210,11 @@ img {max-width: 100%;}
 		<table class="table dataTable" id="tabelaCennik">
 			<thead>
 				<tr>
-					<th style="width: 20%">Liczba eksportacji miesięcznie</th>
-					<th style="width: 20%; text-align: center;">Do 10</th>
-					<th style="width: 20%; text-align: center;">Do 15</th>
-					<th style="width: 20%; text-align: center;">Do 25</th>
-					<th style="width: 20%; text-align: center;">Powyżej 25</th>					
+					<th style="width: 26%">Liczba eksportacji miesięcznie</th>
+					<th style="width: 18.5%; text-align: center;">Do 10</th>
+					<th style="width: 18.5%; text-align: center;">Do 15</th>
+					<th style="width: 18.5%; text-align: center;">Do 25</th>
+					<th style="width: 18.5%; text-align: center;">Powyżej 25</th>					
 				</tr>
 			</thead>
 			<tbody>
