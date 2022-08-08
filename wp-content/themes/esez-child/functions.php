@@ -297,8 +297,7 @@ add_action( 'init', function() {
 	
 	<?php
 	}
-	
-	add_action('wp_ajax_data_fetch' , 'data_fetch');
+		add_action('wp_ajax_data_fetch' , 'data_fetch');
 	add_action('wp_ajax_nopriv_data_fetch','data_fetch');
 	function data_fetch(){
 		global $current_user;
@@ -370,70 +369,4 @@ add_action('cron_url_aktywne_opaski', 'call_url_funeralkety_cron');
 function call_url_funeralkety_cron() {
 	wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=8&action=trigger');
 	wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=8&action=processing');
-}
-
-function shapeSpace_disable_medium_images($sizes) {
-	
-	unset($sizes['medium']); // disable medium size
-	return $sizes;
-
-}
-add_action('intermediate_image_sizes_advanced', 'shapeSpace_disable_medium_images');
-
-function shapeSpace_disable_large_images($sizes) {
-	
-	unset($sizes['large']); // disable large size
-	return $sizes;
-	
-}
-add_action('intermediate_image_sizes_advanced', 'shapeSpace_disable_large_images');
-
-function shapeSpace_disable_medium_large_images($sizes) {
-	
-	unset($sizes['medium_large']); // disable 768px size images
-	return $sizes;
-	
-}
-add_filter('intermediate_image_sizes_advanced', 'shapeSpace_disable_medium_large_images');
-
-function shapeSpace_disable_2x_medium_large_images($sizes) {
-	
-	unset($sizes['1536x1536']); // disable 2x medium-large size
-	return $sizes;
-	
-}
-add_filter('intermediate_image_sizes_advanced', 'shapeSpace_disable_2x_medium_large_images');
-
-function shapeSpace_disable_2x_large_images($sizes) {
-	
-	unset($sizes['2048x2048']); // disable 2x large size
-	return $sizes;
-	
-}
-add_filter('intermediate_image_sizes_advanced', 'shapeSpace_disable_2x_large_images');
-
-function shapeSpace_disable_thumbnail_images($sizes) {
-
-	unset($sizes['thumbnail']); // disable thumbnail size
-	return $sizes;
-
-}
-add_action('intermediate_image_sizes_advanced', 'shapeSpace_disable_thumbnail_images');
-
-function restrict_manage_authors() {
-    if (isset($_GET['post_type']) && post_type_exists($_GET['post_type']) && in_array(strtolower($_GET['post_type']), array('ewidencjazgonow'))) {
-        wp_dropdown_users(array(
-            'show_option_all'   => 'Wszyscy użytkownicy',
-            'show_option_none'  => false,
-            'name'          => 'author',
-            'selected'      => !empty($_GET['author']) ? $_GET['author'] : 0,
-            'include_selected'  => false
-        ));
-    }
-}
-add_action('restrict_manage_posts', 'restrict_manage_authors');
- 
-function custom_columns_author($columns) {
-    $columns['author'] = 'Author';
-    return $columns;
 }

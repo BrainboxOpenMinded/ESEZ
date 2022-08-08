@@ -1,0 +1,2434 @@
+# Translation of Plugins - Hummingbird – Optimize Speed, Enable Cache, Minify CSS &amp; Defer Critical JS - Stable (latest release) in Polish
+# This file is distributed under the same license as the Plugins - Hummingbird – Optimize Speed, Enable Cache, Minify CSS &amp; Defer Critical JS - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2022-05-23 06:45:53+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
+"X-Generator: GlotPress/4.0.0-alpha.1\n"
+"Language: pl\n"
+"Project-Id-Version: Plugins - Hummingbird – Optimize Speed, Enable Cache, Minify CSS &amp; Defer Critical JS - Stable (latest release)\n"
+
+#: admin/class-admin.php:232 admin/class-admin.php:263
+#: admin/pages/class-dashboard.php:552
+#: admin/views/notifications/configure-meta-box.php:25
+msgid "Notifications"
+msgstr "Powiadomienia"
+
+#: admin/class-page.php:454
+msgid "Plugins"
+msgstr "Wtyczki"
+
+#: admin/class-page.php:460 admin/class-page.php:474
+msgid "Privacy Policy"
+msgstr "Polityka prywatności"
+
+#: admin/class-page.php:453 admin/class-page.php:472
+msgid "The Hub"
+msgstr "Centrum"
+
+#: admin/class-page.php:458
+msgid "Community"
+msgstr "Społeczność"
+
+#: admin/class-page.php:407
+msgid "Your changes have been saved."
+msgstr "Twoje zmiany zostały zapisane."
+
+#: admin/class-page.php:468
+msgid "Membership"
+msgstr "Członkostwo"
+
+#: core/api/class-hub.php:492 core/api/class-rest.php:219
+msgid "The requested module is inactive."
+msgstr "Żądany moduł jest nieaktywny."
+
+#: core/api/class-hub.php:363 core/api/class-hub.php:432
+#: core/api/class-hub.php:483 core/api/class-hub.php:561
+#: core/api/class-rest.php:208
+msgid "The requested module was invalid."
+msgstr "Żądany moduł był nieprawidłowy."
+
+#: core/api/class-rest.php:173
+msgid "The requested module status was invalid."
+msgstr "Atatus żądanego modułu był nieprawidłowy."
+
+#: core/class-core.php:295
+msgid "Third parties"
+msgstr "Strony trzecie"
+
+#. translators: %s - number of assets
+#: admin/modals/found-assets-modal.php:22
+msgid "%s assets found"
+msgstr "Znaleziono %s zasoby"
+
+#: admin/views/minification/advanced-files-rows.php:64
+msgid "If you’ve made changes to this file, you can recompress it without resetting your file structure."
+msgstr "Jeśli dokonałeś zmian w tym pliku, możesz go ponownie skompresować bez resetowania struktury pliku."
+
+#: admin/class-ajax.php:1590
+msgid "Log file purged"
+msgstr "Plik dziennika wyczyszczony"
+
+#: admin/class-ajax.php:1582
+msgid "Log file not found or empty"
+msgstr "Plik logu nie znaleziony lub pusty"
+
+#: admin/class-ajax.php:1571
+msgid "Module not found"
+msgstr "Nie znaleziono modułu"
+
+#: admin/class-ajax.php:1259
+msgid "Error removing asset file."
+msgstr "Błąd podczas usuwania zasobu."
+
+#. translators: %s - number of assets
+#: admin/class-ajax.php:1167
+msgid "%s assets found!"
+msgstr "Znaleziono %s zasoby!"
+
+#: admin/views/advanced/db-meta-box.php:44
+#: admin/views/caching/page/meta-box.php:310
+#: admin/views/minification/settings-meta-box.php:210 core/class-core.php:190
+msgid "Clear"
+msgstr "Wyczyść"
+
+#: core/api/class-hub.php:324
+msgid "Disabling this module remotely is not possible."
+msgstr "Zdalne wyłączenie tego modułu nie jest możliwe."
+
+#: core/api/class-hub.php:293
+msgid "Enabling this module remotely is not possible."
+msgstr "Zdalne włączanie tego modułu nie jest możliwe."
+
+#: core/api/class-hub.php:285 core/api/class-hub.php:316
+#: core/api/class-hub.php:474
+msgid "Hummingbird module doesn't exist."
+msgstr "Moduł Hummingbird nie istnieje."
+
+#: languages/react.php:918 _src/react/views/setup/wizard.jsx:735
+#: admin/assets/js/wphb-setup-wizard.min.js:12144
+msgid "Run Performance Test"
+msgstr "Uruchom Test Wydajności"
+
+#: admin/modals/automatic-ao-how-does-it-work-modal.php:53
+#: admin/modals/bulk-update-modal.php:20 admin/modals/clear-cache-modal.php:43
+#: admin/modals/clear-cache-network-wide-modal.php:31
+#: admin/modals/clear-cache-network-wide-modal.php:58
+#: admin/modals/database-cleanup-modal.php:20
+#: admin/modals/dismiss-report-modal.php:20
+#: admin/modals/manual-ao-how-does-it-work-modal.php:51
+#: admin/modals/membership-modal.php:23
+#: admin/modals/minification-basic-modal.php:22
+#: admin/modals/minification-tour-modal.php:20
+#: admin/modals/minification-tour-modal.php:52
+#: admin/modals/minification-tour-modal.php:81
+#: admin/modals/minification-tour-modal.php:110
+#: admin/modals/minification-tour-modal.php:139
+#: admin/modals/minification-tour-modal.php:168
+#: admin/modals/minification-tour-modal.php:197
+#: admin/modals/minification-tour-modal.php:226
+#: admin/modals/reset-settings-modal.php:21
+#: admin/modals/site-health-orphaned-modal.php:31 languages/react.php:279
+#: _src/react/modules/configs.jsx:36
+#: admin/assets/js/wphb-react-configs.min.js:6424
+msgid "Close this dialog window"
+msgstr "Zamknij to okno dialogowe"
+
+#: admin/views/minification/enqueued-files-meta-box-header.php:25
+#: languages/react.php:652 _src/react/views/minify/assets.jsx:53
+#: admin/assets/js/wphb-react-minify.min.js:1830
+msgid "Added/removed plugins or themes? Update your file list to include new files, and remove old ones"
+msgstr "Dodano / usunięto wtyczki lub motywy? Zaktualizuj listę plików, aby uwzględnić nowe pliki i usunąć stare"
+
+#: admin/views/dashboard/uptime/no-membership-meta-box-upsell.php:22
+msgid "Try Pro for FREE"
+msgstr "Wypróbuj wersję  Pro za DARMO"
+
+#: admin/views/dashboard/smush/meta-box-upsell.php:22
+#: admin/views/performance/audits/modern-image-formats.php:116
+#: admin/views/performance/audits/total-byte-weight.php:131
+msgid "Get WP Smush Pro"
+msgstr "Uzyskaj WP Smush Pro"
+
+#: admin/views/dashboard/reports/meta-box-upsell.php:22
+msgid "Scheduled automated reports"
+msgstr "Zaplanowane automatyczne raporty"
+
+#: admin/views/dashboard/caching/browser-meta-box.php:101
+#: languages/react.php:448 _src/react/views/caching/browser/status.jsx:165
+#: admin/assets/js/wphb-react-caching.min.js:1943
+msgid "Connect your account to Cloudflare"
+msgstr "Połącz swoje konto z Cloudflare"
+
+#: core/class-utils.php:172
+msgid "Browser caching status updated."
+msgstr "Status pamięci podręcznej przeglądarki zaktualizowany."
+
+#: core/class-utils.php:171
+msgid "There was an error re-checking the caching status, please try again later."
+msgstr "Wystąpił błąd podczas sprawdzania statusu pamięci podręcznej, proszę spróbować później. "
+
+#: admin/modals/bulk-update-modal.php:24
+msgid "Choose what bulk update actions you’d like to apply to the selected files. You still have to publish your changes before they will be set live."
+msgstr "Proszę wybrać masowe akcje aktualizacji do zastosowania do wybranych plików. Wciąż trzeba będzie opublikować zmiany zanim będą one widoczne. "
+
+#. translators: %s: file name with path
+#: core/class-filesystem.php:689
+msgid "Could not write file %s"
+msgstr "Nie można było zapisać pliku %s"
+
+#: core/class-filesystem.php:604
+msgid "Empty filename"
+msgstr "Nie podano nazwy pliku"
+
+#. translators: %s: directory path
+#: core/class-filesystem.php:679
+msgid "Unable to create directory %s. Is its parent directory writable by the server?"
+msgstr "Nie można utworzyć katalogu &#8222;%s&#8221;. Czy WordPress ma uprawnienie do zapisu do katalogu nadrzędnego?"
+
+#: core/class-filesystem.php:611
+msgid "Sorry, this file type is not permitted for security reasons."
+msgstr "Ze względów bezpieczeństwa taki typ pliku nie jest dozwolony."
+
+#: admin/views/minification/network-settings-meta-box.php:120
+#: admin/views/minification/settings-meta-box.php:29
+msgid "Choose where Hummingbird should store your modified assets."
+msgstr "Proszę wybrać gdzie Hummingbird ma przechowywać zmodyfikowane zasoby. "
+
+#: admin/views/minification/network-settings-meta-box.php:118
+#: admin/views/minification/settings-meta-box.php:27
+msgid "File Location"
+msgstr "Lokalizacja pliku"
+
+#: admin/views/minification/enqueued-files-meta-box.php:183
+msgid "Other"
+msgstr "Inne"
+
+#: admin/views/minification/enqueued-files-meta-box.php:178
+msgid "Select all Other files"
+msgstr "Wybierz wszystkie inne pliki"
+
+#: admin/views/minification/advanced-files-rows.php:118
+msgid "Compression is off for this file. Turn it on to reduce its size"
+msgstr "Kompresja jest wyłączona dla tego pliku. Włącz ją aby zmniejszyć jego rozmiar. "
+
+#: admin/views/minification/advanced-files-rows.php:120
+msgid "Compression is on for this file, which aims to reduce its size"
+msgstr "Kompresja jest włączona dla tego pliku, co oznacza dążenie do zmiejszenia jego rozmiaru. "
+
+#: admin/views/minification/advanced-files-rows.php:116
+msgid "This file is already compressed"
+msgstr "Ten plik jest już skompresowany"
+
+#: admin/views/minification/advanced-files-rows.php:94 core/class-utils.php:238
+msgid "This file is queued for compression. It will get optimized when someone visits a page that requires it."
+msgstr "Ten plik znajduje się w kolejce do kompresji. Zostanie zoptymalizowany kiedy ktoś odwiedzi stronę, na której jest używany. "
+
+#: admin/views/minification/advanced-files-rows.php:77
+msgid "Filesize Unknown"
+msgstr "Nieznany rozmiar pliku"
+
+#: admin/views/minification/advanced-files-rows.php:51
+#: admin/views/minification/advanced-fonts-rows.php:30
+msgid "You need to publish your changes for your new settings to take effect"
+msgstr "Należy opublikować zmiany aby nowe ustawienia odnosły skutek"
+
+#: admin/views/minification/advanced-files-rows.php:47
+msgid "This file has no linked URL, it will not be combined/minified"
+msgstr "Ten plik nie ma powiązanego adresu URL, nie zostanie połączony/zminifikowany"
+
+#: admin/views/minification/network-settings-meta-box.php:126
+#: admin/views/minification/settings-meta-box.php:36
+msgid "This feature is inactive when you’re using the WPMU DEV CDN."
+msgstr "Funkcja nie jest aktywna, kiedy używany jest CDN WPMU DEV."
+
+#: admin/views/caching/page/subsite-meta-box.php:47
+msgid "For any pages/post/post types/taxonomies you don’t want to cache, use the <code>%s</code> constant to instruct Hummingbird not to cache specific pages or templates."
+msgstr "Dla każej strony/wpisu/typu wpisu/taksonomii dla której nie ma być używana pamięć podręczna, należy użyć stałej <code>%s</code> aby poinstruować Hummingbird, by konkretna strona lub szablon nie były zapisywane w pamięci podręcznej. "
+
+#: admin/views/caching/page/subsite-meta-box.php:39
+msgid "By default your subsite inherits your network admin’s cache settings."
+msgstr "Domyślnie witryny dziedziczą ustawienia pamięci podręcznej z administracyjnych ustawień sieci witryn. "
+
+#: admin/views/caching/page/subsite-meta-box.php:37
+msgid "Cache Control"
+msgstr "Kontrola pamięci podręcznej"
+
+#: admin/views/caching/page/meta-box.php:65
+msgid "Your blog is your frontpage"
+msgstr "Twój blog jest Twoją stroną główną"
+
+#: admin/views/caching/page/meta-box.php:54
+msgid "Your subsite admins can use the DONOTCACHEPAGE constant to prevent caching on their custom post types."
+msgstr "Administratorzy witryn sieci mogą używać stałej DONOTCACHEPAGE aby powstrzymać zapisywanie w pamięci podręcznej ich własnych typów wpisów. "
+
+#: admin/views/caching/page/meta-box.php:51
+msgid "Subsites will inherit the settings you use here, except any additional custom post types or taxonomies will be cached by default."
+msgstr "Witryny sieci odziedziczą ustawienia wybrane tutaj. Wyjątek to wszelkie dodatkowe własne typów wpisów lub taksonomii, które będą domyślnie zapisywane w pamięci podręcznej. "
+
+#: admin/views/caching/page/meta-box.php:47
+msgid " Select which page types you wish to cache."
+msgstr "Wybierz, które typy stron chcesz zapisywać w pamięci podręcznej. "
+
+#: admin/views/advanced/general-meta-box.php:202
+msgid "Paste in recommended defaults."
+msgstr "Wklej rekomendowane wartości domyślne."
+
+#: core/modules/class-advanced.php:755
+msgid "TRUE"
+msgstr "PRAWDZIWE"
+
+#: core/modules/class-advanced.php:753
+msgid "FALSE"
+msgstr "FAŁSZYWE"
+
+#: core/modules/class-advanced.php:724 core/modules/class-advanced.php:725
+#: core/modules/class-advanced.php:726 core/modules/class-advanced.php:746
+msgid "undefined"
+msgstr "niezdefiniowany"
+
+#: core/modules/class-advanced.php:730
+msgid "OS Version"
+msgstr "Wersja systemu operacyjnego"
+
+#: core/modules/class-advanced.php:729
+msgid "OS Hostname"
+msgstr "Nazwa hosta systemu operacyjnego"
+
+#: core/modules/class-advanced.php:728
+msgid "Operating System"
+msgstr "System operacyjny"
+
+#: core/modules/class-advanced.php:727
+msgid "Server local time"
+msgstr "Czas lokalny serwera"
+
+#: core/modules/class-advanced.php:726
+msgid "Server Admin"
+msgstr "Administrator serwera"
+
+#: core/modules/class-advanced.php:725
+msgid "Server Hostname"
+msgstr "Nazwa hosta serwera"
+
+#: core/modules/class-advanced.php:723
+msgid "Software Version"
+msgstr "Wersja oprogramowania"
+
+#: core/modules/class-advanced.php:722
+msgid "Software Name"
+msgstr "Nazwa oprogramowania"
+
+#: core/modules/class-advanced.php:572
+msgid "Error Reporting"
+msgstr "Zgłaszanie błędów"
+
+#: core/modules/class-advanced.php:538
+msgid "Version"
+msgstr "Wersja"
+
+#: admin/modals/check-files-modal.php:51
+msgid "Looking for files..."
+msgstr "Szukam plików ..."
+
+#: admin/views/advanced/system-info-meta-box.php:27
+msgid "Server"
+msgstr "Serwer"
+
+#: admin/views/advanced/system-info-meta-box.php:26
+msgid "WordPress"
+msgstr "WordPress"
+
+#: admin/views/advanced/system-info-meta-box.php:25
+msgid "MySQL"
+msgstr "MySQL"
+
+#: admin/views/advanced/system-info-meta-box.php:24
+msgid "PHP"
+msgstr "PHP"
+
+#: admin/views/advanced/system-info-meta-box.php:18
+msgid "Use this info if you are having issues with Hummingbird and your server setup. It will give you the most up to date information about your stack."
+msgstr "Użyj tych informacji jeśli występują problemy z Hummingbirdem i konfiguracją twojego serwera. To będzie najbardziej aktualna informacja o twojej konfiguracji. "
+
+#: admin/class-notices.php:533
+msgid "Adjust notification settings"
+msgstr "Dostosuj ustawienia powiadomień"
+
+#: admin/class-notices.php:525
+msgid "Re-check Asset Optimization"
+msgstr "Ponownie sprawdź optymalizację zasobów"
+
+#: admin/class-notices.php:505
+msgid "We've noticed you've made changes to your website. We recommend you clear Hummingbird's page cache to avoid any issues."
+msgstr "Zauważyliśmy, że wprowadziłeś zmiany w swojej witrynie. Zalecamy wyczyścić pamięć podręczną w Hummingbird, aby uniknąć problemów."
+
+#: core/modules/class-advanced.php:575
+msgid "Extensions"
+msgstr "Dodatki"
+
+#: core/modules/class-advanced.php:724
+msgid "Server IP"
+msgstr "Numer IP serwera"
+
+#: admin/pages/class-advanced.php:40 admin/pages/class-advanced.php:90
+msgid "System Information"
+msgstr "Informacje systemowe"
+
+#: admin/modals/clear-cache-network-wide-modal.php:35
+#: admin/modals/clear-cache-network-wide-modal.php:62
+msgid "Clear page cache"
+msgstr "Wyczyść pamięć podręczną strony"
+
+#: admin/views/minification/summary-meta-box.php:82
+msgid "The Network Admin has the WPMU DEV CDN turned off"
+msgstr "Administrator sieci ma wyłączoną funkcję WPMU DEV CDN"
+
+#: admin/views/minification/summary-meta-box.php:78
+msgid "The Network Admin has the WPMU DEV CDN turned on"
+msgstr "Administrator sieci ma włączoną funkcję WPMU DEV CDN"
+
+#: admin/views/minification/settings-meta-box.php:249
+msgid "Note: This will not remove any files, they will just go back to their original, unoptimized state."
+msgstr "Uwaga: nie spowoduje to usunięcia żadnych plików, tylko wróci do pierwotnego, niezoptymalizowanego stanu."
+
+#: admin/views/minification/settings-meta-box.php:242
+msgid "No longer need Asset Optimization? This will completely deactivate this feature."
+msgstr "Nie potrzebujesz już Optymalizacji Zasobów? To całkowicie dezaktywuje tę funkcję."
+
+#: admin/views/minification/settings-meta-box.php:227
+msgid "Use this button to wipe any existing settings and return to defaults."
+msgstr "Użyj tego przycisku, aby wyczyścić istniejące ustawienia i przywrócić ustawienia domyślne."
+
+#: admin/views/minification/settings-meta-box.php:185
+msgid "Turn on the debug log to get insight into any issues you’re having."
+msgstr "Włącz dziennik debugowania, aby uzyskać wgląd we wszystkie problemy, które masz."
+
+#: admin/views/minification/settings-meta-box.php:183
+msgid "Debug"
+msgstr "Debugowanie"
+
+#: admin/views/minification/settings-meta-box.php:83
+msgid "Host your files on WPMU DEV’s secure and hyper fast CDN."
+msgstr "Hostuj swoje pliki na bezpiecznym i szybkim WPMU DEV CDN."
+
+#: admin/views/minification/settings-meta-box.php:55
+msgid "Compress your files up to 2x more with our enhanced optimization engine."
+msgstr "Skompresuj swoje pliki nawet dwukrotnie, korzystając z naszego ulepszonego mechanizmu optymalizacji."
+
+#: admin/views/caching/settings/meta-box.php:50
+msgid "Disable warnings in your WP Admin area."
+msgstr "Wyłącz ostrzeżenia w obszarze administracyjnym WordPress."
+
+#: admin/views/caching/settings/meta-box.php:38
+msgid "Manual Notice"
+msgstr "Powiadomienia w Kokpicie"
+
+#: admin/views/caching/settings/meta-box.php:19
+msgid "File Change Detection"
+msgstr "Wykrywanie zmian w pliku"
+
+#: core/integration/class-gutenberg.php:106
+#: core/modules/class-page-cache.php:1816
+#: core/modules/class-page-cache.php:1918
+msgid "Cache for post has been cleared."
+msgstr "Pamięć podręczna dla postów została wyczyszczona."
+
+#: core/modules/class-minify.php:1568
+msgid "Error saving file"
+msgstr "Błąd podczas zapisywania pliku"
+
+#: core/modules/class-minify.php:1559
+msgid "Unsupported content"
+msgstr "Nieobsługiwane treści"
+
+#: core/modules/class-advanced.php:283
+msgid "Cached data that themes and plugins have stored, but may still be in use. Note: the next page to load could take a bit longer due to WordPress regenerating transients."
+msgstr "Dane, które dodane do pamięci podręcznej przez motywy i wtyczki mogą być wciąż w użyciu. Uwaga: następna wczytywana strona może ładować się troszkę dłużej ponieważ WordPress będzie regenerował pamięć podręczną krótkotrwałą. "
+
+#: core/modules/class-advanced.php:279
+msgid "Cached data that themes and plugins have stored, except these ones have expired and can be deleted"
+msgstr "Dane w pamięci podręcznej, które przechowują wtyczki i motywy, oprócz tych które wygasły i mogą zostać skasowane."
+
+#: core/modules/class-advanced.php:278
+msgid "Expired Transients"
+msgstr "Wygasła pamięć podręczna krótkotrwała"
+
+#: core/modules/class-advanced.php:275
+msgid "Comments you've marked as trash but haven't permanently deleted yet"
+msgstr "Komentarze które zostały przeniesione do kosza, ale nie zostały jeszcze trwale usunięte"
+
+#: core/modules/class-advanced.php:274
+msgid "Trashed Comments"
+msgstr "Komentarze w koszu"
+
+#: core/modules/class-advanced.php:271
+msgid "Comments marked as spam that haven't been deleted yet"
+msgstr "Komentarze oznaczone jako spam, które nie zostały jeszcze usunięte"
+
+#: core/modules/class-advanced.php:270
+msgid "Spam Comments"
+msgstr "Komentarze zawierające spam"
+
+#: core/modules/class-advanced.php:267
+msgid "Posts or pages you've marked as trash but haven't permanently deleted yet"
+msgstr "Posty lub strony przeniesione do kosza, które nie zostały jeszcze trwale usunięte "
+
+#: core/modules/class-advanced.php:266
+msgid "Trashed Posts"
+msgstr "Posty w koszu "
+
+#: core/modules/class-advanced.php:262
+msgid "Draft Posts"
+msgstr "Wersje robocze postów"
+
+#: core/modules/class-advanced.php:259
+msgid "Historic versions of your posts and pages. If you don't need to revert to older versions, delete these entries"
+msgstr "Historyczne wersje Twoich postów i stron. Jeśli nie musisz powracać do starszych wersji, usuń te wpisy"
+
+#: core/class-utils.php:185
+msgid "Make sure you have a current backup just in case."
+msgstr "Upewnij się, że masz aktualną kopię zapasową."
+
+#: core/class-utils.php:184
+msgid "database entries"
+msgstr "wpisy bazy danych"
+
+#: core/class-utils.php:182
+msgid "Are you sure you wish to delete"
+msgstr "Czy na pewno chcesz usunąć"
+
+#: core/class-utils.php:177
+msgid "Error updating settings"
+msgstr "Błąd podczas aktualizacji ustawień"
+
+#: admin/modals/membership-modal.php:42
+msgid "Enhanced Asset Optimization"
+msgstr "Ulepszona optymalizacja zasobów"
+
+#: admin/views/minification/tools-meta-box.php:51
+msgid "Add CSS here"
+msgstr "Dodaj kod CSS tutaj"
+
+#: admin/views/minification/tools-meta-box.php:49
+msgid "CSS to insert into your <head> area"
+msgstr "Kod CSS do wstawienia do obszaru <head>"
+
+#: admin/views/minification/tools-meta-box.php:30
+msgid ""
+"This will result in the content loading quickly, with the styling\n"
+"\t\t\tfollowed shortly after."
+msgstr ""
+"To zaowocuje treścią ładowaną szybciej, a stylami\n"
+"\t \t \t zaraz po niej."
+
+#: admin/views/minification/tools-meta-box.php:22
+msgid ""
+"Drastically reduce your page load time by moving all of your stylesheets\n"
+"\t\t\tto the footer to force them to load after your content."
+msgstr ""
+"Zredukuj drastycznie czas wczytywania strony przenosząc wszystkie arkusze stylów\n"
+"\t \t \t do stopki, wymuszając tym wczytywanie po pojawieniu się treści."
+
+#: admin/views/minification/tools-meta-box.php:19
+msgid "CSS above the fold"
+msgstr "CSS w widocznej części strony (\"above the fold\")"
+
+#: core/modules/class-advanced.php:258
+msgid "Post Revisions"
+msgstr "Wersje wpisu"
+
+#: core/modules/class-advanced.php:282
+msgid "All Transients"
+msgstr "Wszystkie dane tymczasowe"
+
+#: admin/views/dashboard/advanced/module-meta-box.php:41
+msgid "Up to date"
+msgstr "Aktualny"
+
+#. translators: %d: number of entries
+#. translators: %d - number of entries
+#: admin/views/dashboard/advanced/module-meta-box.php:36
+#: admin/views/dashboard/welcome/subsite-meta-box.php:133
+msgid "%d dispensable entries"
+msgstr "%d alternatywnych wpisów"
+
+#: admin/views/caching/rss/meta-box.php:46
+msgid "If you don't want your RSS Feed cached, you can disable it here."
+msgstr "Jeśli nie chcesz przechowywać RSS w pamięci podręcznej, może to wyłączyć tutaj. "
+
+#: admin/views/caching/rss/meta-box.php:36
+msgid "Note: The default expiry is set to one hour."
+msgstr "Uwaga: Domyślne wygaśnięcie jest ustawione na jedną godzinę."
+
+#: admin/views/caching/rss/meta-box.php:34
+msgid "seconds"
+msgstr "sekund"
+
+#: admin/views/caching/rss/meta-box.php:26
+#: admin/views/caching/rss/meta-box.php:33 core/class-configs.php:521
+#: languages/react.php:133 _src/react/modules/caching/integrations.jsx:435
+#: admin/assets/js/wphb-react-integrations.min.js:2458
+msgid "Expiry time"
+msgstr "Czas wygaśnięcia"
+
+#: admin/views/caching/rss/meta-box.php:22
+msgid "RSS Feed Caching is currently active."
+msgstr "Pamięć podręczna RSS jest obecnie aktywna."
+
+#: admin/views/caching/rss/disabled-meta-box.php:23
+msgid "RSS Caching is currently disabled."
+msgstr "Pamięć podręczna RSS jest obecnie wyłączona. "
+
+#: admin/views/caching/rss/meta-box.php:44
+msgid "Disable caching"
+msgstr "Wyłącz buforowanie"
+
+#: admin/views/caching/rss/meta-box.php:51
+msgid "Disable Caching"
+msgstr "Wyłącz buforowanie"
+
+#: admin/views/caching/page/subsite-meta-box.php:69
+msgid "Note: Deactivating won’t lose any of your website data, only the cached pages will be removed and won’t be served to your visitors any longer."
+msgstr "Uwaga: dezaktywacja nie spowoduje utraty żadnych danych z Twojej witryny, tylko strony z pamięci podręcznej zostaną usunięte i nie będą już wyświetlane użytkownikom."
+
+#: admin/views/caching/page/subsite-meta-box.php:60
+msgid "You can deactivate page caching at any time. Remember this may result in slower page loads unless you have another caching plugin activate."
+msgstr "Możesz dezaktywować buforowanie stron w dowolnym momencie. Pamiętaj, że może to spowodować wolniejsze ładowanie stron, chyba że aktywujesz inną wtyczkę do buforowania."
+
+#: admin/views/caching/page/meta-box.php:417
+msgid "This setting adds the Page Caching tab to Hummingbird and allows a network or subsite admin to disable Page Caching if they wish to. Note: It does not allow them to modify your network settings."
+msgstr "To ustawienie dodaje zakładkę Pamięci Podręcznej Stron do Hummingbirda i pozwala Administrator sieci lub bloga na wyłączenie Pamięci Podręcznej Stron jeśli  chce. Uwaga: to nie zezwala im na zmiany ustawień sieci witryn. "
+
+#: admin/views/caching/page/meta-box.php:414 core/class-configs.php:504
+msgid "Allow subsites to disable page caching"
+msgstr "Zezwól blogom na wyłączenie pamięci podręcznej"
+
+#: admin/views/caching/page/meta-box.php:405
+#: admin/views/minification/network-settings-meta-box.php:26
+#: admin/views/performance/settings-meta-box.php:49
+msgid "Subsites"
+msgstr "Subwitryny"
+
+#: admin/views/caching/page/meta-box.php:272
+msgid "Even though 404s are bad and you will want to avoid them with redirects, you can still choose to cache your 404 page to avoid additional load on your server."
+msgstr "Mimo tego że 404 są złe i chciałbyś uniknąć ich robiąc przekierowania, może wciąż wybrać aby umieścić 404 w pamięci podręcznej, żeby uniknąć dodatkowego obciążenia serwera."
+
+#: admin/views/caching/page/meta-box.php:269
+msgid "Cache 404 requests"
+msgstr "Pamięć podręczna zapytań 404"
+
+#: admin/views/advanced/general-meta-box.php:179
+msgid "Speeds up web pages by pre-resolving DNS. In essence it tells a browser it should resolve the DNS of a specific domain prior to it being explicitly called – very useful if you use third party services."
+msgstr "Przyśpiesz witryny przez wstępne rozwiązywanie DNS. W skrócie: przeglądarka jest instruowana aby rozwiązałą DNS konkretnej domeny zanim jeszcze zostanie on bezpośrednio wywołana - jest to bardzo przydatne, jeśli używane są zewnętrze usługi. "
+
+#: admin/views/advanced/general-meta-box.php:201
+msgid "Add one host entry per line replacing the http:// or https:// with // e.g. //fonts.googleapis.com. We’ve added a few common DNS requests to get you started."
+msgstr "Dodaj po jednym hoście w linii, zamieniając \"http://\" lub \"https://\" na \"//\", np: //fonts.googleapis.com. Dodaliśmy już kilka popularnych żądań DNS na dobry początek. "
+
+#: admin/views/advanced/general-meta-box.php:177
+#: admin/views/advanced/general-meta-box.php:197
+msgid "Prefetch DNS Requests"
+msgstr "Żądania wstępnego pobierania DNS (prefetch)"
+
+#: admin/views/advanced/general-meta-box.php:149 languages/react.php:857
+#: _src/react/views/setup/wizard.jsx:497 _src/react/views/setup/wizard.jsx:586
+#: admin/assets/js/wphb-setup-wizard.min.js:11906
+#: admin/assets/js/wphb-setup-wizard.min.js:11995
+msgid "Remove the default Emoji JS & CSS files"
+msgstr "Usuń domyślne pliki JS & CSS z Emotikonami"
+
+#: admin/views/advanced/general-meta-box.php:141 languages/react.php:812
+#: _src/react/views/setup/wizard.jsx:499
+#: admin/assets/js/wphb-setup-wizard.min.js:11908
+msgid "WordPress adds Javascript and CSS files to convert common symbols like “:)” to visual emojis. If you don’t need emojis this will remove two unnecessary assets."
+msgstr "WordPress dodaje pliki Javascript i CSS w celu konwersji popularnych emotikonów na obrazkowe emoji. Jeśli nie potrzebujesz emoji, ta opcja usunie dwa niepotrzebne zasoby. "
+
+#: admin/views/advanced/general-meta-box.php:139
+msgid "Emojis"
+msgstr "Emoji"
+
+#: admin/views/advanced/general-meta-box.php:45 languages/react.php:851
+#: _src/react/views/setup/wizard.jsx:476 _src/react/views/setup/wizard.jsx:581
+#: admin/assets/js/wphb-setup-wizard.min.js:11885
+#: admin/assets/js/wphb-setup-wizard.min.js:11990
+msgid "Remove query strings from my assets"
+msgstr "Usuń parametry zapytań z zasobów"
+
+#: admin/views/advanced/general-meta-box.php:37
+msgid "Some proxy caching servers and even some CDNs cannot cache static assets with query strings, resulting in a large missed opportunity for increased speeds."
+msgstr "Niektóre serwery proxy z wbudowaną pamięcią podręczną oraz niektóre CDNy nie potrafią przechowywać w pamięci podręcznej statycznych zasobów jeśli zapytania o nie zawierają parametry. To skutkuje straconą szansą na zwiększenie szybkości. "
+
+#: admin/views/advanced/general-meta-box.php:35
+msgid "URL Query Strings"
+msgstr "Parametry zapytań URL"
+
+#: admin/views/advanced/general-meta-box.php:26 languages/react.php:884
+#: _src/react/views/setup/wizard.jsx:634
+#: admin/assets/js/wphb-setup-wizard.min.js:12043
+msgid "Here are a few additional tweaks you can make to further reduce your page load times."
+msgstr "Oto kilka dodatkowych zmian, które mogą jeszcze bardziej skrócić czas ładowania Twojej strony"
+
+#: admin/modals/integration-redis-connect-modal.php:155
+#: admin/views/advanced/general-meta-box-footer.php:18
+#: admin/views/minification/tools-meta-box-footer.php:17
+msgid "Save changes"
+msgstr "Zapisz zmiany"
+
+#: admin/views/advanced/db-meta-box.php:66
+msgid "Tip: Make sure you have a current backup before running a cleanup."
+msgstr "Wskazówka: upewnij się, że masz bieżącą kopię zapasową bazy danych przed uruchomieniem czyszczenia."
+
+#: admin/views/advanced/db-meta-box.php:28
+msgid "Entries"
+msgstr "Wpisy"
+
+#: admin/views/advanced/db-meta-box.php:27
+msgid "Data Type"
+msgstr "Typ danych"
+
+#: admin/pages/class-minification.php:164
+#: admin/pages/class-minification.php:426
+msgid "Tools"
+msgstr "Narzędzia"
+
+#: admin/pages/class-minification.php:163
+#: admin/pages/class-minification.php:409 languages/react.php:649
+#: _src/react/views/minify/assets.jsx:275
+#: admin/assets/js/wphb-react-minify.min.js:2052
+msgid "Assets"
+msgstr "Zasoby"
+
+#: admin/pages/class-caching.php:149 admin/pages/class-caching.php:304
+#: admin/views/caching/summary-meta-box.php:107 languages/react.php:264
+#: _src/react/modules/configs.jsx:157
+#: admin/assets/js/wphb-react-configs.min.js:6545
+msgid "RSS Caching"
+msgstr "Pamięć podręczna RSS"
+
+#: admin/pages/class-advanced.php:38 admin/pages/class-advanced.php:59
+#: admin/views/dashboard/advanced/module-meta-box.php:31
+#: admin/views/dashboard/reports/meta-box.php:32
+#: admin/views/dashboard/welcome/subsite-meta-box.php:128
+#: admin/views/notifications/configure-meta-box.php:64
+msgid "Database Cleanup"
+msgstr "Porządkowanie bazy danych"
+
+#: admin/class-admin.php:226 admin/class-admin.php:261
+#: admin/pages/class-dashboard.php:471 languages/react.php:261
+#: _src/react/modules/configs.jsx:156 _src/react/views/setup/wizard.jsx:48
+#: _src/react/views/setup/wizard.jsx:579
+#: admin/assets/js/wphb-react-configs.min.js:6544
+#: admin/assets/js/wphb-setup-wizard.min.js:11457
+#: admin/assets/js/wphb-setup-wizard.min.js:11988
+msgid "Advanced Tools"
+msgstr "Narzędzia zaawansowane"
+
+#: admin/class-admin.php:218 admin/class-admin.php:260
+#: admin/pages/class-dashboard.php:432 admin/pages/class-dashboard.php:448
+#: admin/pages/class-dashboard.php:457
+#: admin/views/dashboard/welcome/subsite-meta-box.php:120
+#: languages/react.php:821 _src/react/views/setup/wizard.jsx:45
+#: _src/react/views/setup/wizard.jsx:524
+#: admin/assets/js/wphb-setup-wizard.min.js:11454
+#: admin/assets/js/wphb-setup-wizard.min.js:11933
+msgid "Asset Optimization"
+msgstr "Optymalizacja zasobów"
+
+#: admin/class-admin.php:121 admin/views/wphb-upgrade-page.php:21
+msgid "Upgrade to Hummingbird Pro"
+msgstr "Uaktualnij Hummingbird do wersji Pro"
+
+#: admin/class-admin.php:128 admin/class-page.php:457 admin/class-page.php:471
+msgid "Docs"
+msgstr "Dokumentacja"
+
+#: admin/class-admin.php:128
+msgid "View Hummingbird Documentation"
+msgstr "Zobacz dokumentację Hummingbird"
+
+#: admin/class-ajax.php:1409
+msgid "Error deleting data."
+msgstr "Błąd podczas usuwania danych."
+
+#: admin/class-ajax.php:1398
+msgid "Invalid type specified."
+msgstr "Podano nieprawidłowy typ."
+
+#: admin/pages/class-advanced.php:37 admin/pages/class-advanced.php:52
+#: admin/pages/class-settings.php:31 admin/pages/class-settings.php:45
+msgid "General"
+msgstr "Ustawienia główne"
+
+#: admin/class-admin.php:121 admin/pages/class-uptime.php:49
+msgid "Upgrade"
+msgstr "Ulepszenie"
+
+#: admin/views/wphb-page.php:92
+msgid "Learn more"
+msgstr "Dowiedz się więcej"
+
+#: admin/views/wphb-page.php:89
+msgid "Pretty much everything you need for developing and managing WordPress based websites, and then some."
+msgstr "Prawie wszystko, czego potrzebujesz do tworzenia i zarządzania stronami internetowymi opartymi na WordPressie i wiele więcej."
+
+#: admin/views/wphb-page.php:78
+msgid "SmartCrawl Search Engine Optimization"
+msgstr "SmartCrawl - Optymalizacja wyników wyszukiwania"
+
+#: admin/views/wphb-page.php:79
+msgid "Customize Titles & Meta Data, OpenGraph, Twitter & Pinterest Support, Auto-Keyword Linking, SEO & Readability Analysis, Sitemaps, URL Crawler & more."
+msgstr "Dostosuj obsługę tytułów i metadanych, OpenGraph, Twitter & Pinterest, automatyczne łączenie słów kluczowych, analizę SEO i czytelności, mapy witryn, roboty indeksujące URL i inne."
+
+#: admin/views/wphb-page.php:47 admin/views/wphb-page.php:64
+#: admin/views/wphb-page.php:81
+msgid "View features"
+msgstr "Zobacz funkcje"
+
+#: admin/views/wphb-page.php:45
+msgid "Resize, optimize and compress all of your images with the incredibly powerful and award-winning, 100% free WordPress image optimizer."
+msgstr "Zmieniaj rozmiar, optymalizuj i kompresuj wszystkie obrazy dzięki niesamowicie wydajnemu i nagradzanemu, w 100% darmowemu optymalizatorowi obrazów."
+
+#: admin/views/wphb-page.php:44
+msgid "Smush Image Compression and Optimization"
+msgstr "Smush Kompresja i Optymalizacja Obrazków"
+
+#: admin/views/wphb-page.php:33
+msgid "Check out our other free wordpress.org plugins!"
+msgstr "Sprawdź nasze inne darmowe wtyczki na wordpress.org!"
+
+#: admin/views/uptime/summary-meta-box.php:41
+msgid "Website availability in the last "
+msgstr "Dostępność strony w ostatnich"
+
+#: admin/views/uptime/settings-meta-box.php:17
+msgid "If you no longer wish to use Hummingbird’s Uptime Monitor you can turn it off completely."
+msgstr "Jeśli nie chcesz już używać Monitorowania Dostępności Witryny Hummingbirda, możesz wyłączyć je całkowicie. "
+
+#: admin/views/uptime/downtime-meta-box.php:63
+msgid "Spacer image"
+msgstr "Obrazek odstępu"
+
+#: admin/views/uptime/downtime-meta-box.php:45
+msgid "No downtime has been reported during the reporting period."
+msgstr "Nie odnotowano niedostępności w okresie raportowania. "
+
+#: admin/views/uptime/downtime-meta-box.php:41
+msgid "Logs"
+msgstr "Dziennik zdarzeń"
+
+#: admin/views/uptime/downtime-meta-box.php:30
+#: admin/views/uptime/meta-box.php:83 core/modules/class-advanced.php:614
+#: core/modules/class-advanced.php:623
+msgid "Unknown"
+msgstr "Nieznane"
+
+#: admin/views/wphb-page.php:61
+msgid "Defender Security, Monitoring, and Hack Protection"
+msgstr "Defender Bezpieczeństwo, monitorowanie i ochrona przed hackowaniem"
+
+#: admin/views/wphb-page.php:62
+msgid "Security Tweaks & Recommendations, File & Malware Scanning, Login & 404 Lockout Protection, Two-Factor Authentication & more."
+msgstr "Ulepszenia bezpieczeństwa i zalecenia, skanowanie plików i złośliwego oprogramowania, logowanie i ochrona blokady 404, dwuetapowe uwierzytelnianie i inne."
+
+#: admin/pages/class-uptime.php:425
+msgid "30 days"
+msgstr "30 dni"
+
+#: admin/pages/class-uptime.php:424
+msgid "7 days"
+msgstr "7 dni"
+
+#: admin/pages/class-minification.php:200
+msgid "<strong>Your changes have been published.</strong> Note: Files queued for compression will generate once someone visits your homepage."
+msgstr "<strong>Twoje zmiany zostały opublikowane.</strong> Uwaga: pliki oczekujące na kompresowanie wygenerują się, gdy ktoś odwiedzi Twoją stronę główną."
+
+#: languages/react.php:8 _src/react/components/steps-bar/index.jsx:27
+#: admin/assets/js/wphb-react-caching.min.js:2262
+msgid "Server Type"
+msgstr "Typ serwera"
+
+#: admin/modals/database-cleanup-modal.php:24
+#: admin/modals/dismiss-report-modal.php:24
+msgid "Are you sure?"
+msgstr "Czy na pewno?"
+
+#: admin/class-admin.php:192 admin/class-admin.php:243
+#: admin/class-admin.php:253 admin/class-admin.php:271
+#: admin/pages/class-dashboard.php:343
+#: admin/views/dashboard/welcome/upsell-meta-box-header.php:15
+msgid "Hummingbird Pro"
+msgstr "Hummingbird Pro"
+
+#: admin/views/performance/metrics-meta-box.php:61
+msgid "You have chosen to ignore this performance test. Run a new test to see new recommendations."
+msgstr "Postanowiłeś zignorować ten test wydajności. Uruchom nowy test, aby zobaczyć nowe rekomendacje."
+
+#: admin/modals/found-assets-modal.php:41
+msgid "Got It"
+msgstr "Rozumiem"
+
+#: admin/modals/dismiss-report-modal.php:28
+msgid "Are you sure you wish to ignore the current performance test results? You can re-run the test anytime to check your performance score again."
+msgstr "Czy na pewno chcesz zignorować aktualne wyniki testu wydajności? Możesz ponownie uruchomić test w dowolnym momencie, aby ponownie sprawdzić swój wynik."
+
+#: admin/modals/check-files-modal.php:79
+msgid "By default your files are hosted on your own server. With this pro setting enabled we will host your files on WPMU DEV’s secure and hyper fast CDN."
+msgstr "Domyślnie pliki są przechowywane na Twoim serwerze. Po włączeniu tego ustawienia będziemy przechowywać Twoje pliki na bezpiecznym i bardzo szybkim WPMU DEV CDN."
+
+#: admin/views/minification/summary-meta-box.php:51
+msgid "Filesize reductions"
+msgstr "Redukcja rozmiaru plików"
+
+#: admin/views/minification/summary-meta-box.php:47
+msgid "Total files"
+msgstr "Łącznie plików"
+
+#: admin/views/minification/summary-meta-box.php:41
+msgid "Compression savings"
+msgstr "Zaoszczędzono dzięki kompresji"
+
+#: admin/views/minification/settings-meta-box.php:225
+msgid "Reset to defaults"
+msgstr "Przywróć ustawienia domyślne"
+
+#: admin/views/minification/settings-meta-box.php:67
+msgid "Enable super-compression"
+msgstr "Włącz super kompresję"
+
+#: admin/views/minification/settings-meta-box.php:53
+msgid "Super-compress my files"
+msgstr "Kompresuj bardziej moje pliki"
+
+#: admin/views/minification/enqueued-files-meta-box.php:164
+msgid "Select all JavaScript files"
+msgstr "Zaznacz wszystkie pliki JavaScript"
+
+#: admin/views/minification/enqueued-files-meta-box.php:151
+msgid "Select all CSS files"
+msgstr "Zaznacz wszystkie pliki CSS "
+
+#: admin/views/minification/empty-collection-meta-box.php:26
+msgid "Choose which files you wish to compress and then publish your changes."
+msgstr "Wybierz pliki, które chcesz skompresować, a następnie zapisz zmiany."
+
+#: admin/views/minification/enqueued-files-meta-box-header.php:31
+#: languages/react.php:658 _src/react/views/minify/assets.jsx:71
+#: admin/assets/js/wphb-react-minify.min.js:1848
+msgid "Clears all local or hosted assets and recompresses files that need it"
+msgstr "Usuwa wszystkie lokalne lub hostowane zasoby i ponownie kompresuje pliki, które tego wymagają"
+
+#: admin/modals/bulk-update-modal.php:59
+msgid "Move to Footer"
+msgstr "Przenieś do stopki"
+
+#: admin/modals/bulk-update-modal.php:34
+msgid "Compress"
+msgstr "Kompresuj"
+
+#: admin/views/dashboard/performance/module-meta-box-dismissed.php:22
+msgid "You chose to ignore your last performance test. Run a new test to see new recommendations."
+msgstr "Zdecydowałeś się zignorować swój ostatni test wydajności. Uruchom nowy test, aby zobaczyć nowe rekomendacje."
+
+#: admin/views/caching/page/meta-box.php:306
+#: admin/views/minification/settings-meta-box.php:206
+msgid "Download Logs"
+msgstr "Pobierz dzienniki"
+
+#: admin/views/caching/page/meta-box.php:298
+msgid "If you’re having issues with page caching, turn on the debug log to get insight into what’s going on."
+msgstr "Jeśli masz problemy z buforowaniem stron, włącz dziennik debugowania, aby uzyskać wgląd w to, co jest nie tak."
+
+#: languages/react.php:99 _src/react/modules/caching/integrations.jsx:284
+#: _src/react/modules/caching/integrations.jsx:325
+#: admin/assets/js/wphb-react-integrations.min.js:2307
+#: admin/assets/js/wphb-react-integrations.min.js:2348
+msgid "Cloudflare is connected for this domain."
+msgstr "Cloudflare jest podłączony dla tej domeny."
+
+#: languages/react.php:404
+#: _src/react/views/caching/browser/server-instructions.jsx:44
+#: admin/assets/js/wphb-react-caching.min.js:2918
+msgid "Copy the generated code into your .htaccess file & save your changes."
+msgstr "Skopiuj wygenerowany kod do pliku .htaccess i zapisz zmiany."
+
+#: languages/react.php:39 _src/react/components/steps-content/index.jsx:161
+#: _src/react/modules/caching/integrations.jsx:415
+#: admin/assets/js/wphb-react-caching.min.js:2672
+#: admin/assets/js/wphb-react-integrations.min.js:2438
+msgid "JavaScript, CSS, Media, Images"
+msgstr "JavaScript, CSS, Media, Obrazy"
+
+#: languages/react.php:35 _src/react/components/steps-content/index.jsx:146
+#: admin/assets/js/wphb-react-caching.min.js:2657
+msgid "Individual file types"
+msgstr "Indywidualne typy plików"
+
+#: languages/react.php:32 _src/react/components/steps-content/index.jsx:141
+#: admin/assets/js/wphb-react-caching.min.js:2652
+msgid "All file types"
+msgstr "Wszystkie typy plików"
+
+#: admin/pages/class-performance.php:77
+msgid "You have successfully ignored this performance test."
+msgstr "Pomyślnie zignorowałeś ten test wydajności."
+
+#: admin/views/minification/enqueued-files-meta-box.php:86
+msgid "Publish Changes"
+msgstr "Opublikuj zmiany"
+
+#: admin/views/caching/page/meta-box.php:295
+#: admin/views/minification/settings-meta-box.php:195
+msgid "Enable debug log"
+msgstr "Włącz dziennik debugowania"
+
+#: admin/views/caching/page/meta-box.php:285
+msgid "If one of your pages or posts gets updated, turning this setting on will also regenerate all cached archives and taxonomies for all post types."
+msgstr "Jeśli jedna ze stron lub postów zostanie zaktualizowana, włączenie tego ustawienia spowoduje również zregenerowanie wszystkich buforowanych archiwów i taksonomii dla wszystkich typów wpisów."
+
+#: admin/class-notices.php:477
+msgid "We've spent countless hours developing Hummingbird and making it free for you to use. We would really appreciate it if you dropped us a quick rating!"
+msgstr "Spędziliśmy niezliczone godziny na rozwijaniu wtyczki Hummingbird a teraz dajemy Ci ją za darmo. Będziemy wdzięczni, jeśli napiszesz nam szybką ocenę!"
+
+#: admin/views/caching/page/meta-box.php:246
+msgid "Caching pages for logged in users can reduce load on your server, but can cause strange behavior with some themes/plugins."
+msgstr "Przechowywanie stron dla zalogowanych użytkowników może zmniejszyć obciążenie serwera, ale może powodować dziwne zachowanie w przypadku niektórych szablonów/wtyczek."
+
+#: core/class-utils.php:796 languages/react.php:71
+#: _src/react/components/support-link/index.jsx:29
+#: admin/assets/js/wphb-react-caching.min.js:2785
+#: admin/assets/js/wphb-react-gzip.min.js:2220
+msgid "Start a live chat."
+msgstr "Rozpocznij czat na żywo."
+
+#: core/modules/class-page-cache.php:590
+msgid "Tags"
+msgstr "Tagi"
+
+#: core/modules/class-page-cache.php:589
+msgid "Categories"
+msgstr "Kategorie"
+
+#: core/modules/class-page-cache.php:588
+msgid "Archives"
+msgstr "Archiwa"
+
+#: core/modules/class-page-cache.php:586
+msgid "Pages"
+msgstr "Strony"
+
+#: core/modules/class-page-cache.php:585
+msgid "Blog"
+msgstr "Blog"
+
+#: core/modules/class-page-cache.php:584
+msgid "Frontpage"
+msgstr "Strona główna"
+
+#. translators: %s: plugin name.
+#: core/modules/class-page-cache.php:222
+msgid "%s plugin detected. Please disable it to use Hummingbird page caching functionality."
+msgstr "Wykryto wtyczkę %s. Wyłącz ją, aby korzystać z funkcji buforowania strony w Hummingbird."
+
+#: languages/react.php:616 _src/react/views/gzip/summary.jsx:261
+#: admin/assets/js/wphb-react-gzip.min.js:2039
+msgid "Current status"
+msgstr "Aktualny stan"
+
+#: admin/views/dashboard/caching/browser-meta-box.php:43
+#: admin/views/dashboard/caching/cloudflare-module-meta-box.php:41
+#: admin/views/dashboard/gzip/module-meta-box.php:33 languages/react.php:469
+#: _src/react/views/caching/browser/status.jsx:353
+#: _src/react/views/gzip/summary.jsx:260
+#: admin/assets/js/wphb-react-caching.min.js:2131
+#: admin/assets/js/wphb-react-gzip.min.js:2038
+msgid "File type"
+msgstr "Typ pliku"
+
+#: languages/react.php:568 _src/react/views/gzip/server-instructions.jsx:302
+#: admin/assets/js/wphb-react-gzip.min.js:2695
+msgid "Automatic .htaccess rules have been applied."
+msgstr "Zastosowano automatyczne reguły .htaccess."
+
+#: languages/react.php:518 _src/react/views/gzip/server-instructions.jsx:134
+#: admin/assets/js/wphb-react-gzip.min.js:2527
+msgid "Copy & paste the generated code below into your .htaccess file"
+msgstr "Skopiuj i wklej poniżej wygenerowany kod do pliku .htaccess"
+
+#: languages/react.php:550 _src/react/views/gzip/server-instructions.jsx:182
+#: admin/assets/js/wphb-react-gzip.min.js:2575
+msgid "If you are unable to get the automated method working you can copy the generated code below into your .htaccess file to activate GZip compression."
+msgstr "Jeśli tryb automatyczny nie działa, możesz skopiować poniższy wygenerowany kod do pliku .htaccess, aby aktywować kompresję GZip."
+
+#: languages/react.php:571 _src/react/views/gzip/server-instructions.jsx:91
+#: admin/assets/js/wphb-react-gzip.min.js:2484
+msgid "Apply Rules"
+msgstr "Zastosuj reguły"
+
+#: languages/react.php:509 _src/react/views/gzip/configure.jsx:113
+#: admin/assets/js/wphb-react-gzip.min.js:2892
+msgid "Follow the instructions to activate GZip compression for this website."
+msgstr "Postępuj zgodnie z instrukcjami, aby aktywować kompresję GZip dla tej witryny."
+
+#: languages/react.php:53 _src/react/components/steps-content/index.jsx:53
+#: _src/react/views/gzip/configure.jsx:105
+#: admin/assets/js/wphb-react-caching.min.js:2564
+#: admin/assets/js/wphb-react-gzip.min.js:2884
+msgid "Choose your server type. If you don’t know this, please contact your hosting provider."
+msgstr "Wybierz typ serwera. Jeśli tego nie wiesz, skontaktuj się ze swoim dostawcą usług hostingowych."
+
+#: languages/react.php:503 _src/react/views/gzip/configure.jsx:74
+#: _src/react/views/gzip/configure.jsx:104
+#: admin/assets/js/wphb-react-gzip.min.js:2853
+#: admin/assets/js/wphb-react-gzip.min.js:2883
+msgid "Server type"
+msgstr "Typ serwera"
+
+#. translators: %s: Number of inactive types
+#: admin/views/dashboard/gzip/module-meta-box.php:21
+msgid "%s of your compression types are inactive."
+msgstr "%s typów kompresji jest nieaktywnych."
+
+#: admin/views/dashboard/caching/page-caching-module-meta-box.php:17
+msgid "Store static HTML copies of your pages and posts to reduce the processing load on your server and dramatically speed up your page load time."
+msgstr "Przechowuj statyczne kopie HTML Twoich stron i postów, aby zmniejszyć obciążenie serwera i znacznie przyspieszyć ładowanie strony."
+
+#. translators: %s: Connect Cloudflare link
+#: admin/views/dashboard/caching/browser-meta-box.php:108
+msgid " <a href=\"%s\">Connect your account</a> to control your settings via Hummingbird."
+msgstr "<a href=\"%s\">Połącz swoje konto</a> aby kontrolować ustawienia za pomocą Hummingbird."
+
+#: admin/views/dashboard/caching/gravatar-module-meta-box.php:20
+msgid "Gravatar caching is currently active."
+msgstr "Pamięć podręczna dla Gravatarów jest obecnie aktywna. "
+
+#: admin/views/dashboard/caching/gravatar-module-meta-box.php:17
+msgid "Store local copies of Gravatars to avoid your visitors loading them on every page load."
+msgstr "Przechowuj lokalne kopie gravatarów aby nie wczytywały się za każdym wczytaniem stron przez użytkowników. "
+
+#: admin/views/dashboard/caching/browser-meta-box.php:44
+#: admin/views/dashboard/caching/cloudflare-module-meta-box.php:42
+#: languages/react.php:472 _src/react/views/caching/browser/status.jsx:354
+#: admin/assets/js/wphb-react-caching.min.js:2132
+msgid "Current expiry"
+msgstr "Wygasanie bieżące"
+
+#: admin/views/caching/page/meta-box.php:508
+msgid "Note: Deactivating won’t lose any of your website data, only the cached pages will be removed and won’t be served to your visitors any longer. Remember this may result in slower page loads unless you have another caching plugin activate."
+msgstr "Uwaga: dezaktywacja nie spowoduje utraty żadnych danych z Twojej witryny, tylko strony z pamięci podręcznej zostaną usunięte i nie będą już wyświetlane użytkownikom. Pamiętaj, że może to spowodować wolniejsze ładowanie stron, chyba że aktywujesz inną wtyczkę do buforowania."
+
+#: admin/views/caching/page/meta-box.php:499
+msgid "You can deactivate page caching at any time. "
+msgstr "Możesz dezaktywować buforowanie stron w dowolnym momencie."
+
+#: admin/views/caching/page/meta-box.php:467
+msgid "Specify any user agents you don’t want to send cached pages to like bots, spiders and crawlers. We’ve added a couple of common ones for you."
+msgstr "Podaj wszystkie identyfikatory przeglądarek (user agent strings) do których nie chcesz wysyłać stron z pamięci podręcznej. Mogą to być na przykład roboty indeksujące wyszukiwarek. Dodaliśmy już kilka najpopularniejszych."
+
+#: admin/views/caching/page/meta-box.php:465
+msgid "User agents"
+msgstr "Identyfikatory przeglądarek (user agents)"
+
+#: admin/views/caching/page/meta-box.php:435
+msgid "You can tell Hummingbird not to cache specific URLs, or any URLs that contain strings. Add one entry per line."
+msgstr "Możesz skonfigurować Hummingbird tak, aby nie buforował określonych adresów URL lub adresów URL zawierających określone ciągi znaków. Dodaj jeden wpis w wierszu."
+
+#: admin/views/caching/page/meta-box.php:433
+msgid "URL Strings"
+msgstr "Ciągi URL"
+
+#: admin/views/caching/page/meta-box.php:429
+msgid "Specify any particular URLs you don’t want to cache at all."
+msgstr "Określ adresy URL, których w ogóle nie chcesz buforować."
+
+#: admin/views/caching/page/meta-box.php:427 languages/react.php:682
+#: _src/react/views/minify/configurations.jsx:197
+#: admin/assets/js/wphb-react-minify.min.js:2501
+msgid "Exclusions"
+msgstr "Wykluczenia"
+
+#: admin/views/caching/page/meta-box.php:282
+msgid "Clear full cache when post/page is updated"
+msgstr "Wyczyść pełną pamięć podręczną po aktualizacji postu/strony"
+
+#: admin/views/caching/page/meta-box.php:259
+msgid "You can turn on caching pages with GET parameters (?x=y at the end of a url), though generally this isn’t a good idea if those pages are dynamic."
+msgstr "Możesz włączyć pamięć podręczną na stronach z parametrem GET (?x=y na końcu URLa), jednak z zasady to nie jest dobry pomysł, jeśli te strony są dynamiczne. "
+
+#: admin/views/caching/page/meta-box.php:256
+msgid "Cache URL queries"
+msgstr "Przechowuj zapytania URL w pamięci podręcznej"
+
+#: admin/views/caching/page/meta-box.php:243
+msgid "Include logged in users"
+msgstr "Dodaj zalogowanych użytkowników"
+
+#: admin/views/caching/page/meta-box.php:234
+msgid "Fine tune page caching to work how you want it to."
+msgstr "Dopasuj pamięć podręczną aby działała tak jak ty chcesz. "
+
+#: admin/views/caching/page/meta-box.php:45
+msgid "Page Types"
+msgstr "Typy stron"
+
+#: admin/views/caching/page/meta-box.php:34
+#: admin/views/caching/page/subsite-meta-box.php:25
+#: admin/views/dashboard/caching/page-caching-module-meta-box.php:21
+msgid "Page caching is currently active."
+msgstr "Buforowanie stron jest aktualnie aktywne."
+
+#: admin/views/caching/page/meta-box.php:29
+#: admin/views/caching/page/subsite-meta-box.php:19
+msgid "Hummingbird stores static HTML copies of your pages and posts to decrease page load time."
+msgstr "Hummingbird przechowuje statyczne kopie HTML Twoich stron i postów, aby zmniejszyć czas wczytywania strony."
+
+#: admin/views/caching/page/meta-box-header.php:18
+msgid "Clear all locally cached static pages"
+msgstr "Wyczyść wszystkie lokalnie buforowane statyczne strony"
+
+#: admin/views/caching/meta-box-footer.php:18
+#: admin/views/caching/page/meta-box-footer.php:16
+msgid "Save Settings"
+msgstr "Zapisz ustawienia"
+
+#: admin/views/caching/gravatar/meta-box-header.php:17
+msgid "Clear all locally cached Gravatars"
+msgstr "Usuń wszystkie gravatary z lokalnej pamięci podręcznej"
+
+#: admin/pages/class-uptime.php:282
+msgid "Last 30 days"
+msgstr "Ostatnie 30 dni"
+
+#: admin/pages/class-uptime.php:281
+msgid "Last 7 days"
+msgstr "Ostatnie 7 dni"
+
+#: admin/pages/class-uptime.php:280
+msgid "Last 1 day"
+msgstr "Ostatni dzień"
+
+#. translators: %d: number of minutes.
+#: admin/pages/class-performance.php:120
+#: admin/views/dashboard/performance/module-meta-box-header.php:28
+#: admin/views/performance/metrics-meta-box.php:44
+msgid "Hummingbird is just catching her breath - you can run another test in %d minute"
+msgid_plural "Hummingbird is just catching her breath - you can run another test in %d minutes"
+msgstr[0] "Hummingbird właśnie łapie oddech - możesz wykonać kolejny test za %d minutę"
+msgstr[1] "Hummingbird właśnie łapie oddech - możesz wykonać kolejny test za %d minuty."
+msgstr[2] "Hummingbird właśnie łapie oddech - możesz wykonać kolejny test za %d minut."
+
+#: admin/pages/class-performance.php:113 admin/pages/class-performance.php:132
+msgid "New Test"
+msgstr "Nowy test"
+
+#: core/class-utils.php:170
+msgid "Page cache purged."
+msgstr "Usunięto pamięć podręczną strony."
+
+#: admin/class-page.php:385
+msgid "View Documentation"
+msgstr "Zobacz dokumentację"
+
+#: admin/views/dashboard/welcome/meta-box.php:147
+#: admin/views/uptime/summary-meta-box.php:84
+msgid "Website is reported down"
+msgstr "Witryna jest zgłoszona jako niedostępna"
+
+#: core/modules/class-gravatar.php:162
+msgid "Error fetching Gravatar. Gravatar not found."
+msgstr "Błąd podczas pobierania Gravatara. Gravatar nie został znaleziony."
+
+#. translators: %s: file
+#: core/class-filesystem.php:547 core/class-filesystem.php:575
+msgid "Error uploading file %s."
+msgstr "Błąd podczas przesyłania pliku %s."
+
+#. translators: %s: directory
+#: core/class-filesystem.php:534 core/class-filesystem.php:561
+msgid "Error creating directory %s."
+msgstr "Błąd podczas tworzenia katalogu %s."
+
+#: admin/modals/bulk-update-modal.php:69
+msgid "Defer"
+msgstr "Opóźnij"
+
+#: admin/views/minification/advanced-files-rows.php:139
+msgid "This file can’t be combined"
+msgstr "Tego pliku nie można łączyć"
+
+#: admin/views/dashboard/minification/module-meta-box-footer.php:26
+msgid "WPMU DEV CDN is disabled"
+msgstr "WPMU DEV CDN jest wyłączony"
+
+#: admin/views/dashboard/minification/module-meta-box-footer.php:26
+msgid "WPMU DEV CDN is active"
+msgstr "WPMU DEV CDN jest włączony "
+
+#: admin/views/dashboard/minification/module-meta-box.php:44
+#: admin/views/minification/enqueued-files-meta-box.php:169
+msgid "JavaScript"
+msgstr "JavaScript"
+
+#: admin/views/caching/gravatar/meta-box.php:29
+msgid "This will deactivate Gravatar Caching and clear your local avatar storage."
+msgstr "Pamięć podręczna gravatarów zostanie wyłączona, a wszystkie przechowywane w niej awatary zostaną usunięte. "
+
+#: admin/views/caching/gravatar/meta-box.php:21
+msgid "Gravatar Caching is currently active."
+msgstr "Pamięć podręczna dla Gravatarów jest aktualnie aktywna."
+
+#: admin/views/caching/gravatar/meta-box-header.php:21
+#: admin/views/caching/page/meta-box-header.php:19
+#: admin/views/minification/enqueued-files-meta-box-header.php:32
+#: core/modules/class-page-cache.php:1902 languages/react.php:188
+#: _src/react/modules/caching/integrations.jsx:629
+#: _src/react/views/minify/assets.jsx:77
+#: admin/assets/js/wphb-react-integrations.min.js:2652
+#: admin/assets/js/wphb-react-minify.min.js:1854
+msgid "Clear cache"
+msgstr "Wyczyść pamięć podręczną"
+
+#: admin/views/caching/gravatar/disabled-meta-box.php:24
+#: admin/views/caching/gravatar/meta-box.php:16
+msgid "Gravatar Caching stores local copies of avatars used in comments and in your theme. You can control how often you want the cache purged depending on how your website is set up."
+msgstr "Pamięć podręczna gravatarów przechowuje lokalne kopie avatarów używanych przy komentarza i przez motyw. Możesz wybrać jak często ta pamięć podręczna będzie czyszczona, zależnie od konfiguracji witryny. "
+
+#: languages/react.php:475 _src/react/views/caching/browser/status.jsx:355
+#: admin/assets/js/wphb-react-caching.min.js:2133
+msgid "Recommended expiry"
+msgstr "Rekomendowane wygasanie"
+
+#: languages/react.php:619 _src/react/views/gzip/summary.jsx:281
+#: admin/assets/js/wphb-react-gzip.min.js:2059
+msgid "Made changes?"
+msgstr "Wprowadziłeś zmiany?"
+
+#: admin/modals/integration-cloudflare-modal.php:69
+msgid "Cloudflare account email"
+msgstr "Email konta używanego w Cloudflare"
+
+#: languages/react.php:425
+#: _src/react/views/caching/browser/server-instructions.jsx:91
+#: admin/assets/js/wphb-react-caching.min.js:2965
+msgid "Add the code above to the http or inside server section in the file."
+msgstr "Dodaj kod powyżej do sekcji http lub server w pliku. "
+
+#: languages/react.php:422
+#: _src/react/views/caching/browser/server-instructions.jsx:88
+#: admin/assets/js/wphb-react-caching.min.js:2962
+msgid "Copy the generated code into your nginx.conf usually located at /etc/nginx/nginx.conf or /usr/local/nginx/conf/nginx.conf"
+msgstr "Skopiuj wygenerowany kod do pliku nginx.conf znajdującego się zazwyczaj w /etc/nginx/nginx.conf lub /usr/local/nginx/conf/nginx.conf"
+
+#: languages/react.php:553 _src/react/views/gzip/server-instructions.jsx:199
+#: admin/assets/js/wphb-react-gzip.min.js:2592
+msgid "If .htaccess does not work, and you have access to vhosts.conf or httpd.conf try this:"
+msgstr "Jeśli kod w pliku .htaccess nie działa i masz dostęp do vhosts.conf lub httpd.conf spróbuj tego:"
+
+#: admin/pages/class-dashboard.php:685
+msgid "Using Cloudflare?"
+msgstr "Używasz Cloudflare?"
+
+#: admin/pages/class-caching.php:83 admin/pages/class-caching.php:92
+#: admin/pages/class-caching.php:301 admin/pages/class-caching.php:591
+#: admin/pages/class-dashboard.php:360
+#: admin/views/dashboard/welcome/subsite-meta-box.php:112
+#: languages/react.php:257 _src/react/modules/configs.jsx:155
+#: _src/react/views/setup/wizard.jsx:47 _src/react/views/setup/wizard.jsx:551
+#: admin/assets/js/wphb-react-configs.min.js:6543
+#: admin/assets/js/wphb-setup-wizard.min.js:11456
+#: admin/assets/js/wphb-setup-wizard.min.js:11960
+msgid "Page Caching"
+msgstr "Buforowanie stron"
+
+#: core/class-utils.php:169
+msgid "Gravatar cache purged."
+msgstr "Pamięć podręczna Gravatar została wyczyszczona."
+
+#: admin/pages/class-caching.php:126 admin/pages/class-caching.php:135
+#: admin/pages/class-caching.php:303 admin/pages/class-dashboard.php:402
+#: admin/views/caching/summary-meta-box.php:97 languages/react.php:253
+#: _src/react/modules/configs.jsx:154
+#: admin/assets/js/wphb-react-configs.min.js:6542
+msgid "Gravatar Caching"
+msgstr "Buforowanie Gravatar "
+
+#: admin/class-admin.php:212 admin/class-admin.php:259
+msgid "Gzip Compression"
+msgstr "Kompresja Gzip"
+
+#: admin/class-admin.php:159 admin/class-notices.php:478
+msgid "Rate Hummingbird"
+msgstr "Oceń Hummingbird"
+
+#: core/modules/minify/class-minify-group.php:1029
+msgid "This file has not a linked URL, it will not be combined/minified"
+msgstr "Ten plik nie posiada powiązanego adresu URL, nie zostanie połączony/zminifikowany"
+
+#: admin/views/dashboard/welcome/meta-box.php:102
+#: admin/views/dashboard/welcome/subsite-meta-box.php:100
+#: admin/views/performance/summary-meta-box.php:106
+msgid "Running scan..."
+msgstr "Uruchamiam skanowanie ..."
+
+#: admin/class-notices.php:450
+msgid "We noticed you’re running both the free and pro versions of Hummingbird. No biggie! We’ve deactivated the free version for you. Enjoy the pro features!"
+msgstr "Zauważyliśmy, że korzystasz zarówno z bezpłatnej wersji jak i wersji Pro Hummingbird. Nic poważnego! Wyłączyliśmy darmową wersję za Ciebie. Ciesz się funkcjami Pro!"
+
+#. translators: %s: Upgrade URL
+#: admin/class-notices.php:425
+msgid "Awww yeah! You’ve got access to Hummingbird Pro! Let’s upgrade your free version so you can start using premium features. <a href=\"%s\">Upgrade</a>"
+msgstr "O tak! Masz dostęp do Hummingbird Pro! Zaktualizujmy bezpłatną wersję, aby móc zacząć korzystać z funkcji premium. <a href=\"%s\">Zaktualizuj</a>"
+
+#: core/modules/minify/class-minify-group.php:1042
+msgid "This file included in your output can't be minified or combined"
+msgstr "Ten plik nie może być zminifikowany ani połączony"
+
+#: admin/views/uptime/summary-meta-box.php:75
+msgid "Up Since"
+msgstr "Dostępna od"
+
+#: admin/views/uptime/summary-meta-box.php:49
+msgid "Average server response time during the reporting period"
+msgstr "Średni czas odpowiedzi serwera w okresie raportowania"
+
+#: admin/views/uptime/meta-box.php:57
+msgid ""
+"Server response time is the amount of time it takes for a web server to\n"
+"\t\trespond to a request from a browser. The longer it takes, the longer your visitors wait for the page\n"
+"\t\tto start loading."
+msgstr ""
+"Czas odpowiedzi serwera to ilość czasu potrzebna, aby serwer WWW \n"
+"\t \t odpowiedział na żądanie przeglądarki. Im dłużej trwa, tym dłużej użytkownicy oczekują \n"
+"\t \t na rozpoczęcie ładowania strony."
+
+#: admin/views/uptime/meta-box.php:45
+msgid ""
+"Uptime monitors your server response time and lets you know when your website is down<br>\n"
+"\t\t\tor too slow for your visitors. This service is currently under maintenance as we build a<br>\n"
+"\t\t\tbrand new monitoring service. Check back soon!"
+msgstr ""
+"Uptime monitoruje czas odpowiedzi Twojego serwera i informuje Cię, kiedy Twoja witryna jest niedostępna<br>\n"
+"\t \t \t  lub wczytuje się zbyt wolno. Trwają właśnie prace konserwacyjne nad tą usługą (buduemy zupełnie<br>\n"
+"\t \t \tnowy serwis monitorujący). Sprawdź niedługo jeszcze raz! "
+
+#: admin/views/performance/settings-meta-box-footer.php:11
+msgid "Update Settings"
+msgstr "Zaktualizuj ustawienia"
+
+#: admin/views/settings/data-meta-box.php:62 core/class-utils.php:161
+msgid "Remove"
+msgstr "Usuń"
+
+#: core/class-utils.php:162
+msgid "You"
+msgstr "Ty"
+
+#: admin/modals/membership-modal.php:56
+msgid "Get all of this, plus heaps more as part of a WPMU DEV membership."
+msgstr "Zyskaj to wszystko i wiele więcej jako część członkostwa w WPMU DEV."
+
+#: admin/modals/membership-modal.php:51
+msgid "A membership for Hummingbird Pro also gets you the award winning Smush Pro with unlimited advanced lossy compression that’ll give image heavy websites a speed boost."
+msgstr "Subskrypcja dla Hummingbird Pro daje ci także dostęp do nagradzanego Smush Pro z nielimitowaną zaawansowaną kompresją, która  znacznie przyspiesza ciężkie strony ze zdjęciami.  "
+
+#: admin/modals/membership-modal.php:50
+msgid "Smush Pro"
+msgstr "Smush Pro"
+
+#: admin/modals/membership-modal.php:47
+msgid "By default we minify your files via our API and send them back to your server. Pro users can host their files on WPMU DEV’s secure and hyper fast CDN, which will mean less load on your server and a fast visitor experience."
+msgstr "Domyślnie - zmniejszamy pliki poprzez nasze API i odsyłamy je spowroten na Twój serwer. Użytkownicy wersji Pro mogą jednak przechowywać te pliki w superwydajnej i szybkiej WPMU DEV CDN, co oznacza mniejsze obciążenie Twojego serwera i odczuwalnie wyższą prędkość wczytywania strony dla odwiedzających. "
+
+#: admin/modals/membership-modal.php:43
+msgid "Compress your minified files up to 2x more than regular optimization and reduce your page load time even further."
+msgstr "Kompresuj zmniejszone pliki nawet 2 razy wydajniej i przyspiesz wczytywanie strony jeszcze bardziej."
+
+#: admin/modals/membership-modal.php:39
+msgid "Schedule Hummingbird to run regular performance tests daily, weekly or monthly and get email reports delivered straight to your inbox."
+msgstr "Zaplanuj Hummingbird, aby regularnie przeprowadał testy wydajności, codziennie, co tydzień lub co miesiąc, i otrzymuj raporty e-mail dostarczane bezpośrednio do Twojej skrzynki odbiorczej."
+
+#: admin/modals/membership-modal.php:38
+msgid "Automation"
+msgstr "Automatyzacja"
+
+#: admin/modals/membership-modal.php:33
+msgid "Here's what you'll get by upgrading to Hummingbird Pro."
+msgstr "Oto, co zyskasz, przechodząc na wersję Hummingbird Pro."
+
+#: admin/views/minification/settings-meta-box.php:100
+msgid "Host my files on the WPMU DEV CDN"
+msgstr "Hostuj moje pliki na WPMU DEV CDN"
+
+#: admin/modals/bulk-update-modal.php:81 languages/react.php:204
+#: _src/react/modules/configs.jsx:66 _src/react/modules/configs.jsx:108
+#: admin/assets/js/wphb-react-configs.min.js:6454
+#: admin/assets/js/wphb-react-configs.min.js:6496
+msgid "Apply"
+msgstr "Zastosuj"
+
+#: admin/modals/bulk-update-modal.php:77 admin/modals/clear-cache-modal.php:74
+#: admin/modals/clear-cache-network-wide-modal.php:44
+#: admin/modals/clear-cache-network-wide-modal.php:82
+#: admin/modals/database-cleanup-modal.php:34
+#: admin/modals/dismiss-report-modal.php:35
+#: admin/modals/reset-settings-modal.php:36
+#: admin/modals/site-health-orphaned-modal.php:78
+#: admin/modals/site-health-orphaned-modal.php:91 languages/react.php:282
+#: _src/react/modules/configs.jsx:37
+#: admin/assets/js/wphb-react-configs.min.js:6425
+msgid "Cancel"
+msgstr "Anuluj"
+
+#: admin/modals/membership-modal.php:46
+#: admin/views/dashboard/minification/network-module-meta-box.php:39
+#: admin/views/minification/summary-meta-box.php:62 languages/react.php:773
+#: _src/react/views/setup/wizard.jsx:387
+#: admin/assets/js/wphb-setup-wizard.min.js:11796
+msgid "WPMU DEV CDN"
+msgstr "WPMU DEV CDN"
+
+#: admin/views/minification/advanced-files-rows.php:114
+msgid "This file type cannot be compressed and will be left alone"
+msgstr "Ten typ pliku nie może być skompresowany i zostanie pominięty"
+
+#: admin/views/minification/enqueued-files-meta-box.php:137
+#: admin/views/minification/enqueued-files-meta-box.php:138
+msgid "Search by name or extension"
+msgstr "Wyszukaj według nazwy lub rozszerzenia"
+
+#: admin/views/minification/enqueued-files-meta-box.php:126
+msgid "Choose Plugin or Theme"
+msgstr "Wybierz wtyczkę lub szablon"
+
+#: admin/views/minification/enqueued-files-meta-box-header.php:21
+msgid "Not seeing all your files in this list?"
+msgstr "Nie widzisz wszystkich swoich plików na tej liście?"
+
+#: admin/views/minification/network-settings-meta-box.php:144
+#: admin/views/minification/settings-meta-box.php:167
+msgid "WP Smush free installed"
+msgstr "Darmowa wersja WP Smush zainstalowana"
+
+#: admin/views/minification/settings-meta-box.php:60
+msgid "Auto-enabled"
+msgstr "Automatyczne włączone"
+
+#: admin/views/wphb-page.php:98
+msgid "Try pro features for free!"
+msgstr "Wypróbuj funkcje pro za darmo!"
+
+#: admin/views/dashboard/welcome/meta-box.php:144
+msgid "Uptime Inactive"
+msgstr "Uptime nieaktywny"
+
+#: admin/views/dashboard/welcome/meta-box.php:104
+#: admin/views/dashboard/welcome/subsite-meta-box.php:102
+#: admin/views/notifications/summary-meta-box.php:37
+#: admin/views/performance/summary-meta-box.php:108
+msgid "Never"
+msgstr "Nigdy"
+
+#: admin/views/dashboard/uptime/module-meta-box-footer.php:22
+msgid "Downtime notifications are enabled"
+msgstr "Powiadomienia o niedostępności są włączone"
+
+#: admin/views/dashboard/uptime/module-meta-box.php:21
+msgid "Availability"
+msgstr "Dostępność"
+
+#: admin/views/dashboard/uptime/module-meta-box.php:17
+msgid "Your website is currently up and humming."
+msgstr "Twoja witryna aktualnie jest dostępna, śpiewa i tańczy. "
+
+#: admin/views/dashboard/uptime/disabled-meta-box.php:15
+#: admin/views/dashboard/uptime/module-meta-box.php:15
+#: admin/views/dashboard/uptime/no-membership-meta-box.php:14
+msgid "Monitor your website and get notified if/when it’s inaccessible. We’ll also watch your server response time."
+msgstr "Monitoruj swoją witrynę i otrzymuj powiadomienia, jeśli / kiedy jest niedostępna. Będziemy również obserwować czas reakcji Twojego serwera."
+
+#: admin/views/dashboard/smush/meta-box.php:54
+#: admin/views/performance/audits/modern-image-formats.php:102
+#: admin/views/performance/audits/offscreen-images.php:102
+#: admin/views/performance/audits/total-byte-weight.php:116
+#: admin/views/performance/audits/uses-optimized-images.php:109
+#: admin/views/performance/audits/uses-responsive-images.php:105
+msgid "Activate Smush"
+msgstr "Aktywuj Smush"
+
+#: admin/views/dashboard/smush/meta-box.php:44
+msgid "WP Smush is installed but not activated! Activate and set up now to reduce page load time."
+msgstr "WP Smush jest zainstalowany, ale nie aktywowany! Aktywuj i skonfiguruj teraz, aby skrócić czas wczytywania strony."
+
+#: admin/views/dashboard/smush/meta-box.php:35
+#: admin/views/performance/audits/modern-image-formats.php:106
+#: admin/views/performance/audits/offscreen-images.php:106
+#: admin/views/performance/audits/total-byte-weight.php:120
+#: admin/views/performance/audits/uses-optimized-images.php:113
+#: admin/views/performance/audits/uses-responsive-images.php:109
+msgid "Install Smush"
+msgstr "Zainstaluj Smush"
+
+#: admin/views/dashboard/smush/meta-box.php:25
+msgid "Automatically compress and optimize your images with our super popular Smush plugin."
+msgstr "Automatycznie kompresuj i optymalizuj swoje obrazy dzięki naszej super popularnej wtyczce Smush."
+
+#: admin/views/caching/page/meta-box.php:326
+#: admin/views/dashboard/uptime/module-meta-box-header.php:20
+#: admin/views/dashboard/welcome/upsell-meta-box-header.php:19
+#: admin/views/minification/summary-meta-box.php:64
+#: admin/views/notifications/configure-meta-box.php:40
+#: admin/views/notifications/configure-meta-box.php:49
+#: admin/views/notifications/configure-meta-box.php:58
+#: admin/views/notifications/configure-meta-box.php:67 languages/react.php:715
+#: _src/react/views/setup/wizard.jsx:140
+#: admin/assets/js/wphb-setup-wizard.min.js:11549
+msgid "Pro"
+msgstr "Pro"
+
+#: admin/class-admin.php:201 admin/class-admin.php:257
+#: admin/pages/class-dashboard.php:1132
+#: admin/views/dashboard/reports/meta-box.php:23
+#: admin/views/notifications/configure-meta-box.php:37 languages/react.php:270
+#: _src/react/modules/configs.jsx:159
+#: admin/assets/js/wphb-react-configs.min.js:6547
+msgid "Performance Test"
+msgstr "Test wydajności"
+
+#: admin/modals/check-performance-modal.php:32
+msgid "Hummingbird is running a test to measure your website performance, please wait."
+msgstr "Hummingbird przeprowadza test, by zmierzyć wydajność witryny, proszę czekać."
+
+#: admin/views/dashboard/minification/disabled-meta-box.php:15
+#: admin/views/dashboard/minification/module-meta-box.php:20
+msgid "Compress, combine and position your assets to dramatically improve your page load speed."
+msgstr "Kompresuj, łącz i pozycjonuj zasoby, aby znacząco poprawić szybkość wczytywania strony."
+
+#: admin/views/dashboard/gzip/module-meta-box.php:16
+msgid "Gzip compresses your webpages and style sheets before sending them over to the browser."
+msgstr "Gzip kompresuje Twoje strony i arkusze stylów przed wysłaniem ich do przeglądarki."
+
+#: admin/pages/class-uptime.php:112 admin/pages/class-uptime.php:143
+#: admin/views/uptime/meta-box.php:80
+msgid "Response Time"
+msgstr "Czas odpowiedzi"
+
+#: admin/pages/class-uptime.php:236
+msgid "Reporting period"
+msgstr "Raport z okresu"
+
+#: admin/views/notifications/configure-meta-box.php:39
+#: admin/views/notifications/configure-meta-box.php:57
+#: admin/views/notifications/configure-meta-box.php:66
+msgid "Reporting"
+msgstr "Raportowanie"
+
+#: admin/pages/class-dashboard.php:165 admin/pages/class-minification.php:209
+msgid "Your local and Cloudflare caches have been successfully cleared. Your assets will regenerate the next time someone visits your website."
+msgstr "Twoja lokalna pamięci podręczna oraz pamięci podręczna Cloudflare zostały pomyślnie wyczyszczone. Twoje zasoby zostaną zregenerowane, gdy następnym razem ktoś odwiedzi Twoją witrynę."
+
+#: admin/pages/class-dashboard.php:161 admin/pages/class-minification.php:205
+#: languages/react.php:345 _src/react/modules/minify.jsx:95
+#: admin/assets/js/wphb-react-minify.min.js:2636
+msgid "Your cache has been successfully cleared. Your assets will regenerate the next time someone visits your website."
+msgstr "Twoja pamięć podręczna została pomyślnie wyczyszczona. Twoje zasoby zostaną zregenerowane, gdy następnym razem ktoś odwiedzi Twoją witrynę."
+
+#: core/class-utils.php:173 languages/react.php:81
+#: _src/react/modules/caching/integrations.jsx:176
+#: admin/assets/js/wphb-react-integrations.min.js:2199
+msgid "Cloudflare cache successfully purged. Please wait 30 seconds for the purge to complete."
+msgstr "Pamięć podręczna Cloudflare została wyczyszczona. Zaczekaj 30 sekund na zakończenie oczyszczania."
+
+#. translators: %s - icon
+#: admin/class-page.php:432
+msgid "Made with %s by WPMU DEV"
+msgstr "Wykonane z %s przez WPMU DEV"
+
+#: core/modules/minify/class-minify-group.php:1201
+msgid "Minify callback does not exist"
+msgstr "Wywołanie zwrotne minifikacji nie istnieje"
+
+#: core/modules/minify/class-minify-group.php:1160
+msgid "Hummingbird could not parse the content of this file"
+msgstr "Hummingbird nie mógł przeanalizować zawartości tego pliku"
+
+#: core/modules/minify/class-minify-group.php:1144
+msgid "@import directive is not allowed in stylesheets"
+msgstr "dyrektywa @import nie jest dozwolona w arkuszach stylów"
+
+#: core/modules/minify/class-minify-group.php:1093
+msgid "It looks like this file is empty"
+msgstr "Wygląda na to, że ten plik jest pusty"
+
+#: admin/views/minification/enqueued-files-meta-box.php:127
+msgid "Others"
+msgstr "Inne"
+
+#. translators: %d: Time left before another retry.
+#: admin/views/minification/enqueued-files-meta-box.php:72
+msgid "It seems that we are having problems in our servers. Asset optimization will be turned off for %d minutes"
+msgstr "Wygląda na to, że mamy problemy na naszych serwerach. Optymalizacja zasobów zostanie wyłączona na %d minuty"
+
+#: admin/views/minification/settings-meta-box.php:81
+#: admin/views/minification/summary-meta-box.php:69
+msgid "Enable WPMU DEV CDN"
+msgstr "Aktywuj WPMU DEV CDN"
+
+#: admin/modals/check-files-modal.php:76
+msgid "Store my files on the WPMU DEV CDN"
+msgstr "Przechowuj moje pliki na  WPMU DEV CDN"
+
+#: core/modules/class-cloudflare.php:675
+msgid "8 hours"
+msgstr "8 godzin"
+
+#: core/modules/class-cloudflare.php:671
+msgid "2 hours"
+msgstr "2 godziny"
+
+#: core/modules/class-cloudflare.php:572
+msgid "Invalid Cloudflare expiration value"
+msgstr "Nieprawidłowa wartość wygasania Cloudflare"
+
+#: core/class-core.php:208
+msgid "See this page unminified"
+msgstr "Zobacz tę stronę nie zminimalizowaną "
+
+#: core/class-core.php:208
+msgid "See this page minified"
+msgstr "Zobacz tę stronę zminifikowaną"
+
+#: core/class-utils.php:918 languages/react.php:96
+#: _src/react/modules/caching/integrations.jsx:297
+#: _src/react/modules/caching/integrations.jsx:307
+#: admin/assets/js/wphb-react-integrations.min.js:2320
+#: admin/assets/js/wphb-react-integrations.min.js:2330
+msgid "Cloudflare"
+msgstr "Cloudflare"
+
+#: core/api/request/class-cloudflare.php:150
+msgid "Cloudflare unknown error"
+msgstr "Nieznany błąd Cloudflare"
+
+#. translators: %s: cloudflare error
+#: core/api/request/class-cloudflare.php:139
+msgid "Cloudflare error: %s"
+msgstr "Błąd Cloudflare : %s"
+
+#: admin/modals/integration-cloudflare-modal.php:290
+msgid "Enable Cloudflare"
+msgstr "Włącz Cloudflare"
+
+#: admin/views/performance/empty-meta-box.php:29
+msgid "Test my website"
+msgstr "Przetestuj moją stronę"
+
+#: core/class-utils.php:237
+msgid "Are you sure? All your changes will be lost"
+msgstr "Jesteś pewny? Wszystkie twoje zmiany zostaną utracone "
+
+#: admin/modals/bulk-update-modal.php:22
+#: admin/views/minification/enqueued-files-meta-box.php:84
+msgid "Bulk Update"
+msgstr "Zbiorcza aktualizacja"
+
+#: admin/views/minification/enqueued-files-meta-box.php:122
+msgid "Filter plugin or theme"
+msgstr "Filtruj po wtyczce lub motywie"
+
+#: admin/views/settings/accessibility-meta-box-footer.php:17
+msgid "Save Changes"
+msgstr "Zapisz zmiany"
+
+#: admin/views/dashboard/smush/meta-box.php:63
+msgid "WP Smush is installed but no images have been smushed yet. Get in there and smush away!"
+msgstr "WP Smush jest zainstalowany, ale nie zoptymalizowano jeszcze żadnych obrazów. Przejdź do zakładki Smush i zoptymalizuj obrazy."
+
+#: core/api/service/class-uptime.php:116 core/api/service/class-uptime.php:137
+msgid "Unknown Error"
+msgstr "Nieznany błąd"
+
+#. translators: %s: error code
+#: core/api/request/class-wpmudev.php:134
+msgid "Unknown Error. Code: %s"
+msgstr "Nieznany błąd. Kod: %s"
+
+#: admin/views/dashboard/minification/network-module-meta-box.php:69
+msgid "Please, activate minification first. A new menu will appear in every site on your Network."
+msgstr "Proszę najpierw włączyć minifikację. Nowe menu pojawi się w każdej witrynie sieci. "
+
+#: admin/class-admin.php:137 admin/class-admin.php:235
+#: admin/class-admin.php:264 admin/pages/class-caching.php:163
+#: admin/pages/class-caching.php:306 admin/pages/class-minification.php:165
+#: admin/pages/class-minification.php:358
+#: admin/pages/class-minification.php:438 admin/pages/class-performance.php:146
+#: admin/pages/class-performance.php:287 admin/pages/class-uptime.php:130
+#: admin/pages/class-uptime.php:145 admin/views/caching/page/meta-box.php:232
+#: admin/views/settings/data-meta-box.php:31 languages/react.php:267
+#: _src/react/modules/configs.jsx:158
+#: admin/assets/js/wphb-react-configs.min.js:6546
+msgid "Settings"
+msgstr "Ustawienia"
+
+#. Author of the plugin
+msgid "WPMU DEV"
+msgstr "WPMU DEV"
+
+#. Description of the plugin
+msgid "Hummingbird zips through your site finding new ways to make it load faster, from file compression and minification to browser caching – because when it comes to pagespeed, every millisecond counts."
+msgstr "Hummingbird śmiga po twojej witrynie znajdując sposoby na zwiększenie jej szybkości, od kompresji i minimalizacji plików do pamięci podręcznej przeglądarki - bo kiedy przychodzi do szybkości ładowania strony każda milisekunda się liczy. "
+
+#. translators: %d: second
+#: core/class-utils.php:590
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] "%d sekunda"
+msgstr[1] "%d sekundy"
+msgstr[2] "%d sekund"
+
+#. translators: %d: minute
+#: core/class-utils.php:587
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d minuta"
+msgstr[1] "%d minuty"
+msgstr[2] "%d minut"
+
+#. translators: %d: hour
+#: core/class-utils.php:584
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] "%d godzina"
+msgstr[1] "%d godziny"
+msgstr[2] "%d godzin"
+
+#. translators: %d: day
+#: core/class-utils.php:581
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d dzień"
+msgstr[1] "%d dni"
+msgstr[2] "%d dni"
+
+#. translators: %d: month
+#: core/class-utils.php:578
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] "%d miesiąc"
+msgstr[1] "%d miesiące"
+msgstr[2] "%d miesiący"
+
+#. translators: %d: year
+#: core/class-utils.php:575
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] "%d rok"
+msgstr[1] "%d lata"
+msgstr[2] "%d lat"
+
+#: core/modules/class-caching.php:309 core/modules/class-caching.php:321
+#: core/modules/class-caching.php:325 core/modules/class-caching.php:329
+#: core/modules/class-caching.php:333 core/modules/class-cloudflare.php:690
+msgid "1 year"
+msgstr "1 rok"
+
+#: core/modules/class-caching.php:308 core/modules/class-cloudflare.php:689
+msgid "6 months"
+msgstr "6 miesięcy"
+
+#: core/modules/class-caching.php:307
+msgid "3 months"
+msgstr "3 miesiące"
+
+#: core/modules/class-caching.php:306 core/modules/class-cloudflare.php:688
+msgid "2 months"
+msgstr "2 miesiące"
+
+#: core/modules/class-caching.php:304 core/modules/class-cloudflare.php:686
+msgid "24 days"
+msgstr "24 dni"
+
+#: core/modules/class-caching.php:303 core/modules/class-cloudflare.php:685
+msgid "16 days"
+msgstr "16 dni"
+
+#: core/modules/class-caching.php:302 core/modules/class-cloudflare.php:684
+msgid "8 days"
+msgstr "8 dni"
+
+#: core/modules/class-caching.php:301 core/modules/class-cloudflare.php:683
+msgid "5 days"
+msgstr "5 dni"
+
+#: core/modules/class-caching.php:300 core/modules/class-cloudflare.php:682
+msgid "4 days"
+msgstr "4 dni"
+
+#: core/modules/class-caching.php:299 core/modules/class-cloudflare.php:681
+msgid "3 days"
+msgstr "3 dni"
+
+#: core/modules/class-caching.php:298 core/modules/class-cloudflare.php:680
+msgid "2 days"
+msgstr "2 dni"
+
+#: admin/pages/class-uptime.php:423 core/modules/class-caching.php:297
+#: core/modules/class-cloudflare.php:679
+msgid "1 day"
+msgstr "1 dzień"
+
+#: core/modules/class-caching.php:296 core/modules/class-cloudflare.php:678
+msgid "20 hours"
+msgstr "20 godzin"
+
+#: core/modules/class-caching.php:295 core/modules/class-cloudflare.php:677
+msgid "16 hours"
+msgstr "16 godzin"
+
+#: core/modules/class-caching.php:294 core/modules/class-cloudflare.php:676
+msgid "12 hours"
+msgstr "12 godzin"
+
+#: core/modules/class-caching.php:293
+msgid "6 hours"
+msgstr "6 godzin"
+
+#: core/modules/class-caching.php:292 core/modules/class-cloudflare.php:674
+msgid "5 hours"
+msgstr "5 godzin"
+
+#: core/modules/class-caching.php:291 core/modules/class-cloudflare.php:673
+msgid "4 hours"
+msgstr "4 godziny"
+
+#: core/modules/class-caching.php:290 core/modules/class-cloudflare.php:672
+msgid "3 hours"
+msgstr "3 godziny"
+
+#: core/modules/class-caching.php:289
+msgid "1 hour"
+msgstr "1 godzina"
+
+#: core/modules/class-uptime.php:54
+msgid "You need to be a WPMU DEV Member"
+msgstr "Musisz posiadać członkostwo WPMU DEV "
+
+#: admin/views/minification/advanced-files-rows.php:56
+#: admin/views/minification/advanced-fonts-rows.php:37
+msgid "Select file"
+msgstr "Wybierz plik"
+
+#: admin/views/uptime/summary-meta-box.php:55
+msgid "Outages"
+msgstr "Przerwy"
+
+#: admin/modals/integration-cloudflare-modal.php:281 languages/react.php:178
+#: _src/react/modules/caching/integrations.jsx:599
+#: admin/assets/js/wphb-react-integrations.min.js:2622
+msgid "Re-check"
+msgstr "Sprawdź ponownie"
+
+#: admin/modals/bulk-update-modal.php:39
+msgid "Combine"
+msgstr "Połącz"
+
+#: admin/modals/check-files-modal.php:21
+msgid "Checking files"
+msgstr "Sprawdzanie plików"
+
+#: languages/react.php:622 _src/react/views/gzip/summary.jsx:91
+#: admin/assets/js/wphb-react-gzip.min.js:1869
+msgid "Gzip is not working properly:"
+msgstr "Gzip nie działa poprawnie:"
+
+#: languages/react.php:506 _src/react/views/gzip/configure.jsx:112
+#: admin/assets/js/wphb-react-gzip.min.js:2891
+msgid "Enable compression"
+msgstr "Włącz kompresję"
+
+#: admin/views/minification/enqueued-files-meta-box-header.php:27
+#: languages/react.php:655 _src/react/views/minify/assets.jsx:59
+#: admin/assets/js/wphb-react-minify.min.js:1836
+msgid "Re-Check Files"
+msgstr "Sprawdź ponownie pliki"
+
+#: admin/views/dashboard/welcome/meta-box.php:136
+msgid "Last Down"
+msgstr "Ostatnia niedostępność"
+
+#: admin/pages/class-uptime.php:121 admin/pages/class-uptime.php:144
+#: admin/views/dashboard/uptime/module-meta-box.php:27
+#: admin/views/uptime/downtime-meta-box.php:29
+#: admin/views/uptime/meta-box.php:82
+#: admin/views/uptime/summary-meta-box.php:65
+msgid "Downtime"
+msgstr "Czas niedostępności"
+
+#: admin/views/dashboard/smush/meta-box.php:50
+msgid "Activate Smush Pro"
+msgstr "Aktywuj Smush Pro"
+
+#: admin/views/dashboard/smush/meta-box.php:33
+msgid "Install Smush Pro"
+msgstr "Zainstaluj Smush Pro"
+
+#: admin/views/wphb-uptime-page.php:36
+msgid "Try again"
+msgstr "Spróbuj ponownie"
+
+#: admin/views/dashboard/minification/module-meta-box.php:51
+#: admin/views/dashboard/minification/module-meta-box.php:52
+#: admin/views/minification/enqueued-files-meta-box.php:156
+msgid "CSS"
+msgstr "CSS"
+
+#: admin/views/dashboard/minification/module-meta-box.php:43
+msgid "JS"
+msgstr "JS"
+
+#: admin/modals/check-performance-modal.php:26
+msgid "Test in progress"
+msgstr "Test w toku"
+
+#. translators: %1$s: compressions status; %2$s: compression type
+#. translators: %1$s - status label, %2$s - type
+#: admin/views/dashboard/gzip/module-meta-box.php:66 languages/react.php:607
+#: _src/react/views/gzip/summary.jsx:219
+#: admin/assets/js/wphb-react-gzip.min.js:1997
+msgid "Gzip compression is %1$s for %2$s"
+msgstr "Kompresja Gzip jest %1$s dla %2$s"
+
+#: languages/react.php:613 _src/react/views/gzip/summary.jsx:250
+#: admin/assets/js/wphb-react-gzip.min.js:2028
+msgid "Gzip compresses your web pages and style sheets before sending them over to the browser. This drastically reduces transfer time since the files are much smaller."
+msgstr "Gzip kompresuje twoje strony i arkusze stylów przed wysłaniem ich do przeglądarki. To znacznie skraca czas transferu, ponieważ pliki są znacznie mniejsze."
+
+#: admin/class-admin.php:209 admin/class-admin.php:258
+msgid "Caching"
+msgstr "Buforowanie"
+
+#: admin/views/dashboard/caching/browser-meta-box.php:61
+#: admin/views/dashboard/caching/cloudflare-module-meta-box.php:60
+msgid "Caching is disabled"
+msgstr "Buforowanie jest wyłączone"
+
+#: admin/pages/class-dashboard.php:680
+#: admin/views/dashboard/caching/browser-meta-box.php:57
+#: admin/views/dashboard/caching/cloudflare-module-meta-box.php:56
+msgid "Caching is enabled but you aren't using our recommended value"
+msgstr "Buforowanie jest włączone, ale nie korzystasz z naszej zalecanej wartości"
+
+#: admin/pages/class-dashboard.php:680
+#: admin/views/dashboard/caching/browser-meta-box.php:53
+#: admin/views/dashboard/caching/cloudflare-module-meta-box.php:52
+msgid "Caching is enabled"
+msgstr "Buforowanie jest włączone"
+
+#: languages/react.php:432 _src/react/views/caching/browser/status.jsx:102
+#: admin/assets/js/wphb-react-caching.min.js:1880
+msgid "Browser Caching is not working properly:"
+msgstr "Pamięć podręczna przeglądarki nie działa poprawnie:"
+
+#: languages/react.php:384
+#: _src/react/views/caching/browser/server-instructions.jsx:104
+#: _src/react/views/gzip/server-instructions.jsx:239
+#: admin/assets/js/wphb-react-caching.min.js:2978
+#: admin/assets/js/wphb-react-gzip.min.js:2632
+msgid "If you do not have access to your NGINX config files you will need to contact your hosting provider to make these changes."
+msgstr "Jeśli nie masz dostępu do plików konfiguracyjnych NGINX, będziesz musiał skontaktować się ze swoim dostawcą usług hostingowych, aby wprowadzić te zmiany."
+
+#: languages/react.php:562 _src/react/views/gzip/server-instructions.jsx:233
+#: admin/assets/js/wphb-react-gzip.min.js:2626
+msgid "For NGINX servers:"
+msgstr "Dla serwerów NGINX:"
+
+#: core/class-utils.php:800 languages/react.php:74
+#: _src/react/components/support-link/index.jsx:29
+#: admin/assets/js/wphb-react-caching.min.js:2785
+#: admin/assets/js/wphb-react-gzip.min.js:2220
+msgid "Open a support ticket."
+msgstr "Utwórz zgłoszenie do pomocy technicznej."
+
+#: core/class-utils.php:792
+msgid "Still having trouble? "
+msgstr "Nadal masz problemy?"
+
+#: languages/react.php:530 _src/react/views/gzip/server-instructions.jsx:144
+#: admin/assets/js/wphb-react-gzip.min.js:2537
+msgid "Look for your site in the file and find the line that starts with <Directory> - add the code above into that section and save the file."
+msgstr "Poszukaj swojej witryny w pliku i znajdź linię, która zaczyna się od <Directory> - dodaj powyższy kod wewnątrz tej sekcji i zapisz plik. "
+
+#: admin/views/dashboard/performance/disabled-meta-box.php:18
+#: admin/views/dashboard/performance/module-meta-box-header.php:22
+#: admin/views/dashboard/performance/module-meta-box-header.php:39
+msgid "Run Test"
+msgstr "Uruchom test"
+
+#: admin/modals/check-files-modal.php:24
+msgid "File check in progress..."
+msgstr "Trwa sprawdzanie pliku ..."
+
+#: admin/pages/class-dashboard.php:287
+msgid "Performance test in progress"
+msgstr "Test wydajności w toku"
+
+#. Translators: %s: username
+#: admin/pages/class-dashboard.php:607
+msgid "Welcome %s"
+msgstr "Witaj %s"
+
+#: admin/class-admin.php:229 admin/class-admin.php:262
+#: admin/views/dashboard/reports/meta-box.php:41
+#: admin/views/notifications/configure-meta-box.php:46
+#: admin/views/notifications/configure-meta-box.php:55
+#: admin/views/uptime/downtime-meta-box.php:28
+#: admin/views/uptime/meta-box.php:81 admin/views/wphb-uptime-page.php:27
+#: core/class-configs.php:530 languages/react.php:250
+#: _src/react/modules/configs.jsx:153 _src/react/views/setup/wizard.jsx:46
+#: _src/react/views/setup/wizard.jsx:544
+#: admin/assets/js/wphb-react-configs.min.js:6541
+#: admin/assets/js/wphb-setup-wizard.min.js:11455
+#: admin/assets/js/wphb-setup-wizard.min.js:11953
+msgid "Uptime"
+msgstr "Czas dostępności"
+
+#: admin/pages/class-dashboard.php:510 admin/pages/class-dashboard.php:519
+#: admin/pages/class-dashboard.php:528 admin/pages/class-dashboard.php:537
+#: admin/pages/class-dashboard.php:841 admin/pages/class-uptime.php:83
+msgid "Uptime Monitoring"
+msgstr "Monitorowanie widoczności  witryny"
+
+#: admin/pages/class-dashboard.php:414 admin/pages/class-dashboard.php:1046
+#: admin/views/dashboard/welcome/meta-box.php:126
+msgid "GZIP Compression"
+msgstr "Kompresja GZIP"
+
+#: admin/pages/class-caching.php:302 admin/pages/class-dashboard.php:385
+#: admin/pages/class-dashboard.php:724
+#: admin/views/caching/summary-meta-box.php:87
+#: admin/views/dashboard/welcome/meta-box.php:114 languages/react.php:25
+#: _src/react/components/steps-bar/index.jsx:52
+#: _src/react/modules/caching/integrations.jsx:545
+#: admin/assets/js/wphb-react-caching.min.js:2287
+#: admin/assets/js/wphb-react-integrations.min.js:2568
+msgid "Browser Caching"
+msgstr "Pamięć podręczna przeglądarki"
+
+#: admin/pages/class-dashboard.php:296 admin/pages/class-dashboard.php:307
+#: admin/pages/class-dashboard.php:320 admin/pages/class-dashboard.php:329
+#: admin/pages/class-performance.php:145 admin/pages/class-performance.php:225
+#: admin/pages/class-performance.php:244 admin/pages/class-performance.php:271
+msgid "Performance Report"
+msgstr "Raport wydajności"
+
+#. Plugin Name of the plugin
+#: admin/class-admin.php:192 admin/class-admin.php:253 admin/class-page.php:138
+#: core/class-core.php:220 core/class-core.php:305 languages/react.php:351
+#: _src/react/modules/setup.jsx:304
+#: admin/assets/js/wphb-setup-wizard.min.js:12497
+msgid "Hummingbird"
+msgstr "Hummingbird"
+
+#: admin/class-admin.php:198 admin/class-admin.php:256
+msgid "Dashboard"
+msgstr "Kokpit"
+
+#: admin/class-admin.php:137
+msgid "Go to Hummingbird Dashboard"
+msgstr "Przejdź do Kokpitu Hummingbird"
+
+#: admin/views/minification/settings-meta-box.php:232
+#: admin/views/settings/data-meta-box.php:44
+msgid "Reset"
+msgstr "Resetuj"
+
+#: admin/class-notices.php:381 admin/class-notices.php:601
+#: admin/pages/class-minification.php:343 core/class-utils.php:186
+#: core/externals/free-dashboard/module.php:496
+#: core/externals/plugin-notice/notice.php:485
+msgid "Dismiss"
+msgstr "Odrzuć"
+
+#: admin/modals/dismiss-report-modal.php:39
+msgid "Confirm"
+msgstr "Potwierdź"
+
+#: admin/views/caching/integrations/meta-box.php:90
+#: admin/views/dashboard/gzip/module-meta-box.php:34
+#: admin/views/notifications/configure-meta-box.php:27
+#: admin/views/performance/audits/bootup-time.php:22
+#: admin/views/performance/audits/dom-size.php:22
+#: admin/views/performance/audits/duplicated-javascript.php:28
+#: admin/views/performance/audits/efficient-animated-content.php:22
+#: admin/views/performance/audits/font-display.php:29
+#: admin/views/performance/audits/largest-contentful-paint-element.php:30
+#: admin/views/performance/audits/layout-shift-elements.php:26
+#: admin/views/performance/audits/mainthread-work-breakdown.php:22
+#: admin/views/performance/audits/modern-image-formats.php:23
+#: admin/views/performance/audits/offscreen-images.php:23
+#: admin/views/performance/audits/redirects.php:22
+#: admin/views/performance/audits/render-blocking-resources.php:25
+#: admin/views/performance/audits/server-response-time.php:25
+#: admin/views/performance/audits/total-byte-weight.php:23
+#: admin/views/performance/audits/unminified-css.php:22
+#: admin/views/performance/audits/unminified-javascript.php:22
+#: admin/views/performance/audits/unused-css-rules.php:22
+#: admin/views/performance/audits/uses-long-cache-ttl.php:22
+#: admin/views/performance/audits/uses-optimized-images.php:23
+#: admin/views/performance/audits/uses-rel-preconnect.php:28
+#: admin/views/performance/audits/uses-rel-preload.php:28
+#: admin/views/performance/audits/uses-responsive-images.php:23
+#: admin/views/performance/audits/uses-text-compression.php:22
+#: languages/react.php:162 _src/react/modules/caching/integrations.jsx:537
+#: _src/react/views/caching/browser/status.jsx:447
+#: _src/react/views/gzip/summary.jsx:302 _src/react/views/setup/wizard.jsx:517
+#: admin/assets/js/wphb-react-caching.min.js:2225
+#: admin/assets/js/wphb-react-gzip.min.js:2080
+#: admin/assets/js/wphb-react-integrations.min.js:2560
+#: admin/assets/js/wphb-setup-wizard.min.js:11926
+msgid "Status"
+msgstr "Stan"
+
+#: admin/views/caching/gravatar/disabled-meta-box.php:28
+#: admin/views/caching/page/disabled-meta-box.php:30
+#: admin/views/dashboard/caching/gravatar-module-meta-box.php:26
+#: admin/views/dashboard/caching/page-caching-module-meta-box.php:24
+#: admin/views/dashboard/minification/disabled-meta-box.php:18
+#: admin/views/dashboard/uptime/disabled-meta-box.php:18
+#: admin/views/minification/empty-files-meta-box.php:34
+#: admin/views/uptime/disabled-meta-box.php:31
+msgid "Activate"
+msgstr "Włącz"
+
+#: admin/views/caching/gravatar/meta-box.php:27
+#: admin/views/caching/gravatar/meta-box.php:35
+#: admin/views/caching/page/meta-box.php:497
+#: admin/views/caching/page/meta-box.php:505
+#: admin/views/caching/page/subsite-meta-box.php:58
+#: admin/views/caching/page/subsite-meta-box.php:66
+#: admin/views/minification/settings-meta-box.php:240
+#: admin/views/minification/settings-meta-box.php:247
+#: admin/views/uptime/settings-meta-box.php:15
+#: admin/views/uptime/settings-meta-box.php:22 languages/react.php:169
+#: _src/react/modules/caching/integrations.jsx:577
+#: _src/react/views/gzip/server-instructions.jsx:81
+#: _src/react/views/gzip/server-instructions.jsx:310
+#: admin/assets/js/wphb-react-gzip.min.js:2474
+#: admin/assets/js/wphb-react-gzip.min.js:2703
+#: admin/assets/js/wphb-react-integrations.min.js:2600
+msgid "Deactivate"
+msgstr "Wyłącz"
+
+#: admin/views/caching/settings/meta-box.php:47
+#: admin/views/performance/audits/uses-long-cache-ttl.php:66
+#: admin/views/uptime/summary-meta-box.php:60
+#: admin/views/uptime/summary-meta-box.php:70
+msgid "None"
+msgstr "Brak"
+
+#: admin/class-admin.php:160 admin/class-page.php:456 admin/class-page.php:470
+msgid "Support"
+msgstr "Wsparcie"
+
+#: core/modules/class-page-cache.php:587
+msgid "Posts"
+msgstr "Wpisy"
+
+#: admin/pages/class-minification.php:372 admin/pages/class-uptime.php:65
+msgid "Get Started"
+msgstr "Rozpocznij"
+
+#: admin/class-notices.php:165
+msgid "Dismiss this notice."
+msgstr "Ukryj komunikat."
+
+#: admin/views/dashboard/caching/browser-meta-box.php:59
+#: admin/views/dashboard/caching/cloudflare-module-meta-box.php:58
+#: admin/views/dashboard/minification/network-module-meta-box.php:48
+#: admin/views/dashboard/minification/network-module-meta-box.php:59
+#: admin/views/minification/summary-meta-box.php:83
+#: admin/views/performance/summary-meta-box.php:176
+#: admin/views/uptime/summary-meta-box.php:103
+#: admin/views/uptime/summary-meta-box.php:118 core/class-utils.php:526
+#: languages/react.php:863 _src/react/views/setup/wizard.jsx:538
+#: _src/react/views/setup/wizard.jsx:562 _src/react/views/setup/wizard.jsx:566
+#: _src/react/views/setup/wizard.jsx:570 _src/react/views/setup/wizard.jsx:574
+#: _src/react/views/setup/wizard.jsx:592 _src/react/views/setup/wizard.jsx:598
+#: _src/react/views/setup/wizard.jsx:603
+#: admin/assets/js/wphb-setup-wizard.min.js:11947
+#: admin/assets/js/wphb-setup-wizard.min.js:11971
+#: admin/assets/js/wphb-setup-wizard.min.js:11975
+#: admin/assets/js/wphb-setup-wizard.min.js:11979
+#: admin/assets/js/wphb-setup-wizard.min.js:11983
+#: admin/assets/js/wphb-setup-wizard.min.js:12001
+#: admin/assets/js/wphb-setup-wizard.min.js:12007
+#: admin/assets/js/wphb-setup-wizard.min.js:12012
+msgid "Disabled"
+msgstr "Wyłączono"
+
+#: admin/modals/automatic-ao-how-does-it-work-modal.php:46
+#: admin/modals/manual-ao-how-does-it-work-modal.php:44
+#: admin/views/minification/enqueued-files-meta-box.php:50
+#: languages/react.php:544 _src/react/views/gzip/server-instructions.jsx:156
+#: _src/react/views/minify/assets.jsx:229
+#: admin/assets/js/wphb-react-gzip.min.js:2549
+#: admin/assets/js/wphb-react-minify.min.js:2006
+msgid "Manual"
+msgstr "Podręcznik"
+
+#: languages/react.php:21 _src/react/components/steps-bar/index.jsx:49
+#: admin/assets/js/wphb-react-caching.min.js:2284
+msgid "Setup"
+msgstr "Konfiguracja"
+
+#: admin/modals/bulk-update-modal.php:44
+msgid "Inline"
+msgstr "W treści"
+
+#: core/api/class-hub.php:244
+msgid "Monthly"
+msgstr "Miesięcznie"
+
+#: core/api/class-hub.php:237
+msgid "Daily"
+msgstr "Codziennie"
+
+#: core/api/class-hub.php:241
+msgid "Weekly"
+msgstr "Co tydzień"
+
+#: admin/modals/automatic-ao-how-does-it-work-modal.php:41
+#: admin/modals/manual-ao-how-does-it-work-modal.php:39
+#: admin/views/caching/settings/meta-box.php:29
+#: admin/views/minification/enqueued-files-meta-box.php:46
+#: languages/react.php:540 _src/react/views/gzip/server-instructions.jsx:151
+#: _src/react/views/minify/assets.jsx:224
+#: admin/assets/js/wphb-react-gzip.min.js:2544
+#: admin/assets/js/wphb-react-minify.min.js:2001
+msgid "Automatic"
+msgstr "Automatycznie"
+
+#: admin/views/caching/integrations/meta-box.php:85
+#: admin/views/performance/audits/bootup-time.php:17
+#: admin/views/performance/audits/dom-size.php:17
+#: admin/views/performance/audits/duplicated-javascript.php:19
+#: admin/views/performance/audits/efficient-animated-content.php:17
+#: admin/views/performance/audits/font-display.php:17
+#: admin/views/performance/audits/largest-contentful-paint-element.php:17
+#: admin/views/performance/audits/layout-shift-elements.php:17
+#: admin/views/performance/audits/mainthread-work-breakdown.php:17
+#: admin/views/performance/audits/modern-image-formats.php:18
+#: admin/views/performance/audits/offscreen-images.php:18
+#: admin/views/performance/audits/redirects.php:17
+#: admin/views/performance/audits/render-blocking-resources.php:17
+#: admin/views/performance/audits/server-response-time.php:20
+#: admin/views/performance/audits/total-byte-weight.php:18
+#: admin/views/performance/audits/unminified-css.php:17
+#: admin/views/performance/audits/unminified-javascript.php:17
+#: admin/views/performance/audits/unused-css-rules.php:17
+#: admin/views/performance/audits/uses-long-cache-ttl.php:17
+#: admin/views/performance/audits/uses-optimized-images.php:18
+#: admin/views/performance/audits/uses-rel-preconnect.php:17
+#: admin/views/performance/audits/uses-rel-preload.php:17
+#: admin/views/performance/audits/uses-responsive-images.php:18
+#: admin/views/performance/audits/uses-text-compression.php:17
+#: languages/react.php:156 _src/react/modules/caching/integrations.jsx:534
+#: admin/assets/js/wphb-react-integrations.min.js:2557
+msgid "Overview"
+msgstr "Przegląd"
+
+#: admin/class-notices.php:529 admin/modals/clear-cache-modal.php:47
+#: admin/pages/class-dashboard.php:189
+#: admin/views/caching/integrations/meta-box.php:153
+#: admin/views/caching/integrations/meta-box.php:157 languages/react.php:478
+#: _src/react/views/caching/browser/status.jsx:384
+#: admin/assets/js/wphb-react-caching.min.js:2162
+msgid "Clear Cache"
+msgstr "Wyczyść pamięć podręczną"
+
+#: admin/views/caching/summary-meta-box.php:47
+#: admin/views/dashboard/gzip/module-meta-box.php:41
+#: admin/views/dashboard/minification/network-module-meta-box.php:48
+#: admin/views/dashboard/welcome/subsite-meta-box.php:115
+#: admin/views/dashboard/welcome/subsite-meta-box.php:123
+#: core/class-configs.php:542 core/class-configs.php:565
+#: core/class-configs.php:571 languages/react.php:603
+#: _src/react/views/gzip/summary.jsx:194
+#: admin/assets/js/wphb-react-gzip.min.js:1972
+msgid "Active"
+msgstr "Włączono"
+
+#: admin/views/dashboard/minification/network-module-meta-box.php:45
+msgid "Pro Feature"
+msgstr "Funkcja wersji pro"
+
+#: admin/pages/class-notifications.php:48
+#: admin/views/caching/integrations/meta-box.php:137
+#: admin/views/caching/integrations/meta-box.php:144
+#: admin/views/dashboard/advanced/module-meta-box-footer.php:19
+#: admin/views/dashboard/caching/browser-meta-box-footer.php:18
+#: admin/views/dashboard/caching/gravatar-module-meta-box-footer.php:18
+#: admin/views/dashboard/caching/page-caching-module-meta-box-footer.php:18
+#: admin/views/dashboard/gzip/module-meta-box-footer.php:17
+#: admin/views/dashboard/minification/module-meta-box-footer.php:20
+#: admin/views/dashboard/performance/module-meta-box-footer.php:22
+#: admin/views/dashboard/smush/meta-box-footer.php:18 languages/react.php:123
+#: _src/react/modules/caching/integrations.jsx:407
+#: _src/react/views/caching/browser/status.jsx:417
+#: _src/react/views/gzip/configure.jsx:99
+#: admin/assets/js/wphb-react-caching.min.js:2195
+#: admin/assets/js/wphb-react-gzip.min.js:2878
+#: admin/assets/js/wphb-react-integrations.min.js:2430
+msgid "Configure"
+msgstr "Konfiguruj"
+
+#: admin/views/notifications/configure-meta-box.php:29
+msgid "Schedule"
+msgstr "Harmonogram"
+
+#: admin/views/dashboard/uptime/module-meta-box-footer.php:18
+msgid "View stats"
+msgstr "Zobacz statystyki"
+
+#: core/class-utils.php:178 core/modules/class-minify.php:1591
+msgid "Settings updated"
+msgstr "Ustawienia zostały zaktualizowane"
+
+#: admin/views/caching/summary-meta-box.php:52
+#: admin/views/caching/summary-meta-box.php:102
+#: admin/views/dashboard/gzip/module-meta-box.php:38
+#: admin/views/dashboard/reports/meta-box.php:26
+#: admin/views/dashboard/reports/meta-box.php:35
+#: admin/views/dashboard/reports/meta-box.php:44
+#: admin/views/dashboard/welcome/subsite-meta-box.php:115
+#: admin/views/dashboard/welcome/subsite-meta-box.php:123
+#: core/class-configs.php:542 core/class-configs.php:565
+#: core/class-configs.php:571 languages/react.php:600
+#: _src/react/views/gzip/summary.jsx:190
+#: admin/assets/js/wphb-react-gzip.min.js:1968
+msgid "Inactive"
+msgstr "Nieaktywne"
+
+#: admin/views/notifications/configure-meta-box.php:85
+#: admin/views/uptime/no-membership-meta-box.php:28
+msgid "Upgrade to Pro"
+msgstr "Ulepsz do wersji pro"
+
+#: admin/modals/membership-modal.php:27 admin/modals/membership-modal.php:62
+#: admin/views/minification/settings-meta-box-header.php:19
+msgid "Upgrade to PRO"
+msgstr "Ulepsz do wersji pro"
+
+#: core/modules/class-caching.php:305 core/modules/class-cloudflare.php:687
+msgid "1 month"
+msgstr "miesiąc"
+
+#: admin/views/dashboard/uptime/module-meta-box.php:35
+msgid "Calculating..."
+msgstr "Przeliczanie…"
+
+#: admin/pages/class-dashboard.php:491
+msgid "Image Optimization"
+msgstr "Optymalizacja obrazków"
