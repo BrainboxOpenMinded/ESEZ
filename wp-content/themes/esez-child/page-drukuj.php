@@ -88,7 +88,8 @@ $tabliczka = get_field( 'tabliczka', $ewidencja_id );
 $rodzaj_tabliczki = $tabliczka['rodzaj'];
 $tabliczka_numer_trumny = $tabliczka['numer_trumny'];
 $tabliczka_numer_urny = $tabliczka['numer_urny'];
-$tabliczka_imiona = $tabliczka['imiona'];
+$tabliczka_pierwsze_imie = $tabliczka['pierwsze_imie'];
+$tabliczka_drugie_imie = $tabliczka['drugie_imie'];
 $tabliczka_cena = $tabliczka['cena']; //CENA
 
 //Grupa - zdjęcie
@@ -339,13 +340,13 @@ if ( !empty( $ewidencja_id ) ) {
   </tr>
 <?php if ($trumna_cena !=='') { ?>
   <tr>
-    <td colspan="2"><strong>Numer trumny:</strong> <?php echo $numer_trumny; ?>&emsp;<strong>Wzrost:</strong> <?php echo $wzrost; ?>  <strong>&emsp;Waga:</strong> <?php echo $waga2; ?></td>
+    <td colspan="2"><strong>Rodzaj trumny:</strong> <?php echo $numer_trumny; ?>&emsp;<strong>Wzrost:</strong> <?php echo $wzrost; ?>  <strong>&emsp;Waga:</strong> <?php echo $waga2; ?></td>
     <td style="text-align: right;"><strong><?php echo $trumna_cena; ?> zł netto</strong></td>
   </tr>
 <?php } ?>
 <?php if ( $urna_cena !=='') { ?>
   <tr>
-    <td colspan="2"><strong>Numer urny:</strong> <?php echo $numer_urny; ?></td>
+    <td colspan="2"><strong>Rodzaj urny:</strong> <?php echo $numer_urny; ?></td>
     <td style="text-align: right;"><strong><?php echo $urna_cena; ?> zł netto</strong></td>
   </tr>
 <?php } ?>
@@ -364,7 +365,7 @@ if ( !empty( $ewidencja_id ) ) {
           <?php echo $rodzaj; ?> 
         <?php endforeach; ?>
       <?php endif; ?>
-      na trumnę nr <?php echo $tabliczka_numer_trumny; ?> / urnę nr <?php echo $tabliczka_numer_urny; ?>, imiona: <?php echo $tabliczka_imiona; ?></td>
+      na trumnę nr <?php echo $tabliczka_numer_trumny; ?> / urnę nr <?php echo $tabliczka_numer_urny; ?>, imiona: <?php echo $tabliczka_pierwsze_imie . ' ' .$tabliczka_drugie_imie ; ?></td>
     <td style="text-align: right;"><strong><?php echo $tabliczka_cena; ?> zł netto</strong></td>
   </tr>
 <?php }

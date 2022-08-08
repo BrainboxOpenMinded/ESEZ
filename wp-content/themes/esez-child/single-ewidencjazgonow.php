@@ -213,7 +213,9 @@ if (is_user_logged_in() && in_array($current_user->ID, $items) || current_user_c
                 'uploader' => 'basic'
             ));
             if(get_field('uslugi_pogrzebowe')) :
-            include('/home/esez/public_html/wp-content/plugins/ewidencja-zmarlych/public/templates/cennik-uslug-pogrzebowych.php');
+                if(!current_user_can('pracownik')) :
+                    include('/home/esez/public_html/wp-content/plugins/ewidencja-zmarlych/public/templates/cennik-uslug-pogrzebowych.php');
+                endif;
             endif;
 		?>
         <?php 
@@ -226,7 +228,7 @@ if (is_user_logged_in() && in_array($current_user->ID, $items) || current_user_c
             <?php foreach( $images as $image ): ?>
             <a href="<?php echo $image['url']; ?>" data-lightbox="galeria"><img
                     class="single-ewidencjazgonow__gallery__img"
-                    src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" /></a>
+                    src="<?php echo $image['sizes']['ewidencja-zdjecie']; ?>" alt="<?php echo $image['alt']; ?>" /></a>
             <?php endforeach; ?>
 
         </div>
