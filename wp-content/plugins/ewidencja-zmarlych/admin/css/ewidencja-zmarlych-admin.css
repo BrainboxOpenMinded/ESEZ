@@ -3,8 +3,8 @@
  * included in this file.
  */
 
- @media (max-width: 800px) {
-    .acf-fields > .acf-field {
-      width: 100% !important;
-    }
+@media (max-width: 800px) {
+  .acf-fields>.acf-field {
+    width: 100% !important;
   }
+}

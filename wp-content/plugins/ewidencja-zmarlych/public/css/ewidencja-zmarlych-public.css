@@ -854,6 +854,18 @@ div.search_result {
   transition: all 0.24s ease-in-out;
 }
 
+.acf-fields.-border {
+  border: none !important;
+}
+
+.acf-fields.-left>.acf-field {
+  padding: 8px 0 !important;
+}
+
+.acf-fields > .acf-field {
+  padding: 15px 6px !important;
+}
+
 .sidebar {
   position: fixed;
   top: 50%;
