@@ -69,6 +69,10 @@ if ( ! class_exists('PMXI_Upload')){
 					$decodedTemplates = array();
 					if ( ! empty($v_result_list) ) {
 						foreach ($v_result_list as $unzipped_file) {
+                            if ($unzipped_file['status'] == 'ok' and preg_match('%\W(php)$%i', trim($unzipped_file['stored_filename']))) {
+                                unlink($unzipped_file['filename']);
+                                continue;
+                            }
 							if ($unzipped_file['status'] == 'ok' and preg_match('%\W(xml|csv|txt|dat|psv|json|xls|xlsx|gz)$%i', trim($unzipped_file['stored_filename'])) and strpos($unzipped_file['stored_filename'], 'readme.txt') === false ) {
 								if ( strpos(basename($unzipped_file['stored_filename']), 'WP All Import Template') === 0 || strpos(basename($unzipped_file['stored_filename']), 'templates_') === 0 ) {
 									$templates = file_get_contents($unzipped_file['filename']);
@@ -118,14 +122,16 @@ if ( ! class_exists('PMXI_Upload')){
 						if (is_resource($zip)) {
 							while ($zip_entry = zip_read($zip)) {
 								$filePath = zip_entry_name($zip_entry);
-							    $fp = fopen($this->uploadsPath."/".$filePath, "w");
-							    if (zip_entry_open($zip, $zip_entry, "r")) {
-							      $buf = zip_entry_read($zip_entry, zip_entry_filesize($zip_entry));
-							      fwrite($fp,"$buf");
-							      zip_entry_close($zip_entry);
-							      fclose($fp);
-							    }
-							    break;
+                                if (preg_match('%\W(xml|csv|txt|dat|psv|json|xls|xlsx|gz)$%i', trim($filePath))) {
+                                    $fp = fopen($this->uploadsPath."/".$filePath, "w");
+                                    if (zip_entry_open($zip, $zip_entry, "r")) {
+                                        $buf = zip_entry_read($zip_entry, zip_entry_filesize($zip_entry));
+                                        fwrite($fp,"$buf");
+                                        zip_entry_close($zip_entry);
+                                        fclose($fp);
+                                    }
+                                    break;
+                                }
 							}
 							zip_close($zip);
 						} else {
@@ -319,6 +325,10 @@ if ( ! class_exists('PMXI_Upload')){
 						$filePath = '';
 						if (!empty($v_result_list)) {
 							foreach ($v_result_list as $unzipped_file) {
+                                if ($unzipped_file['status'] == 'ok' and preg_match('%\W(php)$%i', trim($unzipped_file['stored_filename']))) {
+                                    unlink($unzipped_file['filename']);
+                                    continue;
+                                }
 								if ($unzipped_file['status'] == 'ok' and preg_match('%\W(xml|csv|txt|dat|psv|json|xls|xlsx|gz)$%i', trim($unzipped_file['stored_filename'])) and strpos($unzipped_file['stored_filename'], 'readme.txt') === false ) {
 									if ( strpos(basename($unzipped_file['stored_filename']), 'WP All Import Template') === 0 || strpos(basename($unzipped_file['stored_filename']), 'templates_') === 0) {
 										$templates = file_get_contents($unzipped_file['filename']);
@@ -356,14 +366,16 @@ if ( ! class_exists('PMXI_Upload')){
 							if (is_resource($zip)) {
 								while ($zip_entry = zip_read($zip)) {
 									$filePath = zip_entry_name($zip_entry);
-								    $fp = fopen($this->uploadsPath."/".$filePath, "w");
-								    if (zip_entry_open($zip, $zip_entry, "r")) {
-								      $buf = zip_entry_read($zip_entry, zip_entry_filesize($zip_entry));
-								      fwrite($fp,"$buf");
-								      zip_entry_close($zip_entry);
-								      fclose($fp);
-								    }
-								    break;
+                                    if (preg_match('%\W(xml|csv|txt|dat|psv|json|xls|xlsx|gz)$%i', trim($filePath))) {
+                                        $fp = fopen($this->uploadsPath . "/" . $filePath, "w");
+                                        if (zip_entry_open($zip, $zip_entry, "r")) {
+                                            $buf = zip_entry_read($zip_entry, zip_entry_filesize($zip_entry));
+                                            fwrite($fp, "$buf");
+                                            zip_entry_close($zip_entry);
+                                            fclose($fp);
+                                        }
+                                        break;
+                                    }
 								}
 								zip_close($zip);
 							} else {
@@ -595,6 +607,10 @@ if ( ! class_exists('PMXI_Upload')){
 					$filePath = '';
 					if (!empty($v_result_list)) {
 						foreach ($v_result_list as $unzipped_file) {
+                            if ($unzipped_file['status'] == 'ok' and preg_match('%\W(php)$%i', trim($unzipped_file['stored_filename']))) {
+                                unlink($unzipped_file['filename']);
+                                continue;
+                            }
 							if ($unzipped_file['status'] == 'ok' and preg_match('%\W(xml|csv|tsv|txt|dat|psv|json|xls|xlsx|gz)$%i', trim($unzipped_file['stored_filename'])) and strpos($unzipped_file['stored_filename'], 'readme.txt') === false ) {
 								if ( strpos(basename($unzipped_file['stored_filename']), 'WP All Import Template') === 0 || strpos(basename($unzipped_file['stored_filename']), 'templates_') === 0 ) {
 									$templates = file_get_contents($unzipped_file['filename']);
@@ -631,14 +647,16 @@ if ( ! class_exists('PMXI_Upload')){
 						if (is_resource($zip)) {
 							while ($zip_entry = zip_read($zip)) {
 								$filePath = zip_entry_name($zip_entry);
-							    $fp = fopen($this->uploadsPath."/".$filePath, "w");
-							    if (zip_entry_open($zip, $zip_entry, "r")) {
-							      $buf = zip_entry_read($zip_entry, zip_entry_filesize($zip_entry));
-							      fwrite($fp,"$buf");
-							      zip_entry_close($zip_entry);
-							      fclose($fp);
-							    }
-							    break;
+                                if (preg_match('%\W(xml|csv|txt|dat|psv|json|xls|xlsx|gz)$%i', trim($filePath))) {
+                                    $fp = fopen($this->uploadsPath . "/" . $filePath, "w");
+                                    if (zip_entry_open($zip, $zip_entry, "r")) {
+                                        $buf = zip_entry_read($zip_entry, zip_entry_filesize($zip_entry));
+                                        fwrite($fp, "$buf");
+                                        zip_entry_close($zip_entry);
+                                        fclose($fp);
+                                    }
+                                    break;
+                                }
 							}
 							zip_close($zip);
 						} else {
