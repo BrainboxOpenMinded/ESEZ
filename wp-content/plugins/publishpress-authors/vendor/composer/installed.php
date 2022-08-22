@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
+        'pretty_version' => '3.20.2.x-dev',
+        'version' => '3.20.2.9999999-dev',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '4eae0a4a004c8002f1e003649dc26997fa6dbc37',
+        'reference' => '5418b20578ffd0ee67f8eb1d194a2432681eb12b',
         'name' => 'publishpress/publishpress-authors',
         'dev' => false,
     ),
@@ -29,12 +29,12 @@
             'dev_requirement' => false,
         ),
         'publishpress/publishpress-authors' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
+            'pretty_version' => '3.20.2.x-dev',
+            'version' => '3.20.2.9999999-dev',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '4eae0a4a004c8002f1e003649dc26997fa6dbc37',
+            'reference' => '5418b20578ffd0ee67f8eb1d194a2432681eb12b',
             'dev_requirement' => false,
         ),
         'publishpress/publishpress-instance-protection' => array(
@@ -47,12 +47,12 @@
             'dev_requirement' => false,
         ),
         'publishpress/wordpress-banners' => array(
-            'pretty_version' => 'v1.3.0',
-            'version' => '1.3.0.0',
+            'pretty_version' => 'v1.3.1',
+            'version' => '1.3.1.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../publishpress/wordpress-banners',
             'aliases' => array(),
-            'reference' => '08e20b98320367bdbc59105095c72e7ccbf968f1',
+            'reference' => 'bcb5f9f00973d53e2db027f9a05c059f18743fae',
             'dev_requirement' => false,
         ),
         'publishpress/wordpress-reviews' => array(

@@ -245,6 +245,7 @@ if (is_user_logged_in() && in_array($current_user->ID, $items) || current_user_c
             <a class="location-direct" target="_blank" href="https://www.google.com/maps/dir//<?php echo $adres_odbioru_adres . ', ' . $adres_odbioru_miasto . ', ' . $adres_odbioru_nazwa; ?>"><i class="fa-solid fa-route"></i></a>
         <?php endif; ?>
 <?php endif; ?>
+<a href="/wp-content/plugins/ewidencja-zmarlych/public/documents/dokumenty.php">Wygeneruj dokument</a>
 <?php if(!is_user_logged_in()) : ?>
 <style>
     .sb-nav-fixed #layoutSidenav #layoutSidenav_content {
