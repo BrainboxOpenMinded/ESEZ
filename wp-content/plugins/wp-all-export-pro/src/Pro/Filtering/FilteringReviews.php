@@ -83,6 +83,9 @@ class FilteringReviews extends \Wpae\Pro\Filtering\FilteringBase
                         $this->queryWhere .= "{$this->wpdb->commentmeta}.meta_key = '$meta_key' AND {$this->wpdb->commentmeta}.meta_value " . $this->parse_condition($rule);
                     }
 
+
+	                // De-dupe query joins.
+	                $this->queryJoin = array_unique($this->queryJoin);
                 }
                 break;
         }

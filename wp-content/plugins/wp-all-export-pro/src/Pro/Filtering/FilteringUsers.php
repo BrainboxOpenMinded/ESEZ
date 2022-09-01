@@ -83,15 +83,18 @@ class FilteringUsers extends \Wpae\Pro\Filtering\FilteringBase
                     $meta_key = str_replace("cf_", "", $rule->element);
 
                     if ($rule->condition == 'is_empty'){
-                        $table_alias = (count($this->queryJoin) > 0) ? 'meta' . count($this->queryJoin) : 'meta';
+                        $table_alias = 'usermeta_empty_'. $meta_key;
                         $this->queryJoin[] = " LEFT JOIN {$this->wpdb->usermeta} AS $table_alias ON ($table_alias.user_id = {$this->wpdb->users}.ID AND $table_alias.meta_key = '$meta_key') ";
                         $this->queryWhere .= "$table_alias.umeta_id " . $this->parse_condition($rule);
                     }
                     else{
-                        $table_alias = (count($this->queryJoin) > 0) ? 'meta' . count($this->queryJoin) : 'meta';
+                        $table_alias = 'usermeta';
                         $this->queryJoin[] = " INNER JOIN {$this->wpdb->usermeta} AS $table_alias ON ( {$this->wpdb->users}.ID = $table_alias.user_id ) ";
                         $this->queryWhere .= "$table_alias.meta_key = '$meta_key' AND $table_alias.meta_value " . $this->parse_condition($rule, false, $table_alias);
                     }
+
+	                // De-dupe query joins.
+	                $this->queryJoin = array_unique($this->queryJoin);
                 }
                 break;
         }

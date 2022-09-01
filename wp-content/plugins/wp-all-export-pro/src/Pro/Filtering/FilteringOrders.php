@@ -70,28 +70,31 @@ class FilteringOrders extends \Wpae\Pro\Filtering\FilteringCPT
                     break;
                 case '__coupons_used':
                     $this->meta_query = true;
-                    $item_alias = (count($this->queryJoin) > 0) ? 'order_item' . count($this->queryJoin) : 'order_item';
+                    $item_alias = 'order_item';
                     $this->queryJoin[] = " INNER JOIN {$table_prefix}woocommerce_order_items AS $item_alias ON ({$this->wpdb->posts}.ID = $item_alias.order_id) ";
                     $this->queryWhere .= "$item_alias.order_item_type = 'coupon' AND $item_alias.order_item_name " . $this->parse_condition($rule, false, $item_alias);
                     break;
                 default:
                     $this->meta_query = true;
                     if ($rule->condition == 'is_empty'){
-                        $item_alias = (count($this->queryJoin) > 0) ? 'order_item' . count($this->queryJoin) : 'order_item';
-                        $item_meta_alias = (count($this->queryJoin) > 0) ? 'order_itemmeta' . count($this->queryJoin) : 'order_itemmeta';
+                        $item_alias = 'order_item';
+                        $item_meta_alias = 'order_itemmeta_empty_' . $rule->element;
                         $this->queryJoin[] = " LEFT JOIN {$table_prefix}woocommerce_order_items AS $item_alias ON ({$this->wpdb->posts}.ID = $item_alias.order_id) ";
                         $this->queryJoin[] = " LEFT JOIN {$table_prefix}woocommerce_order_itemmeta AS $item_meta_alias ON ($item_alias.order_item_id = $item_meta_alias.order_item_id AND $item_meta_alias.meta_key = '{$rule->element}') ";
                         $this->queryWhere .= "$item_meta_alias.meta_id " . $this->parse_condition($rule);
                     }
                     else{
-                        $item_alias = (count($this->queryJoin) > 0) ? 'order_item' . count($this->queryJoin) : 'order_item';
-                        $item_meta_alias = (count($this->queryJoin) > 0) ? 'order_itemmeta' . count($this->queryJoin) : 'order_itemmeta';
+                        $item_alias = 'order_item';
+                        $item_meta_alias = 'order_itemmeta';
                         $this->queryJoin[] = " INNER JOIN {$table_prefix}woocommerce_order_items AS $item_alias ON ({$this->wpdb->posts}.ID = $item_alias.order_id) ";
                         $this->queryJoin[] = " INNER JOIN {$table_prefix}woocommerce_order_itemmeta AS $item_meta_alias ON ($item_alias.order_item_id = $item_meta_alias.order_item_id) ";
                         $this->queryWhere .= "$item_meta_alias.meta_key = '{$rule->element}' AND $item_meta_alias.meta_value " . $this->parse_condition($rule, false, $item_meta_alias);
                     }
                     break;
             }
+	        // De-dupe query joins.
+	        $this->queryJoin = array_unique($this->queryJoin);
+
             $this->recursion_parse_query($rule);
             return;
         }
@@ -157,11 +160,14 @@ class FilteringOrders extends \Wpae\Pro\Filtering\FilteringCPT
             $this->meta_query = true;
             $table_prefix = $this->wpdb->prefix;
             $ids_str = implode(",", $ids);
-            $item_alias = (count($this->queryJoin) > 0) ? 'order_item' . count($this->queryJoin) : 'order_item';
-            $item_meta_alias = (count($this->queryJoin) > 0) ? 'order_itemmeta' . count($this->queryJoin) : 'order_itemmeta';
+            $item_alias = 'order_item';
+            $item_meta_alias = 'order_itemmeta';
             $this->queryJoin[] = " INNER JOIN {$table_prefix}woocommerce_order_items AS $item_alias ON ({$this->wpdb->posts}.ID = $item_alias.order_id) ";
             $this->queryJoin[] = " INNER JOIN {$table_prefix}woocommerce_order_itemmeta AS $item_meta_alias ON ($item_alias.order_item_id = $item_meta_alias.order_item_id) ";
             $this->queryWhere .= "($item_meta_alias.meta_key = '_product_id' OR $item_meta_alias.meta_key = '_variation_id') AND $item_meta_alias.meta_value IN ($ids_str)";
+
+	        // De-dupe query joins.
+	        $this->queryJoin = array_unique($this->queryJoin);
         }
     }
 

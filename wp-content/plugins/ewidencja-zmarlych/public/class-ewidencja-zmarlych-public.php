@@ -147,24 +147,6 @@ class Ewidencja_Zmarlych_Public {
 		  return $page_template;
 	  }
 
-	  public function load_single_zgon_archive_template( $template = '' ) {
-		
-		global $post;
-	
-		if ( 'ewidencjazgonow' === $post->post_type && locate_template( array( 'single-ewidencjazgonow.php' ) ) !== $template ) {
-			return plugin_dir_path( __FILE__ ) . '/templates/single-ewidencjazgonow.php';
-		}
-	
-		return $template;
-	}
-	
-	public function use_custom_template_to_single_zgon($to_tempalte){
-		if ( is_post_type_archive ( 'ewidencjazgonow' ) ) {
-		  $to_tempalte = plugin_dir_path( __FILE__ ) . '/templates/single-ewidencjazgonow.php';
-		}
-		return $to_tempalte;
-	  }
-
 	  public function ewidencjazgonow_template( $template ) {
 		if ( is_post_type_archive('ewidencjazgonow') ) {
 		  $theme_files = array('single-ewidencjazgonow.php', 'templates/single-ewidencjazgonow.php');
@@ -184,8 +166,36 @@ class Ewidencja_Zmarlych_Public {
 	
 		/* Checks for single template by post type */
 		if ( $post->post_type == 'ewidencjazgonow' ) {
-			if ( file_exists( plugin_dir_path(__FILE__)  . '/templaates/single-ewidencjazgonow.php' ) ) {
-				return plugin_dir_path(__FILE__)  . '/single-ewidencjazgonow.php';
+			if ( file_exists( plugin_dir_path(__FILE__)  . '/templates/single-ewidencjazgonow.php' ) ) {
+				return plugin_dir_path(__FILE__)  . '/templates/single-ewidencjazgonow.php';
+			}
+		}
+	
+		return $single;
+	
+	}
+
+	public function dokumenty_esez_template( $template ) {
+		if ( is_post_type_archive('dokumenty') ) {
+		  $theme_files = array('single-dokumenty.php', 'documents/single-dokumenty.php');
+		  $exists_in_theme = locate_template($theme_files, false);
+		  if ( $exists_in_theme != '' ) {
+			return $exists_in_theme;
+		  } else {
+			return plugin_dir_path(__FILE__) . '/documents/single-dokumenty.php';
+		  }
+		}
+		return $template;
+	  }
+
+	  public function my_custom_dokumenty_esez_template($single) {
+
+		global $post;
+	
+		/* Checks for single template by post type */
+		if ( $post->post_type == 'dokumenty' ) {
+			if ( file_exists( plugin_dir_path(__FILE__)  . '/documents/single-dokumenty.php' ) ) {
+				return plugin_dir_path(__FILE__)  . '/documents/single-dokumenty.php';
 			}
 		}
 	

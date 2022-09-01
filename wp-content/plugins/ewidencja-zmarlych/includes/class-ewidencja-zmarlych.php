@@ -157,6 +157,7 @@ class Ewidencja_Zmarlych {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 		$this->loader->add_action( 'init', $plugin_admin, 'esez_post_type' );
+		$this->loader->add_action( 'init', $plugin_admin, 'dokumenty_post_type' );
 		$this->loader->add_action( 'login_head', $plugin_admin, 'redirect_to_nonexistent_page' );
 		$this->loader->add_action( 'init', $plugin_admin, 'redirect_to_actual_login' );
 		$this->loader->add_action( 'after_setup_theme', $plugin_admin, 'remove_admin_bar' );
@@ -170,7 +171,8 @@ class Ewidencja_Zmarlych {
 		$this->loader->add_filter( 'wp_mail_from_name', $plugin_admin, 'wpb_sender_name' );
 		$this->loader->add_action( 'wp', $plugin_admin, 'add_login_check' );
 		$this->loader->add_action( 'pre_get_posts', $plugin_admin, 'ewidencja_columns_orderby' );
-		$this->loader->add_filter( 'manage_edit-ewidencjazgonow_sortable_columns', $plugin_admin, 'my_column_register_sortable' );
+		$this->loader->add_filter( 'manage_edit-ewidencjazgonow_sortable_columns', $plugin_admin, 'my_column_register_sortable' );	
+
 	}
 
 	/**
@@ -192,10 +194,10 @@ class Ewidencja_Zmarlych {
 		$this->loader->add_filter( 'page_template', $plugin_public, 'create_konto_all_page_template' );
 		$this->loader->add_filter( 'page_template', $plugin_public, 'create_konto_foreign_page_template' );
 		$this->loader->add_filter( 'page_template', $plugin_public, 'create_konto_ended_page_template' );
-		$this->loader->add_filter( 'archive_template', $plugin_public, 'load_single_zgon_archive_template' );
-		$this->loader->add_filter( 'archive_template', $plugin_public, 'use_custom_template_to_single_zgon' ) ;
 		$this->loader->add_filter( 'template_include', $plugin_public, 'ewidencjazgonow_template' ) ;
 		$this->loader->add_filter( 'single_template', $plugin_public, 'my_custom_ewidencjazgonow_template' ) ;
+		$this->loader->add_filter( 'template_include', $plugin_public, 'dokumenty_esez_template' ) ;
+		$this->loader->add_filter( 'single_template', $plugin_public, 'my_custom_dokumenty_esez_template' ) ;
 	}	
 
 	/**
@@ -314,3 +316,302 @@ add_role(
 	'edit_published_esez_post_type' => true,
 	)
 );
+
+add_action('init', 'my_custom_pagination_base', 1);
+
+function ace_block_wp_admin() {
+	if ( is_admin() && ! current_user_can( 'administrator' ) && ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
+		wp_safe_redirect( home_url('/konto') );
+		exit;
+	}
+}
+add_action( 'admin_init', 'ace_block_wp_admin' );
+				
+
+add_action( 'show_user_profile', 'ns_show_extra_profile_fields' );
+add_action( 'edit_user_profile', 'ns_show_extra_profile_fields' );
+function ns_show_extra_profile_fields( $user ) { ?>
+<h3>Dodaj logo zakładu</h3>
+<table class="form-table">
+<tr>
+<th><label for="image">Logo</label></th>
+<td>
+<img src="<?php echo esc_attr( get_the_author_meta( 'image', $user->ID ) ); ?>" style="height:50px;">
+<input type="text" name="image" id="image" value="<?php echo esc_attr( get_the_author_meta( 'image', $user->ID ) ); ?>" class="regular-text" /><input type='button' class="button-primary" value="Upload Image" id="uploadimage"/><br />
+<span class="description">Prześlij swój obraz do swojego profilu.</span>
+</td>
+</tr>
+</table>
+<?php 
+}
+
+/**
+* Enqueue a script in the WordPress admin user-edit.php.
+*
+* @param int $pagenow Hook suffix for the current admin page.
+*/
+function ns_selectively_enqueue_admin_script( $hook ) {
+global $pagenow;
+if ($pagenow != 'user-edit.php') {
+return;
+}
+wp_enqueue_script('media-upload');
+wp_enqueue_script('thickbox');
+wp_enqueue_style('thickbox');
+wp_register_script( 'profile-image', get_template_directory_uri().'/assets/profile-image.js', array('jquery-core'), false, true );
+wp_enqueue_script( 'profile-image' );
+}
+add_action( 'admin_enqueue_scripts', 'ns_selectively_enqueue_admin_script' );
+
+add_image_size( 'ewidencja-zdjecie', 400, 400, true );
+
+/*
+* Save custom user profile data
+*
+*/
+add_action( 'personal_options_update', 'ns_save_extra_profile_fields' );
+add_action( 'edit_user_profile_update', 'ns_save_extra_profile_fields' );
+function ns_save_extra_profile_fields( $user_id ) {
+
+if ( !current_user_can( 'edit_user', $user_id ) )
+return false;
+
+if(isset($_POST['image'])) {
+$imageprofile = sanitize_text_field( wp_unslash( $_POST['image'] ) );
+update_user_meta( $user_id, 'image', $imageprofile );
+}
+}
+
+
+add_filter( 'wp_sitemaps_enabled', '__return_false' );
+
+add_action( 'init', function() {
+remove_action( 'init', 'wp_sitemaps_get_server' );
+}, 5 );
+
+add_action( 'wp_footer', 'ajax_fetch' );
+function ajax_fetch() {
+?>
+<script type="text/javascript">
+function fetch(){
+
+jQuery.ajax({
+url: '<?php echo admin_url('admin-ajax.php'); ?>',
+type: 'post',
+data: { action: 'data_fetch', keyword: jQuery('#keyword').val() },
+success: function(data) {
+jQuery('#datafetch').html( data );
+}
+});
+
+}
+</script>
+
+<?php
+}
+
+add_action('wp_ajax_data_fetch' , 'data_fetch');
+add_action('wp_ajax_nopriv_data_fetch','data_fetch');
+function data_fetch(){
+global $current_user;
+wp_get_current_user();
+$authorID = $current_user->ID;
+$the_query = new WP_Query( array( 'posts_per_page' => 3, 'author' => $authorID, 's' => esc_attr( $_POST['keyword'] ), 'no_found_rows' => true, 'update_post_meta_cache' => false, 'update_post_term_cache' => false, 'fields' => 'ids', 'post_type' => array('ewidencjazgonow')) );
+if( $the_query->have_posts() ) :
+echo '<ul class="search-lists">';
+while( $the_query->have_posts() ): $the_query->the_post(); ?>
+
+<li class="search-list" ><a href="<?php echo esc_url( post_permalink() ); ?>"><?php echo get_field('numer_opaski'); if(get_field('imie_zmarlego')) : echo ' | ' . get_field('imie_zmarlego') . ' ' . get_field('nazwisko_zmarlego'); endif; ?></a></li>
+
+<?php endwhile;
+echo '</ul>';
+wp_reset_postdata();  
+endif;
+
+die();
+}
+
+function mukto_post_type_include( $query ) {
+if ( $query->is_main_query() && $query->is_search() && ! is_admin() ) {
+$query->set( 'post_type', array( 'ewidencjazgonow' ) );
+}
+}
+add_action( 'pre_get_posts', 'mukto_post_type_include' );
+
+add_filter( 'intermediate_image_sizes_advanced', 'prefix_remove_default_images' );
+
+function prefix_remove_default_images( $sizes ) {
+unset( $sizes['medium']); // 300px
+unset( $sizes['large']); // 1024px
+return $sizes;
+}
+
+function esez_features() {
+register_nav_menu( 'headerMenuLocation', 'Menu Główne' );
+}
+
+add_action( 'after_setup_theme', 'esez_features' );
+
+if (!wp_next_scheduled('cron_url_aktywne_opaski')) {
+wp_schedule_event(time(), 'hourly', 'cron_url_aktywne_opaski');
+}
+
+add_action('cron_url_aktywne_opaski', 'call_url_heron_cron');
+
+function call_url_heron_cron() {
+wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=1&action=trigger');
+wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=1&action=processing');
+}
+
+add_action('cron_url_aktywne_opaski', 'call_url_demo_cron');
+
+function call_url_demo_cron() {
+wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=4&action=trigger');
+wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=4&action=processing');
+}
+
+add_action('cron_url_aktywne_opaski', 'call_url_kallandm_cron');
+
+function call_url_kallandm_cron() {
+wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=7&action=trigger');
+wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=7&action=processing');
+}
+
+add_action('cron_url_aktywne_opaski', 'call_url_funeralkety_cron');
+
+function call_url_funeralkety_cron() {
+wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=8&action=trigger');
+wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=8&action=processing');
+}
+
+function shapeSpace_disable_medium_images($sizes) {
+
+unset($sizes['medium']); // disable medium size
+return $sizes;
+
+}
+add_action('intermediate_image_sizes_advanced', 'shapeSpace_disable_medium_images');
+
+function shapeSpace_disable_large_images($sizes) {
+
+unset($sizes['large']); // disable large size
+return $sizes;
+
+}
+add_action('intermediate_image_sizes_advanced', 'shapeSpace_disable_large_images');
+
+function shapeSpace_disable_medium_large_images($sizes) {
+
+unset($sizes['medium_large']); // disable 768px size images
+return $sizes;
+
+}
+add_filter('intermediate_image_sizes_advanced', 'shapeSpace_disable_medium_large_images');
+
+function shapeSpace_disable_2x_medium_large_images($sizes) {
+
+unset($sizes['1536x1536']); // disable 2x medium-large size
+return $sizes;
+
+}
+add_filter('intermediate_image_sizes_advanced', 'shapeSpace_disable_2x_medium_large_images');
+
+function shapeSpace_disable_2x_large_images($sizes) {
+
+unset($sizes['2048x2048']); // disable 2x large size
+return $sizes;
+
+}
+add_filter('intermediate_image_sizes_advanced', 'shapeSpace_disable_2x_large_images');
+
+function shapeSpace_disable_thumbnail_images($sizes) {
+
+unset($sizes['thumbnail']); // disable thumbnail size
+return $sizes;
+
+}
+add_action('intermediate_image_sizes_advanced', 'shapeSpace_disable_thumbnail_images');
+
+function restrict_manage_authors() {
+if (isset($_GET['post_type']) && post_type_exists($_GET['post_type']) && in_array(strtolower($_GET['post_type']), array('ewidencjazgonow'))) {
+wp_dropdown_users(array(
+'show_option_all'   => 'Wszyscy użytkownicy',
+'show_option_none'  => false,
+'name'          => 'author',
+'selected'      => !empty($_GET['author']) ? $_GET['author'] : 0,
+'include_selected'  => false
+));
+}
+}
+add_action('restrict_manage_posts', 'restrict_manage_authors');
+
+function custom_columns_author($columns) {
+$columns['author'] = 'Author';
+return $columns;
+}
+
+add_filter('user_contactmethods', 'yoast_seo_admin_user_remove_social', 99);
+
+function yoast_seo_admin_user_remove_social ( $contactmethods ) {
+unset( $contactmethods['facebook'] );
+unset( $contactmethods['instagram'] );
+unset( $contactmethods['linkedin'] );
+unset( $contactmethods['myspace'] );
+unset( $contactmethods['pinterest'] );
+unset( $contactmethods['soundcloud'] );
+unset( $contactmethods['tumblr'] );
+unset( $contactmethods['twitter'] );
+unset( $contactmethods['youtube'] );
+unset( $contactmethods['wikipedia'] );
+unset( $contactmethods['facebook_profile'] );
+unset( $contactmethods['twitter_profile'] );
+unset( $contactmethods['linkedin_profile'] );
+unset( $contactmethods['xing_profile'] );
+unset( $contactmethods['github_profile'] );
+unset( $contactmethods['userpicprofile'] );
+
+return $contactmethods;
+}
+
+add_filter( 'wp_is_application_passwords_available', '__return_false' );
+
+add_action( 'personal_options', array ( 'T5_Hide_Profile_Bio_Box', 'start' ) );
+
+/**
+ * Captures the part with the biobox in an output buffer and removes it.
+ */
+class T5_Hide_Profile_Bio_Box
+{
+    /**
+     * Called on 'personal_options'.
+     *
+     * @return void
+     */
+    public static function start()
+    {
+        $action = ( IS_PROFILE_PAGE ? 'show' : 'edit' ) . '_user_profile';
+        add_action( $action, array ( __CLASS__, 'stop' ) );
+        ob_start();
+    }
+
+    /**
+     * Strips the bio box from the buffered content.
+     *
+     * @return void
+     */
+    public static function stop()
+    {
+        $html = ob_get_contents();
+        ob_end_clean();
+
+        // remove the headline
+        $headline = __( IS_PROFILE_PAGE ? 'About Yourself' : 'About the user' );
+        $html = str_replace( '<h2>' . $headline . '</h2>', '', $html );
+
+        // remove the table row
+        $html = preg_replace( '~<tr>\s*<th><label for="description".*</tr>~imsUu', '', $html );
+        print $html;
+    }
+}
+
+add_filter( 'option_show_avatars', '__return_false' );

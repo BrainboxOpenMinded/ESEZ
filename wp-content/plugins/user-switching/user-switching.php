@@ -131,7 +131,7 @@ class user_switching {
 			</th>
 			<td>
 				<a id="user_switching_switcher" href="<?php echo esc_url( $link ); ?>">
-					<?php esc_html_e( 'Switch&nbsp;To', 'user-switching' ); ?>
+					<?php esc_html_e( 'Przełącz&nbsp;użytkownika', 'user-switching' ); ?>
 				</a>
 			</td>
 		</tr>
@@ -585,7 +585,7 @@ class user_switching {
 				$wp_admin_bar->add_node( array(
 					'parent' => 'edit',
 					'id' => 'author-switch-to',
-					'title' => esc_html__( 'Switch&nbsp;To', 'user-switching' ),
+					'title' => esc_html__( 'Przełącz&nbsp;użytkownika', 'user-switching' ),
 					'href' => add_query_arg( array(
 						'redirect_to' => urlencode( self::current_url() ),
 					), self::switch_to_url( get_queried_object() ) ),
@@ -734,7 +734,7 @@ class user_switching {
 		$actions['switch_to_user'] = sprintf(
 			'<a href="%s">%s</a>',
 			esc_url( $link ),
-			esc_html__( 'Switch&nbsp;To', 'user-switching' )
+			esc_html__( 'Przełącz&nbsp;użytkownika', 'user-switching' )
 		);
 
 		return $actions;

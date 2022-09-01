@@ -122,6 +122,8 @@ class FilteringCustom extends FilteringBase
             }
 
             $this->queryJoin[] = $joinString;
+	        // De-dupe query joins.
+	        $this->queryJoin = array_unique($this->queryJoin);
             $this->queryWhere .= $whereString;
 
         } else if (strpos($rule->element, 'rt_') === 0) {
