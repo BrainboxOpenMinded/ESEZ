@@ -456,32 +456,11 @@ if (!wp_next_scheduled('cron_url_aktywne_opaski')) {
 wp_schedule_event(time(), 'hourly', 'cron_url_aktywne_opaski');
 }
 
-add_action('cron_url_aktywne_opaski', 'call_url_heron_cron');
-
-function call_url_heron_cron() {
-wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=1&action=trigger');
-wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=1&action=processing');
-}
-
-add_action('cron_url_aktywne_opaski', 'call_url_demo_cron');
-
-function call_url_demo_cron() {
-wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=4&action=trigger');
-wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=4&action=processing');
-}
-
 add_action('cron_url_aktywne_opaski', 'call_url_kallandm_cron');
 
 function call_url_kallandm_cron() {
 wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=7&action=trigger');
 wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=7&action=processing');
-}
-
-add_action('cron_url_aktywne_opaski', 'call_url_funeralkety_cron');
-
-function call_url_funeralkety_cron() {
-wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=8&action=trigger');
-wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=8&action=processing');
 }
 
 function shapeSpace_disable_medium_images($sizes) {
@@ -524,13 +503,7 @@ return $sizes;
 }
 add_filter('intermediate_image_sizes_advanced', 'shapeSpace_disable_2x_large_images');
 
-function shapeSpace_disable_thumbnail_images($sizes) {
 
-unset($sizes['thumbnail']); // disable thumbnail size
-return $sizes;
-
-}
-add_action('intermediate_image_sizes_advanced', 'shapeSpace_disable_thumbnail_images');
 
 function restrict_manage_authors() {
 if (isset($_GET['post_type']) && post_type_exists($_GET['post_type']) && in_array(strtolower($_GET['post_type']), array('ewidencjazgonow'))) {
@@ -615,3 +588,35 @@ class T5_Hide_Profile_Bio_Box
 }
 
 add_filter( 'option_show_avatars', '__return_false' );
+
+add_filter( 'ajax_query_attachments_args', "user_restrict_media_library" );
+function user_restrict_media_library(  $query ) {
+	global $current_user;
+	$query['author'] = $current_user->ID ;
+	return $query;
+}
+
+add_action('pre_get_posts', 'jr_show_only_users_posts_in_find_posts_modal');
+
+/**
+ * Show only user's own posts in the 'Find Posts' modal window, unless
+ * user is admin or editor.
+ *
+ */
+function jr_show_only_users_posts_in_find_posts_modal($wp_query) {
+    global $pagenow;
+
+    $find_posts = (isset($_POST['action']) && $_POST['action'] === 'find_posts');
+
+    // target the post query for the Find Posts modal
+    if (!is_admin() || $pagenow !== 'admin-ajax.php' || !$find_posts) {
+        return;
+    }
+
+    // Authors
+    if (!current_user_can('administrator') && !current_user_can('editor')) {
+        $wp_query->set('author', get_current_user_id());
+    }
+
+    return $wp_query;
+}
