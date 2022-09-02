@@ -157,8 +157,6 @@ class FilteringTaxonomies extends FilteringBase
                         $this->queryWhere .= "{$this->wpdb->termmeta}.meta_key = '$meta_key' AND {$this->wpdb->termmeta}.meta_value " . $this->parse_condition($rule);
                     }
 
-	                // De-dupe query joins.
-	                $this->queryJoin = array_unique($this->queryJoin);
                 }
                 break;
         }
