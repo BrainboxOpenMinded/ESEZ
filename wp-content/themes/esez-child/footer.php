@@ -4,7 +4,7 @@
 			<div class="container-fluid px-4 py-3">
 				<div class="row">
 					<div class="col-md-6">
-					<p class="copyright"><?php echo date_i18n( 'Y' ); ?> &copy; eSEZ v 2.1. Realizacja: <a href="https://brainbox.com.pl/" target="_blank" rel="noopener nofollow">BRAINBOX®</a><br>Elektroniczny System Ewidencji Zmarłych</p>
+					<p class="copyright"><?php echo date_i18n( 'Y' ); ?> &copy; eSEZ v 2.2. Realizacja: <a href="https://brainbox.com.pl/" target="_blank" rel="noopener nofollow">BRAINBOX®</a><br>Elektroniczny System Ewidencji Zmarłych</p>
 					</div>
 					<div class="col-md-6">
 						<div class="flagi-stopka">
