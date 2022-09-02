@@ -8,3 +8,11 @@
     width: 100% !important;
   }
 }
+
+.yoast-settings {
+  display: none !important;
+}
+
+.select2-container.-acf {
+  width: 24% !important;
+}

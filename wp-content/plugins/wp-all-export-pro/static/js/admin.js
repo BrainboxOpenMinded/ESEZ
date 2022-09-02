@@ -377,7 +377,7 @@
 		if (is_show) {
 			$targets.fadeIn('fast', function(){
 				if ($switcherID == 'coperate_php'){
-					editor.setCursor(1);
+					editor.codemirror.setCursor(1);
 				}
 			});
 		} else {
@@ -2095,7 +2095,7 @@
 	    	if ($(this).find('span').html() == '+'){
 	    		$(this).find('span').html('-');
 	    		$('.wp-all-export-advanced-field-options-content').fadeIn('fast', function(){
-	    			if ($('#coperate_php').is(':checked')) editor.setCursor(1);
+	    			if ($('#coperate_php').is(':checked')) editor.codemirror.setCursor(1);
 	    		});
 	    	}
 	    	else{

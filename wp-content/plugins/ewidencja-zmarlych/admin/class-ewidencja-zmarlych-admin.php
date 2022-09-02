@@ -171,6 +171,64 @@ class Ewidencja_Zmarlych_Admin {
   
   }
 
+  public static function dokumenty_post_type() {
+
+    $cap_type 	= 'post';
+    $plural 	= 'Dokumenty';
+    $single 	= 'Dokument';
+    $cpt_name 	= 'Dokumenty';
+  
+  
+    $opts['can_export']						  		= TRUE;
+    $opts['capability_type']						= $cap_type;
+    $opts['description']						  	= 'Zbiór profili osób zmarłych';
+    $opts['exclude_from_search']					= FALSE;
+    $opts['has_archive']						  	= FALSE;
+    $opts['hierarchical']						  	= FALSE;
+    $opts['map_meta_cap']						  	= TRUE;
+    $opts['rewrite']							   	= array('slug'=>'d');
+    $opts['menu_icon']							  	= 'dashicons-media-document';
+    $opts['public']								    = TRUE;
+    $opts['publicly_querable']						= TRUE;
+    $opts['query_var']								= TRUE;
+    $opts['register_meta_box_cb']					= '';
+    $opts['show_in_admin_bar']						= TRUE;
+    $opts['show_in_menu']						  	= TRUE;
+	$opts['rest_base']								= 'dokumenty';
+    $opts['rest_controller_class']					= 'WP_REST_Posts_Controller';
+	$opts['show_in_rest']						  	= TRUE;
+    $opts['show_in_nav_menu']						= TRUE;
+    $opts['show_ui']							    = TRUE;
+    $opts['supports']								= array( 'title' );
+  
+    $opts['labels']['add_new']						= esc_html__( "Dodaj dokument", 'ewidencja-zmarlych' );
+    $opts['labels']['add_new_item']					= esc_html__( "Dodaj nowy dokument", 'ewidencja-zmarlych' );
+    $opts['labels']['all_items']					= esc_html__( "Wszystkie dokumenty", 'ewidencja-zmarlych' );
+    $opts['labels']['edit_item']					= esc_html__( "Edytuj {$single}" , 'ewidencja-zmarlych' );
+    $opts['labels']['menu_name']					= esc_html__( 'Dokumenty', 'ewidencja-zmarlych' );
+    $opts['labels']['name']							= esc_html__( "Dokumenty ESEZ", 'ewidencja-zmarlych' );
+    $opts['labels']['name_admin_bar']				= esc_html__( "Dokumenty ESEZ", 'ewidencja-zmarlych' );
+    $opts['labels']['new_item']						= esc_html__( "Nowa {$single}", 'ewidencja-zmarlych' );
+    $opts['labels']['not_found']					= esc_html__( "Nie {$plural} znaleziono", 'ewidencja-zmarlych' );
+    $opts['labels']['not_found_in_trash']			= esc_html__( "Nie {$plural} w koszu", 'ewidencja-zmarlych' );
+    $opts['labels']['parent_item_colon']			= esc_html__( "Rodzic {$plural} :", 'ewidencja-zmarlych' );
+    $opts['labels']['search_items']					= esc_html__( "Szukaj {$plural}", 'ewidencja-zmarlych' );
+    $opts['labels']['singular_name']				= esc_html__( "Dokumenty ESEZ", 'ewidencja-zmarlych' );
+    $opts['labels']['view_item']					= esc_html__( "Zobacz {$single}", 'ewidencja-zmarlych' ); 
+  
+    $opts['rewrite']['ep_mask']						= EP_PERMALINK;
+    $opts['rewrite']['feeds']						= FALSE;
+    $opts['rewrite']['pages']						= TRUE;
+    $opts['rewrite']['slug']						= esc_html__( strtolower( 'd' ), 'd' );
+    $opts['rewrite']['with_front']					= FALSE;
+  
+    $opts = apply_filters( 'dokumenty_post_type', $opts );
+  
+    register_post_type( strtolower( $cpt_name ), $opts );
+  
+  }
+
+
   	public function add_author_support_to_posts() {
 		add_post_type_support( 'esez_post_type', 'author' ); 
 }
@@ -471,7 +529,6 @@ class BulkEditPublishDate
             printf($format, $date, $count);
         }
     }
-
 }
 
 $BulkEditPublishDate = new BulkEditPublishDate();
