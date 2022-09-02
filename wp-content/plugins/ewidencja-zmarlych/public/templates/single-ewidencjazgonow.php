@@ -33,7 +33,29 @@ if (is_user_logged_in() && in_array($current_user->ID, $items) || current_user_c
         padding: 32px 0;
     }
 
+    .acfe-phone-number .iti .iti__flag-container .iti__selected-flag {
+        border-radius: 0;
+        border-right: 1px solid #666;
+    }
+
+    .input {
+        border: 1px solid #666;
+    }
+
+    .acf-field input[type="text"],
+    .acf-field input[type="password"],
+    .acf-field input[type="number"],
+    .acf-field input[type="search"],
+    .acf-field input[type="email"],
+    .acf-field input[type="url"],
+    .acf-field textarea,
+    .acf-field select {
+        border-radius: 0.3rem;
+        border: 1px solid #666;
+    }
+
     @media (max-width: 800px) {
+
         .fixed-top,
         .sb-nav-fixed #layoutSidenav #layoutSidenav_nav,
         .sb-nav-fixed .sb-topnav {
@@ -80,7 +102,7 @@ if (is_user_logged_in() && in_array($current_user->ID, $items) || current_user_c
     #acf-field_60140a20aeae8-field_6014134caeaec,
     #acf-field_629378ceae433,
     #acf-field_6310c0e47d0df,
-    .acf-input .intl-tel-input {
+    .acfe-phone-number .iti {
         width: 37.7%;
     }
 
@@ -152,7 +174,8 @@ if (is_user_logged_in() && in_array($current_user->ID, $items) || current_user_c
         #acf-field_601429bd3ccb6-field_601429bd3ccb9,
         #acf-field_601429bd3ccb6-field_601429bd3ccba,
         #acf-field_60140a20aeae8-field_60140d77aeaeb,
-        #acf-field_60140a20aeae8-field_6014134caeaec {
+        #acf-field_60140a20aeae8-field_6014134caeaec,
+        .acfe-phone-number .iti {
             width: 100%;
         }
 
