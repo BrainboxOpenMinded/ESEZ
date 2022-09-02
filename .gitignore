@@ -17,6 +17,17 @@
 /wp-content/advanced-cache.php
 /wp-content/object-cache.php
 /wp-includes/
+/wp-content/plugins/publishpress-authors/defines.php
+/wp-content/plugins/publishpress-authors/languages/publishpress-authors-es_ES.mo
+/wp-content/plugins/publishpress-authors/languages/publishpress-authors-es_ES.po
+/wp-content/plugins/publishpress-authors/languages/publishpress-authors-fr_FR.mo
+/wp-content/plugins/publishpress-authors/languages/publishpress-authors-fr_FR.po
+/wp-content/plugins/publishpress-authors/languages/publishpress-authors-it_IT.mo
+/wp-content/plugins/publishpress-authors/languages/publishpress-authors-it_IT.po
+/wp-content/plugins/publishpress-authors/publishpress-authors.php
+/wp-content/plugins/publishpress-authors/readme.txt
+/wp-content/plugins/publishpress-authors/src/functions/template-tags.php
+/wp-content/plugins/publishpress-authors/vendor/composer/installed.php
 /codes
 /library
 /index.php
