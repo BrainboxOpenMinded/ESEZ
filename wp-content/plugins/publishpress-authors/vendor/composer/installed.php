@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '3.20.2.x-dev',
-        'version' => '3.20.2.9999999-dev',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '5418b20578ffd0ee67f8eb1d194a2432681eb12b',
+        'reference' => '61b6cf62cc47001c23a36d35e10118c19d780dec',
         'name' => 'publishpress/publishpress-authors',
         'dev' => false,
     ),
@@ -29,12 +29,12 @@
             'dev_requirement' => false,
         ),
         'publishpress/publishpress-authors' => array(
-            'pretty_version' => '3.20.2.x-dev',
-            'version' => '3.20.2.9999999-dev',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '5418b20578ffd0ee67f8eb1d194a2432681eb12b',
+            'reference' => '61b6cf62cc47001c23a36d35e10118c19d780dec',
             'dev_requirement' => false,
         ),
         'publishpress/publishpress-instance-protection' => array(
