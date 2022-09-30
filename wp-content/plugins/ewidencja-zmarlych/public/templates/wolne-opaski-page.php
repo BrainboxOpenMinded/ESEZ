@@ -1,5 +1,7 @@
 <?php 
 get_header();
+?>
+<?php
 global $post;
 global $current_user;
 $post_id = $post->ID;
@@ -15,107 +17,106 @@ if(is_user_logged_in()) : ?>
     <div class="row">
         <div id="esez">
             <h2 class="esez-title"><?php echo $first_name; ?></h2>
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    <a href="/konto"
-                        class="nav-link">W trakcie</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/konto/wolne" class="nav-link active">Wolne</a>
-                </li>
-                <?php if ( array_intersect( $allowed_roles, $user->roles ) ) : ?>
-                <li class="nav-item">
-                    <a href="/konto/zakonczone" class="nav-link">Zrealizowane</a>
-                </li>
-                <?php endif; ?>
-                <?php if(get_field('kto_organizuje_pogrzeb') == false) : ?>
-                <li class="nav-item">
-                    <a href="/konto/obce" class="nav-link">Obce</a>
-                </li>
-                <?php endif; ?>
-            </ul>
+            <div class="table-navigation-container">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a href="/konto" class="nav-link">
+                            W trakcie
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/konto/wolne" class="nav-link active">Wolne</a>
+                    </li>
+                    <?php if ( array_intersect( $allowed_roles, $user->roles ) ) : ?>
+                    <li class="nav-item">
+                        <a href="/konto/zakonczone" class="nav-link">Zrealizowane</a>
+                    </li>
+                    <?php endif; ?>
+                    <li class="nav-item">
+                        <a href="/konto/obce" class="nav-link">Obce</a>
+                    </li>
+                </ul>
+            </div>
             <div class="card no-padding mb-4">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
-                    Ewidencja Zgonów
+                    <span class="header-table-title">Wolne opaski</span>
+                    <a type="button" id="btn-reload"><i class="fa-solid fa-arrows-rotate"></i></a>
                 </div>
                 <div class="card-body table-responsive-xxl">
-                    <table class="table" id="datatablesWolneOpaski">
-                        <thead>
+                    <table class="table align-middle hover order-column" id="datatablesWTrakcie">
+                    <thead>
                             <tr>
-                                <th>Nr</th>
-                                <th>Aktywacja</th>
+                                <th class="text-nowrap">Nr</th>
+                                <th class="text-nowrap">Aktywacja</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>Nr</th>
-                                <th>Aktywacja</th>
+                                <th class="text-nowrap">Nr</th>
+                                <th class="text-nowrap">Aktywacja</th>
                             </tr>
                         </tfoot>
                         <tbody>
-                            <?php
-
-    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-    $query = new WP_Query( array(
-            'post_type' => array( 'post', 'ewidencjazgonow' ),
-            'posts_per_page'=> 20,
-            'paged' => $paged,
-            'author' => $authorID,
-            'post_status' => 'publish',
-            'fields' => 'ids',
-            'cache_results' => false,
-            'update_post_meta_cache' => false,
-            'update_post_term_cache' => false,
-            'orderby'			=> 'meta_value',
-            'order'				=> 'DESC',
-            'meta_query' => array(
-                'relation' => 'AND',
-                array(
-                    'key' => 'imie_zmarlego',
-                    'compare' => 'NOT EXISTS'
-                ),
-                array(
-                    'key' => 'nazwisko_zmarlego',
-                    'compare' => 'NOT EXISTS'
-                ),
-            ),
-            )
-        );
-    if ($query->have_posts()) :
-
-        while ( $query->have_posts() ) : $query->the_post(); ?>
-                            <tr>
-                                <td><?php echo '<a class="number-link" href="' . get_permalink() . '">' . get_field('numer_opaski') . '</a>'; ?></td>
-                                <td><?php echo '<a class="number-link" href="' . get_permalink() . '">Aktywuj opaskę</a>'; ?></td>
-                            </tr>
-                            <?php endwhile; ?>
-                            <div class="pagination">
-                                <?php
-                $big = 999999999; // need an unlikely integer
-                echo paginate_links( array(
-                'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
-                'format' => '?paged=%#%',
-                'current' => max( 1, get_query_var('paged') ),
-                'total' => $query->max_num_pages
-                ) );
-            ?>
-                            </div>
-                            <br>
-                            <?php wp_reset_postdata(); else : ?> 
-                            <tr>
-                                <td>
-                                    Brak danych...
-                                </td>
-                            </tr>
-                            <?php endif; ?>
-                        </tbody>
+                    </tbody>
                     </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<?php endif;
-get_footer();
-?>
+                    </div>
+                    </div>
+                    </div>
+<script>
+jQuery(document).ready(function ($) {
+
+    var table = $('#datatablesWTrakcie').DataTable({
+        ajax: {
+            url: datatablesajax.url + '?action=getpostsfordatatableswolne'
+        },
+        language: {
+            'loadingRecords': '&nbsp;',
+            'processing': '<div class="loader-div"><div class="loader-pulse"></div></div>',
+            "search": "Szukaj:",
+            "lengthMenu": "Pokaż _MENU_ pozycji",
+            "info": "Pozycje od _START_ do _END_ z _TOTAL_ łącznie",
+            "infoEmpty": "Pozycji 0 z 0 dostępnych",
+            "infoFiltered": "(filtrowanie spośród _MAX_ dostępnych pozycji)",
+            "zeroRecords": "Nie znaleziono pasujących pozycji",
+            "paginate": {
+                "first": "Pierwsza",
+                "previous": "Poprzednia",
+                "next": "Następna",
+                "last": "Ostatnia"
+            },
+        },
+        columns: [{
+                data: 'nr'
+            },
+            {
+                data: 'aktywacja'
+            },
+        ],
+        processing: true,
+        rowReorder: {
+            selector: 'td:nth-child(2)'
+        },
+        responsive: true,
+        "columnDefs": [{
+                className: "text-nowrap",
+                targets: "_all"
+            },
+            {
+                "targets": [1],
+                "searchable": false,
+                "orderable": false,
+                "visible": true
+            }
+        ]
+    });
+    $('#btn-reload').on('click', function () {
+        table.ajax.reload();
+    });
+    setInterval(function () {
+        table.ajax.reload();
+    }, 60000);
+});
+</script>
+<?php endif; ?>
+<?php get_footer(); ?>

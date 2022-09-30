@@ -7,9 +7,9 @@ namespace LightboxPhotoSwipe;
  */
 class LightboxPhotoSwipe
 {
-    const VERSION = '5.0.7';
+    const VERSION = '5.0.16';
     const SLUG = 'lightbox-photoswipe';
-    const META_VERSION = '6';
+    const META_VERSION = '10';
     const CACHE_EXPIRE_IMG_DETAILS = 86400;
     const DB_VERSION = 36;
     const BASEPATH = WP_PLUGIN_DIR.'/'.self::SLUG.'/';
@@ -117,6 +117,21 @@ class LightboxPhotoSwipe
                     self::VERSION,
                     true
                 );
+                wp_enqueue_style(
+                    'lbwps-styles-photoswipe5-local',
+                    sprintf('%sassets/ps5/lib/photoswipe-local.css', $this->getPluginUrl()),
+                    false,
+                    self::VERSION
+                );
+                wp_enqueue_style(
+                    'lbwps-styles-photoswipe5-dynamic-caption',
+                    sprintf(
+                        '%sassets/ps5/dynamic-caption/photoswipe-dynamic-caption-plugin.css',
+                        $this->getPluginUrl()
+                    ),
+                    false,
+                    self::VERSION
+                );
             } else {
                 wp_enqueue_script(
                     'lbwps-photoswipe5',
@@ -125,22 +140,13 @@ class LightboxPhotoSwipe
                     self::VERSION,
                     true
                 );
+                wp_enqueue_style(
+                    'lbwps-styles-photoswipe5-main',
+                    sprintf('%sassets/ps5/styles/main.css', $this->getPluginUrl()),
+                    false,
+                    self::VERSION
+                );
             }
-            wp_enqueue_style(
-                'lbwps-styles-photoswipe5',
-                sprintf('%sassets/ps5/lib/photoswipe.css', $this->getPluginUrl()),
-                false,
-                self::VERSION
-            );
-            wp_enqueue_style(
-                'lbwps-styles-photoswipe5-dynamic-caption',
-                sprintf(
-                    '%sassets/ps5/dynamic-caption/photoswipe-dynamic-caption-plugin.css',
-                    $this->getPluginUrl()
-                ),
-                false,
-                self::VERSION
-            );
         } else {
             $handle = 'lbwps';
             if (defined('SCRIPT_DEBUG') && SCRIPT_DEBUG) {
@@ -255,9 +261,21 @@ class LightboxPhotoSwipe
         $baseurlHttps = get_site_url(null, null, 'https');
         $url = $matches[2];
 
-        // Remove parameters if any
-        $urlparts = explode('?', $url);
-        $file = $urlparts[0];
+        // Remove fragments and parameters from URL
+        $hasFragment = false;
+        $params = '';
+        $urlParts = explode('#', $url);
+        if (count($urlParts) > 1) {
+            $file = $urlParts[0];
+            $hasFragment = true;
+            $urlParts = explode('?', $urlParts[1]);
+        } else {
+            $urlParts = explode('?', $url);
+            $file = $urlParts[0];
+        }
+        if (count($urlParts) > 1) {
+            $params = '?'.$urlParts[1];
+        }
 
         // If URL is relative then add site URL
         if (substr($file, 0,  7) !== 'http://' && substr($file, 0, 8) !== 'https://') {
@@ -300,21 +318,21 @@ class LightboxPhotoSwipe
 
             if (substr($file, 0, strlen($baseurlHttp)) === $baseurlHttp || substr($file, 0, strlen($baseurlHttps)) === $baseurlHttps) {
                 $isLocal = true;
+                $params = '';
             }
 
             if (!$isLocal && '1' === $this->optionsManager->getOption('ignore_external')) {
                 // Ignore URL if it is an external URL and the respective option to ignore that is set
                 $use = false;
-            } else if (strpos($file, '#') !== false && '1' === $this->optionsManager->getOption('ignore_hash')) {
+            } else if ($hasFragment && '1' === $this->optionsManager->getOption('ignore_hash')) {
                 // Ignore URL if it contains a hash the respective option to ignore that is set
                 $use = false;
             }
         }
 
         if ($use) {
-            $baseDir = wp_upload_dir()['basedir'];
+            $uploadDir = wp_upload_dir()['basedir'];
             $uploadUrl = wp_upload_dir()['baseurl'];
-            $imgPostId = null;
 
             // If image is served by the website itself, try to get caption for local file
             if ($isLocal) {
@@ -329,8 +347,8 @@ class LightboxPhotoSwipe
                 if (substr($file, 0, 6) != 'ftp://' &&
                     substr($file, 0, 7) != 'http://' &&
                     substr($file, 0, 8) != 'https://') {
-                    $uploadDir = wp_upload_dir(null, false)['basedir'];
-                    $realFile = $this->strReplaceOverlap($uploadDir, $file);
+                    $localDir = wp_upload_dir(null, false)['basedir'];
+                    $realFile = $this->strReplaceOverlap($localDir, $file);
 
                     // Using ABSPATH is not recommended, also see
                     // <https://github.com/arnowelzel/lightbox-photoswipe/issues/33>.
@@ -374,7 +392,7 @@ class LightboxPhotoSwipe
                     $imgId = $wpdb->get_col(
                         $wpdb->prepare(
                             'SELECT post_id FROM '.$wpdb->postmeta.' WHERE meta_key = "_wp_attached_file" and meta_value = %s;',
-                            str_replace ($baseDir . '/', '', $fileOriginal)
+                            str_replace ($uploadDir . '/', '', $fileOriginal)
                         )
                     );
                     if (isset($imgId[0])) {
@@ -397,11 +415,11 @@ class LightboxPhotoSwipe
 
             $cacheKey = sprintf('%s-%s-image-%s',self::META_VERSION, self::SLUG, hash('md5', $file.$imgMtime));
             if (!$imgDetails = get_transient($cacheKey)) {
-                $imageSize = $this->getImageSize($file, $extension);
+                $imageSize = $this->getImageSize($file . $params, $extension);
                 if (false !== $imageSize && is_numeric($imageSize[0]) && is_numeric($imageSize[1]) && $imageSize[0] > 0 && $imageSize[1] > 0) {
                     $pathInfo = pathinfo($file);
                     $fileSmall = $file;
-                    if ($imageSize[0] > $imageSize[1]) {
+                    if ($isLocal && $imageSize[0] > $imageSize[1]) {
                         for ($n=-1; $n<2; $n++) {
                             $fileSmallTest = sprintf(
                                 '%s/%s-%dx%d.%s',
@@ -416,8 +434,8 @@ class LightboxPhotoSwipe
                             }
                         }
                     }
-                    if ($baseDir && $uploadUrl) {
-                        $fileSmall = str_replace($baseDir, $uploadUrl, $fileSmall);
+                    if ($uploadDir && $uploadUrl) {
+                        $fileSmall = str_replace($uploadDir, $uploadUrl, $fileSmall);
                     }
                     if (substr($fileSmall, 0, 1) === '/') {
                         $fileSmall = '';
@@ -433,7 +451,7 @@ class LightboxPhotoSwipe
                         'exifDateTime' => '',
                     ];
                     if (in_array($extension, ['jpg', 'jpeg', 'jpe', 'tif', 'tiff']) && function_exists('exif_read_data')) {
-                        $exif = @exif_read_data( $file, 'EXIF', true );
+                        $exif = @exif_read_data( $file . $params, 'EXIF', true );
                         if (false !== $exif) {
                             $this->exifHelper->setExifData($exif);
                             $imgDetails['exifCamera']   = $this->exifHelper->getCamera();
@@ -506,7 +524,7 @@ class LightboxPhotoSwipe
     /**
      * Output filter for post content
      */
-    function filterOutput(string $content)
+    public function filterOutput(string $content)
     {
         return preg_replace_callback(
             '/(<a.[^>]*href=["\'])(.[^"^\']*?)(["\'])([^>]*)(>)/sU',
@@ -866,7 +884,13 @@ class LightboxPhotoSwipe
             'label_twitter' => __('Tweet', LightboxPhotoSwipe::SLUG),
             'label_pinterest' => __('Pin it', LightboxPhotoSwipe::SLUG),
             'label_download' => __('Download image', LightboxPhotoSwipe::SLUG),
-            'label_copyurl' => __('Copy image URL', LightboxPhotoSwipe::SLUG)
+            'label_copyurl' => __('Copy image URL', LightboxPhotoSwipe::SLUG),
+            'label_ui_close' => __('Close [Esc]', LightboxPhotoSwipe::SLUG),
+            'label_ui_zoom' => __('Zoom', LightboxPhotoSwipe::SLUG),
+            'label_ui_prev' => __('Previous [←]', LightboxPhotoSwipe::SLUG),
+            'label_ui_next' => __('Next [→]', LightboxPhotoSwipe::SLUG),
+            'label_ui_error' => __('The image cannot be loaded', LightboxPhotoSwipe::SLUG),
+            'label_ui_fullscreen' => __('Toggle fullscreen [F]', LightboxPhotoSwipe::SLUG),
         ];
         $boolOptions = [
             'share_facebook',

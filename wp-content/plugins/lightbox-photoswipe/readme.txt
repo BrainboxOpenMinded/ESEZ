@@ -4,7 +4,7 @@ Contributors: awelzel
 Tags: attachments, images, gallery, lightbox, fancybox, photoswipe
 Requires at least: 5.3
 Tested up to: 6.0
-Stable tag: 5.0.7
+Stable tag: 5.0.16
 Donate link: https://paypal.me/ArnoWelzel
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -195,6 +195,49 @@ If you change any of the stylesheets or frontend scripts in `src/js` or `src/lib
 7. Example for the use in the frontend
 
 == Changelog ==
+
+= 5.0.16 =
+
+PhotoSwipe 5 integration:
+
+* Added translations for UI tooltip labels.
+* Updated plugins for "auto hide UI" and "fullscreen" to fix potential bugs and add translations.
+
+= 5.0.15 =
+
+PhotoSwipe 5 integration:
+
+* Reverted background click in desktop to the original "close lightbox" behaviour and made UI elements clickable even if hidden - as it was implemented in PhotoSwipe 4 - to avoid confusion when UI hides automatically in desktop mode.
+* Optimized frontend styles to include only one minimized file.
+
+= 5.0.14 =
+
+PhotoSwipe 5 integration:
+
+* Change background click action in desktop mode to "toggle controls" to avoid confusion when UI hides automatically in desktop mode.
+
+= 5.0.13 =
+
+* Fix meta data handling for "external" images.
+
+= 5.0.12 =
+
+* Using PhotoSwipe 5 with "overlay" caption by default.
+* Keep URL parameters in image links when reading image information for external images.
+* Fix bug when using image URLs with hash.
+
+= 5.0.8 - 5.0.11 =
+
+* Several fixes in EXIF data handling.
+
+= 5.0.8 =
+
+* Internal code refactoring.
+
+PhotoSwipe 5 integration:
+
+* Updated dynamic caption plugin to version 1.2.6.
+* Hide dynamic caption if it is using "mobile" view instead of "aside" or "below" and the controls are hidden.
 
 = 5.0.7 =
 

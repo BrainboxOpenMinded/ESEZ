@@ -186,24 +186,22 @@ class FilteringCPT extends FilteringBase
                     $meta_key = $this->removePrefix($rule->element, "cf_");
 
                     if ($rule->condition == 'is_empty') {
-                        $table_alias = 'postmeta_empty_' . $meta_key;
+                        $table_alias = (count($this->queryJoin) > 0) ? 'meta' . count($this->queryJoin) : 'meta';
 
                         $joinString = " LEFT JOIN {$this->wpdb->postmeta} AS $table_alias ON ($table_alias.post_id = {$this->wpdb->posts}.ID AND $table_alias.meta_key = '$meta_key') ";
                         $whereString = "$table_alias.meta_id " . $this->parse_condition($rule);
 
                         $this->queryJoin[] = $joinString;
-	                    $this->queryJoin = array_unique($this->queryJoin);
                         $this->queryWhere .= $whereString;
 
                         self::$variationJoin[] = $joinString;
-	                    self::$variationJoin = array_unique(self::$variationJoin);
                         self::$variationWhere .= $whereString;
 
                     } else {
                         if (in_array($meta_key, array('_completed_date'))) {
                             $this->parse_date_field($rule);
                         }
-                        $table_alias = 'postmeta';
+                        $table_alias = (count($this->queryJoin) > 0) ? 'meta' . count($this->queryJoin) : 'meta';
 
                         if (empty(self::$variationWhere)) {
                             self::$variationWhere = $this->queryWhere;
@@ -213,11 +211,9 @@ class FilteringCPT extends FilteringBase
                         $whereString = "$table_alias.meta_key = '$meta_key' AND $table_alias.meta_value " . $this->parse_condition($rule, false, $table_alias);
 
                         $this->queryJoin[] = $joinString;
-                        $this->queryJoin = array_unique($this->queryJoin);
                         $this->queryWhere .= $whereString;
 
                         self::$variationJoin[] = $joinString;
-	                    self::$variationJoin = array_unique(self::$variationJoin);
                         self::$variationWhere .= $whereString;
 
                     }
@@ -248,11 +244,8 @@ class FilteringCPT extends FilteringBase
 
                             switch ($rule->condition) {
                                 case 'in':
-                                    $table_alias = 'tr';
+                                    $table_alias = (count($this->queryJoin) > 0) ? 'tr' . count($this->queryJoin) : 'tr';
                                     $this->queryJoin[] = " LEFT JOIN {$this->wpdb->term_relationships} AS $table_alias ON ({$this->wpdb->posts}.ID = $table_alias.object_id)";
-                                    // Dedupe query joins.
-	                                $this->queryJoin = array_unique($this->queryJoin);
-
                                     $this->queryWhere .= "$table_alias.term_taxonomy_id IN ($terms_str)";
                                     if (!empty($rule->clause)) $this->queryWhere .= " " . $rule->clause . " ";
                                     break;
