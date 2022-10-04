@@ -601,10 +601,6 @@ div.search_result {
   width: 100%;
 }
 
-.acf-url i {
-  top: 0px !important;
-}
-
 [data-tooltip] {
   cursor: pointer;
   display: inline-block;
@@ -14479,24 +14475,26 @@ body .acf-block-fields,
   background: #009999 !important;
   animation: load-pulse 0.85s infinite linear;
   position: absolute;
-  top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin-top: -30px;
+  margin-top: 10px;
   margin-left: -30px;
 }
 
+div.dataTables_processing div:last-child div {
+  display: none;
+}
+
 .dataTables_wrapper .dataTables_processing {
-  position: absolute;
-  top: 20%;
+  top: 10%;
+  padding-top: 85px;
   left: 101px;
   width: 100%;
-  padding-top: 85px;
-  padding-left: 65px;
   height: 100%;
   text-align: center;
-  background: rgba(255, 255, 255, .3);
+  background: rgba(255, 255, 255, .5);
   z-index: 100;
+  color: #009999 !important;
 }
 
 @keyframes load-pulse {
@@ -14589,4 +14587,20 @@ option:hover {
   .acf-spinner {
     right: 16rem;
   }
+}
+
+/* CHARTS */
+
+.chart-container-one {
+  position: relative;
+  margin: auto;
+  height: auto;
+  width: 400px;
+}
+
+.chart-container-two {
+  position: relative;
+  margin: auto;
+  height: auto;
+  width: 600px;
 }

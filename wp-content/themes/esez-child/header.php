@@ -59,7 +59,7 @@
         class="<?php if (is_user_logged_in()) : ?>sb-topnav<?php endif; ?> navbar navbar-expand-lg navbar-dark bg-dark">
         <!-- Navbar Brand-->
         <?php if (is_user_logged_in()) : ?>
-        <a class="navbar-brand" href="<?php if (is_user_logged_in()) : echo '/konto'; else : echo '/'; endif; ?>"><img
+        <a class="navbar-brand" href="/"><img
                 src="/wp-content/plugins/ewidencja-zmarlych/public/img/eSEZ-medium-jasne.svg" /></a>
         <!-- Sidebar Toggle-->
         <?php endif; ?>

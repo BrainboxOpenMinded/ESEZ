@@ -628,6 +628,8 @@ function datatables_scripts_in_head(){
 	wp_enqueue_script('datatables', 'https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js', array('jquery') );
 	wp_localize_script( 'datatables', 'datatablesajax', array('url' => admin_url('admin-ajax.php')) );
 	wp_enqueue_style('datatables', 'https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css' );
+	wp_enqueue_style('bootsrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css' );
+	wp_enqueue_script('chart', 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js', array('jquery') );	
   }
   add_action('wp_enqueue_scripts', 'datatables_scripts_in_head');
 
@@ -1412,3 +1414,57 @@ function datatables_scripts_in_head(){
 	echo json_encode(array('data' => $return_json));
 	wp_die();
   }
+	
+//Update user online status
+add_action('init', 'gearside_users_status_init');
+add_action('admin_init', 'gearside_users_status_init');
+function gearside_users_status_init(){
+	$logged_in_users = get_transient('users_status'); //Get the active users from the transient.
+	$user = wp_get_current_user(); //Get the current user's data
+
+	//Update the user if they are not on the list, or if they have not been online in the last 900 seconds (15 minutes)
+	if ( !isset($logged_in_users[$user->ID]['last']) || $logged_in_users[$user->ID]['last'] <= time()-2 ){
+		$logged_in_users[$user->ID] = array(
+			'id' => $user->ID,
+			'username' => $user->user_login,
+			'last' => time(),
+		);
+		set_transient('users_status', $logged_in_users, 900); //Set this transient to expire 15 minutes after it is created.
+	}
+}
+
+//Check if a user has been online in the last 15 minutes
+function gearside_is_user_online($id){	
+	$logged_in_users = get_transient('users_status'); //Get the active users from the transient.
+	
+	return isset($logged_in_users[$id]['last']) && $logged_in_users[$id]['last'] > time()-2; //Return boolean if the user has been online in the last 900 seconds (15 minutes).
+}
+
+//Check when a user was last online.
+function gearside_user_last_online($id){
+	$logged_in_users = get_transient('users_status'); //Get the active users from the transient.
+	
+	//Determine if the user has ever been logged in (and return their last active date if so).
+	if ( isset($logged_in_users[$id]['last']) ){
+		return $logged_in_users[$id]['last'];
+	} else {
+		return false;
+	}
+}
+
+ //Add columns to user listings
+ add_filter('manage_users_columns', 'gearside_user_columns_head');
+ function gearside_user_columns_head($defaults){
+	 $defaults['status'] = 'Status';
+	 return $defaults;
+ }
+ add_action('manage_users_custom_column', 'gearside_user_columns_content', 15, 3);
+ function gearside_user_columns_content($value='', $column_name, $id){
+	 if ( $column_name == 'status' ){
+		 if ( gearside_is_user_online($id) ){
+			 return '<strong style="color: green;">Online</strong>';
+		 } else {
+			 return ( gearside_user_last_online($id) )? '<small>Ostatnio widziany: <br /><em>' . date('M j, Y @ g:ia', gearside_user_last_online($id)) . '</em></small>' : ''; //Return the user's "Last Seen" date, or return empty if that user has never logged in.
+		 }
+	 }
+ }

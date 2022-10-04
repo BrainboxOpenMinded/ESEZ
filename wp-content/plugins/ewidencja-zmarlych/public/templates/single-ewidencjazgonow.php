@@ -251,7 +251,7 @@ if (is_user_logged_in() && in_array($current_user->ID, $items) || current_user_c
         <div id="pogladZdjec" class="single-esez__gallery">
             <h4 class="single-esez__gallery__title">Podgląd dodanych zdjęć</h4>
             <?php foreach( $images as $image ): ?>
-            <a href="<?php echo $image['url']; ?>" data-lightbox="galeria"><img
+            <a data-toggle="lightbox" href="<?php echo $image['url']; ?>" data-lightbox="galeria"><img  
                     class="single-ewidencjazgonow__gallery__img"
                     src="<?php echo $image['sizes']['ewidencja-zdjecie']; ?>" alt="<?php echo $image['alt']; ?>" /></a>
             <?php endforeach; ?>

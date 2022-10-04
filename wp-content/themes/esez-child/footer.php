@@ -4,7 +4,7 @@
 			<div class="container-fluid px-4 py-3">
 				<div class="row">
 					<div class="col-md-6">
-					<p class="copyright"><?php echo date_i18n( 'Y' ); ?> &copy; eSEZ. Realizacja: <a href="https://brainbox.com.pl/" target="_blank" rel="noopener nofollow">BRAINBOX®</a><br>Elektroniczny System Ewidencji Zmarłych</p>
+					<p class="copyright"><?php echo date_i18n( 'Y' ); ?> &copy; eSEZ v 2.3. Realizacja: <a href="https://brainbox.com.pl/" target="_blank" rel="noopener nofollow">BRAINBOX®</a><br>Elektroniczny System Ewidencji Zmarłych</p>
 					</div>
 					<div class="col-md-6">
 						<div class="flagi-stopka">
@@ -58,7 +58,8 @@
 	<?php
 		wp_footer(); ?>
 <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-<script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.2/dist/index.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 </body>
 </html>

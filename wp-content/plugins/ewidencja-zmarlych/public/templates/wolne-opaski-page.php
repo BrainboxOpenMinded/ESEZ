@@ -44,7 +44,7 @@ if(is_user_logged_in()) : ?>
                     <a type="button" id="btn-reload"><i class="fa-solid fa-arrows-rotate"></i></a>
                 </div>
                 <div class="card-body table-responsive-xxl">
-                    <table class="table align-middle hover order-column" id="datatablesWTrakcie">
+                    <table class="table align-middle hover" id="datatablesWTrakcie">
                     <thead>
                             <tr>
                                 <th class="text-nowrap">Nr</th>
