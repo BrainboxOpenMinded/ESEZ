@@ -3,8 +3,139 @@ get_header();
 ?>
 
 <?php if (is_user_logged_in()) { ?>
-<?php include '/home/esez/domains/dev.esez.pl/public_html/wp-content/plugins/ewidencja-zmarlych/public/templates/dashboard.php'; ?>
+<div class="esez-container">
+	<h1 class="entry-title">eSEZ - Elektroniczny System Ewidencji Zmarłych</h1>
+	<!--<p class="mt-3">Przejdź do zakładki "Ewidencja", aby zarządzać opaskami</p>-->
+</div>
 <?php } else { ?>
+<!--<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap');
+.esez-container.glowna {
+	font-family: 'Montserrat', sans-serif;
+	max-width: 1400px;
+	margin: auto;
+}
+
+.title-container {
+	text-align: center;
+	margin-top: 60px;
+	margin-bottom: 60px;
+}
+
+.title-container h1:after, .title-container h2:after  {
+	content: '';
+    position: absolute;
+    display: block;
+    border-bottom: 3px solid #00635A;
+    width: 120px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    margin-top: 25px;
+}
+
+.glowna ul li {
+	margin-top: 0.25em;
+}
+
+.glowna h2, .podstrona h2 {
+	margin-bottom: 1em;
+}
+
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInLeft {
+  animation-name: fadeInLeft;
+  animation-duration: 1s;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInRight {
+  animation-name: fadeInRight;
+  animation-duration: 1s;
+}
+
+img {max-width: 100%;}
+
+.tak {
+	color: green;
+}
+
+.nie {
+	color: red;
+}
+
+.formularz-glowna {
+	margin: auto;
+	max-width: 800px;
+}
+
+.formularz-glowna input {
+	max-width: 400px;
+}
+
+#tabelaCennik {
+	font-size: 0.8em;
+}
+
+#tabelaCennik td {
+	vertical-align: middle;
+}
+
+#tabelaCennik a {
+	font-weight: 700;
+}
+
+.grecaptcha-badge { 
+    visibility: hidden;
+}
+
+@media (min-width: 768px) {
+	.esez-container.glowna, .esez-container.podstrona {
+	    font-size: 1.3em;
+	  }
+	  
+	.formularz-glowna textarea {
+		width: 800px;
+	}
+}
+
+@media (min-width: 992px) {
+	.title-container {
+		margin-bottom: 80px;
+	}
+}
+	
+	
+@media (max-width: 991px) {	
+	.glowna h2, .podstrona h2 {
+	    font-size: calc(1.15rem + .9vw);
+	  }
+	}
+
+</style>-->
 <div class="esez-container glowna">
 	<div class="title-container">
 		<h1><?php the_title();?></h1>
@@ -79,11 +210,11 @@ get_header();
 		<table class="table dataTable" id="tabelaCennik">
 			<thead>
 				<tr>
-					<th style="width: 20%">Liczba eksportacji miesięcznie</th>
-					<th style="width: 20%; text-align: center;">Do 10</th>
-					<th style="width: 20%; text-align: center;">Do 15</th>
-					<th style="width: 20%; text-align: center;">Do 25</th>
-					<th style="width: 20%; text-align: center;">Powyżej 25</th>					
+					<th style="width: 26%">Liczba eksportacji miesięcznie</th>
+					<th style="width: 18.5%; text-align: center;">Do 10</th>
+					<th style="width: 18.5%; text-align: center;">Do 15</th>
+					<th style="width: 18.5%; text-align: center;">Do 25</th>
+					<th style="width: 18.5%; text-align: center;">Powyżej 25</th>					
 				</tr>
 			</thead>
 			<tbody>
