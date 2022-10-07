@@ -1,12 +1,12 @@
 === Gallery Blocks with Lightbox. Image Gallery, (HTML5 video , YouTube, Vimeo) Video Gallery and Lightbox for native gallery ===
 Author URI: https://blockslib.com/
 Plugin URI: https://simplygallery.co
-Contributors: gallerycreator
+Contributors: gallerycreator, freemius
 Tags: block, image gallery, video gallery, lightbox, gallery, wordpress gallery plugin
 Requires at least: 5.8.0
 Tested up to: 6.0
 Requires PHP: 5.3.0
-Stable tag: 3.0.3
+Stable tag: 3.0.4
 License: GPL-2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -124,6 +124,10 @@ Please note that you easily convert block gallery from Masonry to Justified or t
 Yes! SimpLy Gallery Blocks's core features are absolutely free.
 
 == Changelog ==
+= 3.0.4 =
+* Updated: poster display method for audio files (MP3)
+* Fixed: Minor bug fixes
+
 = 3.0.3 =
 * Update: Freemius SDK
 * Fixed: Showcase Gallery Block - Next / Previous Buttons

@@ -14415,6 +14415,9 @@ input[type=checkbox]:checked {
   .location-direct {
     right: 11.4rem
   }
+  #acf-field_6310c0e47d0df {
+    width: 100% !important;
+  }
 }
 
 /* ----- ACF Block Style Reset -------------------- */
@@ -14497,4 +14500,20 @@ body .acf-block-fields,
 .acf-repeater.-row>table>tbody>tr:nth-child(2n)>td .acf-row-handle span,
 .acf-repeater.-block>table>tbody>tr:nth-child(2n)>td .acf-row-handle span {
   color: #46474A;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#acf-field_6310c0e47d0df {
+  text-align: left !important;
 }
