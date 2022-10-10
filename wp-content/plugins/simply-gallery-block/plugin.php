@@ -6,7 +6,7 @@
  * Description: The highly customizable Lightbox for native WordPress Gallery/Image. And beautiful gallery blocks with advanced Lightbox for photographers, video creators, writers and content marketers. This blocks set will help you create responsive Images, Video, Audio gallery. Three desired layout in one plugin - Masonry, Justified and Grid.
  * Author: GalleryCreator
  * Author URI: https://blockslib.com/
- * Version: 3.0.4
+ * Version: 3.0.5
  * Text Domain: simply-gallery-block
  * Domain Path: /languages
  * License: GPL2+
@@ -24,7 +24,7 @@ if ( !defined( 'ABSPATH' ) ) {
 if ( function_exists( 'pgc_sgb_fs' ) ) {
     pgc_sgb_fs()->set_basename( false, __FILE__ );
 } else {
-    define( 'PGC_SGB_VERSION', '3.0.4' );
+    define( 'PGC_SGB_VERSION', '3.0.5' );
     define( 'PGC_SGB_SLUG', 'simply-gallery-block' );
     define( 'PGC_SGB_BLOCK_PREF', 'wp-block-pgcsimplygalleryblock-' );
     define( 'PGC_SGB_PLUGIN_SLUG', 'pgc-simply-gallery-plugin' );
@@ -32,7 +32,6 @@ if ( function_exists( 'pgc_sgb_fs' ) ) {
     define( 'PGC_SGB_TAXONOMY', 'pgc_simply_category' );
     define( 'PGC_SGB_FILE', __FILE__ );
     define( 'PGC_SGB_PATH', __DIR__ );
-    define( 'PGC_SGB_URL', plugin_dir_url( __FILE__ ) );
     define( 'PGC_SGB_DIRNAME', basename( PGC_SGB_PATH ) );
     $pgc_sgb_skins_list = array();
     $pgc_sgb_skins_presets = array();
@@ -87,6 +86,7 @@ if ( function_exists( 'pgc_sgb_fs' ) ) {
     pgc_sgb_fs()->add_action( 'after_uninstall', 'pgc_sgb_fs_uninstall_cleanup' );
     function pgc_sgb_load_textdomain()
     {
+        define( 'PGC_SGB_URL', plugin_dir_url( __FILE__ ) );
         load_plugin_textdomain( 'simply-gallery-block', false, basename( PGC_SGB_URL ) . 'languages' );
     }
     

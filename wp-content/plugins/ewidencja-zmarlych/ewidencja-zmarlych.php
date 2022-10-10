@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://brainbox.com.pl/
- * @since             1.0.0
+ * @since             2.0.0
  * @package           Ewidencja_Zmarlych
  *
  * @wordpress-plugin
  * Plugin Name:       Ewidencja zmarłych
  * Plugin URI:        https://brainbox.com.pl
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
- * Version:           1.0.0
+ * Version:           2.0.0
  * Author:            Brainbox
  * Author URI:        https://brainbox.com.pl/
  * License:           GPL-2.0+

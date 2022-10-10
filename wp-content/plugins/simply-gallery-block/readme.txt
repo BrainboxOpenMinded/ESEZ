@@ -6,7 +6,7 @@ Tags: block, image gallery, video gallery, lightbox, gallery, wordpress gallery 
 Requires at least: 5.8.0
 Tested up to: 6.0
 Requires PHP: 5.3.0
-Stable tag: 3.0.4
+Stable tag: 3.0.5
 License: GPL-2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -124,6 +124,11 @@ Please note that you easily convert block gallery from Masonry to Justified or t
 Yes! SimpLy Gallery Blocks's core features are absolutely free.
 
 == Changelog ==
+= 3.0.5 =
+* Added: random sorting mode for dynamic galleries (Att. Cattegory, Att. Tag, FileBird Media Folders and SimpLy Tags)
+* Fixed: sorting system for Vimeo collections (as far as Vimeo API allows). The sequence of video clips must match the source on the Vimeo service.
+* Fixed: Minor bug fixes
+
 = 3.0.4 =
 * Updated: poster display method for audio files (MP3)
 * Fixed: Minor bug fixes

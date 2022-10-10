@@ -35,10 +35,11 @@ if(is_user_logged_in()) : ?>
             <div class="card no-padding mb-4">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
-                    Ewidencja Zgonów
+                    <span class="header-table-title">Obce zlecenia</span>
+                    <a type="button" id="btn-reload"><i class="fa-solid fa-arrows-rotate"></i></a>
                 </div>
                 <div class="card-body table-responsive-xxl">
-                    <table class="table" id="datatablesWolneOpaski">
+                    <table class="table align-middle hover order-column" id="datatablesWolneOpaski">
                         <thead>
                             <tr>
                                 <th>Nr</th>
@@ -58,58 +59,8 @@ if(is_user_logged_in()) : ?>
                             </tr>
                         </tfoot>
                         <tbody>
-                            <?php
-
-    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-    $query = new WP_Query( array(
-            'post_type' => array( 'post', 'ewidencjazgonow' ),
-            'posts_per_page'=> 16,
-            'paged' => $paged,
-            'author' => $authorID,
-            'fields' => 'ids',
-            'meta_query' => array(
-                'relation' => 'AND',
-                array(
-                    'key'     => 'kto_organizuje_pogrzeb',
-                    'value'   => true,
-                    'compare' => '!=',
-                )
-            )
-        )
-    );
-    if ( $query->have_posts() ) {
-
-        while ( $query->have_posts() ) : $query->the_post(); ?>
                             <tr>
-                                <td class="text-nowrap"><?php echo '<a class="number-link" href="' . get_permalink() . '">' . get_field('numer_opaski') . '</a>'; ?>
-                                </td>
-                                <td class="text-nowrap"><?php if(get_field('imie_zmarlego')) : echo get_field('imie_zmarlego'); else : echo '-'; endif; ?></td>
-                                <td class="text-nowrap"><?php if(get_field('nazwisko_zmarlego')) : echo get_field('nazwisko_zmarlego'); else : echo '-'; endif; ?></td>
-                                <td class="text-nowrap"><?php if(get_field('data_wydania_ciala')) : echo get_field('data_wydania_ciala'); else : echo '-'; endif; ?></td>
-                                <td class="text-nowrap"><?php if(get_field('firma_organizujaca_pogrzeb')) : echo get_field('firma_organizujaca_pogrzeb'); else : echo '-'; endif; ?></td>
                             </tr>
-                            <?php endwhile; ?>
-                            <div class="pagination">
-                                <?php
-            $big = 999999999;
-            echo paginate_links( array(
-                'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
-                'format' => '?paged=%#%',
-                'current' => max( 1, get_query_var('paged') ),
-                'total' => $query->max_num_pages,
-                'prev_text' => '&laquo;',
-                'next_text' => '&raquo;'
-            ) );
-            ?>
-                            </div>
-                            <?php wp_reset_postdata(); 
-    } else { ?>
-        <tr>
-            <td>
-                Brak danych...
-            </td>
-        </tr>
-        <?php } ?>
                         </tbody>
                     </table>
                 </div>
@@ -117,5 +68,53 @@ if(is_user_logged_in()) : ?>
         </div>
     </div>
     <div>
+    <script>
+jQuery(document).ready(function($) {
+ 
+  var table = $('#datatablesWolneOpaski').DataTable({
+    ajax: {
+        url: datatablesajax.url + '?action=getpostsfordatatablesobce'
+    },
+    language: {
+        'loadingRecords': '&nbsp;',
+        'processing': '<div class="loader-div"><div class="loader-pulse"></div></div>',
+        "search": "Szukaj:",
+        "lengthMenu": "Pokaż _MENU_ pozycji",
+        "info": "Pozycje od _START_ do _END_ z _TOTAL_ łącznie",
+        "infoEmpty": "Pozycji 0 z 0 dostępnych",
+        "infoFiltered": "(filtrowanie spośród _MAX_ dostępnych pozycji)",
+        "zeroRecords": "Nie znaleziono pasujących pozycji",
+        "paginate": {
+            "first": "Pierwsza",
+            "previous": "Poprzednia",
+            "next": "Następna",
+            "last": "Ostatnia"
+        },
+    },
+    columns: [
+        { data: 'nr' },
+        { data: 'imie' },
+        { data: 'nazwisko' },
+        { data: 'wydanie_ciala' },
+        { data: 'firma' },
+
+    ],
+    rowReorder: {
+            selector: 'td:nth-child(2)'
+        },
+    responsive: true,
+    processing: true,
+    "columnDefs": [
+    { className: "text-nowrap",  targets: "_all" }
+  ]
+  });
+  $('#btn-reload').on('click', function(){
+        table.ajax.reload();
+    });
+    setInterval(function(){
+        table.ajax.reload();
+}, 60000);
+});
+</script>
 <?php endif;
 get_footer(); ?>

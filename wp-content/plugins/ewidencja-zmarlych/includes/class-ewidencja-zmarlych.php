@@ -456,11 +456,32 @@ if (!wp_next_scheduled('cron_url_aktywne_opaski')) {
 wp_schedule_event(time(), 'hourly', 'cron_url_aktywne_opaski');
 }
 
+add_action('cron_url_aktywne_opaski', 'call_url_heron_cron');
+
+function call_url_heron_cron() {
+wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=1&action=trigger');
+wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=1&action=processing');
+}
+
+add_action('cron_url_aktywne_opaski', 'call_url_demo_cron');
+
+function call_url_demo_cron() {
+wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=4&action=trigger');
+wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=4&action=processing');
+}
+
 add_action('cron_url_aktywne_opaski', 'call_url_kallandm_cron');
 
 function call_url_kallandm_cron() {
 wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=7&action=trigger');
 wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=7&action=processing');
+}
+
+add_action('cron_url_aktywne_opaski', 'call_url_funeralkety_cron');
+
+function call_url_funeralkety_cron() {
+wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=8&action=trigger');
+wp_remote_get('https://esez.pl/wp-load.php?export_key=fmHZyIzLwvzW&export_id=8&action=processing');
 }
 
 function shapeSpace_disable_medium_images($sizes) {
@@ -503,7 +524,13 @@ return $sizes;
 }
 add_filter('intermediate_image_sizes_advanced', 'shapeSpace_disable_2x_large_images');
 
+function shapeSpace_disable_thumbnail_images($sizes) {
 
+unset($sizes['thumbnail']); // disable thumbnail size
+return $sizes;
+
+}
+add_action('intermediate_image_sizes_advanced', 'shapeSpace_disable_thumbnail_images');
 
 function restrict_manage_authors() {
 if (isset($_GET['post_type']) && post_type_exists($_GET['post_type']) && in_array(strtolower($_GET['post_type']), array('ewidencjazgonow'))) {
@@ -589,34 +616,855 @@ class T5_Hide_Profile_Bio_Box
 
 add_filter( 'option_show_avatars', '__return_false' );
 
-add_filter( 'ajax_query_attachments_args', "user_restrict_media_library" );
-function user_restrict_media_library(  $query ) {
+	function imie_zmarlego() {
+		if(get_field('imie_zmarlego')) : return get_field('imie_zmarlego');  else : return '-'; endif;
+	}
+
+	function nazwisko_zmarlego() {
+		if(get_field('nazwisko_zmarlego')) : return get_field('nazwisko_zmarlego');  else : return '-'; endif;
+	}
+
+function datatables_scripts_in_head(){
+	wp_enqueue_script('datatables', 'https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js', array('jquery') );
+	wp_localize_script( 'datatables', 'datatablesajax', array('url' => admin_url('admin-ajax.php')) );
+	wp_enqueue_style('datatables', 'https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css' );
+	wp_enqueue_style('bootsrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css' );
+	wp_enqueue_script('chart', 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js', array('jquery') );	
+  }
+  add_action('wp_enqueue_scripts', 'datatables_scripts_in_head');
+
+  add_action( 'wp_ajax_getpostsfordatatables', 'my_ajax_getpostsfordatatables' );
+  add_action( 'wp_ajax_nopriv_getpostsfordatatables', 'my_ajax_getpostsfordatatables' );
+  
+  function my_ajax_getpostsfordatatables() {
+	global $wpdb;
+	global $post;
 	global $current_user;
-	$query['author'] = $current_user->ID ;
-	return $query;
+	$post_id = $post->ID;
+	wp_get_current_user();
+	$authorID = $current_user->ID;
+	$user_info = get_userdata($authorID);
+	$first_name = $user_info->first_name;
+	$user = wp_get_current_user();
+	$allowed_roles = array( 'firma', 'firmapro', 'administrator' );
+
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$query = new WP_Query( array(
+		'post_type' => array( 'post', 'ewidencjazgonow' ),
+		'posts_per_page'=> 2,
+		'paged' => $paged,
+		'author' => $authorID,
+		'meta_key'			=> 'data_odbioru_ciala',
+		'orderby'			=> 'meta_value',
+		'order'				=> 'DESC',
+		'meta_query' => array(
+			'relation' => 'AND',
+			array(
+				'key' => 'imie_zmarlego',
+				'value'   => array(''),
+				'compare' => 'NOT IN'
+			),
+			array(
+				'key'     => 'kto_organizuje_pogrzeb',
+				'value'   => true,
+				'compare' => '=',
+			),
+		),
+	),
+	);
+
+	function dateV($format,$timestamp=null){
+		$to_convert = array(
+			'l'=>array('dat'=>'N','str'=>array('Pn','Wt','Śr','Cz','Pt','Sb','Nd')),
+			'F'=>array('dat'=>'n','str'=>array('styczeń','luty','marzec','kwiecień','maj','czerwiec','lipiec','sierpień','wrzesień','październik','listopad','grudzień')),
+			'f'=>array('dat'=>'n','str'=>array('stycznia','lutego','marca','kwietnia','maja','czerwca','lipca','sierpnia','września','października','listopada','grudnia'))
+		);
+		if ($pieces = preg_split('#[:/.\-, ]#', $format)){	
+			if ($timestamp === null) { $timestamp = time(); }
+			foreach ($pieces as $datepart){
+				if (array_key_exists($datepart,$to_convert)){
+					$replace[] = $to_convert[$datepart]['str'][(date($to_convert[$datepart]['dat'],$timestamp)-1)];
+				}else{
+					$replace[] = date($datepart,$timestamp);
+				}
+			}
+			$result = strtr($format,array_combine($pieces,$replace));
+			return $result;
+		}
+	}
+
+	function typ_kremacji() { 
+		if(get_field('rodzaj_pogrzebu_zmarly') == 'Kremacyjny' and get_field('kremacja_wykonana') == false) : return '<span class="tooltip-right" data-tooltip="Kremacja w toku"><img src="/wp-content/plugins/ewidencja-zmarlych/public/img/pogrzeb-kremacyjny-w-toku.svg" /><span style="visibility: hidden; display: none; width: 0;">kremacja w toku</span></span>'; endif; if(get_field('rodzaj_pogrzebu_zmarly') == 'Kremacyjny' and get_field('kremacja_wykonana') == true) : return '<span class="tooltip-right" data-tooltip="Kremacja zakończona" style="color:green;"><img src="/wp-content/plugins/ewidencja-zmarlych/public/img/pogrzeb-kremacyjny-zakonczony.svg"/><span style="visibility: hidden; width: 0; display: none;">kremacja zakończona</span></span>'; endif; if(get_field('rodzaj_pogrzebu_zmarly')=='Tradycyjny') : return '<span class="tooltip-right" data-tooltip="Pogrzeb tradycyjny"><img src="/wp-content/plugins/ewidencja-zmarlych/public/img/pogrzeb-tradycyjny.svg" /><span style=" width: 0; display: none; visibility: hidden;">pogrzeb tradycyjny</span></span>'; endif; if(get_field('rodzaj_pogrzebu_zmarly')=='Nieokreślony') : return '-'; endif;
+	}
+
+	function data_eksportacji() {
+		if( !empty(get_field('data_odbioru_ciala'))) : return date("d.m", strtotime(get_field('data_odbioru_ciala'))) . ' (' . dateV('l',strtotime(get_field('data_odbioru_ciala'))) . ") " . date("H:i", strtotime(get_field('data_odbioru_ciala'))); endif;
+	}
+
+	function calendar_google_simple() {
+		wp_get_current_user();
+		$ceremonia_pogrzegnalna = get_field('ceremonia_pozegnalna');
+		$ceremonia_pogrzegnalna_data = $ceremonia_pogrzegnalna['data'];
+		$ceremonia_pogrzegnalna_godzina = $ceremonia_pogrzegnalna['godzina'];
+		$data_pozegnania = $ceremonia_pogrzegnalna_data . $ceremonia_pogrzegnalna_godzina;
+		$dzien_po_pogrzebie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+		$dzien_po_pogrzebie = date('d-m-Y H:i', strtotime("+1 day", strtotime($dzien_po_pogrzebie)));
+	
+		$data_odbioru_ciala = date("Ymd\THis", strtotime(get_field('data_odbioru_ciala')));
+		$data_odbioru_ciala_wiadomosc = date("d.m.Y H:i", strtotime($data_odbioru_ciala));
+		$data_odbioru_ciala_po_godzinie = date("Ymd\THis", strtotime($data_odbioru_ciala.'+1 hour'));
+		$data_pozegnania = date("Ymd\THis", strtotime($data_pozegnania));
+		$data_pozegnania_po_godzinie = date("Ymd\THis", strtotime($data_pozegnania.'+1 hour'));
+		$data_wyprowadzenie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+		$data_wyprowadzenie = date("Ymd\THis", strtotime($data_wyprowadzenie));
+		$data_wyprowadzenie_po_godzinie = date("Ymd\THis", strtotime($data_wyprowadzenie.'+1 hour'));
+		$data_kremacja = date("Ymd\THis", strtotime(get_field('data_kremacji')));
+		$data_kremacja_po_godzinie = date("Ymd\THis", strtotime($data_kremacja.'+1 hour'));
+		$data_kremacja_odbior_urny = date("Ymd\THis", strtotime(get_field('data_odebrania_urny')));
+		$data_kremacja_odbior_urny_po_godzinie = date("Ymd\THis", strtotime($data_kremacja_odbior_urny.'+1 hour'));
+		
+		$adres_odbioru_inne = get_field('adres_odbioru_inne');
+		$adres_odbioru_inne_nazwa = $adres_odbioru_inne['adres_odbioru_inne-nazwa'];
+		$adres_odbioru_inne_miasto = $adres_odbioru_inne['adres_odbioru_inne-miasto'];
+		$adres_odbioru_inne_ulica = $adres_odbioru_inne['adres_odbioru_inne-ulica-nr-domu'];
+	
+		$adres_odbioru_dom = get_field('adres_odbioru_dom');
+		$adres_odbioru_dom_miasto = $adres_odbioru_dom['adres_odbioru_dom-miasto'];
+		$adres_odbioru_dom_ulica = $adres_odbioru_dom['adres_odbioru_dom-ulica-nr-domu'];
+	
+		$adres_ceremoni_pozegnalnej = get_field('ceremonia_pozegnalna');
+		$adres_ceremoni_pozegnalnej_adres = $adres_ceremoni_pozegnalnej['adres'];
+	
+		if(current_user_can('firmapro') || current_user_can('administrator')) : return '<a class="tooltip-right" data-tooltip="Dodaj do kalendarza" style="margin-left:5px;" href="https://www.google.com/calendar/event?action=TEMPLATE&text=E | ' .  get_field('numer_opaski') . ' - ' . get_field('imie_zmarlego') . ' ' . get_field('nazwisko_zmarlego') . '&dates=' . $data_odbioru_ciala. '/' . $data_odbioru_ciala_po_godzinie . '&details=Odebrać ciało zmarłego.<br><br><u><strong>DANE ZGŁASZAJĄCEGO</strong></u><br><strong>Miejsce:</strong> ' . get_field('miejsce_odbioru') . '<br><strong>Waga:</strong> ' . get_field('waga') . ' kg<br><strong>Zgłaszający:</strong> ' . get_field('imie_nazwisko_zglaszajacego') . '<br><strong>Tel:</strong> ' . get_field('telefon_zglaszajacego') . '<br>' . get_field('notatka') . '<br><br>________<br>' .  get_permalink() . '&location=' . $adres_odbioru_dom_miasto . $adres_odbioru_inne_miasto . ', ' . $adres_odbioru_dom_ulica . $adres_odbioru_inne_ulica . '" target="_blank" rel="nofollow"><i class="fa-solid fa-calendar-days"></i></a>';endif; if(empty(get_field('data_odbioru_ciala'))) : return '-'; endif;
+	}
+
+	function calendar_google_home() {
+		wp_get_current_user();
+		$ceremonia_pogrzegnalna = get_field('ceremonia_pozegnalna');
+		$ceremonia_pogrzegnalna_data = $ceremonia_pogrzegnalna['data'];
+		$ceremonia_pogrzegnalna_godzina = $ceremonia_pogrzegnalna['godzina'];
+		$data_pozegnania = $ceremonia_pogrzegnalna_data . $ceremonia_pogrzegnalna_godzina;
+		$dzien_po_pogrzebie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+		$dzien_po_pogrzebie = date('d-m-Y H:i', strtotime("+1 day", strtotime($dzien_po_pogrzebie)));
+	
+		$data_odbioru_ciala = date("Ymd\THis", strtotime(get_field('data_odbioru_ciala')));
+		$data_odbioru_ciala_wiadomosc = date("d.m.Y H:i", strtotime($data_odbioru_ciala));
+		$data_odbioru_ciala_po_godzinie = date("Ymd\THis", strtotime($data_odbioru_ciala.'+1 hour'));
+		$data_pozegnania = date("Ymd\THis", strtotime($data_pozegnania));
+		$data_pozegnania_po_godzinie = date("Ymd\THis", strtotime($data_pozegnania.'+1 hour'));
+		$data_wyprowadzenie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+		$data_wyprowadzenie = date("Ymd\THis", strtotime($data_wyprowadzenie));
+		$data_wyprowadzenie_po_godzinie = date("Ymd\THis", strtotime($data_wyprowadzenie.'+1 hour'));
+		$data_kremacja = date("Ymd\THis", strtotime(get_field('data_kremacji')));
+		$data_kremacja_po_godzinie = date("Ymd\THis", strtotime($data_kremacja.'+1 hour'));
+		$data_kremacja_odbior_urny = date("Ymd\THis", strtotime(get_field('data_odebrania_urny')));
+		$data_kremacja_odbior_urny_po_godzinie = date("Ymd\THis", strtotime($data_kremacja_odbior_urny.'+1 hour'));
+		
+		$adres_odbioru_inne = get_field('adres_odbioru_inne');
+		$adres_odbioru_inne_nazwa = $adres_odbioru_inne['adres_odbioru_inne-nazwa'];
+		$adres_odbioru_inne_miasto = $adres_odbioru_inne['adres_odbioru_inne-miasto'];
+		$adres_odbioru_inne_ulica = $adres_odbioru_inne['adres_odbioru_inne-ulica-nr-domu'];
+	
+		$adres_odbioru_dom = get_field('adres_odbioru_dom');
+		$adres_odbioru_dom_miasto = $adres_odbioru_dom['adres_odbioru_dom-miasto'];
+		$adres_odbioru_dom_ulica = $adres_odbioru_dom['adres_odbioru_dom-ulica-nr-domu'];
+	
+		$adres_ceremoni_pozegnalnej = get_field('ceremonia_pozegnalna');
+		$adres_ceremoni_pozegnalnej_adres = $adres_ceremoni_pozegnalnej['adres'];
+
+		if(current_user_can('firmapro') || current_user_can('administrator')) :
+			if(get_field('miejsce_odbioru') == 'Dom' && $adres_odbioru_dom_miasto) :
+			return '<a class="qrcode-icon" target="_blank"
+				href="https://www.google.com/maps/dir//' .  $adres_odbioru_dom_ulica . ', ' . $adres_odbioru_dom_miasto . '"><i
+					class="fa-solid fa-route"></i></a>';
+			endif; endif;
+	}
+
+	function calendar_google_another() {
+		wp_get_current_user();
+		$ceremonia_pogrzegnalna = get_field('ceremonia_pozegnalna');
+		$ceremonia_pogrzegnalna_data = $ceremonia_pogrzegnalna['data'];
+		$ceremonia_pogrzegnalna_godzina = $ceremonia_pogrzegnalna['godzina'];
+		$data_pozegnania = $ceremonia_pogrzegnalna_data . $ceremonia_pogrzegnalna_godzina;
+		$dzien_po_pogrzebie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+		$dzien_po_pogrzebie = date('d-m-Y H:i', strtotime("+1 day", strtotime($dzien_po_pogrzebie)));
+	
+		$data_odbioru_ciala = date("Ymd\THis", strtotime(get_field('data_odbioru_ciala')));
+		$data_odbioru_ciala_wiadomosc = date("d.m.Y H:i", strtotime($data_odbioru_ciala));
+		$data_odbioru_ciala_po_godzinie = date("Ymd\THis", strtotime($data_odbioru_ciala.'+1 hour'));
+		$data_pozegnania = date("Ymd\THis", strtotime($data_pozegnania));
+		$data_pozegnania_po_godzinie = date("Ymd\THis", strtotime($data_pozegnania.'+1 hour'));
+		$data_wyprowadzenie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+		$data_wyprowadzenie = date("Ymd\THis", strtotime($data_wyprowadzenie));
+		$data_wyprowadzenie_po_godzinie = date("Ymd\THis", strtotime($data_wyprowadzenie.'+1 hour'));
+		$data_kremacja = date("Ymd\THis", strtotime(get_field('data_kremacji')));
+		$data_kremacja_po_godzinie = date("Ymd\THis", strtotime($data_kremacja.'+1 hour'));
+		$data_kremacja_odbior_urny = date("Ymd\THis", strtotime(get_field('data_odebrania_urny')));
+		$data_kremacja_odbior_urny_po_godzinie = date("Ymd\THis", strtotime($data_kremacja_odbior_urny.'+1 hour'));
+		
+		$adres_odbioru_inne = get_field('adres_odbioru_inne');
+		$adres_odbioru_inne_nazwa = $adres_odbioru_inne['adres_odbioru_inne-nazwa'];
+		$adres_odbioru_inne_miasto = $adres_odbioru_inne['adres_odbioru_inne-miasto'];
+		$adres_odbioru_inne_ulica = $adres_odbioru_inne['adres_odbioru_inne-ulica-nr-domu'];
+	
+		$adres_odbioru_dom = get_field('adres_odbioru_dom');
+		$adres_odbioru_dom_miasto = $adres_odbioru_dom['adres_odbioru_dom-miasto'];
+		$adres_odbioru_dom_ulica = $adres_odbioru_dom['adres_odbioru_dom-ulica-nr-domu'];
+	
+		$adres_ceremoni_pozegnalnej = get_field('ceremonia_pozegnalna');
+		$adres_ceremoni_pozegnalnej_adres = $adres_ceremoni_pozegnalnej['adres'];
+	
+		if(current_user_can('firmapro') || current_user_can('administrator')) :
+		if($adres_odbioru_inne_miasto && get_field('miejsce_odbioru') != 'Dom') :
+			return '<a class="qrcode-icon" target="_blank"
+				href="https://www.google.com/maps/dir//' . $adres_odbioru_inne_ulica . ', ' . $adres_odbioru_inne_miasto . ', ' . $adres_odbioru_inne_nazwa . '"><i
+					class="fa-solid fa-route"></i></a>';
+			endif; endif;
+	}
+
+	function kreamcja_date() {
+		if(get_field('rodzaj_pogrzebu_zmarly') == 'Kremacyjny' && !empty(get_field('data_kremacji'))) : return date("d.m", strtotime(get_field('data_kremacji'))) . ' (' . dateV('l',strtotime(get_field('data_kremacji'))) . ") " . date("H:i", strtotime(get_field('data_kremacji'))); else : return '-'; endif;
+	}
+
+	function calendar_google_kremacja() {
+		wp_get_current_user();
+		$ceremonia_pogrzegnalna = get_field('ceremonia_pozegnalna');
+		$ceremonia_pogrzegnalna_data = $ceremonia_pogrzegnalna['data'];
+		$ceremonia_pogrzegnalna_godzina = $ceremonia_pogrzegnalna['godzina'];
+		$data_pozegnania = $ceremonia_pogrzegnalna_data . $ceremonia_pogrzegnalna_godzina;
+		$dzien_po_pogrzebie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+		$dzien_po_pogrzebie = date('d-m-Y H:i', strtotime("+1 day", strtotime($dzien_po_pogrzebie)));
+	
+		$data_odbioru_ciala = date("Ymd\THis", strtotime(get_field('data_odbioru_ciala')));
+		$data_odbioru_ciala_wiadomosc = date("d.m.Y H:i", strtotime($data_odbioru_ciala));
+		$data_odbioru_ciala_po_godzinie = date("Ymd\THis", strtotime($data_odbioru_ciala.'+1 hour'));
+		$data_pozegnania = date("Ymd\THis", strtotime($data_pozegnania));
+		$data_pozegnania_po_godzinie = date("Ymd\THis", strtotime($data_pozegnania.'+1 hour'));
+		$data_wyprowadzenie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+		$data_wyprowadzenie = date("Ymd\THis", strtotime($data_wyprowadzenie));
+		$data_wyprowadzenie_po_godzinie = date("Ymd\THis", strtotime($data_wyprowadzenie.'+1 hour'));
+		$data_kremacja = date("Ymd\THis", strtotime(get_field('data_kremacji')));
+		$data_kremacja_po_godzinie = date("Ymd\THis", strtotime($data_kremacja.'+1 hour'));
+		$data_kremacja_odbior_urny = date("Ymd\THis", strtotime(get_field('data_odebrania_urny')));
+		$data_kremacja_odbior_urny_po_godzinie = date("Ymd\THis", strtotime($data_kremacja_odbior_urny.'+1 hour'));
+		
+		$adres_odbioru_inne = get_field('adres_odbioru_inne');
+		$adres_odbioru_inne_nazwa = $adres_odbioru_inne['adres_odbioru_inne-nazwa'];
+		$adres_odbioru_inne_miasto = $adres_odbioru_inne['adres_odbioru_inne-miasto'];
+		$adres_odbioru_inne_ulica = $adres_odbioru_inne['adres_odbioru_inne-ulica-nr-domu'];
+	
+		$adres_odbioru_dom = get_field('adres_odbioru_dom');
+		$adres_odbioru_dom_miasto = $adres_odbioru_dom['adres_odbioru_dom-miasto'];
+		$adres_odbioru_dom_ulica = $adres_odbioru_dom['adres_odbioru_dom-ulica-nr-domu'];
+	
+		$adres_ceremoni_pozegnalnej = get_field('ceremonia_pozegnalna');
+		$adres_ceremoni_pozegnalnej_adres = $adres_ceremoni_pozegnalnej['adres'];
+	
+		if(current_user_can('firmapro') || current_user_can('administrator')) : if(get_field('rodzaj_pogrzebu_zmarly') == 'Kremacyjny' && !empty(get_field('data_kremacji'))) : 
+			return '<a class="tooltip-right" data-tooltip="Dodaj do kalendarza" style="margin-left:5px;" href="https://www.google.com/calendar/event?action=TEMPLATE&text=K | ' .  get_field('numer_opaski') . ' - ' . get_field('imie_zmarlego') . ' ' . get_field('nazwisko_zmarlego') . '&dates=' . $data_kremacja . '/' . $data_kremacja_po_godzinie . '&details=Kremacja zwłok.<br><br>________<br>' .  get_permalink() . '" target="_blank" rel="nofollow"><i class="fa-solid fa-calendar-days"></i></a>'; endif; endif;
+	}
+	function odebranie_urny_date() {
+		if(get_field('rodzaj_pogrzebu_zmarly') == 'Kremacyjny' && !empty(get_field('data_odebrania_urny'))) : return date("d.m", strtotime(get_field('data_odebrania_urny'))) . ' (' . dateV('l',strtotime(get_field('data_odebrania_urny'))) . ") " . date("H:i", strtotime(get_field('data_odebrania_urny'))); else : return '-'; endif;
+	}
+
+	function calendar_google_odbior_urny() {
+		wp_get_current_user();
+		$ceremonia_pogrzegnalna = get_field('ceremonia_pozegnalna');
+		$ceremonia_pogrzegnalna_data = $ceremonia_pogrzegnalna['data'];
+		$ceremonia_pogrzegnalna_godzina = $ceremonia_pogrzegnalna['godzina'];
+		$data_pozegnania = $ceremonia_pogrzegnalna_data . $ceremonia_pogrzegnalna_godzina;
+		$dzien_po_pogrzebie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+		$dzien_po_pogrzebie = date('d-m-Y H:i', strtotime("+1 day", strtotime($dzien_po_pogrzebie)));
+	
+		$data_odbioru_ciala = date("Ymd\THis", strtotime(get_field('data_odbioru_ciala')));
+		$data_odbioru_ciala_wiadomosc = date("d.m.Y H:i", strtotime($data_odbioru_ciala));
+		$data_odbioru_ciala_po_godzinie = date("Ymd\THis", strtotime($data_odbioru_ciala.'+1 hour'));
+		$data_pozegnania = date("Ymd\THis", strtotime($data_pozegnania));
+		$data_pozegnania_po_godzinie = date("Ymd\THis", strtotime($data_pozegnania.'+1 hour'));
+		$data_wyprowadzenie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+		$data_wyprowadzenie = date("Ymd\THis", strtotime($data_wyprowadzenie));
+		$data_wyprowadzenie_po_godzinie = date("Ymd\THis", strtotime($data_wyprowadzenie.'+1 hour'));
+		$data_kremacja = date("Ymd\THis", strtotime(get_field('data_kremacji')));
+		$data_kremacja_po_godzinie = date("Ymd\THis", strtotime($data_kremacja.'+1 hour'));
+		$data_kremacja_odbior_urny = date("Ymd\THis", strtotime(get_field('data_odebrania_urny')));
+		$data_kremacja_odbior_urny_po_godzinie = date("Ymd\THis", strtotime($data_kremacja_odbior_urny.'+1 hour'));
+		
+		$adres_odbioru_inne = get_field('adres_odbioru_inne');
+		$adres_odbioru_inne_nazwa = $adres_odbioru_inne['adres_odbioru_inne-nazwa'];
+		$adres_odbioru_inne_miasto = $adres_odbioru_inne['adres_odbioru_inne-miasto'];
+		$adres_odbioru_inne_ulica = $adres_odbioru_inne['adres_odbioru_inne-ulica-nr-domu'];
+	
+		$adres_odbioru_dom = get_field('adres_odbioru_dom');
+		$adres_odbioru_dom_miasto = $adres_odbioru_dom['adres_odbioru_dom-miasto'];
+		$adres_odbioru_dom_ulica = $adres_odbioru_dom['adres_odbioru_dom-ulica-nr-domu'];
+	
+		$adres_ceremoni_pozegnalnej = get_field('ceremonia_pozegnalna');
+		$adres_ceremoni_pozegnalnej_adres = $adres_ceremoni_pozegnalnej['adres'];
+	
+		if(current_user_can('firmapro') || current_user_can('administrator')) : if(get_field('rodzaj_pogrzebu_zmarly') == 'Kremacyjny' && !empty(get_field('data_odebrania_urny'))) : 
+			return '<a class="tooltip-right" data-tooltip="Dodaj do kalendarza" style="margin-left:5px;" href="https://www.google.com/calendar/event?action=TEMPLATE&text=KO | ' .  get_field('numer_opaski') . ' - ' . get_field('imie_zmarlego') . ' ' . get_field('nazwisko_zmarlego') . '&dates=' . $data_kremacja_odbior_urny . '/' . $data_kremacja_odbior_urny_po_godzinie . '&details=Odebrać urnę z krematorium.<br><br>________<br>' .  get_permalink() . '" target="_blank" rel="nofollow"><i class="fa-solid fa-calendar-days"></i></a>'; endif; endif;
+	}
+
+	function pozegnanie_date() {
+		wp_get_current_user();
+		$ceremonia_pogrzegnalna = get_field('ceremonia_pozegnalna');
+		$ceremonia_pogrzegnalna_data = $ceremonia_pogrzegnalna['data'];
+		$ceremonia_pogrzegnalna_godzina = $ceremonia_pogrzegnalna['godzina'];
+		$data_pozegnania = $ceremonia_pogrzegnalna_data . $ceremonia_pogrzegnalna_godzina;
+		$dzien_po_pogrzebie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+		$dzien_po_pogrzebie = date('d-m-Y H:i', strtotime("+1 day", strtotime($dzien_po_pogrzebie)));
+	
+		$data_odbioru_ciala = date("Ymd\THis", strtotime(get_field('data_odbioru_ciala')));
+		$data_odbioru_ciala_wiadomosc = date("d.m.Y H:i", strtotime($data_odbioru_ciala));
+		$data_odbioru_ciala_po_godzinie = date("Ymd\THis", strtotime($data_odbioru_ciala.'+1 hour'));
+		$data_pozegnania = date("Ymd\THis", strtotime($data_pozegnania));
+		$data_pozegnania_po_godzinie = date("Ymd\THis", strtotime($data_pozegnania.'+1 hour'));
+		$data_wyprowadzenie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+		$data_wyprowadzenie = date("Ymd\THis", strtotime($data_wyprowadzenie));
+		$data_wyprowadzenie_po_godzinie = date("Ymd\THis", strtotime($data_wyprowadzenie.'+1 hour'));
+		$data_kremacja = date("Ymd\THis", strtotime(get_field('data_kremacji')));
+		$data_kremacja_po_godzinie = date("Ymd\THis", strtotime($data_kremacja.'+1 hour'));
+		$data_kremacja_odbior_urny = date("Ymd\THis", strtotime(get_field('data_odebrania_urny')));
+		$data_kremacja_odbior_urny_po_godzinie = date("Ymd\THis", strtotime($data_kremacja_odbior_urny.'+1 hour'));
+		
+		$adres_odbioru_inne = get_field('adres_odbioru_inne');
+		$adres_odbioru_inne_nazwa = $adres_odbioru_inne['adres_odbioru_inne-nazwa'];
+		$adres_odbioru_inne_miasto = $adres_odbioru_inne['adres_odbioru_inne-miasto'];
+		$adres_odbioru_inne_ulica = $adres_odbioru_inne['adres_odbioru_inne-ulica-nr-domu'];
+	
+		$adres_odbioru_dom = get_field('adres_odbioru_dom');
+		$adres_odbioru_dom_miasto = $adres_odbioru_dom['adres_odbioru_dom-miasto'];
+		$adres_odbioru_dom_ulica = $adres_odbioru_dom['adres_odbioru_dom-ulica-nr-domu'];
+	
+		$adres_ceremoni_pozegnalnej = get_field('ceremonia_pozegnalna');
+		$adres_ceremoni_pozegnalnej_adres = $adres_ceremoni_pozegnalnej['adres'];
+	
+		if (!empty($ceremonia_pogrzegnalna_data)) : return date("d.m", strtotime($ceremonia_pogrzegnalna_data)) . ' (' . dateV('l',strtotime($ceremonia_pogrzegnalna_data)) . ") " . date("H:i", strtotime($ceremonia_pogrzegnalna_godzina)); else : return '-'; endif;
+	}
+
+	function calendar_google_pozegnanie() {
+		wp_get_current_user();
+		$ceremonia_pogrzegnalna = get_field('ceremonia_pozegnalna');
+		$ceremonia_pogrzegnalna_data = $ceremonia_pogrzegnalna['data'];
+		$ceremonia_pogrzegnalna_godzina = $ceremonia_pogrzegnalna['godzina'];
+		$data_pozegnania = $ceremonia_pogrzegnalna_data . $ceremonia_pogrzegnalna_godzina;
+		$dzien_po_pogrzebie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+		$dzien_po_pogrzebie = date('d-m-Y H:i', strtotime("+1 day", strtotime($dzien_po_pogrzebie)));
+	
+		$data_odbioru_ciala = date("Ymd\THis", strtotime(get_field('data_odbioru_ciala')));
+		$data_odbioru_ciala_wiadomosc = date("d.m.Y H:i", strtotime($data_odbioru_ciala));
+		$data_odbioru_ciala_po_godzinie = date("Ymd\THis", strtotime($data_odbioru_ciala.'+1 hour'));
+		$data_pozegnania = date("Ymd\THis", strtotime($data_pozegnania));
+		$data_pozegnania_po_godzinie = date("Ymd\THis", strtotime($data_pozegnania.'+1 hour'));
+		$data_wyprowadzenie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+		$data_wyprowadzenie = date("Ymd\THis", strtotime($data_wyprowadzenie));
+		$data_wyprowadzenie_po_godzinie = date("Ymd\THis", strtotime($data_wyprowadzenie.'+1 hour'));
+		$data_kremacja = date("Ymd\THis", strtotime(get_field('data_kremacji')));
+		$data_kremacja_po_godzinie = date("Ymd\THis", strtotime($data_kremacja.'+1 hour'));
+		$data_kremacja_odbior_urny = date("Ymd\THis", strtotime(get_field('data_odebrania_urny')));
+		$data_kremacja_odbior_urny_po_godzinie = date("Ymd\THis", strtotime($data_kremacja_odbior_urny.'+1 hour'));
+		
+		$adres_odbioru_inne = get_field('adres_odbioru_inne');
+		$adres_odbioru_inne_nazwa = $adres_odbioru_inne['adres_odbioru_inne-nazwa'];
+		$adres_odbioru_inne_miasto = $adres_odbioru_inne['adres_odbioru_inne-miasto'];
+		$adres_odbioru_inne_ulica = $adres_odbioru_inne['adres_odbioru_inne-ulica-nr-domu'];
+	
+		$adres_odbioru_dom = get_field('adres_odbioru_dom');
+		$adres_odbioru_dom_miasto = $adres_odbioru_dom['adres_odbioru_dom-miasto'];
+		$adres_odbioru_dom_ulica = $adres_odbioru_dom['adres_odbioru_dom-ulica-nr-domu'];
+	
+		$adres_ceremoni_pozegnalnej = get_field('ceremonia_pozegnalna');
+		$adres_ceremoni_pozegnalnej_adres = $adres_ceremoni_pozegnalnej['adres'];
+	
+		if (!empty($ceremonia_pogrzegnalna_data)) : if(current_user_can('firmapro') || current_user_can('administrator')) : return '<a class="tooltip-right" data-tooltip="Dodaj do kalendarza" style="margin-left:5px;" href="https://www.google.com/calendar/event?action=TEMPLATE&text=KO | ' .  get_field('numer_opaski') . ' - ' . get_field('imie_zmarlego') . ' ' . get_field('nazwisko_zmarlego') . '&dates=' . $data_kremacja_odbior_urny . '/' . $data_kremacja_odbior_urny_po_godzinie . '&details=Odebrać urnę z krematorium.<br><br>________<br>' .  get_permalink() . '" target="_blank" rel="nofollow"><i class="fa-solid fa-calendar-days"></i></a>'; endif; endif;
+	}
+
+	function wprowadzenie_date() {
+		wp_get_current_user();
+		$ceremonia_pogrzegnalna = get_field('ceremonia_pozegnalna');
+		$ceremonia_pogrzegnalna_data = $ceremonia_pogrzegnalna['data'];
+		$ceremonia_pogrzegnalna_godzina = $ceremonia_pogrzegnalna['godzina'];
+		$data_pozegnania = $ceremonia_pogrzegnalna_data . $ceremonia_pogrzegnalna_godzina;
+		$dzien_po_pogrzebie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+		$dzien_po_pogrzebie = date('d-m-Y H:i', strtotime("+1 day", strtotime($dzien_po_pogrzebie)));
+	
+		$data_odbioru_ciala = date("Ymd\THis", strtotime(get_field('data_odbioru_ciala')));
+		$data_odbioru_ciala_wiadomosc = date("d.m.Y H:i", strtotime($data_odbioru_ciala));
+		$data_odbioru_ciala_po_godzinie = date("Ymd\THis", strtotime($data_odbioru_ciala.'+1 hour'));
+		$data_pozegnania = date("Ymd\THis", strtotime($data_pozegnania));
+		$data_pozegnania_po_godzinie = date("Ymd\THis", strtotime($data_pozegnania.'+1 hour'));
+		$data_wyprowadzenie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+		$data_wyprowadzenie = date("Ymd\THis", strtotime($data_wyprowadzenie));
+		$data_wyprowadzenie_po_godzinie = date("Ymd\THis", strtotime($data_wyprowadzenie.'+1 hour'));
+		$data_kremacja = date("Ymd\THis", strtotime(get_field('data_kremacji')));
+		$data_kremacja_po_godzinie = date("Ymd\THis", strtotime($data_kremacja.'+1 hour'));
+		$data_kremacja_odbior_urny = date("Ymd\THis", strtotime(get_field('data_odebrania_urny')));
+		$data_kremacja_odbior_urny_po_godzinie = date("Ymd\THis", strtotime($data_kremacja_odbior_urny.'+1 hour'));
+		
+		$adres_odbioru_inne = get_field('adres_odbioru_inne');
+		$adres_odbioru_inne_nazwa = $adres_odbioru_inne['adres_odbioru_inne-nazwa'];
+		$adres_odbioru_inne_miasto = $adres_odbioru_inne['adres_odbioru_inne-miasto'];
+		$adres_odbioru_inne_ulica = $adres_odbioru_inne['adres_odbioru_inne-ulica-nr-domu'];
+	
+		$adres_odbioru_dom = get_field('adres_odbioru_dom');
+		$adres_odbioru_dom_miasto = $adres_odbioru_dom['adres_odbioru_dom-miasto'];
+		$adres_odbioru_dom_ulica = $adres_odbioru_dom['adres_odbioru_dom-ulica-nr-domu'];
+	
+		$adres_ceremoni_pozegnalnej = get_field('ceremonia_pozegnalna');
+		$adres_ceremoni_pozegnalnej_adres = $adres_ceremoni_pozegnalnej['adres'];
+	
+		if(get_field('godzina_pogrzebu')) : return date("d.m", strtotime(get_field('data_pogrzebu'))) . ' (' . dateV('l',strtotime(get_field('data_pogrzebu'))) . ") " . date("H:i", strtotime(get_field('godzina_pogrzebu'))); else : return '-'; endif;
+	}
+
+	function calendar_google_wprowadznie() {
+		wp_get_current_user();
+		$ceremonia_pogrzegnalna = get_field('ceremonia_pozegnalna');
+		$ceremonia_pogrzegnalna_data = $ceremonia_pogrzegnalna['data'];
+		$ceremonia_pogrzegnalna_godzina = $ceremonia_pogrzegnalna['godzina'];
+		$data_pozegnania = $ceremonia_pogrzegnalna_data . $ceremonia_pogrzegnalna_godzina;
+		$dzien_po_pogrzebie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+		$dzien_po_pogrzebie = date('d-m-Y H:i', strtotime("+1 day", strtotime($dzien_po_pogrzebie)));
+	
+		$data_odbioru_ciala = date("Ymd\THis", strtotime(get_field('data_odbioru_ciala')));
+		$data_odbioru_ciala_wiadomosc = date("d.m.Y H:i", strtotime($data_odbioru_ciala));
+		$data_odbioru_ciala_po_godzinie = date("Ymd\THis", strtotime($data_odbioru_ciala.'+1 hour'));
+		$data_pozegnania = date("Ymd\THis", strtotime($data_pozegnania));
+		$data_pozegnania_po_godzinie = date("Ymd\THis", strtotime($data_pozegnania.'+1 hour'));
+		$data_wyprowadzenie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+		$data_wyprowadzenie = date("Ymd\THis", strtotime($data_wyprowadzenie));
+		$data_wyprowadzenie_po_godzinie = date("Ymd\THis", strtotime($data_wyprowadzenie.'+1 hour'));
+		$data_kremacja = date("Ymd\THis", strtotime(get_field('data_kremacji')));
+		$data_kremacja_po_godzinie = date("Ymd\THis", strtotime($data_kremacja.'+1 hour'));
+		$data_kremacja_odbior_urny = date("Ymd\THis", strtotime(get_field('data_odebrania_urny')));
+		$data_kremacja_odbior_urny_po_godzinie = date("Ymd\THis", strtotime($data_kremacja_odbior_urny.'+1 hour'));
+		
+		$adres_odbioru_inne = get_field('adres_odbioru_inne');
+		$adres_odbioru_inne_nazwa = $adres_odbioru_inne['adres_odbioru_inne-nazwa'];
+		$adres_odbioru_inne_miasto = $adres_odbioru_inne['adres_odbioru_inne-miasto'];
+		$adres_odbioru_inne_ulica = $adres_odbioru_inne['adres_odbioru_inne-ulica-nr-domu'];
+	
+		$adres_odbioru_dom = get_field('adres_odbioru_dom');
+		$adres_odbioru_dom_miasto = $adres_odbioru_dom['adres_odbioru_dom-miasto'];
+		$adres_odbioru_dom_ulica = $adres_odbioru_dom['adres_odbioru_dom-ulica-nr-domu'];
+	
+		$adres_ceremoni_pozegnalnej = get_field('ceremonia_pozegnalna');
+		$adres_ceremoni_pozegnalnej_adres = $adres_ceremoni_pozegnalnej['adres'];
+
+		if(get_field('godzina_pogrzebu')) : if(current_user_can('firmapro') || current_user_can('administrator')) : return '<a data-tooltip="Dodaj do kalendarza" class="tooltip-top" style="margin-left:5px;" href="https://www.google.com/calendar/event?action=TEMPLATE&text=W | ' .  get_field('numer_opaski') . ' - ' . get_field('imie_zmarlego') . ' ' . get_field('nazwisko_zmarlego') . '&dates=' . $data_wyprowadzenie . '/' . $data_wyprowadzenie_po_godzinie . '&details=Wyprowadzenie do grobu.<br><br>________<br>' .  get_permalink() . '&location=' . get_field('adres_cmentarza') . '" target="_blank" rel="nofollow"><i class="fa-solid fa-calendar-days"></i></a>'; endif; endif;
+	}
+
+	function drukowanie_zestawienia() {
+		return '<a class="tooltip-top" title="Drukowanie zestawienia" target="_blank" href="/drukuj?ewidencja_id=' . get_the_ID() . '"><i class="fa fa-print" aria-hidden="true"></i></a>';
+	}
+
+	function drukowanie_etykiety() {
+		return '<a title="Drukowanie etykiety" class="qrcode-icon tooltip-top" target="_blank" href="/etykieta?ewidencja_id=' . get_the_ID() . '"><i class="fa-solid fa-barcode"></i></a>';
+	}
+
+
+
+	function akcje_sms_body_dom() {
+		wp_get_current_user();
+		$ceremonia_pogrzegnalna = get_field('ceremonia_pozegnalna');
+		$ceremonia_pogrzegnalna_data = $ceremonia_pogrzegnalna['data'];
+		$ceremonia_pogrzegnalna_godzina = $ceremonia_pogrzegnalna['godzina'];
+		$data_pozegnania = $ceremonia_pogrzegnalna_data . $ceremonia_pogrzegnalna_godzina;
+		$dzien_po_pogrzebie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+		$dzien_po_pogrzebie = date('d-m-Y H:i', strtotime("+1 day", strtotime($dzien_po_pogrzebie)));
+	
+		$data_odbioru_ciala = date("Ymd\THis", strtotime(get_field('data_odbioru_ciala')));
+		$data_odbioru_ciala_wiadomosc = date("d.m.Y H:i", strtotime($data_odbioru_ciala));
+		$data_odbioru_ciala_po_godzinie = date("Ymd\THis", strtotime($data_odbioru_ciala.'+1 hour'));
+		$data_pozegnania = date("Ymd\THis", strtotime($data_pozegnania));
+		$data_pozegnania_po_godzinie = date("Ymd\THis", strtotime($data_pozegnania.'+1 hour'));
+		$data_wyprowadzenie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+		$data_wyprowadzenie = date("Ymd\THis", strtotime($data_wyprowadzenie));
+		$data_wyprowadzenie_po_godzinie = date("Ymd\THis", strtotime($data_wyprowadzenie.'+1 hour'));
+		$data_kremacja = date("Ymd\THis", strtotime(get_field('data_kremacji')));
+		$data_kremacja_po_godzinie = date("Ymd\THis", strtotime($data_kremacja.'+1 hour'));
+		$data_kremacja_odbior_urny = date("Ymd\THis", strtotime(get_field('data_odebrania_urny')));
+		$data_kremacja_odbior_urny_po_godzinie = date("Ymd\THis", strtotime($data_kremacja_odbior_urny.'+1 hour'));
+		
+		$adres_odbioru_inne = get_field('adres_odbioru_inne');
+		$adres_odbioru_inne_nazwa = $adres_odbioru_inne['adres_odbioru_inne-nazwa'];
+		$adres_odbioru_inne_miasto = $adres_odbioru_inne['adres_odbioru_inne-miasto'];
+		$adres_odbioru_inne_ulica = $adres_odbioru_inne['adres_odbioru_inne-ulica-nr-domu'];
+	
+		$adres_odbioru_dom = get_field('adres_odbioru_dom');
+		$adres_odbioru_dom_miasto = $adres_odbioru_dom['adres_odbioru_dom-miasto'];
+		$adres_odbioru_dom_ulica = $adres_odbioru_dom['adres_odbioru_dom-ulica-nr-domu'];
+	
+		$adres_ceremoni_pozegnalnej = get_field('ceremonia_pozegnalna');
+		$adres_ceremoni_pozegnalnej_adres = $adres_ceremoni_pozegnalnej['adres'];
+	
+		$text_adres_inne = get_field('numer_opaski') . '-' . get_field('imie_zmarlego') . ' ' . get_field('nazwisko_zmarlego') . ' | Adres odbioru: ' . $adres_odbioru_inne_nazwa . ' ' . $adres_odbioru_inne_miasto . ' ' . $adres_odbioru_inne_ulica . ' | Data odbioru: ' . $data_odbioru_ciala_wiadomosc . ' | ' . get_permalink();
+		$text_adres_dom = get_field('numer_opaski') . '-' . get_field('imie_zmarlego') . ' ' . get_field('nazwisko_zmarlego') . ' | Adres odbioru: ' . $adres_odbioru_dom_nazwa . ' ' . $adres_odbioru_dom_miasto . ' ' . $adres_odbioru_dom_ulica . ' | Data odbioru: ' . $data_odbioru_ciala_wiadomosc . ' | ' . get_permalink();
+	
+		$nastepna_klasa_css++;
+		if(get_field('miejsce_odbioru') == 'Dom' && $adres_odbioru_dom_miasto) : return $text_adres_dom; endif;
+	}
+
+	function akcje_sms_body_inne() {
+		wp_get_current_user();
+		$ceremonia_pogrzegnalna = get_field('ceremonia_pozegnalna');
+		$ceremonia_pogrzegnalna_data = $ceremonia_pogrzegnalna['data'];
+		$ceremonia_pogrzegnalna_godzina = $ceremonia_pogrzegnalna['godzina'];
+		$data_pozegnania = $ceremonia_pogrzegnalna_data . $ceremonia_pogrzegnalna_godzina;
+		$dzien_po_pogrzebie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+		$dzien_po_pogrzebie = date('d-m-Y H:i', strtotime("+1 day", strtotime($dzien_po_pogrzebie)));
+	
+		$data_odbioru_ciala = date("Ymd\THis", strtotime(get_field('data_odbioru_ciala')));
+		$data_odbioru_ciala_wiadomosc = date("d.m.Y H:i", strtotime($data_odbioru_ciala));
+		$data_odbioru_ciala_po_godzinie = date("Ymd\THis", strtotime($data_odbioru_ciala.'+1 hour'));
+		$data_pozegnania = date("Ymd\THis", strtotime($data_pozegnania));
+		$data_pozegnania_po_godzinie = date("Ymd\THis", strtotime($data_pozegnania.'+1 hour'));
+		$data_wyprowadzenie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+		$data_wyprowadzenie = date("Ymd\THis", strtotime($data_wyprowadzenie));
+		$data_wyprowadzenie_po_godzinie = date("Ymd\THis", strtotime($data_wyprowadzenie.'+1 hour'));
+		$data_kremacja = date("Ymd\THis", strtotime(get_field('data_kremacji')));
+		$data_kremacja_po_godzinie = date("Ymd\THis", strtotime($data_kremacja.'+1 hour'));
+		$data_kremacja_odbior_urny = date("Ymd\THis", strtotime(get_field('data_odebrania_urny')));
+		$data_kremacja_odbior_urny_po_godzinie = date("Ymd\THis", strtotime($data_kremacja_odbior_urny.'+1 hour'));
+		
+		$adres_odbioru_inne = get_field('adres_odbioru_inne');
+		$adres_odbioru_inne_nazwa = $adres_odbioru_inne['adres_odbioru_inne-nazwa'];
+		$adres_odbioru_inne_miasto = $adres_odbioru_inne['adres_odbioru_inne-miasto'];
+		$adres_odbioru_inne_ulica = $adres_odbioru_inne['adres_odbioru_inne-ulica-nr-domu'];
+	
+		$adres_odbioru_dom = get_field('adres_odbioru_dom');
+		$adres_odbioru_dom_miasto = $adres_odbioru_dom['adres_odbioru_dom-miasto'];
+		$adres_odbioru_dom_ulica = $adres_odbioru_dom['adres_odbioru_dom-ulica-nr-domu'];
+	
+		$adres_ceremoni_pozegnalnej = get_field('ceremonia_pozegnalna');
+		$adres_ceremoni_pozegnalnej_adres = $adres_ceremoni_pozegnalnej['adres'];
+	
+		$text_adres_inne = get_field('numer_opaski') . '-' . get_field('imie_zmarlego') . ' ' . get_field('nazwisko_zmarlego') . ' | Adres odbioru: ' . $adres_odbioru_inne_nazwa . ' ' . $adres_odbioru_inne_miasto . ' ' . $adres_odbioru_inne_ulica . ' | Data odbioru: ' . $data_odbioru_ciala_wiadomosc . ' | ' . get_permalink();
+		$text_adres_dom = get_field('numer_opaski') . '-' . get_field('imie_zmarlego') . ' ' . get_field('nazwisko_zmarlego') . ' | Adres odbioru: ' . $adres_odbioru_dom_nazwa . ' ' . $adres_odbioru_dom_miasto . ' ' . $adres_odbioru_dom_ulica . ' | Data odbioru: ' . $data_odbioru_ciala_wiadomosc . ' | ' . get_permalink();
+	
+		if($adres_odbioru_inne_miasto && get_field('miejsce_odbioru') != 'Dom') : return $text_adres_inne; endif;
+	}
+
+	function udostepnij_opaske() {
+		wp_get_current_user();
+		$ceremonia_pogrzegnalna = get_field('ceremonia_pozegnalna');
+		$ceremonia_pogrzegnalna_data = $ceremonia_pogrzegnalna['data'];
+		$ceremonia_pogrzegnalna_godzina = $ceremonia_pogrzegnalna['godzina'];
+		$data_pozegnania = $ceremonia_pogrzegnalna_data . $ceremonia_pogrzegnalna_godzina;
+		$dzien_po_pogrzebie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+		$dzien_po_pogrzebie = date('d-m-Y H:i', strtotime("+1 day", strtotime($dzien_po_pogrzebie)));
+	
+		$data_odbioru_ciala = date("Ymd\THis", strtotime(get_field('data_odbioru_ciala')));
+		$data_odbioru_ciala_wiadomosc = date("d.m.Y H:i", strtotime($data_odbioru_ciala));
+		$data_odbioru_ciala_po_godzinie = date("Ymd\THis", strtotime($data_odbioru_ciala.'+1 hour'));
+		$data_pozegnania = date("Ymd\THis", strtotime($data_pozegnania));
+		$data_pozegnania_po_godzinie = date("Ymd\THis", strtotime($data_pozegnania.'+1 hour'));
+		$data_wyprowadzenie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+		$data_wyprowadzenie = date("Ymd\THis", strtotime($data_wyprowadzenie));
+		$data_wyprowadzenie_po_godzinie = date("Ymd\THis", strtotime($data_wyprowadzenie.'+1 hour'));
+		$data_kremacja = date("Ymd\THis", strtotime(get_field('data_kremacji')));
+		$data_kremacja_po_godzinie = date("Ymd\THis", strtotime($data_kremacja.'+1 hour'));
+		$data_kremacja_odbior_urny = date("Ymd\THis", strtotime(get_field('data_odebrania_urny')));
+		$data_kremacja_odbior_urny_po_godzinie = date("Ymd\THis", strtotime($data_kremacja_odbior_urny.'+1 hour'));
+		
+		$adres_odbioru_inne = get_field('adres_odbioru_inne');
+		$adres_odbioru_inne_nazwa = $adres_odbioru_inne['adres_odbioru_inne-nazwa'];
+		$adres_odbioru_inne_miasto = $adres_odbioru_inne['adres_odbioru_inne-miasto'];
+		$adres_odbioru_inne_ulica = $adres_odbioru_inne['adres_odbioru_inne-ulica-nr-domu'];
+	
+		$adres_odbioru_dom = get_field('adres_odbioru_dom');
+		$adres_odbioru_dom_miasto = $adres_odbioru_dom['adres_odbioru_dom-miasto'];
+		$adres_odbioru_dom_ulica = $adres_odbioru_dom['adres_odbioru_dom-ulica-nr-domu'];
+	
+		$adres_ceremoni_pozegnalnej = get_field('ceremonia_pozegnalna');
+		$adres_ceremoni_pozegnalnej_adres = $adres_ceremoni_pozegnalnej['adres'];
+	
+		$text_adres_inne = get_field('numer_opaski') . '-' . get_field('imie_zmarlego') . ' ' . get_field('nazwisko_zmarlego') . ' | Adres odbioru: ' . $adres_odbioru_inne_nazwa . ' ' . $adres_odbioru_inne_miasto . ' ' . $adres_odbioru_inne_ulica . ' | Data odbioru: ' . $data_odbioru_ciala_wiadomosc . ' | ' . get_permalink();
+		$text_adres_dom = get_field('numer_opaski') . '-' . get_field('imie_zmarlego') . ' ' . get_field('nazwisko_zmarlego') . ' | Adres odbioru: ' . $adres_odbioru_dom_nazwa . ' ' . $adres_odbioru_dom_miasto . ' ' . $adres_odbioru_dom_ulica . ' | Data odbioru: ' . $data_odbioru_ciala_wiadomosc . ' | ' . get_permalink();
+			
+		if(current_user_can('firmapro') || current_user_can('administrator')) :
+			return '<a title="Udostępnij opaskę" class="qr-download qrcode-icon tooltip-top share-button' .  $nastepna_klasa_css . '"><i class="fa-solid fa-share-nodes"></i></a>';
+		endif;
+	}
+	
+	$return_json = array();
+	while($query->have_posts()) {
+	$query->the_post();
+	$dzien_po_pogrzebie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+	$dzien_po_pogrzebie = date('d-m-Y H:i', strtotime("+1 day", strtotime($dzien_po_pogrzebie)));
+	$nastepna_klasa_css++;
+	if(strtotime(date('d-m-Y H:i')) < strtotime($dzien_po_pogrzebie) || empty(get_field('data_pogrzebu'))) :
+	$row = array(
+		'nr' => '<a class="number-link" href="' . get_permalink() . '">' . get_field('numer_opaski') . '</a>',
+		'typ' => typ_kremacji(),
+		'imie' => imie_zmarlego(),
+		'nazwisko' => nazwisko_zmarlego(),
+		'eksportacja' => data_eksportacji() . calendar_google_simple() . calendar_google_home() . calendar_google_another() ,
+		'kremacja' => kreamcja_date() . calendar_google_kremacja(),
+		'odbior_urny' => odebranie_urny_date() . calendar_google_odbior_urny(),
+		'pozegnanie' => pozegnanie_date() . calendar_google_pozegnanie(),
+		'wyprowadzenie' => wprowadzenie_date() . calendar_google_wprowadznie(),
+		'akcje' => drukowanie_zestawienia() . drukowanie_etykiety() . '<a title="Wyślij SMSa" class="qr-download qrcode-icon tooltip-top" href="sms:?&body=' . akcje_sms_body_dom() . akcje_sms_body_inne() . '"><i class="fa-solid fa-comment-sms"></i></a><a title="Udostępnij opaskę" class="qr-download qrcode-icon tooltip-top share-button' .  $nastepna_klasa_css . '"><i class="fa-solid fa-share-nodes"></i></a><script> const shareButton' . $nastepna_klasa_css . ' = document.querySelector(".share-button' . $nastepna_klasa_css . '"); if (shareButton' . $nastepna_klasa_css . ' ) { shareButton' . $nastepna_klasa_css . '.addEventListener("click", event => { if (navigator.share) { navigator.share({ title: "' . get_field('numer_opaski') . '-' . get_field('imie_zmarlego') . ' ' . get_field('nazwisko_zmarlego') . '", text: "' . akcje_sms_body_dom() . akcje_sms_body_inne() . '" }).then(() => { console.log("Udostępniłeś nekrolog!");}).catch(console.error);}});}</script>'
+	);
+	$return_json[] = $row;
+	endif;
+	}
+	//return the result to the ajax request and die
+	echo json_encode(array('data' => $return_json));
+	wp_die();
+  }
+
+
+  add_action( 'wp_ajax_getpostsfordatatableswolne', 'my_ajax_getpostsfordatatableswolne' );
+  add_action( 'wp_ajax_nopriv_getpostsfordatatableswolne', 'my_ajax_getpostsfordatatableswolne' );
+  function my_ajax_getpostsfordatatableswolne() {
+	global $wpdb;
+	global $post;
+	global $current_user;
+	$post_id = $post->ID;
+	wp_get_current_user();
+	$authorID = $current_user->ID;
+	$user_info = get_userdata($authorID);
+	$first_name = $user_info->first_name;
+	$user = wp_get_current_user();
+	$allowed_roles = array( 'firma', 'firmapro', 'administrator' );
+
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+    $query = new WP_Query( array(
+            'post_type' => array( 'post', 'ewidencjazgonow' ),
+            'posts_per_page'=> -1,
+            'paged' => $paged,
+            'author' => $authorID,
+            'post_status' => 'publish',
+            'fields' => 'ids',
+            'cache_results' => false,
+            'update_post_meta_cache' => false,
+            'update_post_term_cache' => false,
+            'orderby'			=> 'meta_value',
+            'order'				=> 'DESC',
+            'meta_query' => array(
+                'relation' => 'AND',
+                array(
+                    'key' => 'imie_zmarlego',
+                    'compare' => 'NOT EXISTS'
+                ),
+                array(
+                    'key' => 'nazwisko_zmarlego',
+                    'compare' => 'NOT EXISTS'
+                ),
+            ),
+            )
+        );
+
+	$return_json = array();
+	while($query->have_posts()) {
+
+	$query->the_post();
+	$row = array(
+		'nr' => '<a class="number-link" href="' . get_permalink() . '">' . get_field('numer_opaski') . '</a>',
+		'aktywacja' => '<a class="number-link" href="' . get_permalink() . '">Aktywuj opaskę</a>',
+	  );
+	  $return_json[] = $row;
+	}
+	//return the result to the ajax request and die
+	echo json_encode(array('data' => $return_json));
+	wp_die();
+  }
+
+  add_action( 'wp_ajax_getpostsfordatatableszrealizowane', 'my_ajax_getpostsfordatatableszrealizowane' );
+  add_action( 'wp_ajax_nopriv_getpostsfordatatableszrealizowane', 'my_ajax_getpostsfordatatableszrealizowane' );
+
+  function my_ajax_getpostsfordatatableszrealizowane() {
+	global $wpdb;
+	global $current_user;
+	$post_id = $post->ID;
+	wp_get_current_user();
+	$authorID = $current_user->ID;
+	$user_info = get_userdata($authorID);
+	$first_name = $user_info->first_name;
+	$user = wp_get_current_user();
+	$allowed_roles = array( 'firma', 'firmapro', 'administrator' );
+
+	function zasilek_pogrzebowy_odebrany_zus() {
+		$zasilek_pogrzebowy = get_field('zasilek_pogrzebowy_inne');
+		$zasilek_pogrzebowy_odebrany = $zasilek_pogrzebowy['odebrac_zasilek_pogrzebowy'];
+		$zasilek_pogrzebowy_zaksiegowany = $zasilek_pogrzebowy['zasilek_zaksiegowany'];
+
+		if($zasilek_pogrzebowy_odebrany == true and $zasilek_pogrzebowy_zaksiegowany == 'tak') : return '<span class="tooltip-right" data-tooltip="Zasiłek odebrany"><img src="/wp-content/plugins/ewidencja-zmarlych/public/img/zus-zielony.svg" /><span style="display: none;">zus zielony</span></span>'; endif;
+	}
+
+	function zasilek_pogrzebowy_nieodebrany_zus() {
+		$zasilek_pogrzebowy = get_field('zasilek_pogrzebowy_inne');
+		$zasilek_pogrzebowy_odebrany = $zasilek_pogrzebowy['odebrac_zasilek_pogrzebowy'];
+		$zasilek_pogrzebowy_zaksiegowany = $zasilek_pogrzebowy['zasilek_zaksiegowany'];
+
+		if($zasilek_pogrzebowy_odebrany == true and $zasilek_pogrzebowy_zaksiegowany == 'nie') : return '<span class="tooltip-right" data-tooltip="Zasiłek niezaksięgowany"><img src="/wp-content/plugins/ewidencja-zmarlych/public/img/zus-czerwony.svg" /><span style="display: none;">zus czerwony</span></span>'; endif;
+	}
+
+	function zaislek_gotowka() {
+		$zasilek_pogrzebowy = get_field('zasilek_pogrzebowy_inne');
+		$zasilek_pogrzebowy_odebrany = $zasilek_pogrzebowy['odebrac_zasilek_pogrzebowy'];
+		$zasilek_pogrzebowy_zaksiegowany = $zasilek_pogrzebowy['zasilek_zaksiegowany'];
+
+		if($zasilek_pogrzebowy_odebrany == false) : return '<span  class="tooltip-right" data-tooltip="Pogrzeb opłacony gotówką"><img src="/wp-content/plugins/ewidencja-zmarlych/public/img/dolar-zielony.svg" /><span style="display: none;">dolar</span></span>'; endif;
+	}
+
+	function data_pogrzebu() {
+		$ceremonia_pogrzegnalna = get_field('ceremonia_pozegnalna');
+		$ceremonia_pogrzegnalna_data = $ceremonia_pogrzegnalna['data'];
+		$ceremonia_pogrzegnalna_godzina = $ceremonia_pogrzegnalna['godzina'];
+
+		if (!empty($ceremonia_pogrzegnalna_data)) : return $ceremonia_pogrzegnalna_data . ' ' . $ceremonia_pogrzegnalna_godzina; else : return '-'; endif;
+	}
+
+    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+    $query = new WP_Query( array(
+        'post_type' => array( 'post', 'ewidencjazgonow' ),
+        'posts_per_page'=> -1,
+        'paged' => $paged,
+        'author' => $authorID,
+        'fields' => 'ids',
+        'meta_query' => array(
+            'relation' => 'AND',
+            array(
+                'key' => 'imie_zmarlego',
+                'value'   => array(''),
+                'compare' => 'NOT IN'
+            ),
+            array(
+                'key' => 'kto_organizuje_pogrzeb',
+                'value'   => true,
+                'compare' => '=',
+            ),
+        ),
+    ),
+    );
+	$return_json = array();
+	while($query->have_posts()) {
+		$query->the_post();
+		$dzien_po_pogrzebie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
+		$dzien_po_pogrzebie = date('d-m-Y H:i', strtotime("+1 day", strtotime($dzien_po_pogrzebie)));
+		if(strtotime(date('d-m-Y H:i')) > strtotime($dzien_po_pogrzebie) && !empty(get_field('data_pogrzebu'))) : 
+	$row = array(
+		'nr' => '<a class="number-link" href="' . get_permalink() . '">' . get_field('numer_opaski') . '</a>',
+		'zasilek' => zasilek_pogrzebowy_nieodebrany_zus() . zasilek_pogrzebowy_odebrany_zus() . zaislek_gotowka(),
+		'imie' => imie_zmarlego(),
+		'nazwisko' => nazwisko_zmarlego(),
+		'pogrzeb' => data_pogrzebu()
+	  );
+	  $return_json[] = $row;
+	endif;
+	}
+	//return the result to the ajax request and die
+	echo json_encode(array('data' => $return_json));
+	wp_die();
+  }
+
+
+  add_action( 'wp_ajax_getpostsfordatatablesobce', 'my_ajax_getpostsfordatatablesobce' );
+  add_action( 'wp_ajax_nopriv_getpostsfordatatablesobce', 'my_ajax_getpostsfordatatablesobce' );
+  function my_ajax_getpostsfordatatablesobce() {
+	global $wpdb;
+	global $current_user;
+	$post_id = $post->ID;
+	wp_get_current_user();
+	$authorID = $current_user->ID;
+	$user_info = get_userdata($authorID);
+	$first_name = $user_info->first_name;
+	$user = wp_get_current_user();
+	$allowed_roles = array( 'firma', 'firmapro', 'administrator' );
+
+	function wydanie_ciala() {
+		if(get_field('data_wydania_ciala')) : return get_field('data_wydania_ciala'); else : return '-'; endif;
+	}
+
+	function firma_odbierajaca_cialo() {
+		if(get_field('firma_organizujaca_pogrzeb')) : return get_field('firma_organizujaca_pogrzeb'); else : return '-'; endif;
+	}
+
+    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+    $query = new WP_Query( array(
+            'post_type' => array( 'post', 'ewidencjazgonow' ),
+            'posts_per_page'=> -1,
+            'paged' => $paged,
+            'author' => $authorID,
+            'fields' => 'ids',
+            'meta_query' => array(
+                'relation' => 'AND',
+                array(
+                    'key'     => 'kto_organizuje_pogrzeb',
+                    'value'   => true,
+                    'compare' => '!=',
+                )
+            )
+        )
+    );
+	$return_json = array();
+	while($query->have_posts()) {
+	$query->the_post();
+	$row = array(
+		'nr' => '<a class="number-link" href="' . get_permalink() . '">' . get_field('numer_opaski') . '</a>',
+		'imie' => imie_zmarlego(),
+		'nazwisko' => nazwisko_zmarlego(),
+		'wydanie_ciala' => wydanie_ciala(),
+		'firma' => firma_odbierajaca_cialo()
+	  );
+	  $return_json[] = $row;
+	}
+	//return the result to the ajax request and die
+	echo json_encode(array('data' => $return_json));
+	wp_die();
+  }
+	
+//Update user online status
+add_action('init', 'gearside_users_status_init');
+add_action('admin_init', 'gearside_users_status_init');
+function gearside_users_status_init(){
+	$logged_in_users = get_transient('users_status'); //Get the active users from the transient.
+	$user = wp_get_current_user(); //Get the current user's data
+
+	//Update the user if they are not on the list, or if they have not been online in the last 900 seconds (15 minutes)
+	if ( !isset($logged_in_users[$user->ID]['last']) || $logged_in_users[$user->ID]['last'] <= time()-2 ){
+		$logged_in_users[$user->ID] = array(
+			'id' => $user->ID,
+			'username' => $user->user_login,
+			'last' => time(),
+		);
+		set_transient('users_status', $logged_in_users, 900); //Set this transient to expire 15 minutes after it is created.
+	}
 }
 
-add_action('pre_get_posts', 'jr_show_only_users_posts_in_find_posts_modal');
-
-/**
- * Show only user's own posts in the 'Find Posts' modal window, unless
- * user is admin or editor.
- *
- */
-function jr_show_only_users_posts_in_find_posts_modal($wp_query) {
-    global $pagenow;
-
-    $find_posts = (isset($_POST['action']) && $_POST['action'] === 'find_posts');
-
-    // target the post query for the Find Posts modal
-    if (!is_admin() || $pagenow !== 'admin-ajax.php' || !$find_posts) {
-        return;
-    }
-
-    // Authors
-    if (!current_user_can('administrator') && !current_user_can('editor')) {
-        $wp_query->set('author', get_current_user_id());
-    }
-
-    return $wp_query;
+//Check if a user has been online in the last 15 minutes
+function gearside_is_user_online($id){	
+	$logged_in_users = get_transient('users_status'); //Get the active users from the transient.
+	
+	return isset($logged_in_users[$id]['last']) && $logged_in_users[$id]['last'] > time()-2; //Return boolean if the user has been online in the last 900 seconds (15 minutes).
 }
+
+//Check when a user was last online.
+function gearside_user_last_online($id){
+	$logged_in_users = get_transient('users_status'); //Get the active users from the transient.
+	
+	//Determine if the user has ever been logged in (and return their last active date if so).
+	if ( isset($logged_in_users[$id]['last']) ){
+		return $logged_in_users[$id]['last'];
+	} else {
+		return false;
+	}
+}
+
+ //Add columns to user listings
+ add_filter('manage_users_columns', 'gearside_user_columns_head');
+ function gearside_user_columns_head($defaults){
+	 $defaults['status'] = 'Status';
+	 return $defaults;
+ }
+ add_action('manage_users_custom_column', 'gearside_user_columns_content', 15, 3);
+ function gearside_user_columns_content($value='', $column_name, $id){
+	 if ( $column_name == 'status' ){
+		 if ( gearside_is_user_online($id) ){
+			 return '<strong style="color: green;">Online</strong>';
+		 } else {
+			 return ( gearside_user_last_online($id) )? '<small>Ostatnio widziany: <br /><em>' . date('M j, Y @ g:ia', gearside_user_last_online($id)) . '</em></small>' : ''; //Return the user's "Last Seen" date, or return empty if that user has never logged in.
+		 }
+	 }
+ }

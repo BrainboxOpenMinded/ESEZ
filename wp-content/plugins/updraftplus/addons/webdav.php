@@ -378,7 +378,7 @@ class UpdraftPlus_Addons_RemoteStorage_webdav extends UpdraftPlus_RemoteStorage_
 				<td>
 					<input type="text" id="{{get_template_input_attribute_value "id" "host"}}" name="{{get_template_input_attribute_value "name" "host"}}" class="updraft_webdav_settings updraft_input--wide udc-wd-600" value="{{host}}"/>
 					<br>
-					<em id="updraft_webdav_host_error" style="display: none;">{{hostname_error_label}}</em>
+					<em class="updraft_webdav_host_error" style="display: none;">{{hostname_error_label}}</em>
 				</td>
 			</tr>
 			<tr class="{{get_template_css_classes true}}">
