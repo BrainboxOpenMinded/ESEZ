@@ -137,6 +137,8 @@ jQuery(document).ready(function ($) {
         ],
         processing: true,
         responsive: true,
+        lengthMenu: [ 25, 50, 75, 100 ],
+        pageLength: 100,
         type: 'date',
         def: function () {
             return Date();

@@ -651,7 +651,7 @@ function datatables_scripts_in_head(){
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$query = new WP_Query( array(
 		'post_type' => array( 'post', 'ewidencjazgonow' ),
-		'posts_per_page'=> 2,
+		'posts_per_page'=> -1,
 		'paged' => $paged,
 		'author' => $authorID,
 		'meta_key'			=> 'data_odbioru_ciala',
@@ -1191,8 +1191,8 @@ function datatables_scripts_in_head(){
 	$query->the_post();
 	$dzien_po_pogrzebie = get_field('data_pogrzebu') .  get_field('godzina_pogrzebu');
 	$dzien_po_pogrzebie = date('d-m-Y H:i', strtotime("+1 day", strtotime($dzien_po_pogrzebie)));
+	if(strtotime(date('d-m-Y H:i')) < strtotime($dzien_po_pogrzebie) or empty(get_field('data_pogrzebu'))) : 
 	$nastepna_klasa_css++;
-	if(strtotime(date('d-m-Y H:i')) < strtotime($dzien_po_pogrzebie) || empty(get_field('data_pogrzebu'))) :
 	$row = array(
 		'nr' => '<a class="number-link" href="' . get_permalink() . '">' . get_field('numer_opaski') . '</a>',
 		'typ' => typ_kremacji(),
