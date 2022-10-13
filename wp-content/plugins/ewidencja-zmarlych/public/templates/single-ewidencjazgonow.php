@@ -4,8 +4,11 @@
  *
  */
 acf_form_head();
-get_header();
-if(isset($_POST['_acf_form']) && !empty($_POST['_acf_form'])){
+get_header(); ?>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.css" integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipuiaD5ymEo9520lyoVOo9jCQOCA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<?php if(isset($_POST['_acf_form']) && !empty($_POST['_acf_form'])){
     echo 'Success!';
 }
 global $post;
@@ -27,206 +30,7 @@ foreach( get_multiple_authors() as $coauthor ) {
 }
 
 if (is_user_logged_in() && in_array($current_user->ID, $items) || current_user_can('administrator')) : ?>
-<style>
-    .esez-container {
-        max-width: 900px;
-        padding: 32px 0;
-    }
-
-    .acfe-phone-number .iti .iti__flag-container .iti__selected-flag {
-        border-radius: 0;
-        border-right: 1px solid #666;
-    }
-
-    .input {
-        border: 1px solid #666;
-    }
-
-    .acf-field input[type="text"],
-    .acf-field input[type="password"],
-    .acf-field input[type="number"],
-    .acf-field input[type="search"],
-    .acf-field input[type="email"],
-    .acf-field input[type="url"],
-    .acf-field textarea,
-    .acf-field select {
-        border-radius: 0.3rem;
-        border: 1px solid #666;
-    }
-
-    @media (max-width: 800px) {
-
-        .fixed-top,
-        .sb-nav-fixed #layoutSidenav #layoutSidenav_nav,
-        .sb-nav-fixed .sb-topnav {
-            position: absolute !important;
-        }
-    }
-
-    .acf-fields {
-        border: 1px solid #E1E1E1;
-    }
-
-    /* pola */
-    #acf-field_627cfd56b1d15,
-    #acf-field_627cf75e7e3f1,
-    #acf-field_6290abafe4b82-field_6298b5e9de204 {
-        text-align: start;
-    }
-
-    #acf-field_627cf75e7e3f1,
-    #acf-field_627cf4e87e3ee,
-    #acf-field_627cfd56b1d15,
-    #acf-field_627cf6c87e3ef,
-    #acf-field_62a1b642910f9,
-    #acf-field_6059d4efa0515,
-    #acf-field_60112e303f973,
-    #acf-field_60112e573f974,
-    #acf-field_6017dfc3d014f,
-    #dp1659535698987,
-    .acf-date-picker,
-    .acf-time-picker,
-    .acf-date-time-picker,
-    #acf-field_6137462544bfd,
-    #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-6295e8f260432>div.acf-input>div>div.acf-field.acf-field-number.acf-field-6295e90b60435.hide-label.-r0>div.acf-input,
-    #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-6295e8f260432>div.acf-input>div>div.acf-field.acf-field-text.acf-field-6295e8f260433.hide-label.-r0>div.acf-input,
-    #acf-field_60097abd5a117,
-    #acf-field_601151613f976,
-    #acf-field_62a1b70830cd5,
-    #acf-field_62cd382a10d31,
-    #acf-field_627cf8307e3f2,
-    #acf-field_627cf8fc7e3f3,
-    #acf-field_601429bd3ccb6-field_601429bd3ccb9,
-    #acf-field_601429bd3ccb6-field_601429bd3ccba,
-    #acf-field_60140a20aeae8-field_60140d77aeaeb,
-    #acf-field_60140a20aeae8-field_6014134caeaec,
-    #acf-field_629378ceae433,
-    #acf-field_6310c0e47d0df,
-    .acfe-phone-number .iti {
-        width: 37.7%;
-    }
-
-    #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-text.acf-field-62a1df2beb547>div.acf-input {
-        width: 13%;
-    }
-
-    #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-6290abafe4b82>div.acf-input>div>div.acf-field.acf-field-number.acf-field-6298b5e9de204.hide-label.-r0>div.acf-input,
-    #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-6295e93060436>div.acf-input>div>div.acf-field.acf-field-number.acf-field-6295e93060438.hide-label.-r0>div.acf-input {
-        width: 18%;
-    }
-
-    #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-628e500b88425>div.acf-input>div>div.acf-field.acf-field-text.acf-field-628e501e88426.hide-label.-r0>div.acf-input,
-    #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-6290a31e922b8>div.acf-input>div>div.acf-field.acf-field-text.acf-field-6290a33e922b9.hide-label.-r0>div.acf-input {
-        width: 30%;
-    }
-
-    #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-60140a20aeae8>div.acf-input>div>div.acf-field.acf-field-date-picker.acf-field-60140c56aeae9.-r0>div.acf-input>div,
-    #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-6295c733be746>div.acf-input>div>div.acf-field.acf-field-date-picker.acf-field-6295c85bebd40.-r0>div.acf-input>div,
-    #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-6295c733be746>div.acf-input>div>div.acf-field.acf-field-date-picker.acf-field-6295ca92ebd41.-r0>div.acf-input>div,
-    #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-6295f58acdbfa>div.acf-input>div>div.acf-field.acf-field-date-picker.acf-field-6295f58acdbfb.-r0>div.acf-input>div,
-    #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-6295f58acdbfa>div.acf-input>div>div.acf-field.acf-field-date-picker.acf-field-6295f58acdbfc.-r0>div.acf-input>div,
-    #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-601429bd3ccb6>div.acf-input>div>div.acf-field.acf-field-date-picker.acf-field-601429bd3ccb7.-r0>div.acf-input>div {
-        width: 78%;
-    }
-
-    .acf-field input[type=text],
-    .acf-field input[type=password],
-    .acf-field input[type=date],
-    .acf-field input[type=datetime],
-    .acf-field input[type=datetime-local],
-    .acf-field input[type=email],
-    .acf-field input[type=month],
-    .acf-field input[type=number],
-    .acf-field input[type=search],
-    .acf-field input[type=tel],
-    .acf-field input[type=time],
-    .acf-field input[type=url],
-    .acf-field input[type=week],
-    .acf-field textarea,
-    .acf-field select {
-        font-size: 1em !important;
-    }
-
-    @media (max-width: 992px) {
-
-        #acf-field_627cf75e7e3f1,
-        #acf-field_627cf4e87e3ee,
-        #acf-field_627cfd56b1d15,
-        #acf-field_627cf6c87e3ef,
-        #acf-field_62a1b642910f9,
-        #acf-field_6059d4efa0515,
-        #acf-field_60112e303f973,
-        #acf-field_60112e573f974,
-        #acf-field_6017dfc3d014f,
-        #dp1659535698987,
-        .acf-date-picker,
-        .acf-time-picker,
-        .acf-date-time-picker,
-        #acf-field_6137462544bfd,
-        #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-6295e8f260432>div.acf-input>div>div.acf-field.acf-field-number.acf-field-6295e90b60435.hide-label.-r0>div.acf-input,
-        #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-6295e8f260432>div.acf-input>div>div.acf-field.acf-field-text.acf-field-6295e8f260433.hide-label.-r0>div.acf-input,
-        #acf-field_60097abd5a117,
-        #acf-field_601151613f976,
-        #acf-field_62a1b70830cd5,
-        #acf-field_62cd382a10d31,
-        #acf-field_627cf8307e3f2,
-        #acf-field_627cf8fc7e3f3,
-        #acf-field_601429bd3ccb6-field_601429bd3ccb9,
-        #acf-field_601429bd3ccb6-field_601429bd3ccba,
-        #acf-field_60140a20aeae8-field_60140d77aeaeb,
-        #acf-field_60140a20aeae8-field_6014134caeaec,
-        .acfe-phone-number .iti {
-            width: 100%;
-        }
-
-        #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-text.acf-field-62a1df2beb547>div.acf-input {
-            width: 100%;
-        }
-
-        #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-6290abafe4b82>div.acf-input>div>div.acf-field.acf-field-number.acf-field-6298b5e9de204.hide-label.-r0>div.acf-input,
-        #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-6295e93060436>div.acf-input>div>div.acf-field.acf-field-number.acf-field-6295e93060438.hide-label.-r0>div.acf-input {
-            width: 100%;
-        }
-
-        #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-628e500b88425>div.acf-input>div>div.acf-field.acf-field-text.acf-field-628e501e88426.hide-label.-r0>div.acf-input,
-        #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-6290a31e922b8>div.acf-input>div>div.acf-field.acf-field-text.acf-field-6290a33e922b9.hide-label.-r0>div.acf-input {
-            width: 100%;
-        }
-
-        #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-60140a20aeae8>div.acf-input>div>div.acf-field.acf-field-date-picker.acf-field-60140c56aeae9.-r0>div.acf-input>div,
-        #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-60140a20aeae8>div.acf-input>div>div.acf-field.acf-field-time-picker.acf-field-60140ce9aeaea.-r0>div.acf-input>div,
-        #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-6295c733be746>div.acf-input>div>div.acf-field.acf-field-date-picker.acf-field-6295c85bebd40.-r0>div.acf-input>div,
-        #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-6295c733be746>div.acf-input>div>div.acf-field.acf-field-date-picker.acf-field-6295ca92ebd41.-r0>div.acf-input>div,
-        #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-6295f58acdbfa>div.acf-input>div>div.acf-field.acf-field-date-picker.acf-field-6295f58acdbfb.-r0>div.acf-input>div,
-        #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-6295f58acdbfa>div.acf-input>div>div.acf-field.acf-field-date-picker.acf-field-6295f58acdbfc.-r0>div.acf-input>div,
-        #acf-form>div.acf-fields.acf-form-fields.-left>div.acf-field.acf-field-group.acf-field-601429bd3ccb6>div.acf-input>div>div.acf-field.acf-field-date-picker.acf-field-601429bd3ccb7.-r0>div.acf-input>div {
-            width: 100%;
-        }
-    }
-
-    @media (min-width: 1640px) {
-        .totalcost-container {
-            right: 32rem;
-        }
-
-        .drukuj {
-            right: 39rem;
-        }
-
-        .acf-form-submit input {
-            right: 31.8rem;
-        }
-
-        .go-to-top {
-            right: 29rem;
-        }
-
-        .location-direct {
-            right: 43rem;
-        }
-    }
-</style>
-<div id="esez-top" class="esez-container">
+<div id="esez-top" class="esez-container single-esez">
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <header class="esez-header">
             <h1 class="esez-title">Numer opaski: <?php the_field('numer_opaski'); ?></h1>
@@ -251,7 +55,7 @@ if (is_user_logged_in() && in_array($current_user->ID, $items) || current_user_c
         <div id="pogladZdjec" class="single-esez__gallery">
             <h4 class="single-esez__gallery__title">Podgląd dodanych zdjęć</h4>
             <?php foreach( $images as $image ): ?>
-            <a data-toggle="lightbox" href="<?php echo $image['url']; ?>" data-lightbox="galeria"><img  
+            <a href="<?php echo $image['url']; ?>" data-lightbox="galeria"><img  
                     class="single-ewidencjazgonow__gallery__img"
                     src="<?php echo $image['sizes']['ewidencja-zdjecie']; ?>" alt="<?php echo $image['alt']; ?>" /></a>
             <?php endforeach; ?>
@@ -421,6 +225,12 @@ if (is_user_logged_in() && in_array($current_user->ID, $items) || current_user_c
             });
         }
         $("#pogladZdjec").appendTo("#dodajDokumenty");
+        lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true,
+      'albumLabel' : "Zdjęcie %1 z %2"
+    })
     });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js" integrity="sha512-k2GFCTbp9rQU412BStrcD/rlwv1PYec9SNrkbQlo6RZCf75l6KcC3UwDY8H5n5hl4v77IDtIPwOk9Dqjs/mMBQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <?php get_footer(); ?>
